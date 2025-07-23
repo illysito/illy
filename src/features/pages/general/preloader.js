@@ -21,7 +21,8 @@ async function preloader() {
   let countChar = ''
   function randomChar() {
     //prettier-ignore
-    const chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWXxYyZzáéíóú'
+    const chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWXxYyZzáéíóú0123456789'
+    // const chars = '0123456789'
     countChar = chars[countIndex]
     countIndex = (countIndex + 1) % 62
   }
@@ -35,7 +36,7 @@ async function preloader() {
       const targetText = target
       const targetChars = targetText.split('')
 
-      const time = 20
+      const time = 32
 
       let names = new Array(targetChars.length).fill(' ')
       names[0] = targetChars[0]
@@ -50,7 +51,7 @@ async function preloader() {
             // if (isUpperCase(targetChars[index])) {
             //   names[index] = targetChars[index]
             // }
-            if (countIndex == 12) {
+            if (countIndex == 24) {
               names[index] = targetChars[index]
             }
           } else {
@@ -111,7 +112,7 @@ async function preloader() {
 
   // INIT
   async function init() {
-    await generateName('Loading_')
+    await generateName('100')
     await animatePreloaderOverlay()
     localStorage.setItem('isPreloader', 'true')
   }
