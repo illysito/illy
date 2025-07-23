@@ -17,3 +17,13 @@
 .hero-h {
   opacity: 0;
 }
+
+.url-input {
+  width: 90%;
+}
+
+#qrCodeURL {
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+}
