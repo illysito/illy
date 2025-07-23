@@ -4,9 +4,13 @@ import './styles/style.css'
 
 // GENERAL
 import nav from './features/pages/general/nav'
+import preloader from './features/pages/general/preloader'
 // SCRIPTS
 import button from './features/scripts/buttons.js'
 
+// CUSTOM FUNCTIONS
+
+// Query elements from the DOM
 function domElementsQuery() {
   return {
     hireButton: document.querySelector('.hire-button'),
@@ -18,52 +22,44 @@ function domElementsQuery() {
 }
 const domElements = domElementsQuery()
 
-// function transition() {
-//   domElements.navLinks.forEach((link) => {
-//     link.addEventListener('click', (e) => {
-//       e.preventDefault()
+// If preloader has already been shown, cancel initialization and put it behind everything so it doesnt show again!
+function checkPreloader() {
+  if (localStorage.getItem('isPreloader') === 'true') {
+    domElements.preloader.style.zIndex = -30
+  }
+}
 
-//       const href = link.href
-
-//       // TRANSITION
-//       domElements.preloader.style.zIndex = 30
-//       gsap.to(domElements.preloaderOverlays, {
-//         yPercent: 0,
-//         duration: 1,
-//         ease: 'power3.inOut',
-//         onComplete: () => {
-//           window.location.href = href
-//         },
-//       })
-//     })
-//   })
-// }
+// PAGES
 
 function runGeneralFunctions() {
-  if (domElements.nav) {
-    nav()
-  }
-  // transition()
-  // general buttons
+  checkPreloader()
+  nav()
   button(domElements.hireButton)
 }
 
 async function runHomeFunctions() {
   // Imports
-  const { default: intro } = await import('./features/pages/general/intro')
+  const { default: introHome } = await import('./features/pages/home/introHome')
   const { default: handleHeroCanvas } = await import(
     './features/pages/home/handleHeroShader'
   )
 
   // Exec
-  intro()
   handleHeroCanvas()
+  if (localStorage.getItem('isPreloader') !== 'true') {
+    await preloader()
+  }
+  introHome()
 }
+
+// OTHER STUFF
 
 async function runQRFunctions() {
   const { default: generateQR } = await import('./features/scripts/generateQR')
   generateQR()
 }
+
+// INIT
 
 runGeneralFunctions()
 if (document.body.classList.contains('body__home')) runHomeFunctions()
