@@ -8,8 +8,6 @@ import preloader from './features/pages/general/preloader'
 // SCRIPTS
 import button from './features/scripts/buttons.js'
 
-// CUSTOM FUNCTIONS
-
 // Query elements from the DOM
 function domElementsQuery() {
   return {
@@ -54,6 +52,11 @@ async function runHomeFunctions() {
 
 // OTHER STUFF
 
+async function runFlowFieldFunctions() {
+  const { default: flowField } = await import('./features/scripts/flowField')
+  flowField()
+}
+
 async function runQRFunctions() {
   const { default: generateQR } = await import('./features/scripts/generateQR')
   generateQR()
@@ -61,6 +64,7 @@ async function runQRFunctions() {
 
 // INIT
 
-runGeneralFunctions()
+if (!document.body.classList.contains('body__flowfield')) runGeneralFunctions()
 if (document.body.classList.contains('body__home')) runHomeFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
+if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()

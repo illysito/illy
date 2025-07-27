@@ -17,3 +17,8 @@
   padding-left: 8px;
   padding-right: 8px;
 }
+
+.rotation-letter-wrapper {
+  perspective: 800px; /* depth of the 3D effect */
+  display: inline-block;
+}
