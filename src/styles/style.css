@@ -22,3 +22,23 @@
   perspective: 800px; /* depth of the 3D effect */
   display: inline-block;
 }
+
+.mouse-ball {
+  width: 16px;
+  height: 16px;
+  background-color: #fffbf6;
+  /* background-color: #ff5572; */
+  border-radius: 30px;
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.pixel-cell {
+  background-color: #fdfdfd;
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  /* border-radius: 2px; */
+}

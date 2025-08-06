@@ -32,6 +32,10 @@ vec2 aspect(vec2 uv, float image_ratio, float canvas_ratio){
   return uv;
 }
 
+float rand(vec2 co) {
+  return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
 void main()
 {
   if(u_isObserved == 0.0){
@@ -59,6 +63,20 @@ void main()
 
   vec4 img = texture2D(image, coords);
 
+  // ------------- NOISE
+
+  // Distance from mouse (in [0, 1] range)
+  float dist = distance(uv, vec2(u_mouseX, u_mouseY));
+
+  // Grain strength based on distance (1.0 inside radius, 0.0 outside)
+  float radius = 0.05;
+  float grainFactor = smoothstep(radius, radius * 0.8, dist);
+  grainFactor = 0.0;
+
+  float noise = rand(coords);
+  float noiseFactor = 0.2 * u_mouseX;
+  img += grainFactor * noise;
+  
   // ------------- OUTPUT
   
   color = img;

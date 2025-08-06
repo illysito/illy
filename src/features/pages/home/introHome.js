@@ -44,9 +44,9 @@ function introHome() {
     const splitHeading_1 = new SplitType(domElements.headings[0], {
       types: 'chars',
     })
-    const splitHeading_2 = new SplitType(domElements.headings[1], {
-      types: 'chars',
-    })
+    // const splitHeading_2 = new SplitType(domElements.headings[1], {
+    //   types: 'chars',
+    // })
     gsap.from(splitHeading_1.chars, {
       xPercent: -100,
       opacity: 0,
@@ -57,13 +57,13 @@ function introHome() {
         from: 'end', // 👈 starts from the last element
       },
     })
-    gsap.from(splitHeading_2.chars, {
-      xPercent: 100,
-      opacity: 0,
-      duration: dur,
-      ease: ease2,
-      stagger: 0.05,
-    })
+    // gsap.from(splitHeading_2.chars, {
+    //   xPercent: 100,
+    //   opacity: 0,
+    //   duration: dur,
+    //   ease: ease2,
+    //   stagger: 0.05,
+    // })
     gsap.to(domElements.headings, {
       opacity: 1,
       duration: dur,
