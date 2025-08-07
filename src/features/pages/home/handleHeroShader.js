@@ -7,14 +7,14 @@ function handleHeroCanvas() {
   let mouseY = 0.5
   const mouseXRef = { current: mouseX }
   const mouseYRef = { current: mouseY }
-  const trigger = document.querySelector('.illy-canvas')
+  const illy_canvas = document.querySelector('.illy-canvas')
   let isObserved = { current: false }
   let lastScrollY = window.scrollY
 
   //prettier-ignore
   const updateUniforms = heroShader(mouseXRef, mouseYRef, isObserved)
 
-  window.addEventListener('mousemove', (event) => {
+  illy_canvas.addEventListener('mousemove', (event) => {
     //prettier-ignore
     mouseXRef.current = gsap.utils.mapRange(0, window.innerWidth, 0.45, 0.65, event.clientX)
     //prettier-ignore
@@ -49,7 +49,7 @@ function handleHeroCanvas() {
     { threshold: 0.0 }
   )
 
-  observer.observe(trigger)
+  observer.observe(illy_canvas)
 
   window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY

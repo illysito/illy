@@ -3,6 +3,7 @@
 import './styles/style.css'
 
 // GENERAL
+import handleGridShader from './features/pages/general/handleGridShader'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
 import preloader from './features/pages/general/preloader'
@@ -32,6 +33,7 @@ function checkPreloader() {
 
 function runGeneralFunctions() {
   checkPreloader()
+  handleGridShader()
   nav()
   mousetrail()
   button(domElements.hireButton)
@@ -43,9 +45,6 @@ async function runHomeFunctions() {
   const { default: handleHeroCanvas } = await import(
     './features/pages/home/handleHeroShader'
   )
-  // const { default: heroHeaderGrid } = await import(
-  //   './features/pages/home/heroHeaderGrid'
-  // )
 
   // Exec
   handleHeroCanvas()
@@ -53,7 +52,6 @@ async function runHomeFunctions() {
     await preloader()
   }
   introHome()
-  // heroHeaderGrid()
 }
 
 // OTHER STUFF

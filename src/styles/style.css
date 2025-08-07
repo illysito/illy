@@ -1,9 +1,23 @@
+body {
+  cursor: none;
+}
+
 .canvas__wrapper {
   width: 90svh;
   height: 90svh;
 }
 
 #illy-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-canvas__wrapper {
+  width: 100svw;
+  height: 100svh;
+}
+
+#grid-canvas {
   width: 100%;
   height: 100%;
 }

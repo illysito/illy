@@ -1,16 +1,16 @@
 import GlslCanvas from 'glslCanvas'
 
-import heroImg_frag from './glsl/heroImageFrag.js'
+import gridShader_frag from './glsl/gridShaderFrag'
 
 //prettier-ignore
-function heroShader(mouseXRef, mouseYRef, isObserved) {
+function gridShader(mouseXRef, mouseYRef, glowIntensity) {
   function isMobile() {
     return window.matchMedia('(max-width: 768px)').matches
   }
 
   // console.log('Illy Hero Shader: is it mobile?: ' + isMobile())
 
-  const canvas = document.querySelector('#illy-canvas')
+  const canvas = document.querySelector('#grid-canvas')
   // console.log(canvas)
 
   // const gl = canvas.getContext('webgl')
@@ -41,32 +41,22 @@ function heroShader(mouseXRef, mouseYRef, isObserved) {
 
   let fragment_shader
   if (isMobile()) {
-    fragment_shader = heroImg_frag
+    fragment_shader = gridShader_frag
   } else {
-    fragment_shader = heroImg_frag
+    fragment_shader = gridShader_frag
   }
 
   sandbox.load(fragment_shader)
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
+  sandbox.setUniform('u_glowIntensity', glowIntensity.current)
   sandbox.setUniform('u_mouseX', mouseXRef.current)
   sandbox.setUniform('u_mouseY', mouseYRef.current)
-  //prettier-ignore
-  // const imageURL_1 ='https://raw.githubusercontent.com/illysito/illy/4455c083151c48c951a559d0161134026f32c3d5/Illy-Hero-5.png' 
-  const imageURL_1 = 'https://raw.githubusercontent.com/illysito/illy/f83c1eb857ca5f7386a586ff8f1fcd782d0287c3/los-lirios-oski.jpg'
-  const urls = [imageURL_1]
-  const index = 0
-  sandbox.setUniform('u_image', urls[index])
-  sandbox.setUniform('u_imageResolution', [1200.0, 1249.0])
-  sandbox.setUniform('u_distortionFactor', 1.0)
-  sandbox.setUniform('u_blueDistortionFactor', 1.0)
-  sandbox.setUniform('u_naturalDistortionFactor', 1.0)
-  sandbox.setUniform('u_isObserved', isObserved.current)
 
   function updateUniforms() {
     sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
+    sandbox.setUniform('u_glowIntensity', glowIntensity.current)
     sandbox.setUniform('u_mouseX', mouseXRef.current)
     sandbox.setUniform('u_mouseY', mouseYRef.current)
-    sandbox.setUniform('u_isObserved', isObserved.current)
   }
 
   window.addEventListener('resize', function () {
@@ -77,4 +67,4 @@ function heroShader(mouseXRef, mouseYRef, isObserved) {
   return updateUniforms
 }
 
-export default heroShader
+export default gridShader

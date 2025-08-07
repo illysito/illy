@@ -57,26 +57,28 @@ void main()
   float canvas_ratio = u_resolution.x / u_resolution.y;
 
   vec2 coords = aspect(uv, image_ratio, canvas_ratio);
-  coords = clamp(coords, 0.0, 1.0);
+
+  // ------------- DISTORTION
+
+  vec2 mouse = vec2(u_mouseX, u_mouseY);
+  // mouse = mouse / u_resolution;
+  float dist = distance(mouse, uv);
+  float strength = smoothstep(0.6, 0.0, dist);
+
+  float blocks = mix(2.0, 12.0, strength);
+  blocks = 0.01;
+  float x = floor(uv.x * blocks) / blocks;
+  float y = floor(uv.y * blocks) / blocks;
+
+  vec2 distortion = 0.1 * strength * vec2(
+    sin(0.0000006 * u_time + mouse.x + x + 2.0 * y), 
+    cos(0.0000006 * u_time + mouse.y + 1.5 * x + y) 
+  );
 
   // ------------- SAMPLING
 
-  vec4 img = texture2D(image, coords);
+  vec4 img = texture2D(image, coords + distortion);
 
-  // ------------- NOISE
-
-  // Distance from mouse (in [0, 1] range)
-  float dist = distance(uv, vec2(u_mouseX, u_mouseY));
-
-  // Grain strength based on distance (1.0 inside radius, 0.0 outside)
-  float radius = 0.05;
-  float grainFactor = smoothstep(radius, radius * 0.8, dist);
-  grainFactor = 0.0;
-
-  float noise = rand(coords);
-  float noiseFactor = 0.2 * u_mouseX;
-  img += grainFactor * noise;
-  
   // ------------- OUTPUT
   
   color = img;
