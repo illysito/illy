@@ -3,6 +3,7 @@
 import './styles/style.css'
 
 // GENERAL
+import world from './features/pages/3d/world/universe'
 import handleGridShader from './features/pages/general/handleGridShader'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
@@ -13,6 +14,7 @@ import button from './features/scripts/buttons.js'
 // Query elements from the DOM
 function domElementsQuery() {
   return {
+    worldContainer: document.querySelector('.world-container'),
     hireButton: document.querySelector('.hire-button'),
     nav: document.querySelector('.nav__section'),
     navLinks: document.querySelectorAll('.nav-link'),
@@ -34,6 +36,7 @@ function checkPreloader() {
 function runGeneralFunctions() {
   checkPreloader()
   handleGridShader()
+  world(domElements.worldContainer)
   nav()
   mousetrail()
   button(domElements.hireButton)

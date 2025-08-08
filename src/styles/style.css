@@ -1,5 +1,6 @@
 body {
   cursor: none;
+  overflow-x: hidden;
 }
 
 .canvas__wrapper {
@@ -47,12 +48,4 @@ body {
   z-index: 999;
   pointer-events: none;
   mix-blend-mode: difference;
-}
-
-.pixel-cell {
-  background-color: #fdfdfd;
-  opacity: 0;
-  width: 40px;
-  height: 40px;
-  /* border-radius: 2px; */
 }
