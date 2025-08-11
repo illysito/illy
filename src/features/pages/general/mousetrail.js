@@ -19,6 +19,7 @@ function mousetrail() {
     targetX = e.clientX
     targetY = e.pageY
   })
+
   document.addEventListener('pointerenter', () => {
     gsap.set([ball, customCursor], {
       opacity: 1,
