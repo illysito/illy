@@ -49,3 +49,7 @@ body {
   pointer-events: none;
   mix-blend-mode: difference;
 }
+
+.hero-word {
+  border: 1px solid black;
+}

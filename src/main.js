@@ -48,6 +48,7 @@ async function runHomeFunctions() {
   const { default: handleHeroCanvas } = await import(
     './features/pages/home/handleHeroShader'
   )
+  const { default: heroWords } = await import('./features/pages/home/heroWords')
 
   // Exec
   handleHeroCanvas()
@@ -55,6 +56,7 @@ async function runHomeFunctions() {
     await preloader()
   }
   introHome()
+  heroWords()
 }
 
 // OTHER STUFF

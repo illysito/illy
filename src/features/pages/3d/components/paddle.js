@@ -107,9 +107,9 @@ function createPaddle() {
             lastMouseX = currentMouseX
           })
 
-          window.addEventListener('scroll', () => {
-            scroll = window.scrollY
-          })
+          // window.addEventListener('scroll', () => {
+          //   scroll = window.scrollY
+          // })
         }
 
         resolve(paddle)

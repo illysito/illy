@@ -1,3 +1,8 @@
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
 import { World } from './World.js'
 
 function world(container) {
@@ -17,6 +22,16 @@ function world(container) {
 
   const world = new World(container)
   world.start()
+
+  gsap.to(container, {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: container,
+      start: 'bottom 80%',
+      end: 'bottom 50%',
+      scrub: true,
+    },
+  })
 
   // // STOP LOOP WHEN UNOBSERVED (INTERSECTION OBSERVER METHOD)
 
