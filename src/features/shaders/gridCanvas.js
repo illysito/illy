@@ -1,6 +1,7 @@
 import GlslCanvas from 'glslCanvas'
 
-import gridShader_frag from './glsl/gridShaderFrag'
+// import gridShader_frag from './glsl/gridShaderFrag'
+import breathingShader_frag from './glsl/breathingShaderFrag'
 
 //prettier-ignore
 function gridShader(mouseXRef, mouseYRef, glowIntensity) {
@@ -41,9 +42,9 @@ function gridShader(mouseXRef, mouseYRef, glowIntensity) {
 
   let fragment_shader
   if (isMobile()) {
-    fragment_shader = gridShader_frag
+    fragment_shader = breathingShader_frag
   } else {
-    fragment_shader = gridShader_frag
+    fragment_shader = breathingShader_frag
   }
 
   sandbox.load(fragment_shader)

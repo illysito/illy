@@ -3,7 +3,7 @@
 import './styles/style.css'
 
 // GENERAL
-import world from './features/pages/3d/world/universe'
+// import world from './features/pages/3d/world/universe'
 import handleGridShader from './features/pages/general/handleGridShader'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
@@ -36,7 +36,7 @@ function checkPreloader() {
 function runGeneralFunctions() {
   checkPreloader()
   handleGridShader()
-  world(domElements.worldContainer)
+  // world(domElements.worldContainer)
   nav()
   mousetrail()
   button(domElements.hireButton)
