@@ -73,7 +73,11 @@ async function runQRFunctions() {
 
 // INIT
 
-if (!document.body.classList.contains('body__flowfield')) runGeneralFunctions()
+if (
+  !document.body.classList.contains('body__flowfield') &&
+  !document.body.classList.contains('body__qr')
+)
+  runGeneralFunctions()
 if (document.body.classList.contains('body__home')) runHomeFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
 if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()
