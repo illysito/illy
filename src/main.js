@@ -20,6 +20,7 @@ function domElementsQuery() {
     navLinks: document.querySelectorAll('.nav-link'),
     preloaderOverlays: document.querySelectorAll('.preloader-overlay'),
     preloader: document.querySelector('.preloader__section'),
+    qrButton: document.querySelector('.qr-button'),
   }
 }
 const domElements = domElementsQuery()
@@ -34,12 +35,11 @@ function checkPreloader() {
 // PAGES
 
 function runGeneralFunctions() {
-  checkPreloader()
-  handleGridShader()
   // world(domElements.worldContainer)
   nav()
   mousetrail()
   button(domElements.hireButton)
+  button(domElements.qrButton)
 }
 
 async function runHomeFunctions() {
@@ -51,6 +51,8 @@ async function runHomeFunctions() {
   const { default: heroWords } = await import('./features/pages/home/heroWords')
 
   // Exec
+  checkPreloader()
+  handleGridShader()
   handleHeroCanvas()
   if (localStorage.getItem('isPreloader') !== 'true') {
     await preloader()
@@ -68,16 +70,14 @@ async function runFlowFieldFunctions() {
 
 async function runQRFunctions() {
   const { default: generateQR } = await import('./features/scripts/generateQR')
+  nav()
+  button(domElements.hireButton)
   generateQR()
 }
 
 // INIT
 
-if (
-  !document.body.classList.contains('body__flowfield') &&
-  !document.body.classList.contains('body__qr')
-)
-  runGeneralFunctions()
+if (!document.body.classList.contains('body__flowfield')) runGeneralFunctions()
 if (document.body.classList.contains('body__home')) runHomeFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
 if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()
