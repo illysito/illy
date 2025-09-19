@@ -39,7 +39,9 @@ function runGeneralFunctions() {
   nav()
   mousetrail()
   button(domElements.hireButton)
-  button(domElements.qrButton)
+  if (domElements.qrButton) {
+    button(domElements.qrButton)
+  }
 }
 
 async function runHomeFunctions() {
