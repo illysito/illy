@@ -61,6 +61,7 @@ async function runHomeFunctions() {
   }
   introHome()
   heroWords()
+  // world(domElements.worldContainer)
 }
 
 // OTHER STUFF

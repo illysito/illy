@@ -12,6 +12,7 @@ function createPaddle() {
     // const url = 'https://raw.githubusercontent.com/illysito/illy/a77728eac81f76ebbb08a729e0a9fbc681efd843/old_italian_coffee_maker_moka.glb' // COFFEE
     const url = 'https://raw.githubusercontent.com/illysito/illy/19c1e0bbea612d52c84233eb0261efa6b49f2afa/chinese_teapot.glb' // TEAPOT
     // const url = 'https://raw.githubusercontent.com/illysito/padmi/refs/heads/main/tennisball.obj' // IPHONE
+    // const url = 'https://raw.githubusercontent.com/illysito/illy/1a0b1b6ab44f71a36cc7c7a453de68737644f5da/ImageToStl.com_minitimple.glb' // TIMPLE
     const textureUrl =
       'https://raw.githubusercontent.com/illysito/illy/ea76c80ead519eb558b189c06bc01e7486481335/metal_color.png'
 

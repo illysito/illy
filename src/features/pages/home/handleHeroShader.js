@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 
-import heroShader from '../../shaders/heroImage.js'
+// import heroShader from '../../shaders/heroImage.js'
+import textureShader from '../../shaders/textureCanvas.js'
 
 function handleHeroCanvas() {
   let mouseX = 0.5
@@ -12,7 +13,8 @@ function handleHeroCanvas() {
   let lastScrollY = window.scrollY
 
   //prettier-ignore
-  const updateUniforms = heroShader(mouseXRef, mouseYRef, isObserved)
+  // const updateUniforms = heroShader(mouseXRef, mouseYRef, isObserved)
+  const updateUniforms = textureShader()
 
   illy_canvas.addEventListener('mousemove', (event) => {
     //prettier-ignore
