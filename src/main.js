@@ -4,7 +4,7 @@ import './styles/style.css'
 
 // GENERAL
 // import world from './features/pages/3d/world/universe'
-import handleGridShader from './features/pages/general/handleGridShader'
+// import handleGridShader from './features/pages/general/handleGridShader'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
 import preloader from './features/pages/general/preloader'
@@ -47,20 +47,24 @@ function runGeneralFunctions() {
 async function runHomeFunctions() {
   // Imports
   const { default: introHome } = await import('./features/pages/home/introHome')
-  const { default: handleHeroCanvas } = await import(
-    './features/pages/home/handleHeroShader'
-  )
+  // const { default: handleHeroCanvas } = await import(
+  //   './features/pages/home/handleHeroShader'
+  // )
   const { default: heroWords } = await import('./features/pages/home/heroWords')
+  const { default: workCanvasUI } = await import(
+    './features/pages/home/work_shaders/disp_ui'
+  )
 
   // Exec
   checkPreloader()
-  handleGridShader()
-  handleHeroCanvas()
+  // handleGridShader()
+  // handleHeroCanvas()
   if (localStorage.getItem('isPreloader') !== 'true') {
     await preloader()
   }
   introHome()
   heroWords()
+  workCanvasUI()
   // world(domElements.worldContainer)
 }
 
