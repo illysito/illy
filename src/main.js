@@ -47,9 +47,9 @@ function runGeneralFunctions() {
 async function runHomeFunctions() {
   // Imports
   const { default: introHome } = await import('./features/pages/home/introHome')
-  // const { default: handleHeroCanvas } = await import(
-  //   './features/pages/home/handleHeroShader'
-  // )
+  const { default: heroUI } = await import(
+    './features/pages/home/hero_shader/hero_ui'
+  )
   const { default: heroWords } = await import('./features/pages/home/heroWords')
   const { default: workCanvasUI } = await import(
     './features/pages/home/work_shaders/disp_ui'
@@ -62,6 +62,7 @@ async function runHomeFunctions() {
   if (localStorage.getItem('isPreloader') !== 'true') {
     await preloader()
   }
+  heroUI()
   introHome()
   heroWords()
   // await new Promise(r => setTimeout(r, 3000));
