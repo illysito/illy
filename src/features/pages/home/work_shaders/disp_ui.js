@@ -21,9 +21,9 @@ function dispUI() {
   // Barrrena
   const offsetRefBARRENA = { current: 0 }
   const image1_URL_BARRRENA =
-    'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15533643_4278.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/5b0afe962c4861a9a37f7e1dcee9784a7ca8bcde/imgs/Cachanchan-05.jpg'
   const image2_URL_BARRRENA =
-    'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/5b0afe962c4861a9a37f7e1dcee9784a7ca8bcde/imgs/Cachanchan-06.jpg'
   const updateUniformsBARRENA = dispHandler(
     barrenaCanvas,
     offsetRefBARRENA,
@@ -36,9 +36,9 @@ function dispUI() {
   // Fifame
   const offsetRefFIFAME = { current: 0 }
   const image1_URL_FIFAME =
-    'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15533643_4278.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/5b0afe962c4861a9a37f7e1dcee9784a7ca8bcde/imgs/LosLirios-05.jpg'
   const image2_URL_FIFAME =
-    'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/5b0afe962c4861a9a37f7e1dcee9784a7ca8bcde/imgs/LosLirios-06.jpg'
   const updateUniformsFIFAME = dispHandler(
     fifameCanvas,
     offsetRefFIFAME,
@@ -51,9 +51,9 @@ function dispUI() {
   // Los Lirios
   const offsetRefLIRIOS = { current: 0 }
   const image1_URL_LIRIOS =
-    'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15533643_4278.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/5b0afe962c4861a9a37f7e1dcee9784a7ca8bcde/imgs/Llanten-05.jpg'
   const image2_URL_LIRIOS =
-    'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/5b0afe962c4861a9a37f7e1dcee9784a7ca8bcde/imgs/Llanten-06.jpg'
   const updateUniformsLIRIOS = dispHandler(
     liriosCanvas,
     offsetRefLIRIOS,
@@ -71,7 +71,7 @@ function dispUI() {
       onUpdate: updateUniforms[index],
     })
     gsap.to(canvasUI[index], {
-      borderRadius: 8,
+      borderRadius: 12,
       duration: duration - 0.2,
       ease: p2o,
     })

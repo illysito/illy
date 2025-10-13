@@ -64,7 +64,8 @@ async function runHomeFunctions() {
   }
   introHome()
   heroWords()
-  workCanvasUI()
+  // await new Promise(r => setTimeout(r, 3000));
+  setTimeout(workCanvasUI, 1200)
   // world(domElements.worldContainer)
 }
 

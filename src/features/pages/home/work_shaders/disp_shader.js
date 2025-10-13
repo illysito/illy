@@ -57,8 +57,8 @@ void main()
 
   // NOISE
 
-  float noise = random(uv + sin(u_time));
-  float noiseFactor = 0.1;
+  // float noise = random(uv + sin(u_time));
+  // float noiseFactor = 0.16;
 
   // IMG
 
@@ -81,7 +81,7 @@ void main()
   vec4 img = (d_img_1 * (1.0 - u_offset) + d_img_2 * u_offset);
   // img = (d_img_1 + d_img_2);
   // img = d_img_1;
-  img += noise * noiseFactor;
+  // img += noise * noiseFactor;
 
   // img = displacement;
   // img = blockDisplacement;

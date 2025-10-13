@@ -3,6 +3,7 @@ import gsap from 'gsap'
 function mousetrail() {
   // create mouse ball
   const ball = document.createElement('div')
+  const canvasUI = document.querySelectorAll('.work-canvas')
   // const customCursor = document.querySelector('.custom-cursor')
   // const links = document.querySelectorAll('a')
   ball.classList.add('mouse-ball')
@@ -20,29 +21,18 @@ function mousetrail() {
     targetY = e.pageY
   })
 
-  document.addEventListener('pointerenter', () => {
-    gsap.set([ball], {
-      opacity: 1,
+  canvasUI.forEach((c) => {
+    c.addEventListener('mouseenter', () => {
+      gsap.to(ball, {
+        scale: 2,
+      })
+    })
+    c.addEventListener('mouseleave', () => {
+      gsap.to(ball, {
+        scale: 1,
+      })
     })
   })
-  document.addEventListener('pointerleave', () => {
-    gsap.set([ball], {
-      opacity: 0,
-    })
-  })
-
-  // links.forEach((l) => {
-  //   l.addEventListener('mouseenter', () => {
-  //     gsap.set(customCursor, {
-  //       opacity: 0,
-  //     })
-  //   })
-  //   l.addEventListener('mouseleave', () => {
-  //     gsap.set(customCursor, {
-  //       opacity: 1,
-  //     })
-  //   })
-  // })
 
   function animate() {
     currentX += (targetX - currentX) * 0.1
