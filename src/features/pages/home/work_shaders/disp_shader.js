@@ -42,7 +42,7 @@ void main()
   //uv.x *= u_resolution.x / u_resolution.y;
 
   // find out the ratios
-  float image_ratio = 1080.0 / 1200.0;
+  float image_ratio = 800.0 / 1000.0;
   float canvas_ratio = u_resolution.x / u_resolution.y;
 
   vec2 coords = aspect(uv, image_ratio, canvas_ratio);
