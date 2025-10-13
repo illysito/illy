@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 
 import heroHandler from './hero_handler'
+import getWind from '../../../api/wind'
 
 function heroUI() {
   // canvases
@@ -8,16 +9,19 @@ function heroUI() {
   console.log(canvasWrapper)
   const heroCanvas = document.querySelector('#grid-canvas')
 
-  // const p2o = 'power2.out'
-  // const duration = 1
+  const offsetRef = { current: 0.0 }
+  const windRef = { current: 0.0 }
+  getWind().then((windValue) => {
+    windRef.current = windValue.normalizedWindSpeed
+    updateUniforms()
+  })
 
-  const offsetRef = { current: 0 }
-  const updateUniforms = heroHandler(heroCanvas, offsetRef)
+  const updateUniforms = heroHandler(heroCanvas, offsetRef, windRef)
 
   let ticking = false
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY
-    offsetRef.current = gsap.utils.mapRange(0, 240, 0, 1, scrollY)
+    offsetRef.current = gsap.utils.mapRange(0, 240, 0.0, 1.0, scrollY)
 
     if (!ticking) {
       ticking = true

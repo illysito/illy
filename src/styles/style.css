@@ -2,6 +2,9 @@
   cursor: none;
   overflow-x: hidden;
 } */
+.metadata-p {
+  font-family: 'Otbrut Mono';
+}
 
 .canvas__wrapper {
   width: 90svh;

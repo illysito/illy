@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 
 async function preloader() {
+  console.log('running preloader')
   let dur = 0.6
   // let ease1 = 'power1.inOut'
   let ease2 = 'power2.inOut'

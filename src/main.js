@@ -54,19 +54,20 @@ async function runHomeFunctions() {
   const { default: workCanvasUI } = await import(
     './features/pages/home/work_shaders/disp_ui'
   )
+  const { default: metadata } = await import('./features/pages/home/metadata')
 
   // Exec
   checkPreloader()
   // handleGridShader()
   // handleHeroCanvas()
+  heroUI()
+  setTimeout(workCanvasUI, 1200)
   if (localStorage.getItem('isPreloader') !== 'true') {
     await preloader()
   }
-  heroUI()
   introHome()
+  metadata()
   heroWords()
-  // await new Promise(r => setTimeout(r, 3000));
-  setTimeout(workCanvasUI, 1200)
   // world(domElements.worldContainer)
 }
 

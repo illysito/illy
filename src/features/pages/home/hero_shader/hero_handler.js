@@ -3,19 +3,20 @@ import GlslCanvas from 'glslCanvas'
 import disp_frag from './hero_shader'
 
 //prettier-ignore
-function dispHandler(canvas, offsetRef) {
+function dispHandler(canvas, offsetRef, windRef) {
   // SETUP
-  const shaderReference = 'DISPLACEMENT SHADER: '
-  const gl = canvas.getContext('webgl')
-  if (!gl) {
-    console.error(shaderReference + 'WebGL not supported!')
-  } else {
-    console.log(shaderReference + 'WebGL is working!')
-  }
-  if (!canvas) {
-    console.error(shaderReference + 'Canvas element not found!')
-    return
-  }
+  // const shaderReference = 'HREO SHADER: '
+  // const gl = canvas.getContext('webgl')
+  canvas.getContext('webgl')
+  // if (!gl) {
+  //   console.error(shaderReference + 'WebGL not supported!')
+  // } else {
+  //   console.log(shaderReference + 'WebGL is working!')
+  // }
+  // if (!canvas) {
+  //   console.error(shaderReference + 'Canvas element not found!')
+  //   return
+  // }
 
   // CALCULATE SIZE
   const calcSize = function () {
@@ -46,6 +47,7 @@ function dispHandler(canvas, offsetRef) {
   function updateUniforms() {
     sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
     sandbox.setUniform('u_offset', offsetRef.current)
+    sandbox.setUniform('u_wind', windRef.current)
   }
 
   window.addEventListener('resize', function () {
