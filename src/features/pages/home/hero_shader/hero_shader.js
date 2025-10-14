@@ -92,7 +92,7 @@ void main()
   // IMG
 
   float displacementCoef = 0.2;
-  float windCoef = -u_wind * 1.25;
+  float windCoef = -u_wind;
 
   float windOffset = fbm(vec2(u_time * u_wind, coords.y * 0.5));
 

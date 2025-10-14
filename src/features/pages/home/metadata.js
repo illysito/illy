@@ -1,6 +1,6 @@
 import gsap from 'gsap'
 
-import getWind from '../../api/wind'
+import getMeteo from '../../api/openWeather'
 
 function metadata() {
   function domQuery() {
@@ -9,6 +9,8 @@ function metadata() {
       wind_txt: document.querySelector('.is--wind--metadata'),
       date_txt: document.querySelector('.is--date--metadata'),
       time_txt: document.querySelector('.is--time--metadata'),
+      moon_txt: document.querySelector('.is--moonphase-metadata'),
+      moon_imgs: document.querySelectorAll('.moon-img'),
     }
   }
   const DOM = domQuery()
@@ -57,13 +59,16 @@ function metadata() {
   DOM.date_txt.textContent =
     dayNames[day] + ', ' + dayNumber + ' ' + monthNames[month]
 
-  // WIND
-
   let windMessage = ''
   let wind = 0.0
 
-  getWind().then((windValue) => {
-    wind = windValue.windSpeed
+  let moonMessage = ''
+  let moonImgIndex = 0
+  let moon = 0.0
+
+  getMeteo().then((meteo) => {
+    // WIND
+    wind = meteo.windSpeed
 
     if (wind < 1) {
       windMessage = 'calm'
@@ -82,6 +87,58 @@ function metadata() {
     }
 
     DOM.wind_txt.textContent = windMessage + ' · ' + wind + ' m/s'
+
+    // MOON
+    moon = meteo.moonPhase
+
+    if (moon > 0 && moon <= 0.125) {
+      moonMessage = 'waxing crecent'
+      moonImgIndex = 1
+    } else if (moon > 0.125 && moon <= 0.25) {
+      moonMessage = 'first quarter'
+      moonImgIndex = 2
+    } else if (moon > 0.25 && moon <= 0.375) {
+      moonMessage = 'waxing gibbous'
+      moonImgIndex = 3
+    } else if (moon > 0.375 && moon < 0.5) {
+      moonMessage = 'waxing gibbous (almost there!)'
+      moonImgIndex = 4
+    } else if (moon === 0.5) {
+      moonMessage = 'full moon'
+      moonImgIndex = 5
+    } else if (moon > 0.5 && moon <= 0.625) {
+      moonMessage = 'waning gibbous'
+      moonImgIndex = 6
+    } else if (moon > 0.625 && moon <= 0.75) {
+      moonMessage = 'last quarter'
+      moonImgIndex = 7
+    } else if (moon > 0.75 && moon <= 0.875) {
+      moonMessage = 'waning crescent'
+      moonImgIndex = 8
+    } else if (moon > 0.875 && moon < 1) {
+      moonMessage = 'almost new'
+      moonImgIndex = 9
+    } else if (moon === 0 || moon === 1) {
+      moonMessage = 'new moon'
+      moonImgIndex = 0
+    }
+
+    DOM.moon_txt.textContent = moonMessage
+    DOM.moon_imgs.forEach((moon, index) => {
+      if (moonImgIndex === index) {
+        gsap.to(moon, {
+          opacity: 1,
+          duration: 0.1,
+          ease: 'none',
+        })
+      } else {
+        gsap.to(moon, {
+          opacity: 0,
+          duration: 0.1,
+          ease: 'none',
+        })
+      }
+    })
   })
 }
 

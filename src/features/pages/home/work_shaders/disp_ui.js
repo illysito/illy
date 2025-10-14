@@ -7,9 +7,12 @@ function dispUI() {
   const canvasUI = document.querySelectorAll('.work-canvas')
 
   // canvases
-  const barrenaCanvas = document.querySelector('#work-barrena-canvas')
-  const fifameCanvas = document.querySelector('#work-fifame-canvas')
+  const padmiCanvas = document.querySelector('#work-padmi-canvas')
+  const liubaCanvas = document.querySelector('#work-liuba-canvas')
+  const barrenaCanvas = document.querySelector('#work-barrrena-canvas')
+  const cachanchanCanvas = document.querySelector('#work-cachanchan-canvas')
   const liriosCanvas = document.querySelector('#work-lirios-canvas')
+  const llantenCanvas = document.querySelector('#work-llanten-canvas')
 
   const p2o = 'power2.out'
   const duration = 0.8
@@ -18,50 +21,95 @@ function dispUI() {
   const updateUniforms = []
   const offsets = []
 
+  // Padmi
+  const offsetRefPADMI = { current: 0 }
+  const image1_URL_PADMI =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Iphone-Mockup-2---Comp.jpg'
+  const image2_URL_PADMI =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Mac-Mockup-1-Comp.jpg'
+  const updateUniformsPADMI = dispHandler(
+    padmiCanvas,
+    offsetRefPADMI,
+    image1_URL_PADMI,
+    image2_URL_PADMI
+  )
+  updateUniforms.push(updateUniformsPADMI)
+  offsets.push(offsetRefPADMI)
+
+  // Liuba
+  const offsetRefLIUBA = { current: 0 }
+  const image1_URL_LIUBA =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Liuba-Mokcup-IPHONE-1-Comp.jpg'
+  const image2_URL_LIUBA =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Liuba-Mokcup-Mac-3-Comp.jpg'
+  const updateUniformsLIUBA = dispHandler(
+    liubaCanvas,
+    offsetRefLIUBA,
+    image1_URL_LIUBA,
+    image2_URL_LIUBA
+  )
+  updateUniforms.push(updateUniformsLIUBA)
+  offsets.push(offsetRefLIUBA)
+
   // Barrrena
   const offsetRefBARRENA = { current: 0 }
-  const image1_URL_CACHANCHAN =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-CACHANCHAN%201.jpg'
-  const image2_URL_CACHANCHAN =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-CACHANCHAN%202.jpg'
+  const image1_URL_BARRENA =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Barrena-Mockup-Iphone---Comp.jpg'
+  const image2_URL_BARRENA =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Barrrena-Mac-Mockup---Comp.jpg'
   const updateUniformsBARRENA = dispHandler(
     barrenaCanvas,
     offsetRefBARRENA,
-    image1_URL_CACHANCHAN,
-    image2_URL_CACHANCHAN
+    image1_URL_BARRENA,
+    image2_URL_BARRENA
   )
   updateUniforms.push(updateUniformsBARRENA)
   offsets.push(offsetRefBARRENA)
 
-  // Fifame
-  const offsetRefFIFAME = { current: 0 }
+  // Cachanchan
+  const offsetRefCACHANCHAN = { current: 0 }
+  const image1_URL_CACHANCHAN =
+    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-CACHANCHAN%201.jpg'
+  const image2_URL_CACHANCHAN =
+    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-CACHANCHAN%202.jpg'
+  const updateUniformsCACHANCHAN = dispHandler(
+    cachanchanCanvas,
+    offsetRefCACHANCHAN,
+    image1_URL_CACHANCHAN,
+    image2_URL_CACHANCHAN
+  )
+  updateUniforms.push(updateUniformsCACHANCHAN)
+  offsets.push(offsetRefCACHANCHAN)
+
+  // Lirios
+  const offsetRefLIRIOS = { current: 0 }
   const image1_URL_LIRIOS =
     'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LIRIOS%201.jpg'
   const image2_URL_LIRIOS =
     'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LIRIOS%202.jpg'
-  const updateUniformsFIFAME = dispHandler(
-    fifameCanvas,
-    offsetRefFIFAME,
+  const updateUniformsLIRIOS = dispHandler(
+    liriosCanvas,
+    offsetRefLIRIOS,
     image1_URL_LIRIOS,
     image2_URL_LIRIOS
   )
-  updateUniforms.push(updateUniformsFIFAME)
-  offsets.push(offsetRefFIFAME)
+  updateUniforms.push(updateUniformsLIRIOS)
+  offsets.push(offsetRefLIRIOS)
 
-  // Los Lirios
-  const offsetRefLIRIOS = { current: 0 }
+  // Llanten
+  const offsetRefLLANTEN = { current: 0 }
   const image1_URL_LLANTEN =
     'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LLANTEN%201.jpg'
   const image2_URL_LLANTEN =
     'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LLANTEN%202.jpg'
-  const updateUniformsLIRIOS = dispHandler(
-    liriosCanvas,
-    offsetRefLIRIOS,
+  const updateUniformsLLANTEN = dispHandler(
+    llantenCanvas,
+    offsetRefLLANTEN,
     image1_URL_LLANTEN,
     image2_URL_LLANTEN
   )
-  updateUniforms.push(updateUniformsLIRIOS)
-  offsets.push(offsetRefLIRIOS)
+  updateUniforms.push(updateUniformsLLANTEN)
+  offsets.push(offsetRefLLANTEN)
 
   function hoverIn(index) {
     gsap.to(offsets[index], {

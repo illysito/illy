@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 
 import heroHandler from './hero_handler'
-import getWind from '../../../api/wind'
+import getMeteo from '../../../api/openWeather'
 
 function heroUI() {
   // canvases
@@ -10,8 +10,8 @@ function heroUI() {
 
   const offsetRef = { current: 0.0 }
   const windRef = { current: 0.0 }
-  getWind().then((windValue) => {
-    windRef.current = windValue.normalizedWindSpeed
+  getMeteo().then((meteo) => {
+    windRef.current = meteo.normalizedWindSpeed
     updateUniforms()
   })
 
