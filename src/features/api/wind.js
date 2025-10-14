@@ -1,11 +1,9 @@
 async function getWind() {
-  const lat = 28.1235 // Gran Canaria latitude, e.g.
-  const lon = -15.4363
-  const API_KEY = 'Mq4bRWeknd6F70ah'
-  const url = `https://my.meteoblue.com/packages/basic-1h_basic-day?lat=${lat}&lon=${lon}&apikey=${API_KEY}`
+  const lat = 28.0612 // Teror
+  const lon = -15.5497 // Teror
+  const API_KEY = '1eea8f283d6ad1735a7eaa8f9fc8fa4a'
+  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}`
 
-  const now = new Date()
-  const currentHour = now.getUTCHours()
   let windSpeed = 0.0
   let normalizedWindSpeed = 0.0
 
@@ -17,8 +15,8 @@ async function getWind() {
     }
 
     const data = await res.json()
-    // console.log(data)
-    const windSpeedNow = data.data_1h.windspeed[currentHour + 1]
+    console.log(data)
+    const windSpeedNow = data.current.wind_speed
     windSpeed = windSpeedNow
     normalizedWindSpeed = Number((windSpeedNow / 15.0).toFixed(2))
     // console.log(windSpeedNow)

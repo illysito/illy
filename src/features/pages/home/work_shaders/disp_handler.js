@@ -5,17 +5,18 @@ import disp_frag from './disp_shader'
 //prettier-ignore
 function dispHandler(canvas, offsetRef, image1_URL, image2_URL) {
   // SETUP
-  const shaderReference = 'DISPLACEMENT SHADER: '
-  const gl = canvas.getContext('webgl')
-  if (!gl) {
-    console.error(shaderReference + 'WebGL not supported!')
-  } else {
-    console.log(shaderReference + 'WebGL is working!')
-  }
-  if (!canvas) {
-    console.error(shaderReference + 'Canvas element not found!')
-    return
-  }
+  // const shaderReference = 'DISPLACEMENT SHADER: '
+  canvas.getContext('webgl')
+  // const gl = canvas.getContext('webgl')
+  // if (!gl) {
+  //   console.error(shaderReference + 'WebGL not supported!')
+  // } else {
+  //   console.log(shaderReference + 'WebGL is working!')
+  // }
+  // if (!canvas) {
+  //   console.error(shaderReference + 'Canvas element not found!')
+  //   return
+  // }
 
   // CALCULATE SIZE
   const calcSize = function () {

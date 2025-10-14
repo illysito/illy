@@ -5,8 +5,7 @@ import getWind from '../../../api/wind'
 
 function heroUI() {
   // canvases
-  const canvasWrapper = document.querySelector('.grid-canvas')
-  console.log(canvasWrapper)
+  // const canvasWrapper = document.querySelector('.grid-canvas')
   const heroCanvas = document.querySelector('#grid-canvas')
 
   const offsetRef = { current: 0.0 }

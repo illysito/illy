@@ -64,7 +64,6 @@ function metadata() {
 
   getWind().then((windValue) => {
     wind = windValue.windSpeed
-    console.log(wind)
 
     if (wind < 1) {
       windMessage = 'calm'
@@ -82,7 +81,7 @@ function metadata() {
       windMessage = 'storm'
     }
 
-    DOM.wind_txt.textContent = windMessage + ' ( ' + wind + ' m/s )'
+    DOM.wind_txt.textContent = windMessage + ' · ' + wind + ' m/s'
   })
 }
 
