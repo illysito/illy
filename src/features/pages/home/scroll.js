@@ -19,6 +19,18 @@ function scroll() {
       },
     })
   })
+
+  const aboutSection = document.querySelector('.about__section')
+
+  gsap.to(aboutSection, {
+    y: 80,
+    scrollTrigger: {
+      trigger: aboutSection,
+      start: `top 98%`,
+      markers: false,
+      scrub: 1,
+    },
+  })
 }
 
 export default scroll

@@ -8,7 +8,7 @@ function nav() {
       navLogo: document.querySelector('.nav-logo'),
       letters: document.querySelectorAll('.logo-letter'),
       lettersHidden: document.querySelectorAll('.logo-letter-hidden'),
-      navTextWrappers: document.querySelectorAll('.is--navtext'),
+      navTextWrappers: document.querySelectorAll('.nav-link'),
       navText: document.querySelectorAll('.nav-text'),
       navTextHidden: document.querySelectorAll('.nav-text-hidden'),
     }

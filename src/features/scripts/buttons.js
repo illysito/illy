@@ -9,6 +9,7 @@ function button(button) {
     const circle = w.nextElementSibling
     gsap.to(b, {
       scale: 0.98,
+      borderColor: '#0000ff',
       duration: 0.4,
       ease: 'power3.inOut',
     })
@@ -40,6 +41,7 @@ function button(button) {
     gsap.to(b, {
       scale: 1,
       duration: 0.4,
+      borderColor: '#202020',
       ease: 'power3.inOut',
     })
     gsap.to(circle, {

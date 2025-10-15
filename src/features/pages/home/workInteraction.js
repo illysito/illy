@@ -14,7 +14,7 @@ function workInteraction() {
     })
     gsap.to(sorryHeader, {
       yPercent: -100,
-      delay: 0.2,
+      delay: 0.1,
       duration: duration - 0.2,
       ease: p2o,
     })
@@ -33,6 +33,7 @@ function workInteraction() {
     })
     gsap.to(sorryHeader, {
       yPercent: 0,
+      delay: 0.1,
       duration: duration - 0.2,
       ease: p2o,
     })
