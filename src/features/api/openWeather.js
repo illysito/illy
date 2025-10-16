@@ -7,6 +7,9 @@ async function getMeteo() {
   let windSpeed = 0.0
   let normalizedWindSpeed = 0.0
 
+  let rain = 0.0
+  let normalizedRain = 0.0
+
   let moonPhase = 0.0
 
   try {
@@ -25,6 +28,10 @@ async function getMeteo() {
     windSpeed = windSpeedNow
     normalizedWindSpeed = Number((windSpeedNow / 15.0).toFixed(2))
 
+    // RAIN
+    const rainNow = data.current.rain?.['1h'] ?? 0
+    rain = rainNow
+    normalizedRain = 60.0 * Math.min(rain / 10.0, 1.0) + 30
     // MOON
     const moonPhaseNow = data.daily[0].moon_phase
     moonPhase = moonPhaseNow
@@ -36,7 +43,7 @@ async function getMeteo() {
     return null
   }
 
-  return { normalizedWindSpeed, windSpeed, moonPhase }
+  return { normalizedWindSpeed, windSpeed, normalizedRain, rain, moonPhase }
 }
 
 export default getMeteo

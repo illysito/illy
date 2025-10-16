@@ -10,12 +10,14 @@ function heroUI() {
 
   const offsetRef = { current: 0.0 }
   const windRef = { current: 0.0 }
+  const rainRef = { current: 0.0 }
   getMeteo().then((meteo) => {
     windRef.current = meteo.normalizedWindSpeed
+    rainRef.current = meteo.normalizedRain
     updateUniforms()
   })
 
-  const updateUniforms = heroHandler(heroCanvas, offsetRef, windRef)
+  const updateUniforms = heroHandler(heroCanvas, offsetRef, windRef, rainRef)
 
   let ticking = false
   window.addEventListener('scroll', () => {

@@ -3,7 +3,7 @@ import GlslCanvas from 'glslCanvas'
 import disp_frag from './hero_shader'
 
 //prettier-ignore
-function dispHandler(canvas, offsetRef, windRef) {
+function dispHandler(canvas, offsetRef, windRef, rainRef) {
   // SETUP
   // const shaderReference = 'HREO SHADER: '
   // const gl = canvas.getContext('webgl')
@@ -48,6 +48,7 @@ function dispHandler(canvas, offsetRef, windRef) {
     sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
     sandbox.setUniform('u_offset', offsetRef.current)
     sandbox.setUniform('u_wind', windRef.current)
+    sandbox.setUniform('u_rain', rainRef.current)
   }
 
   window.addEventListener('resize', function () {

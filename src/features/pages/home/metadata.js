@@ -7,6 +7,7 @@ function metadata() {
     return {
       underscores: document.querySelectorAll('.underscore'),
       wind_txt: document.querySelector('.is--wind--metadata'),
+      rain_txt: document.querySelector('.is--rain--metadata'),
       date_txt: document.querySelector('.is--date--metadata'),
       time_txt: document.querySelector('.is--time--metadata'),
       moon_txt: document.querySelector('.is--moonphase-metadata'),
@@ -62,6 +63,9 @@ function metadata() {
   let windMessage = ''
   let wind = 0.0
 
+  let rainMessage = ''
+  let rain = 0.0
+
   let moonMessage = ''
   let moonImgIndex = 0
   let moon = 0.0
@@ -87,6 +91,26 @@ function metadata() {
     }
 
     DOM.wind_txt.textContent = windMessage + ' · ' + wind + ' m/s'
+
+    // RAIN
+    rain = meteo.rain
+
+    if (rain === 0) {
+      rainMessage = 'no rain'
+      rain = 0.0
+    } else if (rain >= 0.1 && wind < 1.0) {
+      rainMessage = 'chirimiri'
+    } else if (rain >= 1.0 && wind < 2.5) {
+      rainMessage = 'light rain'
+    } else if (rain >= 2.5 && wind < 7.5) {
+      rainMessage = 'moderate rain'
+    } else if (rain >= 7.5 && wind < 50) {
+      rainMessage = 'heavy rain'
+    } else if (rain >= 50) {
+      rainMessage = 'torrential'
+    }
+
+    DOM.rain_txt.textContent = rainMessage + ' · ' + rain + ' mm/h'
 
     // MOON
     moon = meteo.moonPhase
