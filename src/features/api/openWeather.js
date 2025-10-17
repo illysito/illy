@@ -31,7 +31,7 @@ async function getMeteo() {
     // RAIN
     const rainNow = data.current.rain?.['1h'] ?? 0
     rain = rainNow
-    normalizedRain = 60.0 * Math.min(rain / 10.0, 1.0) + 30
+    normalizedRain = 60.0 * Math.min(rain / 10.0, 1.0)
     // MOON
     const moonPhaseNow = data.daily[0].moon_phase
     moonPhase = moonPhaseNow

@@ -20,6 +20,7 @@ function domElementsQuery() {
     preloaderOverlays: document.querySelectorAll('.preloader-overlay'),
     preloader: document.querySelector('.preloader__section'),
     qrButton: document.querySelector('.qr-button'),
+    canvasWrapper: document.querySelector('.layer-1-canvas-wrapper'),
   }
 }
 const domElements = domElementsQuery()
@@ -58,6 +59,8 @@ async function runHomeFunctions() {
     './features/pages/home/workInteraction'
   )
   const { default: scroll } = await import('./features/pages/home/scroll')
+  const { default: sineHandler } = await import('./features/p5js/sine_handler')
+  // const { default: sine } = await import('./features/p5js/sine')
 
   // Exec
   checkPreloader()
@@ -70,6 +73,8 @@ async function runHomeFunctions() {
   metadata()
   workInteraction()
   scroll()
+  sineHandler()
+  // sine(domElements.canvasWrapper)
 }
 
 // OTHER STUFF
