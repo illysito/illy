@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 function scroll() {
   const claimHeadings = document.querySelectorAll('.claim-h')
+  const claimUnderscore = document.querySelector('.underscore.is--claim')
   const claimWrapper = document.querySelector('.claim-wrapper')
 
   claimHeadings.forEach((h, index) => {
@@ -18,6 +19,17 @@ function scroll() {
         scrub: 1,
       },
     })
+  })
+
+  gsap.to(claimUnderscore, {
+    yPercent: 100,
+    scrollTrigger: {
+      trigger: claimWrapper,
+      start: `top 20%`,
+      end: 'top 8%',
+      markers: false,
+      scrub: 1,
+    },
   })
 
   const aboutSection = document.querySelector('.about__section')

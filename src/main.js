@@ -59,8 +59,9 @@ async function runHomeFunctions() {
     './features/pages/home/workInteraction'
   )
   const { default: scroll } = await import('./features/pages/home/scroll')
-  const { default: sineHandler } = await import('./features/p5js/sine_handler')
-  // const { default: sine } = await import('./features/p5js/sine')
+  const { default: workAnimations } = await import(
+    './features/pages/home/work_animations'
+  )
 
   // Exec
   checkPreloader()
@@ -71,10 +72,14 @@ async function runHomeFunctions() {
   }
   introHome()
   metadata()
-  workInteraction()
   scroll()
+  workInteraction()
+  workAnimations()
+}
+
+async function runPhilosophyFunctions() {
+  const { default: sineHandler } = await import('./features/p5js/sine_handler')
   sineHandler()
-  // sine(domElements.canvasWrapper)
 }
 
 // OTHER STUFF
@@ -95,5 +100,7 @@ async function runQRFunctions() {
 
 if (!document.body.classList.contains('body__flowfield')) runGeneralFunctions()
 if (document.body.classList.contains('body__home')) runHomeFunctions()
+if (document.body.classList.contains('body__philosophy'))
+  runPhilosophyFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
 if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()

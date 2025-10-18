@@ -45,7 +45,8 @@ function workInteraction() {
   }
 
   canvasUI.forEach((canvas) => {
-    const workCard = canvas.parentElement
+    const canvasWrapper = canvas.parentElement
+    const workCard = canvasWrapper.parentElement
     const cardTitle = workCard.querySelector('.work-h')
     const workView = workCard.querySelector('.work-view')
     const sorryHeader = workView.firstElementChild

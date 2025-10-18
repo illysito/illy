@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-function sine(canvasWrapper, amp, freq, phase, angV, index) {
+function sineAddition(canvasWrapper, amps, freqs, phases, angVs, count) {
   new window.p5((sk) => {
     class Wave {
       constructor(amp, freq, phase, angV) {
@@ -23,7 +23,7 @@ function sine(canvasWrapper, amp, freq, phase, angV, index) {
     let r = 2
     let y = 0
 
-    let wave
+    let waves = []
 
     sk.setup = () => {
       // Attach to the element you already have in your DOM
@@ -35,31 +35,34 @@ function sine(canvasWrapper, amp, freq, phase, angV, index) {
       )
       c.parent(canvasParent)
 
-      wave = new Wave(amp, freq, phase, angV)
+      for (let i = 0; i < count; i++) {
+        waves[i] = new Wave(amps[i], 1.6 * freqs[i], phases[i], angVs[i])
+      }
     }
 
     sk.draw = () => {
-      sk.background(255, 244, 233, 255)
+      sk.background(255, 244, 233)
       sk.fill(0, 0, 255, 255)
       sk.stroke(20, 20, 20, 255)
-      if (index === 0) {
-        sk.strokeWeight(2.5)
-      } else {
-        sk.strokeWeight(1.25)
-      }
+      sk.strokeWeight(2.5)
       sk.noFill()
       // sketch.ellipseMode(sketch.CENTER)
       sk.translate(0, sk.height / 2)
 
       sk.beginShape()
       for (let x = 0; x <= sk.width; x += r) {
-        y = wave.evaluate(x)
-        // sk.ellipse(x, y, r)
-        sk.vertex(x, y)
+        let ySum = 0
+        for (let i = 0; i < count; i++) {
+          ySum += waves[i].evaluate(x)
+          // sk.ellipse(x, y, r)
+        }
+        sk.vertex(x, 0.6 * ySum)
       }
       sk.endShape()
 
-      wave.update()
+      for (let i = 0; i < count; i++) {
+        waves[i].update()
+      }
     }
 
     sk.windowResized = () => {
@@ -68,4 +71,4 @@ function sine(canvasWrapper, amp, freq, phase, angV, index) {
   })
 }
 
-export default sine
+export default sineAddition
