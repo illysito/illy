@@ -44,20 +44,22 @@ function workInteraction() {
     })
   }
 
-  canvasUI.forEach((canvas) => {
-    const canvasWrapper = canvas.parentElement
-    const workCard = canvasWrapper.parentElement
-    const cardTitle = workCard.querySelector('.work-h')
-    const workView = workCard.querySelector('.work-view')
-    const sorryHeader = workView.firstElementChild
-    const viewBlock = workView.lastElementChild
-    canvas.addEventListener('mouseover', () => {
-      hoverIn(cardTitle, sorryHeader, viewBlock)
-    })
+  canvasUI.forEach((canvas, index) => {
+    if (index != 0) {
+      const canvasWrapper = canvas.parentElement
+      const workCard = canvasWrapper.parentElement
+      const cardTitle = workCard.querySelector('.work-h')
+      const workView = workCard.querySelector('.work-view')
+      const sorryHeader = workView.firstElementChild
+      const viewBlock = workView.lastElementChild
+      canvas.addEventListener('mouseover', () => {
+        hoverIn(cardTitle, sorryHeader, viewBlock)
+      })
 
-    canvas.addEventListener('mouseleave', () => {
-      hoverOut(cardTitle, sorryHeader, viewBlock)
-    })
+      canvas.addEventListener('mouseleave', () => {
+        hoverOut(cardTitle, sorryHeader, viewBlock)
+      })
+    }
   })
 }
 

@@ -1,6 +1,6 @@
 async function getMeteo() {
-  const lat = 28.0612 // Teror
-  const lon = -15.5497 // Teror
+  const lat = 28.083703626176177 // Teror
+  const lon = -15.53379300394519 // Teror
   const API_KEY = '1eea8f283d6ad1735a7eaa8f9fc8fa4a'
   const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}`
 

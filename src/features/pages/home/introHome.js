@@ -17,7 +17,7 @@ function introHome() {
       // heading
       headings: document.querySelectorAll('.hero-h'),
       // img
-      canvas_wrapper: document.querySelector('.canvas__wrapper'),
+      canvas_wrapper: document.querySelector('.grid-canvas'),
     }
   }
   const domElements = domElementsQuery()
@@ -37,6 +37,15 @@ function introHome() {
     gsap.to(domElements.navWrapper, {
       opacity: 1,
       duration: 4 * dur,
+    })
+  }
+
+  function animateCanvas() {
+    gsap.to(domElements.canvas_wrapper, {
+      opacity: 1,
+      scale: 1,
+      duration: 3 * dur,
+      ease: 'power.out',
     })
   }
 
@@ -82,7 +91,7 @@ function introHome() {
   function init() {
     animateNav()
     // animateHeading()
-    // animateImg()
+    animateCanvas()
   }
 
   init()

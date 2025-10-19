@@ -7,6 +7,7 @@ function dispUI() {
   const canvasUI = document.querySelectorAll('.work-canvas')
 
   // canvases
+  const aboutCanvas = document.querySelector('#about-canvas')
   const padmiCanvas = document.querySelector('#work-padmi-canvas')
   const liubaCanvas = document.querySelector('#work-liuba-canvas')
   const barrenaCanvas = document.querySelector('#work-barrrena-canvas')
@@ -20,6 +21,21 @@ function dispUI() {
   // Aux arrays
   const updateUniforms = []
   const offsets = []
+
+  // About
+  const offsetRefME = { current: 0 }
+  const image1_URL_ME =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Iphone-Mockup-2---Comp.jpg'
+  const image2_URL_ME =
+    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Mac-Mockup-1-Comp.jpg'
+  const updateUniformsME = dispHandler(
+    aboutCanvas,
+    offsetRefME,
+    image1_URL_ME,
+    image2_URL_ME
+  )
+  updateUniforms.push(updateUniformsME)
+  offsets.push(offsetRefME)
 
   // Padmi
   const offsetRefPADMI = { current: 0 }
