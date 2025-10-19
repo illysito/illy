@@ -12,6 +12,9 @@ async function getMeteo() {
 
   let moonPhase = 0.0
 
+  let sunsetTime = 0
+  let sunriseTime = 0
+
   try {
     const res = await fetch(url)
 
@@ -32,18 +35,30 @@ async function getMeteo() {
     const rainNow = data.current.rain?.['1h'] ?? 0
     rain = rainNow
     normalizedRain = 60.0 * Math.min(rain / 10.0, 1.0)
+
     // MOON
     const moonPhaseNow = data.daily[0].moon_phase
     moonPhase = moonPhaseNow
-    // console.log(windSpeedNow)
-    // windRef.current = data.wind.speed
-    // console.log('wind speed = ' + windRef.current)
+
+    // SUNSET
+    const sunsetToday = data.current.sunset
+    sunsetTime = sunsetToday
+    const sunriseToday = data.current.sunrise
+    sunriseTime = sunriseToday
   } catch (err) {
     console.error(err)
     return null
   }
 
-  return { normalizedWindSpeed, windSpeed, normalizedRain, rain, moonPhase }
+  return {
+    normalizedWindSpeed,
+    windSpeed,
+    normalizedRain,
+    rain,
+    moonPhase,
+    sunsetTime,
+    sunriseTime,
+  }
 }
 
 export default getMeteo

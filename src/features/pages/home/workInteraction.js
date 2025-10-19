@@ -6,11 +6,14 @@ function workInteraction() {
   const p2o = 'power2.out'
   const duration = 0.8
 
+  const accentDark = localStorage.getItem('accentDark')
+  const accentLight = localStorage.getItem('accentLight')
+
   function hoverIn(cardTitle, sorryHeader, viewBlock) {
     const isDarkMode = localStorage.getItem('isDarkModeOn')
     if (isDarkMode === 'true') {
       gsap.to(cardTitle, {
-        color: '#f83d8b',
+        color: `${accentDark}`,
         duration: duration - 0.2,
         ease: p2o,
       })
@@ -27,7 +30,7 @@ function workInteraction() {
       })
     } else {
       gsap.to(cardTitle, {
-        color: '#0000ff',
+        color: `${accentLight}`,
         duration: duration - 0.2,
         ease: p2o,
       })

@@ -5,7 +5,7 @@ import introHome from '../../pages/home/introHome'
 async function preloader() {
   document.body.classList.add('no-scroll')
 
-  console.log('running preloader')
+  // console.log('running preloader')
   let dur = 0.6
   // let ease1 = 'power1.inOut'
   let ease2 = 'power2.inOut'
@@ -16,6 +16,8 @@ async function preloader() {
       // preload
       preloaderText: document.querySelector('.percentage-block-p'),
       preloader: document.querySelector('.preloader__section'),
+      preloaderSentence: document.querySelector('.preloader-text'),
+      preloaderUnderscore: document.querySelector('.underscore.is--preloader'),
     }
   }
   const domElements = domElementsQuery()
@@ -67,6 +69,15 @@ async function preloader() {
           // console.log(names.join(''))
         } else {
           clearInterval(interval)
+          gsap.to(
+            [domElements.preloaderSentence, domElements.preloaderUnderscore],
+            {
+              yPercent: 100,
+              stagger: -0.2,
+              duration: 1.2 * dur,
+              ease: 'power.inOut',
+            }
+          )
           gsap.to(domElements.preloaderText, {
             opacity: 0,
             repeat: 2,

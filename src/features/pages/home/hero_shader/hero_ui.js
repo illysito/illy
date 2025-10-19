@@ -41,6 +41,14 @@ function heroUI() {
     }
   })
 
+  if (localStorage.getItem('isDarkModeOn') === 'true') {
+    gsap.to(darkModeRef, {
+      current: 1.0,
+      duration: 0.8,
+      onUpdate: updateUniforms,
+    })
+  }
+
   document.addEventListener('isDarkMode', () => {
     // darkModeRef.current = 1.0
     gsap.to(darkModeRef, {
@@ -48,7 +56,6 @@ function heroUI() {
       duration: 0.8,
       onUpdate: updateUniforms,
     })
-    updateUniforms()
   })
   document.addEventListener('isLightMode', () => {
     // darkModeRef.current = 0.0
@@ -57,7 +64,6 @@ function heroUI() {
       duration: 0.8,
       onUpdate: updateUniforms,
     })
-    updateUniforms()
   })
 }
 

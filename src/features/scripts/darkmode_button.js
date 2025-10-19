@@ -1,5 +1,7 @@
 import gsap from 'gsap'
 
+import getMeteo from '../api/openWeather'
+
 function darkmodeButton() {
   // const isDarkModeOn = localStorage.getItem('isDarkModeOn')
 
@@ -7,10 +9,14 @@ function darkmodeButton() {
 
   const isDarkMode = new Event('isDarkMode')
   const isLightMode = new Event('isLightMode')
-  let isDarkModeClicked = false
 
-  function buttonHoverIn(e) {
-    const b = e.currentTarget
+  let isDarkModeClicked = false
+  let sunsetTime = 0
+  let sunriseTime = 0
+  const currentTime = new Date()
+  const now = Math.floor(currentTime.getTime() / 1000)
+
+  function buttonHoverIn(b) {
     const ball = b.firstElementChild
 
     gsap.to(ball, {
@@ -18,8 +24,7 @@ function darkmodeButton() {
       duration: 0.2,
     })
   }
-  function buttonHoverOut(e) {
-    const b = e.currentTarget
+  function buttonHoverOut(b) {
     const ball = b.firstElementChild
 
     gsap.to(ball, {
@@ -27,8 +32,7 @@ function darkmodeButton() {
       duration: 0.2,
     })
   }
-  function buttonClick(e) {
-    const b = e.currentTarget
+  function toggleMode(b) {
     const ball = b.firstElementChild
 
     if (!isDarkModeClicked) {
@@ -50,23 +54,32 @@ function darkmodeButton() {
     }
 
     isDarkModeClicked = !isDarkModeClicked
-    console.log(isDarkModeClicked)
+    // console.log(isDarkModeClicked)
   }
 
-  // if (isDarkModeOn === 'true') {
-  //   document.dispatchEvent(isDarkMode)
-  // } else {
-  //   document.dispatchEvent(isLightMode)
-  // }
+  getMeteo().then((meteo) => {
+    sunsetTime = meteo.sunsetTime
+    sunriseTime = meteo.sunriseTime
+    if (now >= sunsetTime || now < sunriseTime) {
+      toggleMode(button)
+    }
+  })
+
+  if (localStorage.getItem('isDarkModeOn') === 'true') {
+    toggleMode(button)
+  }
 
   button.addEventListener('mouseenter', (e) => {
-    buttonHoverIn(e)
+    const b = e.currentTarget
+    buttonHoverIn(b)
   })
   button.addEventListener('mouseleave', (e) => {
-    buttonHoverOut(e)
+    const b = e.currentTarget
+    buttonHoverOut(b)
   })
   button.addEventListener('click', (e) => {
-    buttonClick(e)
+    const b = e.currentTarget
+    toggleMode(b)
   })
 }
 

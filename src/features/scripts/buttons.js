@@ -1,6 +1,9 @@
 import gsap from 'gsap'
 
 function button(button) {
+  const accentDark = localStorage.getItem('accentDark')
+  const accentLight = localStorage.getItem('accentLight')
+
   function buttonHoverIn(e) {
     const isDarkMode = localStorage.getItem('isDarkModeOn')
     console.log(isDarkMode)
@@ -12,7 +15,7 @@ function button(button) {
     if (isDarkMode === 'true') {
       gsap.to(b, {
         scale: 0.98,
-        borderColor: '#f83d8b',
+        borderColor: `${accentDark}`,
         duration: 0.4,
         ease: 'power3.inOut',
       })
@@ -25,19 +28,19 @@ function button(button) {
       gsap.to(text, {
         yPercent: -100,
         duration: 0.4,
-        color: '#fff4e9',
+        color: '#101010',
         ease: 'power3.inOut',
       })
       gsap.to(textHidden, {
         yPercent: -100,
         duration: 0.4,
-        color: '#fff4e9',
+        color: '#101010',
         ease: 'power3.inOut',
       })
     } else {
       gsap.to(b, {
         scale: 0.98,
-        borderColor: '#0000ff',
+        borderColor: `${accentLight}`,
         duration: 0.4,
         ease: 'power3.inOut',
       })

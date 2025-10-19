@@ -67,7 +67,8 @@ function metadata() {
   let rain = 0.0
 
   let moonMessage = ''
-  let moonImgIndex = 0
+  let blackMoonImgIndex = 0
+  let whiteMoonImgIndex = 0
   let moon = 0.0
 
   getMeteo().then((meteo) => {
@@ -117,39 +118,46 @@ function metadata() {
 
     if (moon > 0 && moon <= 0.125) {
       moonMessage = 'waxing crecent'
-      moonImgIndex = 1
+      blackMoonImgIndex = 1
     } else if (moon > 0.125 && moon <= 0.25) {
       moonMessage = 'first quarter'
-      moonImgIndex = 2
+      blackMoonImgIndex = 2
     } else if (moon > 0.25 && moon <= 0.375) {
       moonMessage = 'waxing gibbous'
-      moonImgIndex = 3
+      blackMoonImgIndex = 3
     } else if (moon > 0.375 && moon < 0.5) {
       moonMessage = 'waxing gibbous (almost there!)'
-      moonImgIndex = 4
+      blackMoonImgIndex = 4
     } else if (moon === 0.5) {
       moonMessage = 'full moon'
-      moonImgIndex = 5
+      blackMoonImgIndex = 5
     } else if (moon > 0.5 && moon <= 0.625) {
       moonMessage = 'waning gibbous'
-      moonImgIndex = 6
+      blackMoonImgIndex = 6
     } else if (moon > 0.625 && moon <= 0.75) {
       moonMessage = 'last quarter'
-      moonImgIndex = 7
+      blackMoonImgIndex = 7
     } else if (moon > 0.75 && moon <= 0.875) {
       moonMessage = 'waning crescent'
-      moonImgIndex = 8
+      blackMoonImgIndex = 8
     } else if (moon > 0.875 && moon < 1) {
       moonMessage = 'almost new'
-      moonImgIndex = 9
+      blackMoonImgIndex = 9
     } else if (moon === 0 || moon === 1) {
       moonMessage = 'new moon'
-      moonImgIndex = 0
+      blackMoonImgIndex = 0
     }
+    whiteMoonImgIndex = blackMoonImgIndex + 10
 
     DOM.moon_txt.textContent = moonMessage
     DOM.moon_imgs.forEach((moon, index) => {
-      if (moonImgIndex === index) {
+      if (blackMoonImgIndex === index) {
+        gsap.to(moon, {
+          opacity: 1,
+          duration: 0.1,
+          ease: 'none',
+        })
+      } else if (whiteMoonImgIndex === index) {
         gsap.to(moon, {
           opacity: 1,
           duration: 0.1,

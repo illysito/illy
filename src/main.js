@@ -3,15 +3,15 @@
 import './styles/style.css'
 
 // GENERAL
+import setAccent from './features/pages/general/accent'
 import darkmodeToggle from './features/pages/general/darkmode'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
-import preloader from './features/pages/general/preloader'
 // SCRIPTS
+import accentButton from './features/scripts/accent_button'
 import button from './features/scripts/buttons.js'
 import darkmodeButton from './features/scripts/darkmode_button'
 
-// Query elements from the DOM
 function domElementsQuery() {
   return {
     worldContainer: document.querySelector('.world-container'),
@@ -26,31 +26,30 @@ function domElementsQuery() {
 }
 const domElements = domElementsQuery()
 
-localStorage.setItem('isDarkModeOn', 'false')
-
-// If preloader has already been shown, cancel initialization and put it behind everything so it doesnt show again!
-// function checkPreloader() {
-//   if (localStorage.getItem('isPreloader') === 'true') {
-//     domElements.preloader.style.zIndex = -30
-//   }
-// }
+if (!localStorage.getItem('isDarkModeOn')) {
+  localStorage.setItem('isDarkModeOn', 'false')
+}
 
 // PAGES
 
 function runGeneralFunctions() {
-  // world(domElements.worldContainer)
+  accentButton()
+  setAccent()
   darkmodeToggle()
+  darkmodeButton()
   nav()
   mousetrail()
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
   }
-  darkmodeButton()
 }
 
 async function runHomeFunctions() {
   // Imports
+  const { default: preloader } = await import(
+    './features/pages/general/preloader'
+  )
   const { default: heroUI } = await import(
     './features/pages/home/hero_shader/hero_ui'
   )
@@ -65,19 +64,18 @@ async function runHomeFunctions() {
   const { default: workAnimations } = await import(
     './features/pages/home/work_animations'
   )
+  const { default: aboutText } = await import('./features/pages/home/aboutText')
+  const { default: form } = await import('./features/pages/home/form')
 
-  // Exec
-  // checkPreloader()
   heroUI()
   setTimeout(workCanvasUI, 1200)
-  // if (localStorage.getItem('isPreloader') !== 'true') {
-  //   await preloader()
-  // }
   preloader()
   metadata()
   scroll()
+  aboutText()
   workInteraction()
   workAnimations()
+  form()
 }
 
 async function runPhilosophyFunctions() {

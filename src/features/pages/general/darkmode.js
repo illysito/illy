@@ -6,27 +6,44 @@ function darkmodeToggle() {
   const duration = 0.8
   const dark = '#101010'
   const light = '#fff4e9'
-  const pink = '#f83d8b'
-  const blue = '#0000ff'
+  const accentDark = localStorage.getItem('accentDark')
+  const accentLight = localStorage.getItem('accentLight')
+
+  // console.log(accentDark, accentLight)
+
   // body
   const body = document.body
   // shader texture
   // const darkModeOffset = { current: 0.0 }
   // texts
-  const texts = document.querySelectorAll('h1,h2,h3,h4,h5,h6,p,span')
+  const texts = document.querySelectorAll(
+    'h1,h2,h3,h4,h5,h6,p,span,label,textarea,.form-field'
+  )
   const semiTranspText = document.querySelector('.about-type-h')
   // buttons
   const buttons = document.querySelectorAll('.hire-button')
   const buttonCircle = document.querySelector('.fill-circle')
   const darkmodeToggle = document.querySelectorAll('.darkmode-toggle')
+  const accentToggle = document.querySelectorAll('.accent-toggle')
   // lines
   const lines = document.querySelectorAll('.work-line')
   const lineOutline = document.querySelectorAll('.line-outline')
+  const circle = document.querySelectorAll('.circle-wrapper')
   // dots
   const dots = document.querySelectorAll('.metdata-dot')
   const darkmodeBall = document.querySelector('.darkmode-ball')
+  const accentBall = document.querySelector('.accent-ball')
   // overlays
   const canvasOverlays = document.querySelectorAll('.canvas-overlay')
+  // form
+  const formFields = document.querySelectorAll('.form-field,textarea')
+  const formButton = document.querySelector('.submit-button')
+  // moons
+  const darkMoons = document.querySelector('.black-moon-wrapper')
+  const lightMoons = document.querySelector('.white-moon-wrapper')
+  // arrows
+  const darkArrows = document.querySelectorAll('.view-img')
+  const lightArrows = document.querySelectorAll('.view-img-white')
 
   function toDark() {
     localStorage.setItem('isDarkModeOn', 'true')
@@ -34,15 +51,27 @@ function darkmodeToggle() {
       backgroundColor: dark,
       duration: duration,
     })
+    gsap.to([darkMoons, darkArrows], {
+      opacity: 0,
+      duration: duration,
+    })
+    gsap.to([lightMoons, lightArrows], {
+      opacity: 1,
+      duration: duration,
+    })
     gsap.to(texts, {
       color: light,
+      duration: duration,
+    })
+    gsap.to(formButton, {
+      color: dark,
       duration: duration,
     })
     gsap.to(semiTranspText, {
       color: '#fff4e9bf',
       duration: duration,
     })
-    gsap.to([buttons, darkmodeToggle], {
+    gsap.to([buttons, darkmodeToggle, accentToggle, circle, formFields], {
       borderColor: light,
       duration: duration,
     })
@@ -50,12 +79,12 @@ function darkmodeToggle() {
       backgroundColor: dark,
       duration: duration,
     })
-    gsap.to([lines, lineOutline], {
+    gsap.to([lines, lineOutline, formButton], {
       backgroundColor: light,
       duration: duration,
     })
-    gsap.to([dots, darkmodeBall, buttonCircle], {
-      backgroundColor: pink,
+    gsap.to([dots, darkmodeBall, accentBall, buttonCircle], {
+      backgroundColor: `${accentDark}`,
       duration: duration,
     })
   }
@@ -66,15 +95,27 @@ function darkmodeToggle() {
       backgroundColor: light,
       duration: duration,
     })
+    gsap.to([darkMoons, darkArrows], {
+      opacity: 1,
+      duration: duration,
+    })
+    gsap.to([lightMoons, lightArrows], {
+      opacity: 0,
+      duration: duration,
+    })
     gsap.to(texts, {
       color: dark,
+      duration: duration,
+    })
+    gsap.to(formButton, {
+      color: light,
       duration: duration,
     })
     gsap.to(semiTranspText, {
       color: '#101010bf',
       duration: duration,
     })
-    gsap.to([buttons, darkmodeToggle], {
+    gsap.to([buttons, darkmodeToggle, accentToggle, circle, formFields], {
       borderColor: dark,
       duration: duration,
     })
@@ -82,12 +123,12 @@ function darkmodeToggle() {
       backgroundColor: light,
       duration: duration,
     })
-    gsap.to([lines, lineOutline], {
+    gsap.to([lines, lineOutline, formButton], {
       backgroundColor: dark,
       duration: duration,
     })
-    gsap.to([dots, darkmodeBall, buttonCircle], {
-      backgroundColor: blue,
+    gsap.to([dots, darkmodeBall, accentBall, buttonCircle], {
+      backgroundColor: `${accentLight}`,
       duration: duration,
     })
   }
