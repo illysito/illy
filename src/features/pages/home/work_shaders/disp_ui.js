@@ -27,7 +27,7 @@ function dispUI() {
   const image1_URL_ME =
     'https://raw.githubusercontent.com/illysito/illy/b0ba86c0c1f3206e715c35aa122a87317216c2d5/imgs/fotiwini.jpeg'
   const image2_URL_ME =
-    'https://raw.githubusercontent.com/illysito/illy/b0ba86c0c1f3206e715c35aa122a87317216c2d5/imgs/Fotiwini%20squares.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/6c129da2585cab13aa410e5644d87f96e65d0eaa/imgs/fotiwini-semitone.jpg'
   const updateUniformsME = dispHandler(
     aboutCanvas,
     offsetRefME,
