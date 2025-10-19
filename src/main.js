@@ -29,11 +29,11 @@ const domElements = domElementsQuery()
 localStorage.setItem('isDarkModeOn', 'false')
 
 // If preloader has already been shown, cancel initialization and put it behind everything so it doesnt show again!
-function checkPreloader() {
-  if (localStorage.getItem('isPreloader') === 'true') {
-    domElements.preloader.style.zIndex = -30
-  }
-}
+// function checkPreloader() {
+//   if (localStorage.getItem('isPreloader') === 'true') {
+//     domElements.preloader.style.zIndex = -30
+//   }
+// }
 
 // PAGES
 
@@ -51,7 +51,6 @@ function runGeneralFunctions() {
 
 async function runHomeFunctions() {
   // Imports
-  const { default: introHome } = await import('./features/pages/home/introHome')
   const { default: heroUI } = await import(
     './features/pages/home/hero_shader/hero_ui'
   )
@@ -68,13 +67,13 @@ async function runHomeFunctions() {
   )
 
   // Exec
-  checkPreloader()
+  // checkPreloader()
   heroUI()
   setTimeout(workCanvasUI, 1200)
-  if (localStorage.getItem('isPreloader') !== 'true') {
-    await preloader()
-  }
-  introHome()
+  // if (localStorage.getItem('isPreloader') !== 'true') {
+  //   await preloader()
+  // }
+  preloader()
   metadata()
   scroll()
   workInteraction()

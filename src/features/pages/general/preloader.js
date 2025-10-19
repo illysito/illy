@@ -1,19 +1,21 @@
 import gsap from 'gsap'
 
+import introHome from '../../pages/home/introHome'
+
 async function preloader() {
+  document.body.classList.add('no-scroll')
+
   console.log('running preloader')
   let dur = 0.6
   // let ease1 = 'power1.inOut'
   let ease2 = 'power2.inOut'
-  let ease3 = 'power3.inOut'
   // let ease4 = 'power4.inOut'
 
   function domElementsQuery() {
     return {
       // preload
-      preloaderText: document.querySelector('.preloader-text'),
+      preloaderText: document.querySelector('.percentage-block-p'),
       preloader: document.querySelector('.preloader__section'),
-      preloaderOverlay: document.querySelectorAll('.preloader-overlay'),
     }
   }
   const domElements = domElementsQuery()
@@ -84,37 +86,23 @@ async function preloader() {
     })
   }
 
-  async function animatePreloaderOverlay() {
-    return new Promise((resolve) => {
-      domElements.preloaderOverlay.forEach((ov, index) => {
-        const tl = gsap.timeline()
-        let direction
-        index === 0 ? (direction = 1) : (direction = -1)
-        tl.to(ov, { yPercent: -12 * direction, duration: dur, ease: ease3 })
-          .to(ov, {
-            yPercent: 0 * direction,
-            duration: dur,
-            ease: ease3,
-            onComplete: () => {
-              resolve()
-            },
-          })
-          .to(ov, {
-            yPercent: -100 * direction,
-            duration: 1.6 * dur,
-            ease: 'power4.out',
-            onComplete: () => {
-              domElements.preloader.style.zIndex = -30
-            },
-          })
-      })
+  async function fadePreloader() {
+    gsap.to(domElements.preloader, {
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power.out',
+      onComplete: () => {
+        domElements.preloader.style.zIndex = -30
+      },
     })
   }
 
   // INIT
   async function init() {
     await generateName('100')
-    await animatePreloaderOverlay()
+    await fadePreloader()
+    document.body.classList.remove('no-scroll')
+    introHome()
     localStorage.setItem('isPreloader', 'true')
   }
 

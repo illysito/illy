@@ -1,7 +1,9 @@
-/* body {
+body.no-scroll {
   cursor: none;
-  overflow-x: hidden;
-} */
+  overflow: hidden;
+  height: 100vh;
+}
+
 .metadata-p {
   font-family: 'Otbrut Mono';
 }

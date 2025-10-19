@@ -25,6 +25,8 @@ function darkmodeToggle() {
   // dots
   const dots = document.querySelectorAll('.metdata-dot')
   const darkmodeBall = document.querySelector('.darkmode-ball')
+  // overlays
+  const canvasOverlays = document.querySelectorAll('.canvas-overlay')
 
   function toDark() {
     localStorage.setItem('isDarkModeOn', 'true')
@@ -42,6 +44,10 @@ function darkmodeToggle() {
     })
     gsap.to([buttons, darkmodeToggle], {
       borderColor: light,
+      duration: duration,
+    })
+    gsap.to(canvasOverlays, {
+      backgroundColor: dark,
       duration: duration,
     })
     gsap.to([lines, lineOutline], {
@@ -64,8 +70,16 @@ function darkmodeToggle() {
       color: dark,
       duration: duration,
     })
+    gsap.to(semiTranspText, {
+      color: '#101010bf',
+      duration: duration,
+    })
     gsap.to([buttons, darkmodeToggle], {
       borderColor: dark,
+      duration: duration,
+    })
+    gsap.to(canvasOverlays, {
+      backgroundColor: light,
       duration: duration,
     })
     gsap.to([lines, lineOutline], {
