@@ -3,7 +3,7 @@ import GlslCanvas from 'glslCanvas'
 import disp_frag from './hero_shader'
 
 //prettier-ignore
-function dispHandler(canvas, offsetRef, windRef, rainRef) {
+function dispHandler(canvas, texture, offsetRef, windRef, rainRef) {
   // SETUP
   // const shaderReference = 'HREO SHADER: '
   // const gl = canvas.getContext('webgl')
@@ -36,7 +36,7 @@ function dispHandler(canvas, offsetRef, windRef, rainRef) {
   sandbox.load(fragment_shader)
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
   //prettier-ignore
-  const image1_URL = 'https://raw.githubusercontent.com/illysito/illy/e6e7a5ed1c28a6a9aacd53d5b602ef31eed833e6/imgs/ILLYALUKIANOV-type.png'
+  const image1_URL = texture
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
   const displacementURL = 'https://raw.githubusercontent.com/illysito/shaders/3e187d663841f03e89f44a38cfba0061fc61193a/imgs/Perlin%20Noise%20Large.png'
 

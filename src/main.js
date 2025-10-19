@@ -3,12 +3,13 @@
 import './styles/style.css'
 
 // GENERAL
-// import darkmodeToggle from './features/pages/general/darkmode'
+import darkmodeToggle from './features/pages/general/darkmode'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
 import preloader from './features/pages/general/preloader'
 // SCRIPTS
 import button from './features/scripts/buttons.js'
+import darkmodeButton from './features/scripts/darkmode_button'
 
 // Query elements from the DOM
 function domElementsQuery() {
@@ -36,13 +37,14 @@ function checkPreloader() {
 
 function runGeneralFunctions() {
   // world(domElements.worldContainer)
-  // darkmodeToggle()
+  darkmodeToggle()
   nav()
   mousetrail()
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
   }
+  darkmodeButton()
 }
 
 async function runHomeFunctions() {

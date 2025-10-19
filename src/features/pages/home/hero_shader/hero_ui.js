@@ -8,6 +8,9 @@ function heroUI() {
   // const canvasWrapper = document.querySelector('.grid-canvas')
   const heroCanvas = document.querySelector('#grid-canvas')
 
+  let texture = ''
+  texture =
+    'https://raw.githubusercontent.com/illysito/illy/e6e7a5ed1c28a6a9aacd53d5b602ef31eed833e6/imgs/ILLYALUKIANOV-type.png'
   const offsetRef = { current: 0.0 }
   const windRef = { current: 0.0 }
   const rainRef = { current: 0.0 }
@@ -17,7 +20,13 @@ function heroUI() {
     updateUniforms()
   })
 
-  const updateUniforms = heroHandler(heroCanvas, offsetRef, windRef, rainRef)
+  const updateUniforms = heroHandler(
+    heroCanvas,
+    texture,
+    offsetRef,
+    windRef,
+    rainRef
+  )
 
   let ticking = false
   window.addEventListener('scroll', () => {
@@ -32,6 +41,13 @@ function heroUI() {
       })
     }
   })
+
+  // document.addEventListener('isDarkMode',()=>{
+
+  // })
+  // document.addEventListener('isLightMode',()=>{
+
+  // })
 }
 
 export default heroUI

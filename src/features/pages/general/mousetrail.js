@@ -21,15 +21,23 @@ function mousetrail() {
     targetY = e.pageY
   })
 
-  canvasUI.forEach((c) => {
+  canvasUI.forEach((c, index) => {
     c.addEventListener('mouseenter', () => {
-      gsap.to(ball, {
-        scale: 2,
-      })
+      if (index === 0) {
+        gsap.to(ball, {
+          scale: 6,
+          borderRadius: 0,
+        })
+      } else {
+        gsap.to(ball, {
+          scale: 2,
+        })
+      }
     })
     c.addEventListener('mouseleave', () => {
       gsap.to(ball, {
         scale: 1,
+        borderRadius: 30,
       })
     })
   })
