@@ -8,25 +8,24 @@ function heroUI() {
   // const canvasWrapper = document.querySelector('.grid-canvas')
   const heroCanvas = document.querySelector('#grid-canvas')
 
-  let texture = ''
-  texture =
-    'https://raw.githubusercontent.com/illysito/illy/e6e7a5ed1c28a6a9aacd53d5b602ef31eed833e6/imgs/ILLYALUKIANOV-type.png'
+  const darkModeRef = { current: 0.0 }
   const offsetRef = { current: 0.0 }
   const windRef = { current: 0.0 }
   const rainRef = { current: 0.0 }
+
+  const updateUniforms = heroHandler(
+    heroCanvas,
+    darkModeRef,
+    offsetRef,
+    windRef,
+    rainRef
+  )
+
   getMeteo().then((meteo) => {
     windRef.current = meteo.normalizedWindSpeed
     rainRef.current = meteo.normalizedRain
     updateUniforms()
   })
-
-  const updateUniforms = heroHandler(
-    heroCanvas,
-    texture,
-    offsetRef,
-    windRef,
-    rainRef
-  )
 
   let ticking = false
   window.addEventListener('scroll', () => {
@@ -42,12 +41,24 @@ function heroUI() {
     }
   })
 
-  // document.addEventListener('isDarkMode',()=>{
-
-  // })
-  // document.addEventListener('isLightMode',()=>{
-
-  // })
+  document.addEventListener('isDarkMode', () => {
+    // darkModeRef.current = 1.0
+    gsap.to(darkModeRef, {
+      current: 1.0,
+      duration: 0.8,
+      onUpdate: updateUniforms,
+    })
+    updateUniforms()
+  })
+  document.addEventListener('isLightMode', () => {
+    // darkModeRef.current = 0.0
+    gsap.to(darkModeRef, {
+      current: 0.0,
+      duration: 0.8,
+      onUpdate: updateUniforms,
+    })
+    updateUniforms()
+  })
 }
 
 export default heroUI

@@ -26,6 +26,8 @@ function domElementsQuery() {
 }
 const domElements = domElementsQuery()
 
+localStorage.setItem('isDarkModeOn', 'false')
+
 // If preloader has already been shown, cancel initialization and put it behind everything so it doesnt show again!
 function checkPreloader() {
   if (localStorage.getItem('isPreloader') === 'true') {

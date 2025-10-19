@@ -1,6 +1,8 @@
 import gsap from 'gsap'
 
 function darkmodeButton() {
+  // const isDarkModeOn = localStorage.getItem('isDarkModeOn')
+
   const button = document.querySelector('.darkmode-toggle')
 
   const isDarkMode = new Event('isDarkMode')
@@ -12,7 +14,7 @@ function darkmodeButton() {
     const ball = b.firstElementChild
 
     gsap.to(ball, {
-      scale: 0.98,
+      scale: 0.8,
       duration: 0.2,
     })
   }
@@ -50,6 +52,12 @@ function darkmodeButton() {
     isDarkModeClicked = !isDarkModeClicked
     console.log(isDarkModeClicked)
   }
+
+  // if (isDarkModeOn === 'true') {
+  //   document.dispatchEvent(isDarkMode)
+  // } else {
+  //   document.dispatchEvent(isLightMode)
+  // }
 
   button.addEventListener('mouseenter', (e) => {
     buttonHoverIn(e)

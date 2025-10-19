@@ -3,8 +3,6 @@ import gsap from 'gsap'
 // import heroHandler from './hero_handler'
 
 function darkmodeToggle() {
-  localStorage.setItem('isDarkModeOn', 'false')
-
   const duration = 0.8
   const dark = '#101010'
   const light = '#fff4e9'

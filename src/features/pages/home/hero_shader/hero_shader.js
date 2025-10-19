@@ -8,6 +8,7 @@ uniform vec2 u_resolution;
 uniform float u_offset;
 uniform float u_wind;
 uniform float u_rain;
+uniform float u_darkMode;
 uniform sampler2D u_image_1;
 uniform sampler2D u_image_2;
 uniform sampler2D u_displacement;
@@ -154,7 +155,10 @@ void main()
 
   vec2 rainOffset = drops(uv, u_time * u_rain * 0.01, u_rain);
 
-  vec4 img_1 = texture2D(u_image_1, coords);
+  // vec4 darkTexture = texture2D(u_image_1, coords);
+  // vec4 lightTexture = texture2D(u_image_2, coords);
+  // vec4 img_1 = mix(darkTexture, lightTexture, u_darkMode);
+
   vec4 img_2 = vec4(0.0, 0.0, 0.0, 0.0);
   vec4 displacement = texture2D(u_displacement, coords);
   // vec4 blockDisplacement = texture2D(u_displacement, coords);
@@ -163,9 +167,9 @@ void main()
   float displaceForceScroll = blockDisplacement.r * u_offset * displacementCoef;
   float displaceForceWind = displacement.r * windOffset * windCoef;
   vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll);
-  uvDisplaced += 70.0*rainOffset;
+  uvDisplaced += 70.0 * rainOffset;
 
-  vec4 d_img_1 = texture2D(u_image_1, uvDisplaced);
+  vec4 d_img_1 = mix(texture2D(u_image_1, uvDisplaced), texture2D(u_image_2, uvDisplaced), u_darkMode);
   vec4 d_img_2 = img_2;
 
   vec4 img = (d_img_1);
