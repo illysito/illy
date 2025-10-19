@@ -61,6 +61,7 @@ function darkmodeButton() {
     sunsetTime = meteo.sunsetTime
     sunriseTime = meteo.sunriseTime
     if (now >= sunsetTime || now < sunriseTime) {
+      isDarkModeClicked = false
       toggleMode(button)
     }
   })

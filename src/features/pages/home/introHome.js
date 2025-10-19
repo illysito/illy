@@ -17,7 +17,7 @@ function introHome() {
       // heading
       headings: document.querySelectorAll('.hero-h'),
       // img
-      canvas_wrapper: document.querySelector('.grid-canvas'),
+      canvas_wrapper: document.querySelector('.hero-canvas'),
     }
   }
   const domElements = domElementsQuery()

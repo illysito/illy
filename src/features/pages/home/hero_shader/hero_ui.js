@@ -6,7 +6,7 @@ import getMeteo from '../../../api/openWeather'
 function heroUI() {
   // canvases
   // const canvasWrapper = document.querySelector('.grid-canvas')
-  const heroCanvas = document.querySelector('#grid-canvas')
+  const heroCanvas = document.querySelector('#hero-canvas')
 
   const darkModeRef = { current: 0.0 }
   const offsetRef = { current: 0.0 }
