@@ -25,9 +25,9 @@ function dispUI() {
   // About
   const offsetRefME = { current: 0 }
   const image1_URL_ME =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Iphone-Mockup-2---Comp.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/b0ba86c0c1f3206e715c35aa122a87317216c2d5/imgs/fotiwini.jpeg'
   const image2_URL_ME =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Mac-Mockup-1-Comp.jpg'
+    'https://raw.githubusercontent.com/illysito/illy/b0ba86c0c1f3206e715c35aa122a87317216c2d5/imgs/Fotiwini%20squares.jpg'
   const updateUniformsME = dispHandler(
     aboutCanvas,
     offsetRefME,
