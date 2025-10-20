@@ -12,7 +12,9 @@ function introHome() {
     return {
       // nav
       navLogo: document.querySelector('.nav-logo'),
+      navLogoWhite: document.querySelector('.nav-logo-white'),
       logoLetters: document.querySelectorAll('.logo-letter'),
+      logoLettersWhite: document.querySelectorAll('.logo-letter-white'),
       navWrapper: document.querySelector('.navigation__wrapper'),
       // heading
       headings: document.querySelectorAll('.hero-h'),
@@ -23,12 +25,26 @@ function introHome() {
   const domElements = domElementsQuery()
 
   function animateNav() {
-    gsap.to(domElements.navLogo, {
-      opacity: 1,
+    if (localStorage.getItem('isDarkModeOn') === 'true') {
+      gsap.to(domElements.navLogoWhite, {
+        opacity: 1,
+        duration: dur,
+        ease: ease2,
+      })
+    } else {
+      gsap.to(domElements.navLogo, {
+        opacity: 1,
+        duration: dur,
+        ease: ease2,
+      })
+    }
+    gsap.to(domElements.logoLetters, {
+      yPercent: -100,
+      stagger: 0.1,
       duration: dur,
       ease: ease2,
     })
-    gsap.to(domElements.logoLetters, {
+    gsap.to(domElements.logoLettersWhite, {
       yPercent: -100,
       stagger: 0.1,
       duration: dur,

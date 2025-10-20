@@ -20,6 +20,9 @@ function darkmodeToggle() {
     'h1,h2,h3,h4,h5,h6,p,span,label,textarea,.form-field'
   )
   const semiTranspText = document.querySelector('.about-type-h')
+  // nav logo
+  const logoDark = document.querySelector('.nav-logo')
+  const logoWhite = document.querySelector('.nav-logo-white')
   // buttons
   const buttons = document.querySelectorAll('.hire-button')
   const buttonCircle = document.querySelector('.fill-circle')
@@ -51,6 +54,16 @@ function darkmodeToggle() {
       backgroundColor: dark,
       duration: duration,
     })
+    // Single elements OPACITY
+    gsap.to(logoDark, {
+      opacity: 0,
+      duration: duration,
+    })
+    gsap.to(logoWhite, {
+      opacity: 1,
+      duration: duration,
+    })
+    // Node lists OPACITY
     gsap.to([darkMoons, darkArrows], {
       opacity: 0,
       duration: duration,
@@ -59,6 +72,7 @@ function darkmodeToggle() {
       opacity: 1,
       duration: duration,
     })
+    // TEXTS
     gsap.to(texts, {
       color: light,
       duration: duration,
@@ -93,6 +107,14 @@ function darkmodeToggle() {
     localStorage.setItem('isDarkModeOn', 'false')
     gsap.to(body, {
       backgroundColor: light,
+      duration: duration,
+    })
+    gsap.to(logoDark, {
+      opacity: 1,
+      duration: duration,
+    })
+    gsap.to(logoWhite, {
+      opacity: 0,
       duration: duration,
     })
     gsap.to([darkMoons, darkArrows], {

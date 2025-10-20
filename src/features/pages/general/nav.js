@@ -6,8 +6,13 @@ function nav() {
     return {
       nav: document.querySelector('.nav__section'),
       navLogo: document.querySelector('.nav-logo'),
+      navLogoWhite: document.querySelector('.nav-logo-white'),
       letters: document.querySelectorAll('.logo-letter'),
+      lettersWhite: document.querySelectorAll('.logo-letter-white'),
       lettersHidden: document.querySelectorAll('.logo-letter-hidden'),
+      lettersHiddenWhite: document.querySelectorAll(
+        '.logo-letter-hidden-white'
+      ),
       navTextWrappers: document.querySelectorAll('.nav-link'),
       navText: document.querySelectorAll('.nav-text'),
       navTextHidden: document.querySelectorAll('.nav-text-hidden'),
@@ -15,13 +20,31 @@ function nav() {
   }
   const domElements = domElementsQuery()
 
+  if (localStorage.getItem('isDarkModeOn') === 'true') {
+    console.log('dark logo set to 0')
+    gsap.set(domElements.navLogo, {
+      opacity: 0,
+    })
+  } else {
+    console.log('white logo set to 0')
+    gsap.set(domElements.navLogoWhite, {
+      opacity: 0,
+    })
+  }
+
   function animateLogoIn() {
-    gsap.to(domElements.navLogo, {
+    gsap.to([domElements.navLogo, domElements.navLogoWhite], {
       scale: 0.95,
       duration: 0.4,
       ease: 'power1.inOut',
     })
     gsap.to(domElements.letters, {
+      yPercent: -200,
+      duration: 0.4,
+      stagger: 0.05,
+      ease: 'power3.inOut',
+    })
+    gsap.to(domElements.lettersWhite, {
       yPercent: -200,
       duration: 0.4,
       stagger: 0.05,
@@ -33,10 +56,16 @@ function nav() {
       stagger: 0.05,
       ease: 'power3.inOut',
     })
+    gsap.to(domElements.lettersHiddenWhite, {
+      yPercent: -100,
+      duration: 0.4,
+      stagger: 0.05,
+      ease: 'power3.inOut',
+    })
   }
 
   function animateLogoOut() {
-    gsap.to(domElements.navLogo, {
+    gsap.to([domElements.navLogo, domElements.navLogoWhite], {
       scale: 1,
       duration: 0.4,
       ease: 'power1.inOut',
@@ -47,7 +76,19 @@ function nav() {
       stagger: 0.05,
       ease: 'power3.inOut',
     })
+    gsap.to(domElements.lettersHiddenWhite, {
+      yPercent: 0,
+      duration: 0.4,
+      stagger: 0.05,
+      ease: 'power3.inOut',
+    })
     gsap.to(domElements.letters, {
+      yPercent: -100,
+      duration: 0.4,
+      stagger: 0.05,
+      ease: 'power3.inOut',
+    })
+    gsap.to(domElements.lettersWhite, {
       yPercent: -100,
       duration: 0.4,
       stagger: 0.05,
