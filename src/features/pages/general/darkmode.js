@@ -17,7 +17,7 @@ function darkmodeToggle() {
   // const darkModeOffset = { current: 0.0 }
   // texts
   const texts = document.querySelectorAll(
-    'h1,h2,h3,h4,h5,h6,p,span,label,textarea,.form-field'
+    'h1,h2,h3,h4,h5,h6,p,span,label,textarea,.form-field,a'
   )
   const semiTranspText = document.querySelector('.about-type-h')
   // nav logo

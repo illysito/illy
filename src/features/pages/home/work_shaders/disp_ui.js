@@ -18,7 +18,7 @@ function dispUI() {
   const barrenaCanvas = document.querySelector('#work-barrrena-canvas')
   const cachanchanCanvas = document.querySelector('#work-cachanchan-canvas')
   const liriosCanvas = document.querySelector('#work-lirios-canvas')
-  const llantenCanvas = document.querySelector('#work-llanten-canvas')
+  const postersCanvas = document.querySelector('#work-posters-canvas')
 
   const p2o = 'power2.out'
   const duration = 0.8
@@ -118,7 +118,7 @@ function dispUI() {
     'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-09.webp'
   )
   const image2_URL_LIRIOS = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-08.webp'
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-10.webp'
   )
   const updateUniformsLIRIOS = dispHandler(
     liriosCanvas,
@@ -130,21 +130,21 @@ function dispUI() {
   offsets.push(offsetRefLIRIOS)
 
   // Llanten
-  const offsetRefLLANTEN = { current: 0 }
-  const image1_URL_LLANTEN = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-10.webp'
+  const offsetRefPOSTERS = { current: 0 }
+  const image1_URL_POSTERS = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/7a0c44e7e0db7282217e16e8ee500d8d46c84c9a/public/imgs_cdn/WORK-51.webp'
   )
-  const image2_URL_LLANTEN = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-11.webp'
+  const image2_URL_POSTERS = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/7a0c44e7e0db7282217e16e8ee500d8d46c84c9a/public/imgs_cdn/WORK-52.webp'
   )
-  const updateUniformsLLANTEN = dispHandler(
-    llantenCanvas,
-    offsetRefLLANTEN,
-    image1_URL_LLANTEN,
-    image2_URL_LLANTEN
+  const updateUniformsPOSTERS = dispHandler(
+    postersCanvas,
+    offsetRefPOSTERS,
+    image1_URL_POSTERS,
+    image2_URL_POSTERS
   )
-  updateUniforms.push(updateUniformsLLANTEN)
-  offsets.push(offsetRefLLANTEN)
+  updateUniforms.push(updateUniformsPOSTERS)
+  offsets.push(offsetRefPOSTERS)
 
   function hoverIn(index) {
     gsap.to(offsets[index], {
