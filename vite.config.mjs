@@ -3,6 +3,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 // vite.config.js
 export default defineConfig({
+  publicDir: 'imgs_cdn', // ← this line tells Vite to serve that folder publicly
   plugins: [eslintPlugin({ cache: false })],
   server: {
     host: 'localhost',
