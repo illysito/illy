@@ -135,7 +135,7 @@ function dispUI() {
     'https://github.com/illysito/illy/blob/a092342a2a0be47bdc85d62434c3562abca9dc76/public/imgs_cdn/WORK-12-11.webp'
   )
   const image2_URL_POSTERS = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/7a0c44e7e0db7282217e16e8ee500d8d46c84c9a/public/imgs_cdn/WORK-51.webp'
+    'https://github.com/illysito/illy/blob/a9544aa26fa32c9da97a4234792630ab74976d6e/public/imgs_cdn/WORK-9-09.webp'
   )
   const updateUniformsPOSTERS = dispHandler(
     postersCanvas,
