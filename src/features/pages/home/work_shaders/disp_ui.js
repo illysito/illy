@@ -3,6 +3,11 @@ import gsap from 'gsap'
 import dispHandler from './disp_handler'
 
 function dispUI() {
+  function githubToJsDelivr(permalink) {
+    return permalink
+      .replace('github.com', 'cdn.jsdelivr.net/gh')
+      .replace('/blob/', '@')
+  }
   //prettier-ignore
   const canvasUI = document.querySelectorAll('.work-canvas')
 
@@ -24,9 +29,12 @@ function dispUI() {
 
   // About
   const offsetRefME = { current: 0 }
-  const image1_URL_ME = '/imgs_cdn/fotiwini.jpeg'
-  const image2_URL_ME =
-    'https://raw.githubusercontent.com/illysito/illy/6c129da2585cab13aa410e5644d87f96e65d0eaa/imgs/fotiwini-semitone.jpg'
+  const image1_URL_ME = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/fotiwini.jpeg'
+  )
+  const image2_URL_ME = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/ME-11.webp'
+  )
   const updateUniformsME = dispHandler(
     aboutCanvas,
     offsetRefME,
