@@ -64,7 +64,7 @@ function dispUI() {
   // Liuba
   const offsetRefLIUBA = { current: 0 }
   const image1_URL_LIUBA = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20--08.webp'
+    'https://github.com/illysito/illy/blob/27ac402bb534bc9916861b9361fc800f5de6ace7/public/imgs_cdn/WORK%20IMG%20--08-08.webp'
   )
   const image2_URL_LIUBA = githubToJsDelivr(
     'https://github.com/illysito/illy/blob/822021800fa75736aa9673784e88eacd2557d0dd/public/imgs_cdn/WORK%20IMG%20--11-11.webp'
