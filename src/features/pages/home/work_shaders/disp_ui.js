@@ -46,10 +46,12 @@ function dispUI() {
 
   // Padmi
   const offsetRefPADMI = { current: 0 }
-  const image1_URL_PADMI =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Iphone-Mockup-2---Comp.jpg'
-  const image2_URL_PADMI =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Padmi-Mac-Mockup-1-Comp.jpg'
+  const image1_URL_PADMI = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20--05.webp'
+  )
+  const image2_URL_PADMI = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20--09.webp'
+  )
   const updateUniformsPADMI = dispHandler(
     padmiCanvas,
     offsetRefPADMI,
@@ -61,10 +63,12 @@ function dispUI() {
 
   // Liuba
   const offsetRefLIUBA = { current: 0 }
-  const image1_URL_LIUBA =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Liuba-Mokcup-IPHONE-1-Comp.jpg'
-  const image2_URL_LIUBA =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Liuba-Mokcup-Mac-3-Comp.jpg'
+  const image1_URL_LIUBA = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20--08.webp'
+  )
+  const image2_URL_LIUBA = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/822021800fa75736aa9673784e88eacd2557d0dd/public/imgs_cdn/WORK%20IMG%20--11-11.webp'
+  )
   const updateUniformsLIUBA = dispHandler(
     liubaCanvas,
     offsetRefLIUBA,
@@ -76,10 +80,12 @@ function dispUI() {
 
   // Barrrena
   const offsetRefBARRENA = { current: 0 }
-  const image1_URL_BARRENA =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Barrena-Mockup-Iphone---Comp.jpg'
-  const image2_URL_BARRENA =
-    'https://raw.githubusercontent.com/illysito/illy/cd9c644cd453fc70fcfaab2a0c7a0a1f9ed1ed79/imgs/Barrrena-Mac-Mockup---Comp.jpg'
+  const image1_URL_BARRENA = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20--06.webp'
+  )
+  const image2_URL_BARRENA = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20--10.webp'
+  )
   const updateUniformsBARRENA = dispHandler(
     barrenaCanvas,
     offsetRefBARRENA,
@@ -91,10 +97,12 @@ function dispUI() {
 
   // Cachanchan
   const offsetRefCACHANCHAN = { current: 0 }
-  const image1_URL_CACHANCHAN =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-CACHANCHAN%201.jpg'
-  const image2_URL_CACHANCHAN =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-CACHANCHAN%202.jpg'
+  const image1_URL_CACHANCHAN = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-05.webp'
+  )
+  const image2_URL_CACHANCHAN = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-06.webp'
+  )
   const updateUniformsCACHANCHAN = dispHandler(
     cachanchanCanvas,
     offsetRefCACHANCHAN,
@@ -106,10 +114,12 @@ function dispUI() {
 
   // Lirios
   const offsetRefLIRIOS = { current: 0 }
-  const image1_URL_LIRIOS =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LIRIOS%201.jpg'
-  const image2_URL_LIRIOS =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LIRIOS%202.jpg'
+  const image1_URL_LIRIOS = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-09.webp'
+  )
+  const image2_URL_LIRIOS = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-08.webp'
+  )
   const updateUniformsLIRIOS = dispHandler(
     liriosCanvas,
     offsetRefLIRIOS,
@@ -121,10 +131,12 @@ function dispUI() {
 
   // Llanten
   const offsetRefLLANTEN = { current: 0 }
-  const image1_URL_LLANTEN =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LLANTEN%201.jpg'
-  const image2_URL_LLANTEN =
-    'https://raw.githubusercontent.com/illysito/illy/69fa68f40afe33cb2dc9418bc151a3c4a23f0cea/imgs/Los%20Lirios-LLANTEN%202.jpg'
+  const image1_URL_LLANTEN = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-10.webp'
+  )
+  const image2_URL_LLANTEN = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-11.webp'
+  )
   const updateUniformsLLANTEN = dispHandler(
     llantenCanvas,
     offsetRefLLANTEN,

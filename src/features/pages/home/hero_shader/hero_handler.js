@@ -4,6 +4,12 @@ import disp_frag from './hero_shader'
 
 //prettier-ignore
 function dispHandler(canvas, darkModeRef, offsetRef, windRef, rainRef) {
+
+  function githubToJsDelivr(permalink) {
+    return permalink
+      .replace('github.com', 'cdn.jsdelivr.net/gh')
+      .replace('/blob/', '@')
+  }
   // SETUP
   // const shaderReference = 'HREO SHADER: '
   // const gl = canvas.getContext('webgl')
@@ -36,12 +42,12 @@ function dispHandler(canvas, darkModeRef, offsetRef, windRef, rainRef) {
   sandbox.load(fragment_shader)
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
   //prettier-ignore
-  const textureBlack =
-  'https://raw.githubusercontent.com/illysito/illy/e6e7a5ed1c28a6a9aacd53d5b602ef31eed833e6/imgs/ILLYALUKIANOV-type.png'
-  const textureWhite =
-  'https://raw.githubusercontent.com/illysito/illy/e5a78d814b2272546ca5df93a88e626d718bb1fc/imgs/ILLYALUKIANOV-type-white.png'
+  const textureBlack = githubToJsDelivr(
+  'https://github.com/illysito/illy/blob/822021800fa75736aa9673784e88eacd2557d0dd/public/imgs_cdn/ILLYALUKIANOV-type.png')
+  const textureWhite = githubToJsDelivr(
+  'https://github.com/illysito/illy/blob/822021800fa75736aa9673784e88eacd2557d0dd/public/imgs_cdn/ILLYALUKIANOV-type-white.png')
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
-  const displacementURL = 'https://raw.githubusercontent.com/illysito/shaders/3e187d663841f03e89f44a38cfba0061fc61193a/imgs/Perlin%20Noise%20Large.png'
+  const displacementURL = githubToJsDelivr('https://github.com/illysito/shaders/blob/b89ccd38b24b375e79318690acbe4f09faeaf22a/imgs/Perlin%20Noise%20Large.png')
 
   sandbox.setUniform('u_darkMode', darkModeRef.current)
   sandbox.setUniform('u_image_1', textureBlack)
