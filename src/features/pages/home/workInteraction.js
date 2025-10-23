@@ -3,6 +3,8 @@ import gsap from 'gsap'
 function workInteraction() {
   const canvasUI = document.querySelectorAll('.work-canvas')
 
+  const lightLiveArrows = document.querySelectorAll('.live-web-wrapper-white')
+
   const p2o = 'power2.out'
   const duration = 0.8
 
@@ -103,6 +105,26 @@ function workInteraction() {
         hoverOut(cardTitle, sorryHeader, viewBlock)
       })
     }
+  })
+
+  lightLiveArrows.forEach((a) => {
+    const lightArrow = a.firstElementChild
+    const darkArrowWrapper = a.previousElementSibling
+    const darkArrow = darkArrowWrapper.firstElementChild
+    lightArrow.addEventListener('mouseover', () => {
+      gsap.to([lightArrow, darkArrow], {
+        scale: 0.95,
+        rotation: 12,
+        duration: 0.4,
+      })
+    })
+    lightArrow.addEventListener('mouseleave', () => {
+      gsap.to([lightArrow, darkArrow], {
+        scale: 1,
+        rotation: 0,
+        duration: 0.4,
+      })
+    })
   })
 }
 

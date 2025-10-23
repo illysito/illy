@@ -47,6 +47,8 @@ function darkmodeToggle() {
   // arrows
   const darkArrows = document.querySelectorAll('.view-img')
   const lightArrows = document.querySelectorAll('.view-img-white')
+  const darkLiveArrows = document.querySelectorAll('.live-web-wrapper')
+  const lightLiveArrows = document.querySelectorAll('.live-web-wrapper-white')
 
   function toDark() {
     localStorage.setItem('isDarkModeOn', 'true')
@@ -64,11 +66,11 @@ function darkmodeToggle() {
       duration: duration,
     })
     // Node lists OPACITY
-    gsap.to([darkMoons, darkArrows], {
+    gsap.to([darkMoons, darkArrows, darkLiveArrows], {
       opacity: 0,
       duration: duration,
     })
-    gsap.to([lightMoons, lightArrows], {
+    gsap.to([lightMoons, lightArrows, lightLiveArrows], {
       opacity: 1,
       duration: duration,
     })
@@ -117,11 +119,11 @@ function darkmodeToggle() {
       opacity: 0,
       duration: duration,
     })
-    gsap.to([darkMoons, darkArrows], {
+    gsap.to([darkMoons, darkArrows, darkLiveArrows], {
       opacity: 1,
       duration: duration,
     })
-    gsap.to([lightMoons, lightArrows], {
+    gsap.to([lightMoons, lightArrows, lightLiveArrows], {
       opacity: 0,
       duration: duration,
     })
