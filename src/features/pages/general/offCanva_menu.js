@@ -1,18 +1,33 @@
 import gsap from 'gsap'
 
-import menuUI from './menu_shader/menu_ui'
-
 function offCanvaMenu() {
   const button = document.querySelector('.hire-button')
+  const closeButton = document.querySelector('.close-button')
   const menu = document.querySelector('.offcanva')
-
-  menuUI()
+  const body = document.body
 
   button.addEventListener('click', () => {
+    gsap.to(body, {
+      y: 32,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
     gsap.to(menu, {
-      yPercent: 120,
-      duration: 0.6,
-      ease: 'power.out',
+      yPercent: 118,
+      duration: 1.2,
+      ease: 'power3.inOut',
+    })
+  })
+  closeButton.addEventListener('click', () => {
+    gsap.to(body, {
+      y: 0,
+      duration: 1.2,
+      ease: 'power3.inOut',
+    })
+    gsap.to(menu, {
+      yPercent: 0,
+      duration: 1.2,
+      ease: 'power3.inOut',
     })
   })
 }
