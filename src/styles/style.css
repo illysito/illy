@@ -91,6 +91,11 @@ body.no-scroll {
   height: 100%;
 }
 
+#offcanva-canvas {
+  width: 100%;
+  height: 100%;
+}
+
 input:focus,
 textarea:focus {
   border-color: #0000ff;

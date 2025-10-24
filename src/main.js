@@ -7,6 +7,7 @@ import setAccent from './features/pages/general/accent'
 import darkmodeToggle from './features/pages/general/darkmode'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
+import offCanvaMenu from './features/pages/general/offCanva_menu'
 // SCRIPTS
 import accentButton from './features/scripts/accent_button'
 import button from './features/scripts/buttons.js'
@@ -43,6 +44,7 @@ function runGeneralFunctions() {
   if (domElements.qrButton) {
     button(domElements.qrButton)
   }
+  offCanvaMenu()
 }
 
 async function runHomeFunctions() {
