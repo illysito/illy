@@ -77,9 +77,10 @@ async function runHomeFunctions() {
   aboutText()
 
   // Shaders
-  setTimeout(async () => {
-    workCanvasUI()
-  }, 1200)
+  // setTimeout(async () => {
+  //   workCanvasUI()
+  // }, 1200)
+  workCanvasUI()
   workInteraction()
   workAnimations()
 
