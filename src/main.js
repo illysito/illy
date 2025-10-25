@@ -110,10 +110,10 @@ async function runQRFunctions() {
 
 if (!document.body.classList.contains('body__flowfield'))
   // requestIdleCallback(runGeneralFunctions)
-  runGeneralFunctions
+  runGeneralFunctions()
 if (document.body.classList.contains('body__home'))
   // requestIdleCallback(runHomeFunctions)
-  runHomeFunctions
+  runHomeFunctions()
 if (document.body.classList.contains('body__philosophy'))
   runPhilosophyFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
