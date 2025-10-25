@@ -57,28 +57,34 @@ async function runHomeFunctions() {
   const { default: scroll } = await import('./features/pages/home/scroll')
   const { default: aboutText } = await import('./features/pages/home/aboutText')
   const { default: form } = await import('./features/pages/home/form')
+  const { default: workCanvasUI } = await import(
+    './features/pages/home/work_shaders/disp_ui'
+  )
+  const { default: workInteraction } = await import(
+    './features/pages/home/workInteraction'
+  )
+  const { default: workAnimations } = await import(
+    './features/pages/home/work_animations'
+  )
 
-  preloader()
+  // Hero
   heroUI()
+  preloader()
   metadata()
   scroll()
-  aboutText()
-  form()
 
+  // About
+  aboutText()
+
+  // Shaders
   setTimeout(async () => {
-    const { default: workCanvasUI } = await import(
-      './features/pages/home/work_shaders/disp_ui'
-    )
-    const { default: workInteraction } = await import(
-      './features/pages/home/workInteraction'
-    )
-    const { default: workAnimations } = await import(
-      './features/pages/home/work_animations'
-    )
     workCanvasUI()
-    workInteraction()
-    workAnimations()
   }, 1200)
+  workInteraction()
+  workAnimations()
+
+  // Contact
+  form()
 }
 
 async function runPhilosophyFunctions() {
@@ -102,7 +108,8 @@ async function runQRFunctions() {
 
 // INIT
 
-if (!document.body.classList.contains('body__flowfield')) runGeneralFunctions()
+if (!document.body.classList.contains('body__flowfield'))
+  requestIdleCallback(runGeneralFunctions)
 if (document.body.classList.contains('body__home'))
   requestIdleCallback(runHomeFunctions)
 if (document.body.classList.contains('body__philosophy'))
