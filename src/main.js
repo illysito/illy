@@ -1,5 +1,3 @@
-// import gsap from 'gsap'
-
 import './styles/style.css'
 
 // GENERAL
@@ -69,9 +67,9 @@ async function runHomeFunctions() {
   const { default: aboutText } = await import('./features/pages/home/aboutText')
   const { default: form } = await import('./features/pages/home/form')
 
+  preloader()
   heroUI()
   setTimeout(workCanvasUI, 1200)
-  preloader()
   metadata()
   scroll()
   aboutText()
@@ -102,7 +100,8 @@ async function runQRFunctions() {
 // INIT
 
 if (!document.body.classList.contains('body__flowfield')) runGeneralFunctions()
-if (document.body.classList.contains('body__home')) runHomeFunctions()
+if (document.body.classList.contains('body__home'))
+  requestIdleCallback(runHomeFunctions)
 if (document.body.classList.contains('body__philosophy'))
   runPhilosophyFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
