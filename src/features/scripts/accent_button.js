@@ -39,7 +39,7 @@ function accentButton() {
         ease: 'power.out',
       })
       localStorage.setItem('accentDark', '#08ee00') // fluor
-      localStorage.setItem('accentLight', '#ffbcbf') // soft pink
+      localStorage.setItem('accentLight', '#0000ff') // soft pink
       // document.dispatchEvent(isAccentTwo)
     } else {
       gsap.to(ball, {
@@ -48,8 +48,8 @@ function accentButton() {
         duration: 0.4,
         ease: 'power.out',
       })
-      localStorage.setItem('accentDark', '#f83d8b') // hard pink
-      localStorage.setItem('accentLight', '#0000ff') // blue
+      localStorage.setItem('accentDark', '#ffc897') // hard pink
+      localStorage.setItem('accentLight', '#ff9fd6') // blue
       // document.dispatchEvent(isAccentOne)
     }
 

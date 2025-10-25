@@ -6,8 +6,6 @@ function darkmodeToggle() {
   const duration = 0.8
   const dark = '#101010'
   const light = '#fff4e9'
-  const accentDark = localStorage.getItem('accentDark')
-  const accentLight = localStorage.getItem('accentLight')
 
   // console.log(accentDark, accentLight)
 
@@ -31,7 +29,7 @@ function darkmodeToggle() {
   // lines
   const lines = document.querySelectorAll('.work-line')
   const lineOutline = document.querySelectorAll('.line-outline')
-  const circle = document.querySelectorAll('.circle-wrapper')
+  // const circle = document.querySelectorAll('.circle-wrapper')
   // dots
   const dots = document.querySelectorAll('.metdata-dot')
   const darkmodeBall = document.querySelector('.darkmode-ball')
@@ -52,6 +50,7 @@ function darkmodeToggle() {
 
   function toDark() {
     localStorage.setItem('isDarkModeOn', 'true')
+    const accentDark = localStorage.getItem('accentDark')
     gsap.to(body, {
       backgroundColor: dark,
       duration: duration,
@@ -87,7 +86,7 @@ function darkmodeToggle() {
       color: '#fff4e9bf',
       duration: duration,
     })
-    gsap.to([buttons, darkmodeToggle, accentToggle, circle, formFields], {
+    gsap.to([buttons, darkmodeToggle, accentToggle, formFields], {
       borderColor: light,
       duration: duration,
     })
@@ -107,6 +106,7 @@ function darkmodeToggle() {
 
   function toLight() {
     localStorage.setItem('isDarkModeOn', 'false')
+    const accentLight = localStorage.getItem('accentLight')
     gsap.to(body, {
       backgroundColor: light,
       duration: duration,
@@ -139,7 +139,7 @@ function darkmodeToggle() {
       color: '#101010bf',
       duration: duration,
     })
-    gsap.to([buttons, darkmodeToggle, accentToggle, circle, formFields], {
+    gsap.to([buttons, darkmodeToggle, accentToggle, formFields], {
       borderColor: dark,
       duration: duration,
     })

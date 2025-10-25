@@ -8,7 +8,7 @@ function setAccent() {
     localStorage.setItem('accentLight', '#0000ff')
   }
 
-  function setAccent() {
+  function accent() {
     let accent
     if (localStorage.getItem('isDarkModeOn') === 'true') {
       accent = localStorage.getItem('accentDark')
@@ -34,10 +34,10 @@ function setAccent() {
   }
 
   document.addEventListener('isAccentOne', () => {
-    setAccent()
+    accent()
   })
   document.addEventListener('isAccentTwo', () => {
-    setAccent()
+    accent()
   })
 }
 

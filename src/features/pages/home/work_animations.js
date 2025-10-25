@@ -6,6 +6,7 @@ function workAnimations() {
   const workHs = document.querySelectorAll('.work-h')
   const workLines = document.querySelectorAll('.work-line')
   const workOverlays = document.querySelectorAll('.canvas-overlay')
+  const workCanvas = document.querySelectorAll('.work-canvas')
   // const workCards = document.querySelectorAll('.work-card')
 
   workPs.forEach((p, index) => {
@@ -93,6 +94,21 @@ function workAnimations() {
         end: 'top 60%',
       },
     })
+  })
+
+  workCanvas.forEach((canvas, index) => {
+    // const texture = canvas.firstElementChild
+    if (index != 0) {
+      gsap.to(canvas, {
+        scale: 1.05,
+        scrollTrigger: {
+          trigger: canvas,
+          start: 'top bottom',
+          end: 'top top',
+          scrub: 1,
+        },
+      })
+    }
   })
 }
 

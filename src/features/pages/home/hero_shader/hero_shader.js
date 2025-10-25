@@ -150,7 +150,7 @@ void main()
 
   float displacementCoef = 0.2;
 
-  float windCoef = -u_wind * 0.2;
+  float windCoef = -u_wind * 0.34;
   float windOffset = fbm(vec2(u_time * u_wind, coords.y * 0.5));
 
   vec2 rainOffset = drops(uv, u_time * u_rain * 0.01, u_rain);
@@ -165,6 +165,7 @@ void main()
   vec4 blockDisplacement = texture2D(u_displacement, block_coords);
 
   float displaceForceScroll = blockDisplacement.r * u_offset * displacementCoef;
+  displaceForceScroll *= 1.2;
   float displaceForceWind = displacement.r * windOffset * windCoef;
   vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll);
   uvDisplaced += 70.0 * rainOffset;

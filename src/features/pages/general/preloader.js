@@ -16,8 +16,14 @@ async function preloader() {
       // preload
       preloaderText: document.querySelector('.percentage-block-p'),
       preloader: document.querySelector('.preloader__section'),
-      preloaderSentence: document.querySelector('.preloader-text'),
+      preloaderSentence1: document.querySelector('.preloader-text-1'),
+      preloaderSentence2: document.querySelector('.preloader-text-2'),
       preloaderUnderscore: document.querySelector('.underscore.is--preloader'),
+      word1: document.querySelector('.preloader-word-1'),
+      word2: document.querySelector('.preloader-word-2'),
+      imgWrapper: document.querySelector('.preloader-img-wrapper'),
+      curtain1: document.querySelector('.preloader-curtain-1'),
+      curtain2: document.querySelector('.preloader-curtain-2'),
     }
   }
   const domElements = domElementsQuery()
@@ -41,7 +47,7 @@ async function preloader() {
       const targetText = target
       const targetChars = targetText.split('')
 
-      const time = 32
+      const time = 48
 
       let names = new Array(targetChars.length).fill(' ')
       names[0] = targetChars[0]
@@ -69,10 +75,15 @@ async function preloader() {
           // console.log(names.join(''))
         } else {
           clearInterval(interval)
+          gsap.to(domElements.preloaderSentence1, {
+            yPercent: 0,
+            duration: 1.2 * dur,
+            ease: 'power.inOut',
+          })
           gsap.to(
-            [domElements.preloaderSentence, domElements.preloaderUnderscore],
+            [domElements.preloaderSentence2, domElements.preloaderUnderscore],
             {
-              yPercent: 100,
+              yPercent: 0,
               stagger: -0.2,
               duration: 1.2 * dur,
               ease: 'power.inOut',
@@ -80,7 +91,7 @@ async function preloader() {
           )
           gsap.to(domElements.preloaderText, {
             opacity: 0,
-            repeat: 2,
+            repeat: 1,
             yoyo: true,
             duration: 1.2 * dur,
             ease: ease2,
@@ -108,8 +119,59 @@ async function preloader() {
     })
   }
 
+  function animateWords() {
+    // TWEEN INITIALS
+    gsap.to(domElements.preloaderSentence1, {
+      delay: 0.4,
+      yPercent: -100,
+      opacity: 1,
+      duration: 1.2 * dur,
+      ease: 'power.inOut',
+    })
+    gsap.to([domElements.preloaderSentence2, domElements.preloaderUnderscore], {
+      delay: 0.4,
+      yPercent: 100,
+      opacity: 1,
+      stagger: -0.2,
+      duration: 1.2 * dur,
+      ease: 'power.inOut',
+    })
+    gsap.to(domElements.word1, {
+      delay: 0.8,
+      x: -200,
+      duration: 0.6,
+      ease: 'power.inOut',
+    })
+    gsap.to(domElements.word2, {
+      delay: 0.8,
+      x: 200,
+      duration: 0.6,
+      ease: 'power.inOut',
+    })
+  }
+
+  function animateImg() {
+    gsap.from(domElements.imgWrapper, {
+      scale: 0.8,
+      duration: 1,
+      ease: 'power2.inOut',
+    })
+    gsap.to(domElements.curtain1, {
+      yPercent: -100,
+      duration: 0.8,
+      ease: 'power3.inOut',
+    })
+    gsap.to(domElements.curtain2, {
+      yPercent: 100,
+      duration: 0.8,
+      ease: 'power3.inOut',
+    })
+  }
+
   // INIT
   async function init() {
+    animateImg()
+    animateWords()
     await generateName('100')
     await fadePreloader()
     document.body.classList.remove('no-scroll')
