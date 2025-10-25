@@ -4,6 +4,11 @@ import disp_frag from './disp_shader'
 
 //prettier-ignore
 function dispHandler(canvas, offsetRef, image1_URL, image2_URL) {
+  function githubToJsDelivr(permalink) {
+    return permalink
+      .replace('github.com', 'cdn.jsdelivr.net/gh')
+      .replace('/blob/', '@')
+  }
   // SETUP
   // const shaderReference = 'DISPLACEMENT SHADER: '
   canvas.getContext('webgl')
@@ -38,8 +43,7 @@ function dispHandler(canvas, offsetRef, image1_URL, image2_URL) {
   //prettier-ignore
   // const image1_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15533643_4278.jpg'
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
-  const displacementURL = 'https://raw.githubusercontent.com/illysito/shaders/3e187d663841f03e89f44a38cfba0061fc61193a/imgs/Perlin%20Noise%20Large.png'
-
+  const displacementURL = githubToJsDelivr('https://github.com/illysito/shaders/blob/b89ccd38b24b375e79318690acbe4f09faeaf22a/imgs/Perlin%20Noise%20Large.png')
   sandbox.setUniform('u_image_1', image1_URL)
   sandbox.setUniform('u_image_2', image2_URL)
   sandbox.setUniform('u_displacement', displacementURL)
