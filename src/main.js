@@ -37,7 +37,9 @@ function runGeneralFunctions() {
   darkmodeToggle()
   darkmodeButton()
   nav()
-  mousetrail()
+  setTimeout(() => {
+    mousetrail()
+  }, 3800)
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
