@@ -47,7 +47,7 @@ async function preloader() {
       const targetText = target
       const targetChars = targetText.split('')
 
-      const time = 48
+      const time = 32
 
       let names = new Array(targetChars.length).fill(' ')
       names[0] = targetChars[0]
@@ -89,10 +89,13 @@ async function preloader() {
               ease: 'power.inOut',
             }
           )
+          gsap.to(domElements.imgWrapper, {
+            opacity: 0,
+            duration: 1.2 * dur,
+            ease: 'power.inOut',
+          })
           gsap.to(domElements.preloaderText, {
             opacity: 0,
-            repeat: 1,
-            yoyo: true,
             duration: 1.2 * dur,
             ease: ease2,
             // delay: 1,
@@ -110,6 +113,7 @@ async function preloader() {
 
   async function fadePreloader() {
     gsap.to(domElements.preloader, {
+      delay: 0.4,
       opacity: 0,
       duration: 1.2,
       ease: 'power.out',
@@ -138,13 +142,13 @@ async function preloader() {
     })
     gsap.to(domElements.word1, {
       delay: 0.8,
-      x: -200,
+      x: -160,
       duration: 0.6,
       ease: 'power.inOut',
     })
     gsap.to(domElements.word2, {
       delay: 0.8,
-      x: 200,
+      x: 160,
       duration: 0.6,
       ease: 'power.inOut',
     })
