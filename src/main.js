@@ -53,29 +53,32 @@ async function runHomeFunctions() {
   const { default: heroUI } = await import(
     './features/pages/home/hero_shader/hero_ui'
   )
-  const { default: workCanvasUI } = await import(
-    './features/pages/home/work_shaders/disp_ui'
-  )
   const { default: metadata } = await import('./features/pages/home/metadata')
-  const { default: workInteraction } = await import(
-    './features/pages/home/workInteraction'
-  )
   const { default: scroll } = await import('./features/pages/home/scroll')
-  const { default: workAnimations } = await import(
-    './features/pages/home/work_animations'
-  )
   const { default: aboutText } = await import('./features/pages/home/aboutText')
   const { default: form } = await import('./features/pages/home/form')
 
   preloader()
   heroUI()
-  setTimeout(workCanvasUI, 1200)
   metadata()
   scroll()
   aboutText()
-  workInteraction()
-  workAnimations()
   form()
+
+  setTimeout(async () => {
+    const { default: workCanvasUI } = await import(
+      './features/pages/home/work_shaders/disp_ui'
+    )
+    const { default: workInteraction } = await import(
+      './features/pages/home/workInteraction'
+    )
+    const { default: workAnimations } = await import(
+      './features/pages/home/work_animations'
+    )
+    workCanvasUI()
+    workInteraction()
+    workAnimations()
+  }, 1200)
 }
 
 async function runPhilosophyFunctions() {
