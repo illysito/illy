@@ -8,14 +8,14 @@ function workInteraction() {
   const p2o = 'power2.out'
   const duration = 0.8
 
-  const accentDark = localStorage.getItem('accentDark')
-  const accentLight = localStorage.getItem('accentLight')
-
-  function hoverIn(cardTitle, sorryHeader, viewBlock) {
+  function hoverIn(cardTitles, cardTitlesHidden, sorryHeader, viewBlock) {
+    const accentDark = localStorage.getItem('accentDark')
+    const accentLight = localStorage.getItem('accentLight')
     const isDarkMode = localStorage.getItem('isDarkModeOn')
     if (isDarkMode === 'true') {
-      gsap.to(cardTitle, {
+      gsap.to([cardTitles, cardTitlesHidden], {
         color: `${accentDark}`,
+        yPercent: -100,
         duration: duration - 0.2,
         ease: p2o,
       })
@@ -31,8 +31,9 @@ function workInteraction() {
         ease: p2o,
       })
     } else {
-      gsap.to(cardTitle, {
+      gsap.to([cardTitles, cardTitlesHidden], {
         color: `${accentLight}`,
+        yPercent: -100,
         duration: duration - 0.2,
         ease: p2o,
       })
@@ -50,11 +51,12 @@ function workInteraction() {
     }
   }
 
-  function hoverOut(cardTitle, sorryHeader, viewBlock) {
+  function hoverOut(cardTitles, cardTitlesHidden, sorryHeader, viewBlock) {
     const isDarkMode = localStorage.getItem('isDarkModeOn')
     if (isDarkMode === 'true') {
-      gsap.to(cardTitle, {
+      gsap.to([cardTitles, cardTitlesHidden], {
         color: '#fff4e9',
+        yPercent: 0,
         duration: duration - 0.2,
         ease: p2o,
       })
@@ -70,8 +72,9 @@ function workInteraction() {
         ease: p2o,
       })
     } else {
-      gsap.to(cardTitle, {
+      gsap.to([cardTitles, cardTitlesHidden], {
         color: '#202020',
+        yPercent: 0,
         duration: duration - 0.2,
         ease: p2o,
       })
@@ -93,16 +96,17 @@ function workInteraction() {
     if (index != 0) {
       const canvasWrapper = canvas.parentElement
       const workCard = canvasWrapper.parentElement
-      const cardTitle = workCard.querySelector('.work-h')
+      const cardTitles = workCard.querySelectorAll('.work-h')
+      const cardTitlesHidden = workCard.querySelectorAll('.work-h-hidden')
       const workView = workCard.querySelector('.work-view')
       const sorryHeader = workView.firstElementChild
       const viewBlock = workView.lastElementChild
       canvas.addEventListener('mouseover', () => {
-        hoverIn(cardTitle, sorryHeader, viewBlock)
+        hoverIn(cardTitles, cardTitlesHidden, sorryHeader, viewBlock)
       })
 
       canvas.addEventListener('mouseleave', () => {
-        hoverOut(cardTitle, sorryHeader, viewBlock)
+        hoverOut(cardTitles, cardTitlesHidden, sorryHeader, viewBlock)
       })
     }
   })

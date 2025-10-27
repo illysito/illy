@@ -2,7 +2,7 @@ import gsap from 'gsap'
 
 function setAccent() {
   if (!localStorage.getItem('accentDark')) {
-    localStorage.setItem('accentDark', '#08ee00')
+    localStorage.setItem('accentDark', '#ffc897')
   }
   if (!localStorage.getItem('accentLight')) {
     localStorage.setItem('accentLight', '#0000ff')
@@ -15,6 +15,7 @@ function setAccent() {
     } else {
       accent = localStorage.getItem('accentLight')
     }
+    console.log(accent)
 
     const metadataDots = document.querySelectorAll('.metdata-dot')
     const buttonCircle = document.querySelector('.fill-circle')

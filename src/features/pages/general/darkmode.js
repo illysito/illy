@@ -37,8 +37,8 @@ function darkmodeToggle() {
   // overlays
   const canvasOverlays = document.querySelectorAll('.canvas-overlay')
   // form
-  const formFields = document.querySelectorAll('.form-field,textarea')
-  const formButton = document.querySelector('.submit-button')
+  // const formFields = document.querySelectorAll('.form-field,textarea')
+  // const formButton = document.querySelector('.submit-button')
   // moons
   const darkMoons = document.querySelector('.black-moon-wrapper')
   const lightMoons = document.querySelector('.white-moon-wrapper')
@@ -78,15 +78,20 @@ function darkmodeToggle() {
       color: light,
       duration: duration,
     })
-    gsap.to(formButton, {
-      color: dark,
-      duration: duration,
-    })
+    // gsap.to(formButton, {
+    //   color: dark,
+    //   duration: duration,
+    // })
     gsap.to(semiTranspText, {
       color: '#fff4e9bf',
       duration: duration,
     })
-    gsap.to([buttons, darkmodeToggle, accentToggle, formFields], {
+    // gsap.to([buttons, darkmodeToggle, accentToggle, formFields], {
+    //   borderColor: light,
+    //   duration: duration,
+    // })
+    // this is the same as above but without the form fields, which are temporary out
+    gsap.to([buttons, darkmodeToggle, accentToggle], {
       borderColor: light,
       duration: duration,
     })
@@ -94,7 +99,11 @@ function darkmodeToggle() {
       backgroundColor: dark,
       duration: duration,
     })
-    gsap.to([lines, lineOutline, formButton], {
+    // gsap.to([lines, lineOutline, formButton], {
+    //   backgroundColor: light,
+    //   duration: duration,
+    // })
+    gsap.to([lines, lineOutline], {
       backgroundColor: light,
       duration: duration,
     })
@@ -131,15 +140,19 @@ function darkmodeToggle() {
       color: dark,
       duration: duration,
     })
-    gsap.to(formButton, {
-      color: light,
-      duration: duration,
-    })
+    // gsap.to(formButton, {
+    //   color: light,
+    //   duration: duration,
+    // })
     gsap.to(semiTranspText, {
       color: '#101010bf',
       duration: duration,
     })
-    gsap.to([buttons, darkmodeToggle, accentToggle, formFields], {
+    // gsap.to([buttons, darkmodeToggle, accentToggle, formFields], {
+    //   borderColor: dark,
+    //   duration: duration,
+    // })
+    gsap.to([buttons, darkmodeToggle, accentToggle], {
       borderColor: dark,
       duration: duration,
     })
@@ -147,7 +160,11 @@ function darkmodeToggle() {
       backgroundColor: light,
       duration: duration,
     })
-    gsap.to([lines, lineOutline, formButton], {
+    // gsap.to([lines, lineOutline, formButton], {
+    //   backgroundColor: dark,
+    //   duration: duration,
+    // })
+    gsap.to([lines, lineOutline], {
       backgroundColor: dark,
       duration: duration,
     })

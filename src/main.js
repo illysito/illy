@@ -39,7 +39,7 @@ function runGeneralFunctions() {
   nav()
   setTimeout(() => {
     mousetrail()
-  }, 3800)
+  }, 3400)
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
@@ -58,15 +58,18 @@ async function runHomeFunctions() {
   const { default: metadata } = await import('./features/pages/home/metadata')
   const { default: scroll } = await import('./features/pages/home/scroll')
   const { default: aboutText } = await import('./features/pages/home/aboutText')
-  const { default: form } = await import('./features/pages/home/form')
+  // const { default: form } = await import('./features/pages/home/form')
   const { default: workCanvasUI } = await import(
     './features/pages/home/work_shaders/disp_ui'
   )
   const { default: workInteraction } = await import(
-    './features/pages/home/workInteraction'
+    './features/pages/home/work_interaction'
   )
   const { default: workAnimations } = await import(
     './features/pages/home/work_animations'
+  )
+  const { default: golUI } = await import(
+    './features/pages/general/game_of_life/gol_ui'
   )
 
   // Hero
@@ -87,7 +90,10 @@ async function runHomeFunctions() {
   workAnimations()
 
   // Contact
-  form()
+  // form()
+
+  // Footer
+  golUI()
 }
 
 async function runPhilosophyFunctions() {

@@ -4,9 +4,10 @@ function accentButton() {
   // const isDarkModeOn = localStorage.getItem('isDarkModeOn')
 
   const button = document.querySelector('.accent-toggle')
+  const buttonBall = button.firstElementChild
 
-  // const isAccentOne = new Event('isAccentOne')
-  // const isAccentTwo = new Event('isAccentTwo')
+  const isAccentOne = new Event('isAccentOne')
+  const isAccentTwo = new Event('isAccentTwo')
   let isAccentTwoClicked = false
 
   function buttonHoverIn(e) {
@@ -39,8 +40,8 @@ function accentButton() {
         ease: 'power.out',
       })
       localStorage.setItem('accentDark', '#08ee00') // fluor
-      localStorage.setItem('accentLight', '#0000ff') // soft pink
-      // document.dispatchEvent(isAccentTwo)
+      localStorage.setItem('accentLight', '#0000ff') // blue
+      document.dispatchEvent(isAccentTwo)
     } else {
       gsap.to(ball, {
         scale: 1,
@@ -48,13 +49,24 @@ function accentButton() {
         duration: 0.4,
         ease: 'power.out',
       })
-      localStorage.setItem('accentDark', '#ffc897') // hard pink
+      localStorage.setItem('accentDark', '#ffc897') // cream
       localStorage.setItem('accentLight', '#ff9fd6') // blue
-      // document.dispatchEvent(isAccentOne)
+      document.dispatchEvent(isAccentOne)
     }
 
     isAccentTwoClicked = !isAccentTwoClicked
     // console.log(isDarkModeClicked)
+  }
+
+  if (localStorage.getItem('accentDark') === '#08ee00') {
+    // Boton clikado --> empieza el toggle en la derecha
+    gsap.to(buttonBall, {
+      scale: 1,
+      x: 18,
+      duration: 0.4,
+      ease: 'power.out',
+    })
+    isAccentTwoClicked = true
   }
 
   // if (isDarkModeOn === 'true') {

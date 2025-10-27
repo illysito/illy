@@ -1,12 +1,11 @@
 import gsap from 'gsap'
 
 function button(button) {
-  const accentDark = localStorage.getItem('accentDark')
-  const accentLight = localStorage.getItem('accentLight')
-
   function buttonHoverIn(e) {
+    const accentDark = localStorage.getItem('accentDark')
+    const accentLight = localStorage.getItem('accentLight')
     const isDarkMode = localStorage.getItem('isDarkModeOn')
-    console.log(isDarkMode)
+    // console.log(isDarkMode)
     const b = e.currentTarget
     const w = b.firstElementChild
     const text = w.firstElementChild

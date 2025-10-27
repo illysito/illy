@@ -9,7 +9,7 @@ async function preloader() {
   let dur = 0.6
   let delay = 0.4
   // let ease1 = 'power1.inOut'
-  let ease2 = 'power2.inOut'
+  // let ease2 = 'power2.inOut'
   // let ease4 = 'power4.inOut'
 
   function domElementsQuery() {
@@ -182,12 +182,6 @@ async function preloader() {
       opacity: 0,
       duration: 1.2 * dur,
       ease: 'power.inOut',
-    })
-    gsap.to(domElements.preloaderText, {
-      opacity: 0,
-      duration: 1.2 * dur,
-      ease: ease2,
-      // delay: 1,
       onComplete: () => {
         localStorage.setItem('preloaderShown', 'true')
         // resolve()
@@ -236,12 +230,12 @@ async function preloader() {
       duration: dur,
       ease: 'power.inOut',
     })
-    gsap.to(domElements.preloaderText, {
-      delay: 2 * delay,
-      opacity: 1,
-      duration: dur,
-      ease: 'power.inOut',
-    })
+    // gsap.to(domElements.preloaderText, {
+    //   delay: 2 * delay,
+    //   opacity: 1,
+    //   duration: dur,
+    //   ease: 'power.inOut',
+    // })
   }
 
   function animateImg() {
@@ -272,10 +266,10 @@ async function preloader() {
     // await generateName('100')
     setTimeout(() => {
       fadeElements()
-    }, 3000)
+    }, 2400)
     setTimeout(() => {
       fadePreloader()
-    }, 3400)
+    }, 2800)
     // fadePreloader()
     document.body.classList.remove('no-scroll')
     introHome()
