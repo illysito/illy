@@ -22,38 +22,20 @@ precision mediump float;
 varying vec2 v_texcoord;
 uniform sampler2D u_state;
 uniform vec2 u_resolution;
-uniform vec2 u_grid;
 uniform float u_time;
 
 void main() {
 
   vec2 uv = v_texcoord;
-  vec2 normalRes = 1.0 / u_resolution;
+  vec4 prev = texture2D(u_state, uv);
 
+  float r = 0.5 + 0.5 * sin(u_time) * (prev.r);
+  float g = 0.5 + 0.5 * sin(2.0 * u_time) * (prev.g);
+  float b = 0.5 + 0.5 * sin(0.5 * u_time) * (prev.b);
 
-  vec2 cellSize = 1.0 / u_grid;     // texel size per cell
-  vec2 cellCoord = floor(v_texcoord * u_grid) / u_grid; // snap to cell grid
-  vec4 prev = texture2D(u_state, cellCoord);
-  float a = prev.r;
-
-  float num = 0.0;
-  for(float i = -1.0; i < 2.0; i++){
-    for(float j = -1.0; j < 2.0; j++){
-      vec2 offset = vec2(i, j) * cellSize;
-      num += texture2D(u_state, cellCoord + offset).r;
-    }
-  }
-
-  num -= a;
-  float next = a;
-  if (a > 0.5) {
-    if (num < 2.0 || num > 3.0) next = 0.0;
-  } else {
-    if (num == 3.0) next = 1.0;
-  }
-
-  // gl_FragColor = vec4(vec3(next), 1.0);
-  gl_FragColor = texture2D(u_state, cellCoord);
+  vec3 color = vec3(r, prev.g, prev.b);
+  gl_FragColor = vec4(color, 1.0);
+  // gl_FragColor = prev;
 }
 `
 

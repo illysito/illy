@@ -1,78 +1,131 @@
 /* eslint-disable */
-import gol_shader from './gol_shader'
-
 function golHandler(canvasWrapper) {
   new window.p5((sk) => {
     let canvasParent
-    let golShader
-    let prevFrame
     let width
     let height
+    // let cols = 30
+    // let rows = 2 * cols / 3
+    let res = 12
+    let cols
+    let rows
 
-    const gridCols = 100
-    const gridRows = 100
+    let gen
+    let nextGen
 
-    sk.preload = () => {
-      // Preload shader ALWAYS HERE
-      golShader = sk.createShader(gol_shader.gol_vert, gol_shader.gol_frag)
+    function make2Darray(cols, rows) {
+      let arr = new Array(cols)
+      for (let i = 0; i < arr.length; i++) {
+        arr[i] = new Array(rows)
+      }
+      return arr
     }
 
     sk.setup = () => {
       // Define parent and dimensions, create Canvas and attach it to the parent using its dimensions. ALWAYS in JS
       canvasParent = canvasWrapper
-      // width = canvasParent.offsetWidth
-      // height = canvasParent.offsetHeight
-      width = 400
-      height = 200
-      const c = sk.createCanvas(width, height, sk.WEBGL)
+      width = canvasParent.offsetWidth
+      height = canvasParent.offsetHeight
+      const c = sk.createCanvas(width, height)
       c.parent(canvasParent)
 
-      // Create offscreen canvas for PING PONG
-      prevFrame = sk.createGraphics(width, height)
-      prevFrame.pixelDensity(1)
-      prevFrame.noSmooth()
+      sk.background(16)
+      sk.stroke(16)
+      sk.fill(255, 244, 233)
 
-      const cellW = width / gridCols
-      const cellH = height / gridRows
+      cols = Math.floor(width / res)
+      rows = Math.floor(height / res)
 
-      prevFrame.background(0)
-      prevFrame.noStroke()
-      for (let y = 0; y < gridRows; y++) {
-        for (let x = 0; x < gridCols; x++) {
-          if (Math.random() > 0.8) {
-            // ~20% alive
-            prevFrame.fill(255)
-            prevFrame.rect(x * cellW, y * cellH, cellW, cellH)
+      gen = make2Darray(cols, rows)
+      nextGen = make2Darray(cols, rows)
+
+      // Init first gen ARRAY
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          let random = sk.random()
+          let alive
+          if (random > 0.65) {
+            alive = 1
+          } else {
+            alive = 0
           }
+          gen[i][j] = alive
         }
       }
 
-      // Black background, white stroke and shader based graphics for main canvas
-      // sk.pixelDensity(1)
-      // sk.noSmooth()
-      sk.background(0)
-      sk.stroke(255)
-      // sk.line(0, 0, 120, 120)
-      sk.shader(golShader) // tell p5 to use the shader
-      golShader.setUniform('u_resolution', [width, height])
-      golShader.setUniform('u_grid', [gridCols, gridRows])
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          const x = i * res
+          const y = j * res
+          if (gen[i][j] == 1) {
+            sk.fill(255, 244, 233)
+          } else {
+            sk.fill(10)
+          }
+          sk.rect(x, y, res, res)
+        }
+      }
     }
 
-    let time = 0
     sk.draw = () => {
-      time += 0.01
-      // Copy the rendered image into our prevFrame image EACH FRAME
-      sk.resetShader()
-      prevFrame.image(sk.get(), -width / 2, -height / 2)
+      const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
+      sk.frameRate(10)
+      sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+      sk.stroke(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+      // sk.background(16)
 
-      // Set UNIFORMS
-      golShader.setUniform('u_time', time) // time
-      golShader.setUniform('u_state', prevFrame) // previous FRAME for ping pong
-      golShader.setUniform('u_resolution', [width, height]) // resolution
-      golShader.setUniform('u_grid', [gridCols, gridRows])
+      // read GEN
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          let sum = 0
+          for (let a = -1; a < 2; a++) {
+            for (let b = -1; b < 2; b++) {
+              // skip if i'm counting myself
+              if (a === 0 && b === 0) continue
+              // Assign 0 to neighbours out of bound
+              if (
+                i + a < 0 ||
+                i + a >= cols - 1 ||
+                j + b < 0 ||
+                j + b >= rows - 1
+              ) {
+                sum += 0
+                // add 1 if is alive, add 0 if dead
+              } else {
+                sum += gen[i + a][j + b]
+              }
+            }
+          }
 
-      // Give the shader a surface to draw on
-      sk.rect(-width / 2, -height / 2, width, height)
+          // If I'm alive
+          if (gen[i][j] == 1) {
+            if (sum == 2 || sum == 3) {
+              nextGen[i][j] = 1
+            } else {
+              nextGen[i][j] = 0
+            }
+            // If I'm dead
+          } else {
+            if (sum == 3) {
+              nextGen[i][j] = 1
+            } else {
+              nextGen[i][j] = 0
+            }
+          }
+
+          // Draw next gen
+          const x = i * res
+          const y = j * res
+          if (nextGen[i][j] == 1) {
+            sk.fill(isDarkMode ? sk.color(255, 244, 233) : sk.color(16))
+          } else {
+            sk.fill(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+          }
+          sk.rect(x, y, res, res)
+        }
+      }
+
+      gen = nextGen.map((row) => [...row])
     }
 
     sk.windowResized = () => {
@@ -80,11 +133,6 @@ function golHandler(canvasWrapper) {
       width = canvasParent.offsetWidth
       height = canvasParent.offsetHeight
       sk.resizeCanvas(width, height)
-      prevFrame = sk.createGraphics(width, height)
-      prevFrame.pixelDensity(1)
-      prevFrame.noSmooth()
-      golShader.setUniform('u_resolution', [width, height])
-      golShader.setUniform('u_grid', [gridCols, gridRows])
     }
   })
 }

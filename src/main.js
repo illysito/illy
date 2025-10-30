@@ -93,7 +93,7 @@ async function runHomeFunctions() {
   // form()
 
   // Footer
-  golUI()
+  setTimeout(golUI, 6000)
 }
 
 async function runPhilosophyFunctions() {
