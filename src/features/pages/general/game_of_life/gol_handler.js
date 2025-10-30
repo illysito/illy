@@ -1,7 +1,7 @@
 import p5 from 'p5'
 /* eslint-disable */
 function golHandler(canvasWrapper) {
-  window._disableAutoScriptLoad = true
+  // window._disableAutoScriptLoad = true
   new p5((sk) => {
     let canvasParent
     let width
