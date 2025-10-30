@@ -93,7 +93,7 @@ async function runHomeFunctions() {
   // form()
 
   // Footer
-  setTimeout(golUI, 6200)
+  // setTimeout(golUI, 6200)
   // golUI()
 }
 
