@@ -68,9 +68,9 @@ async function runHomeFunctions() {
   const { default: workAnimations } = await import(
     './features/pages/home/work_animations'
   )
-  // const { default: golUI } = await import(
-  //   './features/pages/general/game_of_life/gol_ui'
-  // )
+  const { default: golUI } = await import(
+    './features/pages/general/game_of_life/gol_ui'
+  )
 
   // Hero
   heroUI()
@@ -94,7 +94,7 @@ async function runHomeFunctions() {
 
   // Footer
   // setTimeout(golUI, 6200)
-  // golUI()
+  golUI()
 }
 
 async function runPhilosophyFunctions() {
