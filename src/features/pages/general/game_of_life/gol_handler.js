@@ -69,7 +69,7 @@ function golHandler(canvasWrapper) {
 
     sk.draw = () => {
       const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
-      sk.frameRate(10)
+      sk.frameRate(8)
       sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
       sk.stroke(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
       // sk.background(16)
