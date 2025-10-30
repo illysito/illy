@@ -1,6 +1,7 @@
+import p5 from 'p5'
 /* eslint-disable */
 function golHandler(canvasWrapper) {
-  new window.p5((sk) => {
+  new p5((sk) => {
     let canvasParent
     let width
     let height
