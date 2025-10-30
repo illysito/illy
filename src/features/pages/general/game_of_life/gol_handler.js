@@ -1,4 +1,6 @@
+import gsap from 'gsap'
 import p5 from 'p5'
+
 /* eslint-disable */
 function golHandler(canvasWrapper) {
   // window._disableAutoScriptLoad = true
@@ -15,6 +17,10 @@ function golHandler(canvasWrapper) {
     let gen
     let nextGen
 
+    let isPaused = false
+
+    let thres = 0.5
+
     function make2Darray(cols, rows) {
       let arr = new Array(cols)
       for (let i = 0; i < arr.length; i++) {
@@ -25,6 +31,7 @@ function golHandler(canvasWrapper) {
 
     sk.setup = () => {
       // Define parent and dimensions, create Canvas and attach it to the parent using its dimensions. ALWAYS in JS
+      const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
       canvasParent = canvasWrapper
       width = canvasParent.offsetWidth
       height = canvasParent.offsetHeight
@@ -46,7 +53,7 @@ function golHandler(canvasWrapper) {
         for (let j = 0; j < rows; j++) {
           let random = sk.random()
           let alive
-          if (random > 0.65) {
+          if (random > thres) {
             alive = 1
           } else {
             alive = 0
@@ -60,9 +67,9 @@ function golHandler(canvasWrapper) {
           const x = i * res
           const y = j * res
           if (gen[i][j] == 1) {
-            sk.fill(255, 244, 233)
+            sk.fill(isDarkMode ? sk.color(255, 244, 233) : sk.color(16))
           } else {
-            sk.fill(10)
+            sk.fill(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
           }
           sk.rect(x, y, res, res)
         }
@@ -70,6 +77,7 @@ function golHandler(canvasWrapper) {
     }
 
     sk.draw = () => {
+      // if (isPaused) return
       const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
       sk.frameRate(8)
       sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
@@ -131,11 +139,12 @@ function golHandler(canvasWrapper) {
     }
 
     function restart() {
+      const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           let random = sk.random()
           let alive
-          if (random > 0.65) {
+          if (random > thres) {
             alive = 1
           } else {
             alive = 0
@@ -148,19 +157,87 @@ function golHandler(canvasWrapper) {
           const x = i * res
           const y = j * res
           if (gen[i][j] == 1) {
-            sk.fill(255, 244, 233)
+            sk.fill(isDarkMode ? sk.color(255, 244, 233) : sk.color(16))
           } else {
-            sk.fill(10)
+            sk.fill(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
           }
           sk.rect(x, y, res, res)
         }
       }
+      sk.redraw()
     }
 
     // Events
-    const restartButton = document.querySelector('.gol-restart')
-    restartButton.addEventListener('click', () => {
+    const playButton = document.querySelector('.gol-play-button')
+    const reSeedButton = document.querySelector('.gol-seed-button')
+    const sliderRail = document.querySelector('.slider')
+    const sliderBall = document.querySelector('.slider-ball')
+    const sliderValue = document.querySelector('.slider-value')
+
+    function handlePause() {
+      isPaused = !isPaused
+      if (isPaused) sk.noLoop()
+      else sk.loop()
+      const wrapper = playButton.firstElementChild
+      const text = wrapper.firstElementChild
+      const textHidden = text.nextElementSibling
+
+      if (isPaused) {
+        text.textContent = 'play game of life'
+        textHidden.textContent = 'play game of life'
+      } else {
+        text.textContent = 'pause game of life'
+        textHidden.textContent = 'pause game of life'
+      }
+    }
+    handlePause()
+
+    playButton.addEventListener('click', () => {
+      handlePause()
+    })
+    reSeedButton.addEventListener('click', () => {
       restart()
+    })
+
+    let isDragging = false
+    let sliderRect = sliderRail.getBoundingClientRect()
+
+    function updateBallPosition(clientX) {
+      // Calculate position relative to slider
+      let x = clientX - sliderRect.left
+
+      // Clamp within slider bounds
+      const min = 0
+      const max = sliderRect.width - 12
+      x = Math.min(Math.max(x, min), max)
+
+      // Update ball position (in pixels)
+      sliderBall.style.left = `${x}px`
+
+      // Optional: compute normalized value (0–1)
+      const value = x / sliderRect.width
+      // console.log('value: ', value)
+      thres = gsap.utils.mapRange(0, 0.96, 0.95, 0.5, value)
+      sliderValue.textContent = (value + 0.05).toFixed(2)
+      // // thres = gsap.utils.map
+      // console.log('thres: ', thres)
+
+      // console.log('slider value:', value.toFixed(2))
+    }
+
+    sliderBall.addEventListener('mousedown', (e) => {
+      isDragging = true
+    })
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return
+      updateBallPosition(e.clientX)
+    })
+
+    document.addEventListener('mouseup', () => {
+      // if (isDragging) restart()
+      isDragging = false
+      // restart()
     })
   })
 }

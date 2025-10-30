@@ -23,10 +23,13 @@ function darkmodeToggle() {
   const logoWhite = document.querySelector('.nav-logo-white')
   // buttons
   const buttons = document.querySelectorAll('.hire-button')
-  const golButton = document.querySelector('.gol-button')
+  const golPlayButton = document.querySelector('.gol-play-button')
+  const golSeedButton = document.querySelector('.gol-seed-button')
   const buttonCircles = document.querySelectorAll('.fill-circle')
   const darkmodeToggle = document.querySelectorAll('.darkmode-toggle')
   const accentToggle = document.querySelectorAll('.accent-toggle')
+  const golSlider = document.querySelectorAll('.slider')
+  const golBall = document.querySelectorAll('.slider-ball')
   // lines
   const lines = document.querySelectorAll('.work-line')
   const lineOutline = document.querySelectorAll('.line-outline')
@@ -38,7 +41,7 @@ function darkmodeToggle() {
   const accentBall = document.querySelector('.accent-ball')
   // overlays
   const canvasOverlays = document.querySelectorAll('.canvas-overlay')
-  const golOverlay = document.querySelector('.gol-button-wrapper')
+  const golOverlay = document.querySelector('.gol-overlay')
   // form
   // const formFields = document.querySelectorAll('.form-field,textarea')
   // const formButton = document.querySelector('.submit-button')
@@ -94,10 +97,20 @@ function darkmodeToggle() {
     //   duration: duration,
     // })
     // this is the same as above but without the form fields, which are temporary out
-    gsap.to([buttons, golButton, darkmodeToggle, accentToggle, golOverlay], {
-      borderColor: light,
-      duration: duration,
-    })
+    gsap.to(
+      [
+        buttons,
+        golPlayButton,
+        golSeedButton,
+        darkmodeToggle,
+        accentToggle,
+        golOverlay,
+      ],
+      {
+        borderColor: light,
+        duration: duration,
+      }
+    )
     gsap.to(canvasOverlays, {
       backgroundColor: dark,
       duration: duration,
@@ -106,7 +119,7 @@ function darkmodeToggle() {
     //   backgroundColor: light,
     //   duration: duration,
     // })
-    gsap.to([lines, lineOutline, serviceLine], {
+    gsap.to([lines, lineOutline, serviceLine, golSlider, golBall], {
       backgroundColor: light,
       duration: duration,
     })
@@ -155,10 +168,20 @@ function darkmodeToggle() {
     //   borderColor: dark,
     //   duration: duration,
     // })
-    gsap.to([buttons, golButton, darkmodeToggle, accentToggle, golOverlay], {
-      borderColor: dark,
-      duration: duration,
-    })
+    gsap.to(
+      [
+        buttons,
+        golPlayButton,
+        golSeedButton,
+        darkmodeToggle,
+        accentToggle,
+        golOverlay,
+      ],
+      {
+        borderColor: dark,
+        duration: duration,
+      }
+    )
     gsap.to(canvasOverlays, {
       backgroundColor: light,
       duration: duration,
@@ -167,7 +190,7 @@ function darkmodeToggle() {
     //   backgroundColor: dark,
     //   duration: duration,
     // })
-    gsap.to([lines, lineOutline, serviceLine], {
+    gsap.to([lines, lineOutline, serviceLine, golSlider, golBall], {
       backgroundColor: dark,
       duration: duration,
     })

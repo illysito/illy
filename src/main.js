@@ -21,7 +21,8 @@ function domElementsQuery() {
     preloader: document.querySelector('.preloader__section'),
     qrButton: document.querySelector('.qr-button'),
     canvasWrapper: document.querySelector('.layer-1-canvas-wrapper'),
-    golButton: document.querySelector('.gol-button'),
+    golPlayButton: document.querySelector('.gol-play-button'),
+    golSeedButton: document.querySelector('.gol-seed-button'),
   }
 }
 const domElements = domElementsQuery()
@@ -99,7 +100,8 @@ async function runHomeFunctions() {
 
   // Footer
   setTimeout(golUI, 6200)
-  button(domElements.golButton)
+  button(domElements.golPlayButton)
+  button(domElements.golSeedButton)
   // golUI()
 }
 
