@@ -23,12 +23,14 @@ function darkmodeToggle() {
   const logoWhite = document.querySelector('.nav-logo-white')
   // buttons
   const buttons = document.querySelectorAll('.hire-button')
-  const buttonCircle = document.querySelector('.fill-circle')
+  const golButton = document.querySelector('.gol-button')
+  const buttonCircles = document.querySelectorAll('.fill-circle')
   const darkmodeToggle = document.querySelectorAll('.darkmode-toggle')
   const accentToggle = document.querySelectorAll('.accent-toggle')
   // lines
   const lines = document.querySelectorAll('.work-line')
   const lineOutline = document.querySelectorAll('.line-outline')
+  const serviceLine = document.querySelectorAll('.service-line')
   // const circle = document.querySelectorAll('.circle-wrapper')
   // dots
   const dots = document.querySelectorAll('.metdata-dot')
@@ -36,6 +38,7 @@ function darkmodeToggle() {
   const accentBall = document.querySelector('.accent-ball')
   // overlays
   const canvasOverlays = document.querySelectorAll('.canvas-overlay')
+  const golOverlay = document.querySelector('.gol-button-wrapper')
   // form
   // const formFields = document.querySelectorAll('.form-field,textarea')
   // const formButton = document.querySelector('.submit-button')
@@ -51,7 +54,7 @@ function darkmodeToggle() {
   function toDark() {
     localStorage.setItem('isDarkModeOn', 'true')
     const accentDark = localStorage.getItem('accentDark')
-    gsap.to(body, {
+    gsap.to([body, golOverlay], {
       backgroundColor: dark,
       duration: duration,
     })
@@ -91,7 +94,7 @@ function darkmodeToggle() {
     //   duration: duration,
     // })
     // this is the same as above but without the form fields, which are temporary out
-    gsap.to([buttons, darkmodeToggle, accentToggle], {
+    gsap.to([buttons, golButton, darkmodeToggle, accentToggle, golOverlay], {
       borderColor: light,
       duration: duration,
     })
@@ -103,11 +106,11 @@ function darkmodeToggle() {
     //   backgroundColor: light,
     //   duration: duration,
     // })
-    gsap.to([lines, lineOutline], {
+    gsap.to([lines, lineOutline, serviceLine], {
       backgroundColor: light,
       duration: duration,
     })
-    gsap.to([dots, darkmodeBall, accentBall, buttonCircle], {
+    gsap.to([dots, darkmodeBall, accentBall, buttonCircles], {
       backgroundColor: `${accentDark}`,
       duration: duration,
     })
@@ -116,7 +119,7 @@ function darkmodeToggle() {
   function toLight() {
     localStorage.setItem('isDarkModeOn', 'false')
     const accentLight = localStorage.getItem('accentLight')
-    gsap.to(body, {
+    gsap.to([body, golOverlay], {
       backgroundColor: light,
       duration: duration,
     })
@@ -152,7 +155,7 @@ function darkmodeToggle() {
     //   borderColor: dark,
     //   duration: duration,
     // })
-    gsap.to([buttons, darkmodeToggle, accentToggle], {
+    gsap.to([buttons, golButton, darkmodeToggle, accentToggle, golOverlay], {
       borderColor: dark,
       duration: duration,
     })
@@ -164,11 +167,11 @@ function darkmodeToggle() {
     //   backgroundColor: dark,
     //   duration: duration,
     // })
-    gsap.to([lines, lineOutline], {
+    gsap.to([lines, lineOutline, serviceLine], {
       backgroundColor: dark,
       duration: duration,
     })
-    gsap.to([dots, darkmodeBall, accentBall, buttonCircle], {
+    gsap.to([dots, darkmodeBall, accentBall, buttonCircles], {
       backgroundColor: `${accentLight}`,
       duration: duration,
     })

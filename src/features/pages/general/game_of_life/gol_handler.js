@@ -8,7 +8,7 @@ function golHandler(canvasWrapper) {
     let height
     // let cols = 30
     // let rows = 2 * cols / 3
-    let res = 12
+    let res = 8
     let cols
     let rows
 
@@ -84,18 +84,11 @@ function golHandler(canvasWrapper) {
             for (let b = -1; b < 2; b++) {
               // skip if i'm counting myself
               if (a === 0 && b === 0) continue
-              // Assign 0 to neighbours out of bound
-              if (
-                i + a < 0 ||
-                i + a >= cols - 1 ||
-                j + b < 0 ||
-                j + b >= rows - 1
-              ) {
-                sum += 0
-                // add 1 if is alive, add 0 if dead
-              } else {
-                sum += gen[i + a][j + b]
-              }
+              // Warp the edges
+              const col = (i + a + cols) % cols
+              const row = (j + b + rows) % rows
+
+              sum += gen[col][row]
             }
           }
 
@@ -136,6 +129,39 @@ function golHandler(canvasWrapper) {
       height = canvasParent.offsetHeight
       sk.resizeCanvas(width, height)
     }
+
+    function restart() {
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          let random = sk.random()
+          let alive
+          if (random > 0.65) {
+            alive = 1
+          } else {
+            alive = 0
+          }
+          gen[i][j] = alive
+        }
+      }
+      for (let i = 0; i < cols; i++) {
+        for (let j = 0; j < rows; j++) {
+          const x = i * res
+          const y = j * res
+          if (gen[i][j] == 1) {
+            sk.fill(255, 244, 233)
+          } else {
+            sk.fill(10)
+          }
+          sk.rect(x, y, res, res)
+        }
+      }
+    }
+
+    // Events
+    const restartButton = document.querySelector('.gol-restart')
+    restartButton.addEventListener('click', () => {
+      restart()
+    })
   })
 }
 

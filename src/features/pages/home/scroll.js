@@ -8,7 +8,9 @@ function scroll() {
   const claimUnderscore = document.querySelector('.underscore.is--claim')
   const claimWrapper = document.querySelector('.claim-wrapper')
   const sectionLines = document.querySelectorAll('.line-outline')
+  const serviceLines = document.querySelectorAll('.service-line')
   const headers = document.querySelectorAll('.header__info')
+  const separationHeaders = document.querySelectorAll('.separation-h')
 
   claimHeadings.forEach((h, index) => {
     gsap.to(h, {
@@ -61,6 +63,21 @@ function scroll() {
     })
   })
 
+  serviceLines.forEach((l) => {
+    gsap.set(l, { width: 0 })
+
+    gsap.to(l, {
+      duration: 1.2,
+      width: '100%',
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: l,
+        start: 'top 90%',
+        end: 'top 60%',
+      },
+    })
+  })
+
   headers.forEach((h) => {
     gsap.set(h, { opacity: 0 })
 
@@ -72,6 +89,21 @@ function scroll() {
         trigger: h,
         start: 'top 90%',
         end: 'top 60%',
+      },
+    })
+  })
+
+  separationHeaders.forEach((h) => {
+    gsap.to(h, {
+      duration: 1,
+      yPercent: -100,
+      opacity: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: h,
+        start: 'top 90%',
+        end: 'top 60%',
+        markers: false,
       },
     })
   })

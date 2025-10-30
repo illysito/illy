@@ -8,6 +8,11 @@ function setAccent() {
     localStorage.setItem('accentLight', '#0000ff')
   }
 
+  const metadataDots = document.querySelectorAll('.metdata-dot')
+  const buttonCircles = document.querySelectorAll('.fill-circle')
+  const darkModeBall = document.querySelector('.darkmode-ball')
+  const accentBall = document.querySelector('.accent-ball')
+
   function accent() {
     let accent
     if (localStorage.getItem('isDarkModeOn') === 'true') {
@@ -17,12 +22,7 @@ function setAccent() {
     }
     console.log(accent)
 
-    const metadataDots = document.querySelectorAll('.metdata-dot')
-    const buttonCircle = document.querySelector('.fill-circle')
-    const darkModeBall = document.querySelector('.darkmode-ball')
-    const accentBall = document.querySelector('.accent-ball')
-
-    gsap.to([buttonCircle, darkModeBall, accentBall], {
+    gsap.to([buttonCircles, darkModeBall, accentBall], {
       backgroundColor: `${accent}`,
       duration: 0.6,
       ease: 'power.out',

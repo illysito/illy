@@ -21,6 +21,7 @@ function domElementsQuery() {
     preloader: document.querySelector('.preloader__section'),
     qrButton: document.querySelector('.qr-button'),
     canvasWrapper: document.querySelector('.layer-1-canvas-wrapper'),
+    golButton: document.querySelector('.gol-button'),
   }
 }
 const domElements = domElementsQuery()
@@ -68,6 +69,9 @@ async function runHomeFunctions() {
   const { default: workAnimations } = await import(
     './features/pages/home/work_animations'
   )
+  const { default: serviceAnimations } = await import(
+    './features/pages/home/service_animations'
+  )
   const { default: golUI } = await import(
     './features/pages/general/game_of_life/gol_ui'
   )
@@ -88,12 +92,14 @@ async function runHomeFunctions() {
   workCanvasUI()
   workInteraction()
   workAnimations()
+  serviceAnimations()
 
   // Contact
   // form()
 
   // Footer
   setTimeout(golUI, 6200)
+  button(domElements.golButton)
   // golUI()
 }
 
