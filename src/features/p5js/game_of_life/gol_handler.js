@@ -31,7 +31,7 @@ function golHandler(canvasWrapper) {
 
     sk.setup = () => {
       // Define parent and dimensions, create Canvas and attach it to the parent using its dimensions. ALWAYS in JS
-      const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
+      const isDarkMode = localStorage.getItem('dark_state') === '1'
       canvasParent = canvasWrapper
       width = canvasParent.offsetWidth
       height = canvasParent.offsetHeight
@@ -78,7 +78,8 @@ function golHandler(canvasWrapper) {
 
     sk.draw = () => {
       // if (isPaused) return
-      const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
+      const isDarkMode = localStorage.getItem('dark_state') === '1'
+      console.log(isDarkMode)
       sk.frameRate(8)
       sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
       sk.stroke(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
@@ -139,7 +140,9 @@ function golHandler(canvasWrapper) {
     }
 
     function restart() {
-      const isDarkMode = localStorage.getItem('isDarkModeOn') === 'true'
+      const isDarkMode =
+        localStorage.getItem('theme:dark-accent1') === 'true' ||
+        localStorage.getItem('theme:dark-accent2') === 'true'
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           let random = sk.random()
@@ -239,6 +242,11 @@ function golHandler(canvasWrapper) {
       isDragging = false
       // restart()
     })
+
+    document.addEventListener('theme:dark-accent1', () => sk.redraw())
+    document.addEventListener('theme:dark-accent2', () => sk.redraw())
+    document.addEventListener('theme:light-accent1', () => sk.redraw())
+    document.addEventListener('theme:light-accent2', () => sk.redraw())
   })
 }
 

@@ -1,15 +1,11 @@
 import './styles/style.css'
 
 // GENERAL
-import setAccent from './features/pages/general/accent'
-import darkmodeToggle from './features/pages/general/darkmode'
+import button from './features/pages/general/buttons.js'
+import colorModeChange from './features/pages/general/color_mode_change'
+import colorModeState from './features/pages/general/color_mode_state'
 import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
-// import offCanvaMenu from './features/pages/general/offCanva_menu'
-// SCRIPTS
-import accentButton from './features/scripts/accent_button'
-import button from './features/scripts/buttons.js'
-import darkmodeButton from './features/scripts/darkmode_button'
 
 function domElementsQuery() {
   return {
@@ -27,17 +23,18 @@ function domElementsQuery() {
 }
 const domElements = domElementsQuery()
 
-if (!localStorage.getItem('isDarkModeOn')) {
-  localStorage.setItem('isDarkModeOn', 'false')
+if (!localStorage.getItem('dark_state')) {
+  localStorage.setItem('dark_state', '0')
+}
+if (!localStorage.getItem('accent_state')) {
+  localStorage.setItem('dark_state', '0')
 }
 
 // PAGES
 
 function runGeneralFunctions() {
-  accentButton()
-  setAccent()
-  darkmodeToggle()
-  darkmodeButton()
+  colorModeChange()
+  colorModeState()
   nav()
   setTimeout(() => {
     mousetrail()
@@ -73,9 +70,7 @@ async function runHomeFunctions() {
   const { default: serviceAnimations } = await import(
     './features/pages/home/service_animations'
   )
-  const { default: golUI } = await import(
-    './features/pages/general/game_of_life/gol_ui'
-  )
+  const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
 
   // Hero
   heroUI()
@@ -106,7 +101,9 @@ async function runHomeFunctions() {
 }
 
 async function runPhilosophyFunctions() {
-  const { default: sineHandler } = await import('./features/p5js/sine_handler')
+  const { default: sineHandler } = await import(
+    './features/p5js/sine_waves/sine_handler'
+  )
   sineHandler()
 }
 

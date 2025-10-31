@@ -1,3 +1,57 @@
+body,
+div {
+  transition: background-color 0.8s ease;
+}
+h1,
+p {
+  transition: color 0.8s ease;
+}
+
+.hire-button {
+  transition: border-color 0.4s ease;
+}
+
+:root {
+  /* Base (light) mode */
+  --bg-color: #fff4e9;
+  --type-color: #202020;
+  --type-color-darker: #101010;
+  --type-color-lighter: #202020c0;
+  --type-color-lightest: #0a0a0a80;
+  --border-color: #202020;
+  --accent: #1500ff;
+}
+
+[data-wf-mode='base-2'] {
+  --bg-color: #fff4e9;
+  --type-color: #202020;
+  --type-color-darker: #101010;
+  --type-color-lighter: #202020c0;
+  --type-color-lightest: #0a0a0a80;
+  --border-color: #202020;
+  --accent: #ff7373;
+}
+
+[data-wf-mode='dark'] {
+  --bg-color: #101010;
+  --type-color: #fff4e9;
+  --type-color-darker: #fff4e9;
+  --type-color-lighter: #fff4e9bf;
+  --type-color-lightest: #fff4e9fb;
+  --border-color: #fff4e9;
+  --accent: #08ee00;
+}
+
+[data-wf-mode='dark-2'] {
+  --bg-color: #101010;
+  --type-color: #fff4e9;
+  --type-color-darker: #fff4e9;
+  --type-color-lighter: #fff4e9bf;
+  --type-color-lightest: #fff4e9fb;
+  --border-color: #fff4e9;
+  --accent: #ffe5bb;
+}
+
 body.no-scroll {
   cursor: none;
   overflow: hidden;

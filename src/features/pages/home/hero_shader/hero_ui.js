@@ -41,7 +41,7 @@ function heroUI() {
     }
   })
 
-  if (localStorage.getItem('isDarkModeOn') === 'true') {
+  if (localStorage.getItem('dark_state') === '1') {
     gsap.to(darkModeRef, {
       current: 1.0,
       duration: 0.8,
@@ -49,7 +49,7 @@ function heroUI() {
     })
   }
 
-  document.addEventListener('isDarkMode', () => {
+  document.addEventListener('theme:dark-accent1', () => {
     // darkModeRef.current = 1.0
     gsap.to(darkModeRef, {
       current: 1.0,
@@ -57,7 +57,23 @@ function heroUI() {
       onUpdate: updateUniforms,
     })
   })
-  document.addEventListener('isLightMode', () => {
+  document.addEventListener('theme:dark-accent2', () => {
+    // darkModeRef.current = 1.0
+    gsap.to(darkModeRef, {
+      current: 1.0,
+      duration: 0.8,
+      onUpdate: updateUniforms,
+    })
+  })
+  document.addEventListener('theme:light-accent1', () => {
+    // darkModeRef.current = 0.0
+    gsap.to(darkModeRef, {
+      current: 0.0,
+      duration: 0.8,
+      onUpdate: updateUniforms,
+    })
+  })
+  document.addEventListener('theme:light-accent2', () => {
     // darkModeRef.current = 0.0
     gsap.to(darkModeRef, {
       current: 0.0,
