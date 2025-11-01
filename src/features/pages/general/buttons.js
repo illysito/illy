@@ -23,13 +23,13 @@ function button(button) {
     gsap.to(text, {
       yPercent: -100,
       duration: 0.4,
-      color: '#101010',
+      color: 'var(--type-color-comp)',
       ease: 'power3.inOut',
     })
     gsap.to(textHidden, {
       yPercent: -100,
-      duration: 0.2,
-      color: '#101010',
+      duration: 0.4,
+      color: 'var(--type-color-comp)',
       ease: 'power3.inOut',
     })
   }
@@ -39,6 +39,18 @@ function button(button) {
     const text = w.firstElementChild
     const textHidden = text.nextElementSibling
     const circle = w.nextElementSibling
+    gsap.to(text, {
+      yPercent: 0,
+      duration: 0.6,
+      color: 'var(--type-color)',
+      ease: 'power3.inOut',
+    })
+    gsap.to(textHidden, {
+      yPercent: 0,
+      duration: 0.6,
+      color: 'var(--type-color)',
+      ease: 'power3.inOut',
+    })
     gsap.to(b, {
       scale: 1,
       duration: 0.4,
@@ -49,18 +61,6 @@ function button(button) {
       scale: 1,
       yPercent: 0,
       duration: 0.65,
-      ease: 'power3.inOut',
-    })
-    gsap.to(text, {
-      yPercent: 0,
-      duration: 0.4,
-      color: 'var(--type-color)',
-      ease: 'power3.inOut',
-    })
-    gsap.to(textHidden, {
-      yPercent: 0,
-      duration: 0.2,
-      color: 'var(--type-color)',
       ease: 'power3.inOut',
     })
   }

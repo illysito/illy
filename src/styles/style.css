@@ -7,14 +7,15 @@ p {
   transition: color 0.8s ease;
 }
 
-.hire-button {
+/* div {
   transition: border-color 0.4s ease;
-}
+} */
 
 :root {
   /* Base (light) mode */
   --bg-color: #fff4e9;
   --type-color: #202020;
+  --type-color-comp: #fff4e9;
   --type-color-darker: #101010;
   --type-color-lighter: #202020c0;
   --type-color-lightest: #0a0a0a80;
@@ -25,6 +26,7 @@ p {
 [data-wf-mode='base-2'] {
   --bg-color: #fff4e9;
   --type-color: #202020;
+  --type-color-comp: #fff4e9;
   --type-color-darker: #101010;
   --type-color-lighter: #202020c0;
   --type-color-lightest: #0a0a0a80;
@@ -35,6 +37,7 @@ p {
 [data-wf-mode='dark'] {
   --bg-color: #101010;
   --type-color: #fff4e9;
+  --type-color-comp: #101010;
   --type-color-darker: #fff4e9;
   --type-color-lighter: #fff4e9bf;
   --type-color-lightest: #fff4e9fb;
@@ -45,6 +48,7 @@ p {
 [data-wf-mode='dark-2'] {
   --bg-color: #101010;
   --type-color: #fff4e9;
+  --type-color-comp: #101010;
   --type-color-darker: #fff4e9;
   --type-color-lighter: #fff4e9bf;
   --type-color-lightest: #fff4e9fb;

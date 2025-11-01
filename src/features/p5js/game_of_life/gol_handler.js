@@ -1,4 +1,4 @@
-import gsap from 'gsap'
+// import gsap from 'gsap'
 import p5 from 'p5'
 
 /* eslint-disable */
@@ -19,7 +19,7 @@ function golHandler(canvasWrapper) {
 
     let isPaused = false
 
-    let thres = 0.5
+    let thres = 0.25
 
     function make2Darray(cols, rows) {
       let arr = new Array(cols)
@@ -38,9 +38,8 @@ function golHandler(canvasWrapper) {
       const c = sk.createCanvas(width, height)
       c.parent(canvasParent)
 
-      sk.background(16)
-      sk.stroke(16)
-      sk.fill(255, 244, 233)
+      sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+      sk.stroke(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
 
       cols = Math.floor(width / res)
       rows = Math.floor(height / res)
@@ -51,9 +50,9 @@ function golHandler(canvasWrapper) {
       // Init first gen ARRAY
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
-          let random = sk.random()
+          let random = Math.random()
           let alive
-          if (random > thres) {
+          if (random < thres) {
             alive = 1
           } else {
             alive = 0
@@ -67,9 +66,17 @@ function golHandler(canvasWrapper) {
           const x = i * res
           const y = j * res
           if (gen[i][j] == 1) {
-            sk.fill(isDarkMode ? sk.color(255, 244, 233) : sk.color(16))
+            if (isDarkMode) {
+              sk.fill(255, 244, 233)
+            } else {
+              sk.fill(16)
+            }
           } else {
-            sk.fill(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+            if (isDarkMode) {
+              sk.fill(16)
+            } else {
+              sk.fill(255, 244, 233)
+            }
           }
           sk.rect(x, y, res, res)
         }
@@ -79,7 +86,6 @@ function golHandler(canvasWrapper) {
     sk.draw = () => {
       // if (isPaused) return
       const isDarkMode = localStorage.getItem('dark_state') === '1'
-      console.log(isDarkMode)
       sk.frameRate(8)
       sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
       sk.stroke(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
@@ -121,9 +127,17 @@ function golHandler(canvasWrapper) {
           const x = i * res
           const y = j * res
           if (nextGen[i][j] == 1) {
-            sk.fill(isDarkMode ? sk.color(255, 244, 233) : sk.color(16))
+            if (isDarkMode) {
+              sk.fill(255, 244, 233)
+            } else {
+              sk.fill(16)
+            }
           } else {
-            sk.fill(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+            if (isDarkMode) {
+              sk.fill(16)
+            } else {
+              sk.fill(255, 244, 233)
+            }
           }
           sk.rect(x, y, res, res)
         }
@@ -140,14 +154,15 @@ function golHandler(canvasWrapper) {
     }
 
     function restart() {
-      const isDarkMode =
-        localStorage.getItem('theme:dark-accent1') === 'true' ||
-        localStorage.getItem('theme:dark-accent2') === 'true'
+      const isDarkMode = localStorage.getItem('dark_state') === '1'
+      sk.background(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+      sk.stroke(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+
       for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
           let random = sk.random()
           let alive
-          if (random > thres) {
+          if (random < thres) {
             alive = 1
           } else {
             alive = 0
@@ -159,15 +174,23 @@ function golHandler(canvasWrapper) {
         for (let j = 0; j < rows; j++) {
           const x = i * res
           const y = j * res
-          if (gen[i][j] == 1) {
-            sk.fill(isDarkMode ? sk.color(255, 244, 233) : sk.color(16))
+          if (gen[i][j] > 0) {
+            if (isDarkMode) {
+              sk.fill(255, 244, 233)
+            } else {
+              sk.fill(16)
+            }
           } else {
-            sk.fill(isDarkMode ? sk.color(16) : sk.color(255, 244, 233))
+            if (isDarkMode) {
+              sk.fill(16)
+            } else {
+              sk.fill(255, 244, 233)
+            }
           }
           sk.rect(x, y, res, res)
         }
       }
-      sk.redraw()
+      // sk.redraw()
     }
 
     // Events
@@ -218,14 +241,12 @@ function golHandler(canvasWrapper) {
       sliderBall.style.left = `${x}px`
 
       // Optional: compute normalized value (0–1)
-      const value = x / sliderRect.width
+      const value = Math.min(x / sliderRect.width, 0.95)
       // console.log('value: ', value)
-      thres = gsap.utils.mapRange(0, 0.96, 0.95, 0.5, value)
+      thres = parseFloat(value.toFixed(2)) / 2
       sliderValue.textContent = (value + 0.05).toFixed(2)
       // // thres = gsap.utils.map
-      // console.log('thres: ', thres)
-
-      // console.log('slider value:', value.toFixed(2))
+      console.log('thres: ', thres)
     }
 
     sliderBall.addEventListener('mousedown', (e) => {

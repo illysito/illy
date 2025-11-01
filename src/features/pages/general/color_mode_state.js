@@ -34,7 +34,7 @@ function colorModeState() {
       states[1] = 1
     }
     readStates()
-    console.log(states)
+    // console.log(states)
   }
   initState()
 

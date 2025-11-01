@@ -21,12 +21,10 @@ function nav() {
   const domElements = domElementsQuery()
 
   if (localStorage.getItem('isDarkModeOn') === 'true') {
-    console.log('dark logo set to 0')
     gsap.set(domElements.navLogo, {
       opacity: 0,
     })
   } else {
-    console.log('white logo set to 0')
     gsap.set(domElements.navLogoWhite, {
       opacity: 0,
     })
