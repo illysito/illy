@@ -34,11 +34,7 @@ export default defineConfig({
     //   external: ['jquery'], // ✅ keep this
     // },
     rollupOptions: {
-      // input: './src/main.js',
-      input: {
-        main: './src/main.js',
-        gol: './src/gol_entry_point.js',
-      },
+      input: './src/main.js',
       output: {
         format: 'umd',
         entryFileNames: 'main.js',
