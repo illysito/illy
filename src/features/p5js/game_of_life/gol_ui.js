@@ -1,8 +1,7 @@
 import gsap from 'gsap'
 
-import golHandler from './gol_handler'
-
-function golUI() {
+async function golUI() {
+  const { default: golHandler } = await import('./gol_handler.js')
   const golCanvasWrapper = document.querySelector('.gol-canvas-wrapper')
   const overlay = document.querySelector('.gol-overlay')
 

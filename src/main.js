@@ -4,7 +4,6 @@ import './styles/style.css'
 import button from './features/pages/general/buttons.js'
 import colorModeChange from './features/pages/general/color_mode_change'
 import colorModeState from './features/pages/general/color_mode_state'
-import mousetrail from './features/pages/general/mousetrail'
 import nav from './features/pages/general/nav'
 
 function domElementsQuery() {
@@ -32,12 +31,16 @@ if (!localStorage.getItem('accent_state')) {
 
 // PAGES
 
-function runGeneralFunctions() {
+async function runGeneralFunctions() {
   colorModeChange()
   colorModeState()
   nav()
   setTimeout(() => {
-    mousetrail()
+    import('./features/pages/general/mousetrail').then(
+      ({ default: mousetrail }) => {
+        mousetrail()
+      }
+    )
   }, 3400)
   button(domElements.hireButton)
   if (domElements.qrButton) {

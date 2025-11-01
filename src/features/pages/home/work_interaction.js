@@ -9,87 +9,47 @@ function workInteraction() {
   const duration = 0.8
 
   function hoverIn(cardTitles, cardTitlesHidden, sorryHeader, viewBlock) {
-    const accentDark = localStorage.getItem('accentDark')
-    const accentLight = localStorage.getItem('accentLight')
-    const isDarkMode = localStorage.getItem('isDarkModeOn')
-    if (isDarkMode === 'true') {
-      gsap.to([cardTitles, cardTitlesHidden], {
-        color: `${accentDark}`,
-        yPercent: -100,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(sorryHeader, {
-        yPercent: -100,
-        delay: 0.1,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(viewBlock, {
-        yPercent: -100,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-    } else {
-      gsap.to([cardTitles, cardTitlesHidden], {
-        color: `${accentLight}`,
-        yPercent: -100,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(sorryHeader, {
-        yPercent: -100,
-        delay: 0.1,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(viewBlock, {
-        yPercent: -100,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-    }
+    const rootStyles = getComputedStyle(document.documentElement)
+    const accent = rootStyles.getPropertyValue('--accent').trim()
+    gsap.to([cardTitles, cardTitlesHidden], {
+      color: accent,
+      yPercent: -100,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
+    gsap.to(sorryHeader, {
+      yPercent: -100,
+      delay: 0.1,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
+    gsap.to(viewBlock, {
+      yPercent: -100,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
   }
 
   function hoverOut(cardTitles, cardTitlesHidden, sorryHeader, viewBlock) {
-    const isDarkMode = localStorage.getItem('isDarkModeOn')
-    if (isDarkMode === 'true') {
-      gsap.to([cardTitles, cardTitlesHidden], {
-        color: '#fff4e9',
-        yPercent: 0,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(sorryHeader, {
-        yPercent: 0,
-        delay: 0.1,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(viewBlock, {
-        yPercent: 0,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-    } else {
-      gsap.to([cardTitles, cardTitlesHidden], {
-        color: '#202020',
-        yPercent: 0,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(sorryHeader, {
-        yPercent: 0,
-        delay: 0.1,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-      gsap.to(viewBlock, {
-        yPercent: 0,
-        duration: duration - 0.2,
-        ease: p2o,
-      })
-    }
+    const rootStyles = getComputedStyle(document.documentElement)
+    const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+    gsap.to([cardTitles, cardTitlesHidden], {
+      color: typeColor,
+      yPercent: 0,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
+    gsap.to(sorryHeader, {
+      yPercent: 0,
+      delay: 0.1,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
+    gsap.to(viewBlock, {
+      yPercent: 0,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
   }
 
   canvasUI.forEach((canvas, index) => {

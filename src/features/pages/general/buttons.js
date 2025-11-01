@@ -7,11 +7,15 @@ function button(button) {
     const text = w.firstElementChild
     const textHidden = text.nextElementSibling
     const circle = w.nextElementSibling
-
+    const rootStyles = getComputedStyle(document.documentElement)
+    const accent = rootStyles.getPropertyValue('--accent').trim()
+    const typeColorComp = rootStyles
+      .getPropertyValue('--type-color-comp')
+      .trim()
     gsap.to(b, {
       scale: 0.98,
       duration: 0.4,
-      borderColor: 'var(--accent)',
+      borderColor: accent,
       ease: 'power3.inOut',
     })
     gsap.to(circle, {
@@ -23,17 +27,19 @@ function button(button) {
     gsap.to(text, {
       yPercent: -100,
       duration: 0.4,
-      color: 'var(--type-color-comp)',
+      color: typeColorComp,
       ease: 'power3.inOut',
     })
     gsap.to(textHidden, {
       yPercent: -100,
       duration: 0.4,
-      color: 'var(--type-color-comp)',
+      color: typeColorComp,
       ease: 'power3.inOut',
     })
   }
   function buttonHoverOut(e) {
+    const rootStyles = getComputedStyle(document.documentElement)
+    const typeColor = rootStyles.getPropertyValue('--type-color').trim()
     const b = e.currentTarget
     const w = b.firstElementChild
     const text = w.firstElementChild
@@ -42,19 +48,19 @@ function button(button) {
     gsap.to(text, {
       yPercent: 0,
       duration: 0.6,
-      color: 'var(--type-color)',
+      color: typeColor,
       ease: 'power3.inOut',
     })
     gsap.to(textHidden, {
       yPercent: 0,
       duration: 0.6,
-      color: 'var(--type-color)',
+      color: typeColor,
       ease: 'power3.inOut',
     })
     gsap.to(b, {
       scale: 1,
       duration: 0.4,
-      borderColor: 'var(--type-color)',
+      borderColor: typeColor,
       ease: 'power3.inOut',
     })
     gsap.to(circle, {
