@@ -114,7 +114,8 @@ async function runHomeFunctions() {
     {
       el: golTarget,
       run: () => {
-        import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
+        // import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
+        console.log('dummy GOL UI log')
       },
     },
   ]

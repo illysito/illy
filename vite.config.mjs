@@ -22,7 +22,11 @@ export default defineConfig({
     //   // 👈 no custom output here
     // },
     rollupOptions: {
-      input: './src/main.js',
+      // input: './src/main.js',
+      input: {
+        main: './src/main.js',
+        gol: './src/gol_entry_point.js',
+      },
       output: {
         format: 'umd',
         entryFileNames: 'main.js',
