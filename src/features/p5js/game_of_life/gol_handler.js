@@ -190,7 +190,6 @@ function golHandler(canvasWrapper) {
           sk.rect(x, y, res, res)
         }
       }
-      // sk.redraw()
     }
 
     // Events
