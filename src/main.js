@@ -73,7 +73,7 @@ async function runHomeFunctions() {
   const { default: serviceAnimations } = await import(
     './features/pages/home/service_animations'
   )
-  const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
+  // const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
 
   // Hero
   heroUI()
