@@ -61,9 +61,9 @@ async function runHomeFunctions() {
   const { default: scroll } = await import('./features/pages/home/scroll')
   const { default: aboutText } = await import('./features/pages/home/aboutText')
   // const { default: form } = await import('./features/pages/home/form')
-  const { default: workCanvasUI } = await import(
-    './features/pages/home/work_shaders/disp_ui'
-  )
+  // const { default: workCanvasUI } = await import(
+  //   './features/pages/home/work_shaders/disp_ui'
+  // )
   const { default: workInteraction } = await import(
     './features/pages/home/work_interaction'
   )
@@ -88,7 +88,6 @@ async function runHomeFunctions() {
   // setTimeout(async () => {
   //   workCanvasUI()
   // }, 1200)
-  workCanvasUI()
   workInteraction()
   workAnimations()
   serviceAnimations()
@@ -97,9 +96,56 @@ async function runHomeFunctions() {
   // form()
 
   // Footer
-  // setTimeout(golUI, 6200)
   button(domElements.golPlayButton)
   button(domElements.golSeedButton)
+
+  // Intersection observers
+  const workShaderTarget = document.querySelector('.about-type-p') // shaders RUN when about parapgraph is visible
+  const golTarget = document.querySelector('.footer') // gol RUNS when footer is visible
+  const targets = [
+    {
+      el: workShaderTarget,
+      run: () => {
+        import('./features/pages/home/work_shaders/disp_ui').then((m) =>
+          m.default()
+        )
+      },
+    },
+    {
+      el: golTarget,
+      run: () => {
+        import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
+      },
+    },
+  ]
+  const io = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        // not visible? ignore
+        if (!entry.isIntersecting) return
+
+        // find which item in our list this element is
+        const item = targets.find((t) => t.el === entry.target)
+        if (item && item.run) {
+          item.run() // 👉 do the thing (lazy-load)
+        }
+
+        // we only want it ONCE
+        observer.unobserve(entry.target)
+      })
+    },
+    {
+      threshold: 0.2,
+    }
+  )
+
+  targets.forEach((item) => {
+    if (item.el) {
+      io.observe(item.el)
+    }
+  })
+
+  // workCanvasUI()
   // golUI()
 }
 
