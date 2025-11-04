@@ -60,7 +60,12 @@ async function runHomeFunctions() {
   const { default: metadata } = await import('./features/pages/home/metadata')
   const { default: scroll } = await import('./features/pages/home/scroll')
   const { default: aboutText } = await import('./features/pages/home/aboutText')
-  // const { default: form } = await import('./features/pages/home/form')
+  const { default: heroUIState } = await import(
+    './features/pages/home/hero_ui_state'
+  )
+  const { default: heroUIChange } = await import(
+    './features/pages/home/hero_ui_change'
+  )
   // const { default: workCanvasUI } = await import(
   //   './features/pages/home/work_shaders/disp_ui'
   // )
@@ -79,6 +84,8 @@ async function runHomeFunctions() {
   heroUI()
   preloader()
   metadata()
+  heroUIState()
+  heroUIChange()
   scroll()
 
   // About
@@ -100,7 +107,7 @@ async function runHomeFunctions() {
   button(domElements.golSeedButton)
 
   // Intersection observers
-  const workShaderTarget = document.querySelector('.about-type-p') // shaders RUN when about parapgraph is visible
+  const workShaderTarget = document.querySelector('.about-type-h') // shaders RUN when about parapgraph is visible
   const golTarget = document.querySelector('.footer') // gol RUNS when footer is visible
   const targets = [
     {

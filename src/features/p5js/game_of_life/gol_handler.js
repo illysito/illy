@@ -195,9 +195,9 @@ function golHandler(canvasWrapper) {
     // Events
     const playButton = document.querySelector('.gol-play-button')
     const reSeedButton = document.querySelector('.gol-seed-button')
-    const sliderRail = document.querySelector('.slider')
-    const sliderBall = document.querySelector('.slider-ball')
-    const sliderValue = document.querySelector('.slider-value')
+    const sliderRail = document.querySelector('.gol-slider')
+    const sliderBall = document.querySelector('.gol-slider-ball')
+    const sliderValue = document.querySelector('.gol-slider-value')
 
     function handlePause() {
       isPaused = !isPaused

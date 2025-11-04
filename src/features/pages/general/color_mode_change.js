@@ -14,8 +14,27 @@ function colorModeChange() {
   const lightMoons = document.querySelector('.white-moon-wrapper')
   const logoDark = document.querySelector('.nav-logo')
   const logoWhite = document.querySelector('.nav-logo-white')
+  // BUTTONS (need to do this because of flashy artifact)
+  const buttonTexts = document.querySelectorAll('.butt-text')
+  const buttonTextsHidden = document.querySelectorAll('.butt-text-hidden')
+  const hireButton = document.querySelector('.hire-button')
+  const golPlayButton = document.querySelectorAll('.gol-play-button')
+  const golSeedButton = document.querySelectorAll('.gol-seed-button')
+  const buttonTextsArr = [buttonTexts, buttonTextsHidden]
+  const buttonsArr = [hireButton, golPlayButton, golSeedButton]
 
   const duration = 0.8
+
+  function updateButtons() {
+    const rootStyles = getComputedStyle(document.documentElement)
+    const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+    gsap.to(buttonTextsArr, {
+      color: typeColor,
+    })
+    gsap.to(buttonsArr, {
+      borderColor: typeColor,
+    })
+  }
 
   function toLight() {
     localStorage.setItem('isDarkModeOn', 'false')
@@ -103,15 +122,19 @@ function colorModeChange() {
 
   document.addEventListener('theme:light-accent1', () => {
     toLight()
+    updateButtons()
   })
   document.addEventListener('theme:light-accent2', () => {
     toLight2()
+    updateButtons()
   })
   document.addEventListener('theme:dark-accent1', () => {
     toDark()
+    updateButtons()
   })
   document.addEventListener('theme:dark-accent2', () => {
     toDark2()
+    updateButtons()
   })
 }
 
