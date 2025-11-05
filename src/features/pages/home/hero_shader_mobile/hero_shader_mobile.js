@@ -12,68 +12,7 @@ uniform sampler2D u_image_2;
 uniform sampler2D u_displacement;
 uniform float u_darkMode;
 
-// weather UNIFORMS
-uniform float u_wind;
-uniform float u_rain;
-
-// control UNIFORMS
-uniform float u_blocks;
-uniform float u_distortionControlX;
-uniform float u_distortionControlY;
-uniform float u_tear;
-
 varying vec2 v_texcoord;
-
-// DROPS
-
-vec2 random2(vec2 st) {
-  st = vec2(dot(st, vec2(127.1, 311.7)),
-            dot(st, vec2(269.5,183.3)));
-  return -1.0 + 2.0 * fract(sin(st) * 43758.5453123);
-}
-
-vec2 drop(vec2 uv, vec2 center, float radius, float strength) {
-  vec2 dir = uv - center;
-  dir.y *= u_resolution.y / u_resolution.x;
-  float dist = length(dir);
-  float falloff = 1.0 - smoothstep(radius * 0.7, radius, dist);
-  if (dist > radius) return vec2(0.0); // outside the drop, no effect
-  return normalize(dir) * falloff * strength;
-}
-
-vec2 drops(vec2 uv, float time, float intensity) {
-  vec2 totalOffset = vec2(0.0);
-  int count = int(3.0 + intensity * 20.0);
-
-  // control overall drop lifespan (smaller = faster fade cycles)
-  float lifeSpeed = mix(0.8, 0.9, intensity);  
-
-    for (int i = 0; i < 40; i++) {
-      if (i >= count) break;
-
-      // each drop gets its own offset in time
-      float personalOffset = fract(sin(float(i) * 91.17) * 43758.5453123);
-
-      // fractional phase in [0, 1]
-      float phase = fract(time * lifeSpeed + personalOffset);
-
-      // fade envelope: fade in at 0–0.1, fade out at 0.9–1.0
-      float fade = smoothstep(0.0, 0.5, phase) * smoothstep(1.0, 0.5, phase);
-
-      // stable position while alive
-      float lifeIndex = floor(time * lifeSpeed + personalOffset);
-      vec2 seed = vec2(float(i), lifeIndex);
-      vec2 pos = fract(random2(seed));
-
-      // size and strength
-      float radius = mix(0.008, 0.016, fract(sin(float(i)*12.9898)*78.233));
-      float strength = 0.0002;
-
-      // get displacement from single drop
-      totalOffset += drop(uv, pos, radius, strength * fade);
-    }
-  return totalOffset;
-}
 
 // FBM
 
@@ -97,7 +36,7 @@ float noise(vec2 p) {
 // fractal Brownian motion (smooth turbulence)
 float fbm(vec2 p) {
   float value = 0.0;
-  float amplitude = mix(0.2, 0.8, u_tear);
+  float amplitude = 0.5;
   float frequency = 0.0;
   for (int i = 0; i < 5; i++) {
     value += amplitude * noise(p);
@@ -130,28 +69,13 @@ void main()
   // CREO EL VECTOR UV Y LO AJUSTO A RESOLLUCION
 
   vec2 uv = v_texcoord;
-  //uv.x *= u_resolution.x / u_resolution.y;
+  // uv.x *= u_resolution.x / u_resolution.y;
 
   // find out the ratios
-  float image_ratio = 1440.0 / 900.0;
+  float image_ratio = 1080.0 / 1920.0;
   float canvas_ratio = u_resolution.x / u_resolution.y;
 
   vec2 coords = aspect(uv, image_ratio, canvas_ratio);
-
-  // BLOCK COORDS
-
-  float blocks_x = 50.0 / u_blocks;
-  float blocks_y = blocks_x * u_resolution.y / u_resolution.x;
-  float block_coords_x = floor(coords.x * blocks_x) / blocks_x;
-  float block_coords_y = floor(coords.y * blocks_y) / blocks_y;
-  vec2 block_coords = vec2(block_coords_x, block_coords_y);
-
-  // DISTORTION COORDS
-
-  vec2 distortion_coords = vec2(
-    coords.x * sin(u_time),
-    coords.y * cos(u_time)
-  );
 
   // IMG
 
@@ -159,50 +83,30 @@ void main()
 
       // weather
 
-  float windCoef = -u_wind * 0.34;
-  float windOffset = fbm(vec2(u_time * u_wind, coords.y * 0.5));
-  vec2 rainOffset = drops(uv, u_time * u_rain * 0.01, u_rain);
+  float windCoef = -0.2 * sin(0.5 * u_time);
+  float windOffset = fbm(vec2(0.5 * u_time, coords.y * 0.5));
 
   vec4 img_2 = vec4(0.0, 0.0, 0.0, 0.0);
   vec4 displacement = texture2D(u_displacement, coords);
-  // vec4 blockDisplacement = texture2D(u_displacement, coords);
-  vec4 blockDisplacement = texture2D(u_displacement, block_coords);
 
       // scroll displacement
 
-  float displaceForceScroll = blockDisplacement.r * u_offset * displacementCoef;
+  float displaceForceScroll = displacement.r * u_offset * displacementCoef;
   displaceForceScroll *= 1.2;
 
       // controlled distortions
-  
-  float displaceForceControlX = 0.4 * u_distortionControlX * sin(u_time);
-  float displaceForceControlY = 0.4 * u_distortionControlY * cos(0.9 * u_time) * blockDisplacement.r * displacementCoef;
 
       // weather displacement
 
-  windCoef -= displaceForceControlX;
-  float displaceForceWind = mix(displacement.r, blockDisplacement.r, u_blocks) * windOffset * windCoef;
+  float displaceForceWind = displacement.r * windOffset * windCoef;
 
       // combined displacement (& rain)
 
-  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll - displaceForceControlY);
-  uvDisplaced += 70.0 * rainOffset;
-
-      // new blocks
-
-  // float blocks_x_u = 100.0 / u_blocks;
-  // float blocks_y_u = blocks_x_u * u_resolution.y / u_resolution.x;
-  // float block_coords_x_u = floor(uvDisplaced.x * blocks_x_u) / blocks_x_u;
-  // float block_coords_y_u = floor(uvDisplaced.y * blocks_y_u) / blocks_y_u;
-  // vec2 block_coords_u = vec2(block_coords_x_u, block_coords_y_u);
-  // uvDisplaced = block_coords_u;
+  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll);
 
       // dark mode mixing
 
-  vec4 d_img_1 = mix(texture2D(u_image_1, uvDisplaced), texture2D(u_image_2, uvDisplaced), u_darkMode);
-  // vec4 d_img_1 = mix(texture2D(u_image_1, block_coords_u), texture2D(u_image_2, block_coords_u), u_darkMode);
-
-  vec4 img = d_img_1;
+  vec4 img = mix(texture2D(u_image_1, uvDisplaced), texture2D(u_image_2, uvDisplaced), u_darkMode);
 
   gl_FragColor = img;
 }

@@ -39,13 +39,15 @@ async function runGeneralFunctions() {
   colorModeChange()
   colorModeState()
   nav()
-  setTimeout(() => {
-    import('./features/pages/general/mousetrail').then(
-      ({ default: mousetrail }) => {
-        mousetrail()
-      }
-    )
-  }, 3400)
+  if (!isMobile()) {
+    setTimeout(() => {
+      import('./features/pages/general/mousetrail').then(
+        ({ default: mousetrail }) => {
+          mousetrail()
+        }
+      )
+    }, 3400)
+  }
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
