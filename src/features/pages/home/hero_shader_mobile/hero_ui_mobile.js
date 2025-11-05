@@ -1,7 +1,6 @@
 import gsap from 'gsap'
 
 import heroHandlerMobile from './hero_handler_mobile'
-import getMeteo from '../../../api/openWeather'
 // import Anim from '../../../helpers/anim'
 
 function heroUIMobile() {
@@ -13,13 +12,7 @@ function heroUIMobile() {
   const offsetRef = { current: 0.0 }
 
   // UNIFORM MANAGEMENT
-  const updateUniforms = heroHandlerMobile(
-    heroCanvas,
-    darkModeRef,
-    offsetRef,
-    windRef,
-    rainRef
-  )
+  const updateUniforms = heroHandlerMobile(heroCanvas, darkModeRef, offsetRef)
 
   let ticking = false
   function scheduleUpdate() {
@@ -34,13 +27,6 @@ function heroUIMobile() {
 
   // const D = Anim.D
   // const E = Anim.E
-
-  // METEO
-  getMeteo().then((meteo) => {
-    windRef.current = meteo.normalizedWindSpeed
-    rainRef.current = meteo.normalizedRain
-    scheduleUpdate()
-  })
 
   // SCROLL
   window.addEventListener('scroll', () => {
