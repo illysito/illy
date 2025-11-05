@@ -20,6 +20,7 @@ function introHome() {
       headings: document.querySelectorAll('.hero-h'),
       // img
       canvas_wrapper: document.querySelector('.hero-canvas'),
+      canvas_wrapper_mobile: document.querySelector('.hero-canvas-mobile'),
     }
   }
   const domElements = domElementsQuery()
@@ -57,7 +58,7 @@ function introHome() {
   }
 
   function animateCanvas() {
-    gsap.to(domElements.canvas_wrapper, {
+    gsap.to([domElements.canvas_wrapper, domElements.canvas_wrapper_mobile], {
       opacity: 1,
       scale: 1,
       duration: 3 * dur,
