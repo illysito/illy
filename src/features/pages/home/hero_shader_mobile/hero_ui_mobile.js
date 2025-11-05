@@ -54,9 +54,23 @@ function heroUIMobile() {
     })
   }
 
+  const GRAVITY = 9.8
+  const SMOOTH = 0.8
+  let smoothed = 0
   window.addEventListener('devicemotion', (event) => {
-    const acc = event.accelerationIncludingGravity // {x, y, z} in m/s²
+    const acc = event.acceleration // {x, y, z} in m/s²
+    if (!acc) return
+
     accRef.current = acc.y
+
+    const delta = a.y - GRAVITY // try x or z if this one feels wrong
+
+    // Smooth it
+    smoothed = SMOOTH * smoothed + (1 - SMOOTH) * delta
+
+    // Scale down for subtle shader distortion
+    accRef.current = smoothed * 0.05
+
     scheduleUpdate()
   })
 
