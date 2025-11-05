@@ -6,6 +6,9 @@ const D = Anim.D
 const E = Anim.E
 
 function nav() {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
   // Query elements from DOM
   function domElementsQuery() {
     return {
@@ -158,12 +161,14 @@ function nav() {
     ticking = false
   }
 
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(hideOrShowOnScroll)
-      ticking = true
-    }
-  })
+  if (!isMobile()) {
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(hideOrShowOnScroll)
+        ticking = true
+      }
+    })
+  }
 
   domElements.navLogo.addEventListener('mouseenter', animateLogoIn)
   domElements.navLogo.addEventListener('mouseleave', animateLogoOut)
