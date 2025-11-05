@@ -35,7 +35,10 @@ function heroUIMobile() {
   // const E = Anim.E
 
   // SHAKE
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+  if (
+    typeof DeviceMotionEvent.requestPermission === 'function' &&
+    typeof DeviceMotionEvent !== 'undefined'
+  ) {
     const button = document.createElement('button')
     button.textContent = 'Enable Motion'
     button.style.position = 'fixed'
