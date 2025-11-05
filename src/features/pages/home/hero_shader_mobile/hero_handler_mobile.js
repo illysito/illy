@@ -12,7 +12,7 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef){
   // SETUP
   // const shaderReference = 'HREO SHADER: '
   // const gl = canvas.getContext('webgl')
-  canvas.getContext('webgl',{ alpha: true })
+  canvas.getContext('webgl')
   // if (!gl) {
   //   console.error(shaderReference + 'WebGL not supported!')
   // } else {
@@ -42,7 +42,7 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef){
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
   //prettier-ignore
   const textureBlack = githubToJsDelivr(
-  'https://github.com/illysito/illy/blob/a8d42ee01b517aed97e5547743daf657fca74e0f/imgs/illy%20texture%20mobile%20black-34.png')
+  'https://github.com/illysito/illy/blob/6232ce1436151ddd2677cec7f9e81cc8d4f2f8eb/imgs/illy%20texture%20NOT%20transp.jpg')
   const textureWhite = githubToJsDelivr(
   'https://github.com/illysito/illy/blob/a946f53033daedc7f087d48f334fba739daf147b/imgs/illy%20texture%20mobile%20white-34-33.webp')
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
