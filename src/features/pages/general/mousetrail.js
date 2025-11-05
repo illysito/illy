@@ -1,5 +1,9 @@
 import gsap from 'gsap'
 
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+
 function mousetrail() {
   // create mouse ball
   const ball = document.createElement('div')
@@ -27,10 +31,12 @@ function mousetrail() {
         gsap.to(ball, {
           scale: 6,
           borderRadius: 0,
+          duration: D.fast,
         })
       } else {
         gsap.to(ball, {
           scale: 2,
+          duration: D.fast,
         })
       }
     })
@@ -38,6 +44,7 @@ function mousetrail() {
       gsap.to(ball, {
         scale: 1,
         borderRadius: 30,
+        duration: D.fast,
       })
     })
   })

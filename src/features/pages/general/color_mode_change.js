@@ -1,5 +1,9 @@
 import gsap from 'gsap'
 
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+
 // import heroHandler from './hero_handler'
 
 function colorModeChange() {
@@ -27,7 +31,7 @@ function colorModeChange() {
   // HEADER DOTS
   const headerDots = document.querySelectorAll('.header-dot')
 
-  const duration = 0.8
+  const duration = D.slow
 
   function updateButtons() {
     const rootStyles = getComputedStyle(document.documentElement)

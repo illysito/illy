@@ -1,5 +1,10 @@
 import gsap from 'gsap'
 
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+const E = Anim.E
+
 function button(button) {
   function buttonHoverIn(e) {
     const b = e.currentTarget
@@ -14,27 +19,27 @@ function button(button) {
       .trim()
     gsap.to(b, {
       scale: 0.98,
-      duration: 0.4,
+      duration: D.med,
       borderColor: accent,
-      ease: 'power3.inOut',
+      ease: E.p2io,
     })
     gsap.to(circle, {
-      scale: 1.2,
+      scale: D.ultra_slow,
       yPercent: -50,
       duration: 0.65,
-      ease: 'power3.inOut',
+      ease: E.p2io,
     })
     gsap.to(text, {
       yPercent: -100,
-      duration: 0.4,
+      duration: D.med,
       color: typeColorComp,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(textHidden, {
       yPercent: -100,
-      duration: 0.4,
+      duration: D.med,
       color: typeColorComp,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
   }
   function buttonHoverOut(e) {
@@ -47,27 +52,27 @@ function button(button) {
     const circle = w.nextElementSibling
     gsap.to(text, {
       yPercent: 0,
-      duration: 0.6,
+      duration: D.med,
       color: typeColor,
-      ease: 'power3.inOut',
+      ease: E.p2io,
     })
     gsap.to(textHidden, {
       yPercent: 0,
-      duration: 0.6,
+      duration: D.med,
       color: typeColor,
-      ease: 'power3.inOut',
+      ease: E.p2io,
     })
     gsap.to(b, {
       scale: 1,
-      duration: 0.4,
+      duration: D.med,
       borderColor: typeColor,
-      ease: 'power3.inOut',
+      ease: E.p2io,
     })
     gsap.to(circle, {
       scale: 1,
       yPercent: 0,
-      duration: 0.65,
-      ease: 'power3.inOut',
+      duration: D.med,
+      ease: E.p2io,
     })
   }
 

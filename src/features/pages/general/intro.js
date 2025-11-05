@@ -1,8 +1,12 @@
 import gsap from 'gsap'
 import SplitType from 'split-type'
 
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+
 function intro() {
-  let dur = 0.6
+  let dur = D.med
   // let ease1 = 'power1.inOut'
   let ease2 = 'power2.inOut'
   let ease3 = 'power3.inOut'

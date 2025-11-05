@@ -1,5 +1,10 @@
 import gsap from 'gsap'
 
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+const E = Anim.E
+
 function colorModeState() {
   const darkmodeButton = document.querySelector('.darkmode-toggle')
   const accentButton = document.querySelector('.accent-toggle')
@@ -46,8 +51,8 @@ function colorModeState() {
         gsap.to(ball, {
           scale: 1,
           x: 18,
-          duration: 0.4,
-          ease: 'power.out',
+          duration: D.med,
+          ease: E.p2o,
         })
         states[0] = 1
         localStorage.setItem('dark_state', '1')
@@ -55,8 +60,8 @@ function colorModeState() {
         gsap.to(ball, {
           scale: 1,
           x: 0,
-          duration: 0.4,
-          ease: 'power.out',
+          duration: D.med,
+          ease: E.p2o,
         })
         states[0] = 0
         localStorage.setItem('dark_state', '0')
@@ -67,8 +72,8 @@ function colorModeState() {
         gsap.to(ball, {
           scale: 1,
           x: 18,
-          duration: 0.4,
-          ease: 'power.out',
+          duration: D.med,
+          ease: E.p2o,
         })
         states[1] = 1
         localStorage.setItem('accent_state', '1')
@@ -76,8 +81,8 @@ function colorModeState() {
         gsap.to(ball, {
           scale: 1,
           x: 0,
-          duration: 0.4,
-          ease: 'power.out',
+          duration: D.med,
+          ease: E.p2o,
         })
         states[1] = 0
         localStorage.setItem('accent_state', '0')
@@ -112,7 +117,7 @@ function colorModeState() {
 
     gsap.to(ball, {
       scale: 0.8,
-      duration: 0.2,
+      duration: D.fast,
     })
   }
   function buttonHoverOut(b) {
@@ -120,7 +125,7 @@ function colorModeState() {
 
     gsap.to(ball, {
       scale: 1,
-      duration: 0.2,
+      duration: D.fast,
     })
   }
 

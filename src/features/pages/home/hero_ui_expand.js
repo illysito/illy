@@ -21,16 +21,10 @@ function heroUIExpand() {
     gsap.set(metadataHeaders, {
       zIndex: 1,
     })
-    gsap.to(headerTexts, {
+    gsap.to([headerTexts, headerDots], {
       yPercent: -100,
-      stagger: 0.02,
       opacity: 1,
       duration: 0.6,
-    })
-    gsap.to(headerDots, {
-      stagger: 0.02,
-      opacity: 1,
-      duration: 0.4,
     })
     gsap.to([dataWrapper, poetryWrapper], {
       opacity: 1,
@@ -43,16 +37,10 @@ function heroUIExpand() {
     gsap.set(metadataHeaders, {
       zIndex: -30,
     })
-    gsap.to(headerTexts, {
+    gsap.to([headerTexts, headerDots], {
       yPercent: 0,
-      stagger: 0.02,
       opacity: 0,
       duration: 0.6,
-    })
-    gsap.to(headerDots, {
-      stagger: 0.02,
-      opacity: 0,
-      duration: 0.4,
     })
     gsap.to([dataWrapper, poetryWrapper], {
       opacity: 0,

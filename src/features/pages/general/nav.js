@@ -1,5 +1,10 @@
 import gsap from 'gsap'
 
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+const E = Anim.E
+
 function nav() {
   // Query elements from DOM
   function domElementsQuery() {
@@ -33,64 +38,64 @@ function nav() {
   function animateLogoIn() {
     gsap.to([domElements.navLogo, domElements.navLogoWhite], {
       scale: 0.95,
-      duration: 0.4,
-      ease: 'power1.inOut',
+      duration: D.med,
+      ease: E.eio,
     })
     gsap.to(domElements.letters, {
       yPercent: -200,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(domElements.lettersWhite, {
       yPercent: -200,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(domElements.lettersHidden, {
       yPercent: -100,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(domElements.lettersHiddenWhite, {
       yPercent: -100,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
   }
 
   function animateLogoOut() {
     gsap.to([domElements.navLogo, domElements.navLogoWhite], {
       scale: 1,
-      duration: 0.4,
-      ease: 'power1.inOut',
+      duration: D.med,
+      ease: E.eio,
     })
     gsap.to(domElements.lettersHidden, {
       yPercent: 0,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(domElements.lettersHiddenWhite, {
       yPercent: 0,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(domElements.letters, {
       yPercent: -100,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
     gsap.to(domElements.lettersWhite, {
       yPercent: -100,
-      duration: 0.4,
+      duration: D.med,
       stagger: 0.05,
-      ease: 'power3.inOut',
+      ease: E.eio,
     })
   }
 
@@ -100,13 +105,13 @@ function nav() {
     const textHidden = text.nextElementSibling
     gsap.to(text, {
       yPercent: -100,
-      duration: 0.4,
-      ease: 'power3.inOut',
+      duration: D.med,
+      ease: E.eio,
     })
     gsap.to(textHidden, {
       yPercent: -100,
-      duration: 0.4,
-      ease: 'power3.inOut',
+      duration: D.med,
+      ease: E.eio,
     })
   }
 
@@ -116,13 +121,13 @@ function nav() {
     const textHidden = text.nextElementSibling
     gsap.to(text, {
       yPercent: 0,
-      duration: 0.4,
-      ease: 'power3.inOut',
+      duration: D.med,
+      ease: E.p2io,
     })
     gsap.to(textHidden, {
       yPercent: 0,
-      duration: 0.4,
-      ease: 'power3.inOut',
+      duration: D.med,
+      ease: E.p2io,
     })
   }
 
@@ -136,14 +141,14 @@ function nav() {
     if (scrollDirection > 20) {
       gsap.to(domElements.nav, {
         y: -0.14 * window.innerHeight,
-        duration: 1.6,
-        ease: 'power2.out',
+        duration: 2 * D.slow,
+        ease: E.eo,
       })
     } else if (scrollDirection < 0) {
       gsap.to(domElements.nav, {
         y: 0,
-        duration: 0.8,
-        ease: 'power2.out',
+        duration: D.slow,
+        ease: E.eo,
       })
     } else {
       ticking = false
