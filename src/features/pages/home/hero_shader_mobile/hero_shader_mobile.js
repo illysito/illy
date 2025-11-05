@@ -97,7 +97,7 @@ void main()
 
       // controlled distortions
 
-  float accelerationScroll = u_acceleration;
+  float accelerationScroll = displacement.r * 0.02 * u_acceleration;
 
       // weather displacement
 
