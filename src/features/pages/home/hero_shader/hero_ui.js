@@ -8,6 +8,7 @@ function heroUI() {
   const heroCanvas = document.querySelector('#hero-canvas')
   const sliderBalls = document.querySelectorAll('.slider-ball')
   const sliderRails = document.querySelectorAll('.slider-hero')
+  const golBall = document.querySelector('.gol-slider-ball')
 
   // MAIN UNIFORMS
   const darkModeRef = { current: 0.0 }
@@ -175,6 +176,21 @@ function heroUI() {
         borderRadius: 120,
         duration: 0.2,
       })
+    })
+  })
+  // Also for the Game of Life (little trick to do it here)
+  golBall.addEventListener('mouseover', () => {
+    gsap.to(golBall, {
+      scale: 1.4,
+      borderRadius: 0,
+      duration: 0.2,
+    })
+  })
+  golBall.addEventListener('mouseleave', () => {
+    gsap.to(golBall, {
+      scale: 1,
+      borderRadius: 120,
+      duration: 0.2,
     })
   })
   document.addEventListener('mousemove', (e) => {
