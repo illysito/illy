@@ -2,6 +2,7 @@ import gsap from 'gsap'
 
 import heroHandler from './hero_handler'
 import getMeteo from '../../../api/openWeather'
+import Anim from '../../../helpers/anim'
 
 function heroUI() {
   // DOM
@@ -48,37 +49,40 @@ function heroUI() {
     }
   }
 
+  const D = Anim.D
+  // const E = Anim.E
+
   document.addEventListener('nature-open', () => {
     gsap.to([distortionControlXRef, distortionControlYRef], {
       current: 0.0,
-      duration: 0.6,
+      duration: D.slow,
     })
     gsap.to(tearRef, {
       current: 0.5,
-      duration: 0.6,
+      duration: D.slow,
     })
     gsap.to(blocksRef, {
       current: 0.1,
-      duration: 0.6,
+      duration: D.slow,
       onUpdate: scheduleUpdate,
     })
   })
   document.addEventListener('control-open', () => {
     gsap.to(distortionControlXRef, {
       current: distortionControlXRef.stored,
-      duration: 0.6,
+      duration: D.slow,
     })
     gsap.to(distortionControlYRef, {
       current: distortionControlYRef.stored,
-      duration: 0.6,
+      duration: D.slow,
     })
     gsap.to(tearRef, {
       current: tearRef.stored,
-      duration: 0.6,
+      duration: D.slow,
     })
     gsap.to(blocksRef, {
       current: blocksRef.stored,
-      duration: 0.6,
+      duration: D.slow,
       onUpdate: scheduleUpdate,
     })
   })

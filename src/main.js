@@ -6,6 +6,10 @@ import colorModeChange from './features/pages/general/color_mode_change'
 import colorModeState from './features/pages/general/color_mode_state'
 import nav from './features/pages/general/nav'
 
+function isMobile() {
+  return window.innerWidth <= 767
+}
+
 function domElementsQuery() {
   return {
     worldContainer: document.querySelector('.world-container'),
@@ -54,9 +58,6 @@ async function runHomeFunctions() {
   const { default: preloader } = await import(
     './features/pages/general/preloader'
   )
-  const { default: heroUI } = await import(
-    './features/pages/home/hero_shader/hero_ui'
-  )
   const { default: metadata } = await import('./features/pages/home/metadata')
   const { default: scroll } = await import('./features/pages/home/scroll')
   const { default: aboutText } = await import('./features/pages/home/aboutText')
@@ -66,7 +67,6 @@ async function runHomeFunctions() {
   const { default: heroUIChange } = await import(
     './features/pages/home/hero_ui_change'
   )
-
   const { default: heroUIExpand } = await import(
     './features/pages/home/hero_ui_expand'
   )
@@ -85,7 +85,18 @@ async function runHomeFunctions() {
   // const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
 
   // Hero
-  heroUI()
+  if (!isMobile()) {
+    const { default: heroUIMobile } = await import(
+      './features/pages/home/hero_shader_mobile/hero_ui_mobile'
+    )
+    heroUIMobile()
+  } else {
+    const { default: heroUI } = await import(
+      './features/pages/home/hero_shader/hero_ui'
+    )
+    heroUI()
+  }
+
   preloader()
   metadata()
   heroUIChange()
