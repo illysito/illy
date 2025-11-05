@@ -84,8 +84,8 @@ void main()
 
       // weather
 
-  float windCoef = -0.2 * sin(0.5 * u_time);
-  float windOffset = fbm(vec2(0.5 * u_time, coords.y * 0.5));
+  float distAmplitude = -0.05 * sin(0.5 * u_time);
+  float noiseDepth = fbm(vec2(0.5 * u_time, coords.y * 0.5));
 
   vec4 img_2 = vec4(0.0, 0.0, 0.0, 0.0);
   vec4 displacement = texture2D(u_displacement, coords);
@@ -97,15 +97,15 @@ void main()
 
       // controlled distortions
 
-  float accelerationScroll = displacement.r * 0.4 * u_acceleration;
+  float accelerationForce = displacement.r * 0.25 * u_acceleration;
 
       // weather displacement
 
-  float displaceForceWind = displacement.r * windOffset * windCoef;
+  float displaceForceWind = displacement.r * noiseDepth * distAmplitude;
 
       // combined displacement (& rain)
 
-  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll - accelerationScroll);
+  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll - accelerationForce);
 
       // dark mode mixing
 
