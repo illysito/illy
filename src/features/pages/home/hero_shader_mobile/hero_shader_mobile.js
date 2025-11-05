@@ -80,7 +80,7 @@ void main()
 
   // IMG
 
-  float displacementCoef = 0.2;
+  float displacementCoef = 0.4;
 
       // weather
 
@@ -97,7 +97,7 @@ void main()
 
       // controlled distortions
 
-  float accelerationScroll = displacement.r * 0.1 * u_acceleration;
+  float accelerationScroll = displacement.r * 0.4 * u_acceleration;
 
       // weather displacement
 
