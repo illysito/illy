@@ -97,7 +97,7 @@ void main()
 
       // controlled distortions
 
-  float accelerationForce = displacement.r * 0.25 * u_acceleration;
+  float accelerationForce = displacement.r * 0.2 * u_acceleration;
 
       // weather displacement
 
