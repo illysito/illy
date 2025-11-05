@@ -35,6 +35,25 @@ function heroUIMobile() {
   // const E = Anim.E
 
   // SHAKE
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    const button = document.createElement('button')
+    button.textContent = 'Enable Motion'
+    button.style.position = 'fixed'
+    button.style.top = '20px'
+    button.style.left = '20px'
+    button.style.zIndex = '9999'
+    document.body.appendChild(button)
+    button.addEventListener('click', async () => {
+      const res = await DeviceMotionEvent.requestPermission()
+      if (res === 'granted') {
+        alert('Motion enabled')
+        button.remove()
+      } else {
+        alert('Motion permission denied')
+      }
+    })
+  }
+
   window.addEventListener('devicemotion', (event) => {
     const acc = event.accelerationIncludingGravity // {x, y, z} in m/s²
     accRef.current = acc.y
