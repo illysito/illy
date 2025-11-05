@@ -11,6 +11,7 @@ uniform sampler2D u_image_1;
 uniform sampler2D u_image_2;
 uniform sampler2D u_displacement;
 uniform float u_darkMode;
+uniform float u_acceleration;
 
 varying vec2 v_texcoord;
 
@@ -96,13 +97,15 @@ void main()
 
       // controlled distortions
 
+  float accelerationScroll = u_acceleration;
+
       // weather displacement
 
   float displaceForceWind = displacement.r * windOffset * windCoef;
 
       // combined displacement (& rain)
 
-  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll);
+  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll - accelerationScroll);
 
       // dark mode mixing
 

@@ -10,9 +10,15 @@ function heroUIMobile() {
   // MAIN UNIFORMS
   const darkModeRef = { current: 0.0 }
   const offsetRef = { current: 0.0 }
+  const accRef = { current: 0.0 }
 
   // UNIFORM MANAGEMENT
-  const updateUniforms = heroHandlerMobile(heroCanvas, darkModeRef, offsetRef)
+  const updateUniforms = heroHandlerMobile(
+    heroCanvas,
+    darkModeRef,
+    offsetRef,
+    accRef
+  )
 
   let ticking = false
   function scheduleUpdate() {
@@ -27,6 +33,13 @@ function heroUIMobile() {
 
   // const D = Anim.D
   // const E = Anim.E
+
+  // SHAKE
+  window.addEventListener('devicemotion', (event) => {
+    const acc = event.accelerationIncludingGravity // {x, y, z} in m/s²
+    accRef.current = acc.y
+    scheduleUpdate()
+  })
 
   // SCROLL
   window.addEventListener('scroll', () => {
