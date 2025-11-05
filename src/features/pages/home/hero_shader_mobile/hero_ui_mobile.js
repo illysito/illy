@@ -36,7 +36,7 @@ function heroUIMobile() {
     }
   }
 
-  const D = Anim.D
+  // const D = Anim.D
   // const E = Anim.E
 
   // METEO
