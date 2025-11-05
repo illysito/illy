@@ -86,15 +86,15 @@ async function runHomeFunctions() {
 
   // Hero
   if (!isMobile()) {
-    const { default: heroUIMobile } = await import(
-      './features/pages/home/hero_shader_mobile/hero_ui_mobile'
-    )
-    heroUIMobile()
-  } else {
     const { default: heroUI } = await import(
       './features/pages/home/hero_shader/hero_ui'
     )
     heroUI()
+  } else {
+    const { default: heroUIMobile } = await import(
+      './features/pages/home/hero_shader_mobile/hero_ui_mobile'
+    )
+    heroUIMobile()
   }
 
   preloader()
@@ -135,8 +135,11 @@ async function runHomeFunctions() {
     {
       el: golTarget,
       run: () => {
-        import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
-        // console.log('dummy GOL UI log')
+        if (!isMobile()) {
+          import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
+        } else {
+          return
+        }
       },
     },
   ]
