@@ -44,7 +44,7 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef, accRef){
   const textureBlack = githubToJsDelivr(
   'https://github.com/illysito/illy/blob/6232ce1436151ddd2677cec7f9e81cc8d4f2f8eb/imgs/illy%20texture%20NOT%20transp.jpg')
   const textureWhite = githubToJsDelivr(
-  'https://github.com/illysito/illy/blob/a946f53033daedc7f087d48f334fba739daf147b/imgs/illy%20texture%20mobile%20white-34-33.webp')
+  'https://github.com/illysito/illy/blob/60c91161b64385a5aa2edc9787ca92dcf0e30ede/imgs/illy%20texture%20dark%20NOT%20transp.jpg')
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
   const displacementURL = githubToJsDelivr('https://github.com/illysito/shaders/blob/b89ccd38b24b375e79318690acbe4f09faeaf22a/imgs/Perlin%20Noise%20Large.png')
 
