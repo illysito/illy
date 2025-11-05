@@ -12,10 +12,6 @@ function heroUIMobile() {
   const darkModeRef = { current: 0.0 }
   const offsetRef = { current: 0.0 }
 
-  // WEATHER UNIFORMS
-  const windRef = { current: 0.0 }
-  const rainRef = { current: 0.0 }
-
   // UNIFORM MANAGEMENT
   const updateUniforms = heroHandlerMobile(
     heroCanvas,

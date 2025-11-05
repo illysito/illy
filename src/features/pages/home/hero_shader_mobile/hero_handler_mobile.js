@@ -3,7 +3,7 @@ import GlslCanvas from 'glslCanvas'
 import disp_frag from './hero_shader_mobile'
 
 //prettier-ignore
-function dispHandlerMobile(canvas, darkModeRef, offsetRef, windRef, rainRef){
+function dispHandlerMobile(canvas, darkModeRef, offsetRef){
   function githubToJsDelivr(permalink) {
     return permalink
       .replace('github.com', 'cdn.jsdelivr.net/gh')
@@ -57,8 +57,6 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef, windRef, rainRef){
     sandbox.setUniform('u_darkMode', darkModeRef.current)
     sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
     sandbox.setUniform('u_offset', offsetRef.current)
-    sandbox.setUniform('u_wind', windRef.current)
-    sandbox.setUniform('u_rain', rainRef.current)
   }
 
   window.addEventListener('resize', function () {

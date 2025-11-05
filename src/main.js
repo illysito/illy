@@ -87,21 +87,21 @@ async function runHomeFunctions() {
   // const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
 
   // Hero
-  // if (!isMobile()) {
-  //   const { default: heroUI } = await import(
-  //     './features/pages/home/hero_shader/hero_ui'
-  //   )
-  //   heroUI()
-  // } else {
-  //   const { default: heroUIMobile } = await import(
-  //     './features/pages/home/hero_shader_mobile/hero_ui_mobile'
-  //   )
-  //   heroUIMobile()
-  // }
-  const { default: heroUI } = await import(
-    './features/pages/home/hero_shader/hero_ui'
-  )
-  heroUI()
+  if (!isMobile()) {
+    const { default: heroUI } = await import(
+      './features/pages/home/hero_shader/hero_ui'
+    )
+    heroUI()
+  } else {
+    const { default: heroUIMobile } = await import(
+      './features/pages/home/hero_shader_mobile/hero_ui_mobile'
+    )
+    heroUIMobile()
+  }
+  // const { default: heroUI } = await import(
+  //   './features/pages/home/hero_shader/hero_ui'
+  // )
+  // heroUI()
 
   preloader()
   metadata()
