@@ -42,7 +42,7 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef, windRef, rainRef){
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
   //prettier-ignore
   const textureBlack = githubToJsDelivr(
-  'https://github.com/illysito/illy/blob/a946f53033daedc7f087d48f334fba739daf147b/imgs/illy%20texture%20mobile%20black-34.webp')
+  'https://github.com/illysito/illy/blob/a8d42ee01b517aed97e5547743daf657fca74e0f/imgs/illy%20texture%20mobile%20black-34.png')
   const textureWhite = githubToJsDelivr(
   'https://github.com/illysito/illy/blob/a946f53033daedc7f087d48f334fba739daf147b/imgs/illy%20texture%20mobile%20white-34-33.webp')
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
