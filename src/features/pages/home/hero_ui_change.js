@@ -6,6 +6,10 @@ function heroUIChange() {
   const sliders = document.querySelectorAll('.slider-hero')
   const sliderTexts = document.querySelectorAll('.slider-text-hero')
   const metadataPs = document.querySelectorAll('.metdata-p')
+  const metadataPoetry = document.querySelectorAll('.metdata-poetry')
+  const metadataPoetryControl = document.querySelectorAll(
+    '.metdata-poetry-control'
+  )
   const metadataUnderscores = document.querySelectorAll(
     '.underscore.is--metadata'
   )
@@ -21,6 +25,8 @@ function heroUIChange() {
     const rootStyles = getComputedStyle(document.documentElement)
     const typeColor = rootStyles.getPropertyValue('--type-color').trim()
     const actualButton = expandButtons[arrayPos]
+    actualButton.classList.remove('is--active')
+    actualButton.style.pointerEvents = 'none'
     gsap.to(actualButton, {
       backgroundColor: '#00000000',
       borderColor: typeColor,
@@ -28,12 +34,19 @@ function heroUIChange() {
       ease: 'none',
       onComplete: () => {
         gsap.set(actualButton, {
-          borderColor: 'var(--type-color)',
+          delay: 0.4,
+          pointerEvents: 'auto',
         })
       },
     })
     if (arrayPos === 0) {
       gsap.to(metadataPs, {
+        yPercent: 0,
+        stagger: 0.01,
+        opacity: 0,
+        duration: 0.8,
+      })
+      gsap.to(metadataPoetry, {
         yPercent: 0,
         stagger: 0.01,
         opacity: 0,
@@ -56,6 +69,12 @@ function heroUIChange() {
         },
       })
     } else {
+      gsap.to(metadataPoetryControl, {
+        yPercent: 0,
+        stagger: 0.01,
+        opacity: 0,
+        duration: 0.8,
+      })
       gsap.to(sliderTexts, {
         yPercent: 0,
         stagger: 0.02,
@@ -83,6 +102,8 @@ function heroUIChange() {
     // Take actual button and rotate it
     // Take the other button to close it
     const actualButton = expandButtons[arrayPos]
+    actualButton.style.pointerEvents = 'none'
+    actualButton.classList.add('is--active')
     gsap.set(metadataContainers[arrayPos], {
       zIndex: 0,
     })
@@ -93,12 +114,14 @@ function heroUIChange() {
       ease: 'none',
       onComplete: () => {
         gsap.set(actualButton, {
+          delay: 0.4,
           backgroundColor: 'var(--accent)',
           borderColor: 'var(--accent)',
+          pointerEvents: 'auto',
         })
       },
     })
-    gsap.to(metadataPs, {
+    gsap.to([metadataPs, metadataPoetry], {
       yPercent: -100,
       stagger: 0.02,
       opacity: 1,
@@ -123,6 +146,8 @@ function heroUIChange() {
     // Take actual button and rotate it
     // Take the other button to close it
     const actualButton = expandButtons[arrayPos]
+    actualButton.classList.add('is--active')
+    actualButton.style.pointerEvents = 'none'
     gsap.set(metadataContainers[arrayPos], {
       zIndex: 0,
     })
@@ -133,8 +158,10 @@ function heroUIChange() {
       ease: 'none',
       onComplete: () => {
         gsap.set(actualButton, {
+          delay: 0.4,
           backgroundColor: 'var(--accent)',
           borderColor: 'var(--accent)',
+          pointerEvents: 'auto',
         })
       },
     })
@@ -145,18 +172,23 @@ function heroUIChange() {
       duration: 0.8,
     })
     gsap.to(sliders, {
-      yPercent: -100,
+      yPercent: 0,
       opacity: 1,
       stagger: 0.1,
       duration: 1,
       ease: 'none',
+      onComplete: () => {
+        console.log('slider mooved')
+      },
+    })
+    gsap.to(metadataPoetryControl, {
+      yPercent: -100,
+      stagger: 0.02,
+      opacity: 1,
+      duration: 0.8,
     })
   }
 
-  document.addEventListener('menus-closed', () => {
-    closeAnyMenu(0)
-    closeAnyMenu(1)
-  })
   document.addEventListener('nature-open', () => {
     closeAnyMenu(1)
     setTimeout(() => {

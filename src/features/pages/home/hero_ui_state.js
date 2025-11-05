@@ -1,8 +1,6 @@
 import gsap from 'gsap'
 
 function heroUIState() {
-  // const isDarkModeOn = localStorage.getItem('isDarkModeOn')
-
   const expandButtons = document.querySelectorAll('.header-dot')
   const expandNature = expandButtons[0]
   const expandControl = expandButtons[1]
@@ -11,62 +9,40 @@ function heroUIState() {
     0: new Event('menus-closed'),
     1: new Event('control-open'),
     2: new Event('nature-open'),
-    // 2: new Event('control-open'),
   }
 
-  // 0: light or dark
-  // 1: accent 1 or 2
-  const states = [0, 0]
+  const states = [1, 0]
+
+  if (!localStorage.getItem('UIState')) {
+    localStorage.setItem('UIState', '2')
+  }
+  const stateString = localStorage.getItem('UIState')
+  if (stateString === '1') {
+    states[0] = 0
+    states[1] = 1
+  } else {
+    states[0] = 1
+    states[1] = 0
+  }
+  readStates()
+
   let isNatureExpanded = false
   let isControlExpanded = false
-
-  // function initState() {
-  //   const darkState = localStorage.getItem('dark_state')
-  //   const accentState = localStorage.getItem('accent_state')
-
-  //   if (darkState === '1') {
-  //     gsap.set(darkmodeButton.firstElementChild, { x: 18 })
-  //     isDarkModeClicked = true
-  //     states[0] = 1
-  //   }
-  //   if (accentState === '1') {
-  //     gsap.set(accentButton.firstElementChild, { x: 18 })
-  //     isAccentClicked = true
-  //     states[1] = 1
-  //   }
-  //   readStates()
-  //   // console.log(states)
-  // }
-  // initState()
 
   function toggleMode(id) {
     console.log(id)
     if (id == 'expand-nature') {
-      if (!isNatureExpanded) {
-        states[0] = 1
-        if (states[1] === 1) {
-          states[1] = 0
-          isControlExpanded = !isControlExpanded
-        }
-        // localStorage.setItem('dark_state', '1')
-      } else {
-        states[0] = 0
-        // localStorage.setItem('dark_state', '0')
-      }
-      isNatureExpanded = !isNatureExpanded
-    } else {
-      if (!isControlExpanded) {
-        states[1] = 1
-        if (states[0] === 1) {
-          states[0] = 0
-          isNatureExpanded = !isNatureExpanded
-        }
-        // localStorage.setItem('accent_state', '1')
-      } else {
+      states[0] = 1
+      if (states[1] === 1) {
         states[1] = 0
-        // localStorage.setItem('accent_state', '0')
+        isControlExpanded = !isControlExpanded
       }
-      isControlExpanded = !isControlExpanded
+    } else {
+      states[1] = 1
+      if (states[0] === 1) {
+        states[0] = 0
+        isNatureExpanded = !isNatureExpanded
+      }
     }
 
     console.log(states)
@@ -75,8 +51,8 @@ function heroUIState() {
 
   function readStates() {
     const decimal = parseInt(states.join(''), 2) // Join the array and interpret it as a binary num
-
     document.dispatchEvent(modeEvents[decimal])
+    localStorage.setItem('UIState', decimal)
     // console.log(modeEvents[decimal])
   }
 

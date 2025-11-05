@@ -1,8 +1,6 @@
 import gsap from 'gsap'
 
 function colorModeState() {
-  // const isDarkModeOn = localStorage.getItem('isDarkModeOn')
-
   const darkmodeButton = document.querySelector('.darkmode-toggle')
   const accentButton = document.querySelector('.accent-toggle')
 

@@ -3,15 +3,24 @@ const disp_frag = `
 precision highp float;
 #endif
 
+// main UNIFORMS
 uniform float u_time;
 uniform vec2 u_resolution;
 uniform float u_offset;
-uniform float u_wind;
-uniform float u_rain;
-uniform float u_darkMode;
 uniform sampler2D u_image_1;
 uniform sampler2D u_image_2;
 uniform sampler2D u_displacement;
+uniform float u_darkMode;
+
+// weather UNIFORMS
+uniform float u_wind;
+uniform float u_rain;
+
+// control UNIFORMS
+uniform float u_blocks;
+uniform float u_distortionControl;
+uniform float u_driftControl;
+uniform float u_rainControl;
 
 varying vec2 v_texcoord;
 
@@ -133,7 +142,7 @@ void main()
 
   float blocks_x = 100.0;
   float blocks_y = blocks_x * u_resolution.y / u_resolution.x;
-  float block_coords_x = floor(coords.x * blocks_x) / blocks_x;
+  float block_coords_x = floor(coords.x * blocks_x / u_blocks) / (blocks_x / u_blocks);
   // float block_coords_x = coords.x;
   // float block_coords_y = floor(coords.y * blocks_y) / blocks_y;
   float block_coords_y = coords.y;
@@ -150,30 +159,38 @@ void main()
 
   float displacementCoef = 0.2;
 
+      // weather
+
   float windCoef = -u_wind * 0.34;
-  float windOffset = fbm(vec2(u_time * u_wind, coords.y * 0.5));
-
-  vec2 rainOffset = drops(uv, u_time * u_rain * 0.01, u_rain);
-
-  // vec4 darkTexture = texture2D(u_image_1, coords);
-  // vec4 lightTexture = texture2D(u_image_2, coords);
-  // vec4 img_1 = mix(darkTexture, lightTexture, u_darkMode);
+  windCoef -= u_distortionControl;
+  float windOffset = fbm(vec2(u_time * u_wind * u_driftControl, coords.y * 0.5));
+  float compoundRain = u_rain + u_rainControl;
+  vec2 rainOffset = drops(uv, u_time * compoundRain * 0.01, compoundRain);
 
   vec4 img_2 = vec4(0.0, 0.0, 0.0, 0.0);
   vec4 displacement = texture2D(u_displacement, coords);
   // vec4 blockDisplacement = texture2D(u_displacement, coords);
   vec4 blockDisplacement = texture2D(u_displacement, block_coords);
 
+      // scroll displacement
+
   float displaceForceScroll = blockDisplacement.r * u_offset * displacementCoef;
   displaceForceScroll *= 1.2;
+
+      // weather displacement
   float displaceForceWind = displacement.r * windOffset * windCoef;
+  displaceForceWind = blockDisplacement.r * windOffset * windCoef;
+
+      // combined displacement (& rain)
   vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll);
   uvDisplaced += 70.0 * rainOffset;
 
-  vec4 d_img_1 = mix(texture2D(u_image_1, uvDisplaced), texture2D(u_image_2, uvDisplaced), u_darkMode);
-  vec4 d_img_2 = img_2;
+      // dark mode mixing
 
-  vec4 img = (d_img_1);
+  vec4 d_img_1 = mix(texture2D(u_image_1, uvDisplaced), texture2D(u_image_2, uvDisplaced), u_darkMode);
+  // vec4 d_img_2 = img_2;
+
+  vec4 img = d_img_1;
 
   gl_FragColor = img;
 }

@@ -66,9 +66,13 @@ async function runHomeFunctions() {
   const { default: heroUIChange } = await import(
     './features/pages/home/hero_ui_change'
   )
-  // const { default: workCanvasUI } = await import(
-  //   './features/pages/home/work_shaders/disp_ui'
-  // )
+
+  const { default: heroUIExpand } = await import(
+    './features/pages/home/hero_ui_expand'
+  )
+  const { default: workCanvasUI } = await import(
+    './features/pages/home/work_shaders/disp_ui'
+  )
   const { default: workInteraction } = await import(
     './features/pages/home/work_interaction'
   )
@@ -84,17 +88,16 @@ async function runHomeFunctions() {
   heroUI()
   preloader()
   metadata()
-  heroUIState()
   heroUIChange()
+  heroUIState()
+  heroUIExpand()
   scroll()
 
   // About
   aboutText()
 
   // Shaders
-  // setTimeout(async () => {
-  //   workCanvasUI()
-  // }, 1200)
+  workCanvasUI()
   workInteraction()
   workAnimations()
   serviceAnimations()
@@ -113,9 +116,9 @@ async function runHomeFunctions() {
     {
       el: workShaderTarget,
       run: () => {
-        import('./features/pages/home/work_shaders/disp_ui').then((m) =>
-          m.default()
-        )
+        // import('./features/pages/home/work_shaders/disp_ui').then((m) =>
+        //   m.default()
+        console.log('shaders should run here')
       },
     },
     {
