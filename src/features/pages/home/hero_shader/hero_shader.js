@@ -18,9 +18,9 @@ uniform float u_rain;
 
 // control UNIFORMS
 uniform float u_blocks;
-uniform float u_distortionControl;
-uniform float u_driftControl;
-uniform float u_rainControl;
+uniform float u_distortionControlX;
+uniform float u_distortionControlY;
+uniform float u_tear;
 
 varying vec2 v_texcoord;
 
@@ -97,7 +97,7 @@ float noise(vec2 p) {
 // fractal Brownian motion (smooth turbulence)
 float fbm(vec2 p) {
   float value = 0.0;
-  float amplitude = 0.5;
+  float amplitude = mix(0.2, 0.8, u_tear);
   float frequency = 0.0;
   for (int i = 0; i < 5; i++) {
     value += amplitude * noise(p);
@@ -140,12 +140,10 @@ void main()
 
   // BLOCK COORDS
 
-  float blocks_x = 100.0;
+  float blocks_x = 50.0 / u_blocks;
   float blocks_y = blocks_x * u_resolution.y / u_resolution.x;
-  float block_coords_x = floor(coords.x * blocks_x / u_blocks) / (blocks_x / u_blocks);
-  // float block_coords_x = coords.x;
-  // float block_coords_y = floor(coords.y * blocks_y) / blocks_y;
-  float block_coords_y = coords.y;
+  float block_coords_x = floor(coords.x * blocks_x) / blocks_x;
+  float block_coords_y = floor(coords.y * blocks_y) / blocks_y;
   vec2 block_coords = vec2(block_coords_x, block_coords_y);
 
   // DISTORTION COORDS
@@ -162,10 +160,8 @@ void main()
       // weather
 
   float windCoef = -u_wind * 0.34;
-  windCoef -= u_distortionControl;
-  float windOffset = fbm(vec2(u_time * u_wind * u_driftControl, coords.y * 0.5));
-  float compoundRain = u_rain + u_rainControl;
-  vec2 rainOffset = drops(uv, u_time * compoundRain * 0.01, compoundRain);
+  float windOffset = fbm(vec2(u_time * u_wind, coords.y * 0.5));
+  vec2 rainOffset = drops(uv, u_time * u_rain * 0.01, u_rain);
 
   vec4 img_2 = vec4(0.0, 0.0, 0.0, 0.0);
   vec4 displacement = texture2D(u_displacement, coords);
@@ -177,18 +173,34 @@ void main()
   float displaceForceScroll = blockDisplacement.r * u_offset * displacementCoef;
   displaceForceScroll *= 1.2;
 
+      // controlled distortions
+  
+  float displaceForceControlX = 0.4 * u_distortionControlX * sin(u_time);
+  float displaceForceControlY = 0.4 * u_distortionControlY * cos(u_time) * blockDisplacement.r * displacementCoef;
+
       // weather displacement
-  float displaceForceWind = displacement.r * windOffset * windCoef;
-  displaceForceWind = blockDisplacement.r * windOffset * windCoef;
+
+  windCoef -= displaceForceControlX;
+  float displaceForceWind = mix(displacement.r, blockDisplacement.r, u_blocks) * windOffset * windCoef;
 
       // combined displacement (& rain)
-  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll);
+
+  vec2 uvDisplaced = vec2(uv.x + displaceForceWind, uv.y - displaceForceScroll - displaceForceControlY);
   uvDisplaced += 70.0 * rainOffset;
+
+      // new blocks
+
+  // float blocks_x_u = 100.0 / u_blocks;
+  // float blocks_y_u = blocks_x_u * u_resolution.y / u_resolution.x;
+  // float block_coords_x_u = floor(uvDisplaced.x * blocks_x_u) / blocks_x_u;
+  // float block_coords_y_u = floor(uvDisplaced.y * blocks_y_u) / blocks_y_u;
+  // vec2 block_coords_u = vec2(block_coords_x_u, block_coords_y_u);
+  // uvDisplaced = block_coords_u;
 
       // dark mode mixing
 
   vec4 d_img_1 = mix(texture2D(u_image_1, uvDisplaced), texture2D(u_image_2, uvDisplaced), u_darkMode);
-  // vec4 d_img_2 = img_2;
+  // vec4 d_img_1 = mix(texture2D(u_image_1, block_coords_u), texture2D(u_image_2, block_coords_u), u_darkMode);
 
   vec4 img = d_img_1;
 

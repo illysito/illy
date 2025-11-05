@@ -177,9 +177,6 @@ function heroUIChange() {
       stagger: 0.1,
       duration: 1,
       ease: 'none',
-      onComplete: () => {
-        console.log('slider mooved')
-      },
     })
     gsap.to(metadataPoetryControl, {
       yPercent: -100,
