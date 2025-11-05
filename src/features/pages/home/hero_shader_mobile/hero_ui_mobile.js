@@ -2,7 +2,7 @@ import gsap from 'gsap'
 
 import heroHandlerMobile from './hero_handler_mobile'
 import getMeteo from '../../../api/openWeather'
-import Anim from '../../../helpers/anim'
+// import Anim from '../../../helpers/anim'
 
 function heroUIMobile() {
   // DOM
