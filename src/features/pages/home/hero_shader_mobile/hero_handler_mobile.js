@@ -12,7 +12,7 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef, windRef, rainRef){
   // SETUP
   // const shaderReference = 'HREO SHADER: '
   // const gl = canvas.getContext('webgl')
-  canvas.getContext('webgl')
+  canvas.getContext('webgl',{ alpha: true })
   // if (!gl) {
   //   console.error(shaderReference + 'WebGL not supported!')
   // } else {
