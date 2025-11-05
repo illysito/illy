@@ -61,7 +61,7 @@ function heroUIMobile() {
     const acc = event.accelerationIncludingGravity // {x, y, z} in m/s²
     if (!acc) return
 
-    const delta = acc.y - GRAVITY // try x or z if this one feels wrong
+    const delta = acc.y + GRAVITY // try x or z if this one feels wrong
 
     // Smooth it
     smoothed = SMOOTH * smoothed + (1 - SMOOTH) * delta
