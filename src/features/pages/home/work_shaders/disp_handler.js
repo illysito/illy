@@ -1,6 +1,7 @@
 import GlslCanvas from 'glslCanvas'
 
 import disp_frag from './disp_shader'
+import disp_vert from './disp_shader_vert'
 
 //prettier-ignore
 function dispHandler(canvas, offsetRef, image1_URL, image2_URL) {
@@ -38,7 +39,10 @@ function dispHandler(canvas, offsetRef, image1_URL, image2_URL) {
   const sandbox = new GlslCanvas(canvas)
 
   const fragment_shader = disp_frag
-  sandbox.load(fragment_shader)
+  const vertex_shader = disp_vert
+  // sandbox.load(fragment_shader)
+  // sandbox.load(vertex_shader)
+  sandbox.load(fragment_shader, vertex_shader)
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
   //prettier-ignore
   // const image1_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15533643_4278.jpg'
