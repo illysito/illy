@@ -5,10 +5,11 @@ import Anim from '../../helpers/anim.js'
 const D = Anim.D
 const E = Anim.E
 
-function nav() {
+function nav(isBuilding) {
   function isMobile() {
     return window.innerWidth <= 767
   }
+  console.log(isBuilding)
   // Query elements from DOM
   function domElementsQuery() {
     return {
@@ -161,7 +162,7 @@ function nav() {
     ticking = false
   }
 
-  if (!isMobile()) {
+  if (!isMobile() && !isBuilding) {
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(hideOrShowOnScroll)

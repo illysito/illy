@@ -6,6 +6,8 @@ import colorModeChange from './features/pages/general/color_mode_change'
 import colorModeState from './features/pages/general/color_mode_state'
 import nav from './features/pages/general/nav'
 
+let isBuilding = true
+
 function isMobile() {
   return window.innerWidth <= 767
 }
@@ -38,8 +40,8 @@ if (!localStorage.getItem('accent_state')) {
 async function runGeneralFunctions() {
   colorModeChange()
   colorModeState()
-  nav()
-  if (!isMobile()) {
+  nav(isBuilding)
+  if (!isMobile() && !isBuilding) {
     setTimeout(() => {
       import('./features/pages/general/mousetrail').then(
         ({ default: mousetrail }) => {
@@ -48,11 +50,12 @@ async function runGeneralFunctions() {
       )
     }, 3400)
   }
+
+  // offCanvaMenu()
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
   }
-  // offCanvaMenu()
 }
 
 async function runHomeFunctions() {
@@ -84,6 +87,9 @@ async function runHomeFunctions() {
   const { default: serviceAnimations } = await import(
     './features/pages/home/service_animations'
   )
+  const { default: building } = await import(
+    './features/pages/building/building'
+  )
   // const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
 
   // Hero
@@ -91,7 +97,7 @@ async function runHomeFunctions() {
     const { default: heroUI } = await import(
       './features/pages/home/hero_shader/hero_ui'
     )
-    heroUI()
+    heroUI(isBuilding)
   } else {
     const { default: heroUIMobile } = await import(
       './features/pages/home/hero_shader_mobile/hero_ui_mobile'
@@ -102,6 +108,9 @@ async function runHomeFunctions() {
   //   './features/pages/home/hero_shader/hero_ui'
   // )
   // heroUI()
+  if (isBuilding) {
+    building()
+  }
 
   preloader()
   metadata()

@@ -4,7 +4,7 @@ import heroHandler from './hero_handler'
 import getMeteo from '../../../api/openWeather'
 import Anim from '../../../helpers/anim'
 
-function heroUI() {
+function heroUI(isBuilding) {
   // DOM
   const heroCanvas = document.querySelector('#hero-canvas')
   const sliderBalls = document.querySelectorAll('.slider-ball')
@@ -208,9 +208,29 @@ function heroUI() {
   })
 
   // SCROLL
+  const pageHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
+  )
+  // const staticOffset = 840
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY
-    offsetRef.current = gsap.utils.mapRange(0, 240, 0.0, 1.0, scrollY)
+    if (isBuilding) {
+      offsetRef.current = gsap.utils.mapRange(
+        0,
+        pageHeight / 2,
+        0.0,
+        1.0,
+        scrollY
+      )
+    } else {
+      offsetRef.current = gsap.utils.mapRange(0, 240, 0.0, 1.0, scrollY)
+    }
+
     scheduleUpdate()
   })
 
