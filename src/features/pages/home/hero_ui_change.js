@@ -1,6 +1,10 @@
 import gsap from 'gsap'
 
 // import heroHandler from './hero_handler'
+import Anim from '../../helpers/anim.js'
+
+const D = Anim.D
+const E = Anim.E
 
 function heroUIChange() {
   const sliders = document.querySelectorAll('.slider-hero')
@@ -16,29 +20,30 @@ function heroUIChange() {
   const moonImgs = document.querySelectorAll('.moon-img')
   const metadataContainers = document.querySelectorAll('.metadata-container')
   // const headerDots = document.querySelectorAll('.header-dot')
-  const expandButtons = document.querySelectorAll('.header-dot')
-  // const expandNature = expandButtons[0]
-  // const expandControl = expandButtons[1]
+  const expandToggle = document.querySelector('.expand-toggle')
+  const ball = expandToggle.firstElementChild
+  const uiButtonText = document.querySelector('.metadata-h')
+  const uiButtonTextHidden = document.querySelector('.metadata-h-hidden')
 
   function closeAnyMenu(arrayPos) {
     // Take actual button and rotate it
-    const rootStyles = getComputedStyle(document.documentElement)
-    const typeColor = rootStyles.getPropertyValue('--type-color').trim()
-    const actualButton = expandButtons[arrayPos]
-    actualButton.classList.remove('is--active')
-    actualButton.style.pointerEvents = 'none'
-    gsap.to(actualButton, {
-      backgroundColor: '#00000000',
-      borderColor: typeColor,
-      duration: 0.2,
-      ease: 'none',
-      onComplete: () => {
-        gsap.set(actualButton, {
-          delay: 0.4,
-          pointerEvents: 'auto',
-        })
-      },
-    })
+    // const rootStyles = getComputedStyle(document.documentElement)
+    // const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+    // const actualButton = expandButtons[arrayPos]
+    // actualButton.classList.remove('is--active')
+    // actualButton.style.pointerEvents = 'none'
+    // gsap.to(actualButton, {
+    //   backgroundColor: '#00000000',
+    //   borderColor: typeColor,
+    //   duration: 0.2,
+    //   ease: 'none',
+    //   onComplete: () => {
+    //     gsap.set(actualButton, {
+    //       delay: 0.4,
+    //       pointerEvents: 'auto',
+    //     })
+    //   },
+    // })
     if (arrayPos === 0) {
       gsap.to(metadataPs, {
         yPercent: 0,
@@ -97,29 +102,28 @@ function heroUIChange() {
   }
 
   function expandNature(arrayPos) {
-    const rootStyles = getComputedStyle(document.documentElement)
-    const accent = rootStyles.getPropertyValue('--accent').trim()
+    // const rootStyles = getComputedStyle(document.documentElement)
+    // const accent = rootStyles.getPropertyValue('--accent').trim()
     // Take actual button and rotate it
     // Take the other button to close it
-    const actualButton = expandButtons[arrayPos]
-    actualButton.style.pointerEvents = 'none'
-    actualButton.classList.add('is--active')
+    // actualButton.style.pointerEvents = 'none'
+    // actualButton.classList.add('is--active')
+    // gsap.to(actualButton, {
+    //   backgroundColor: accent,
+    //   borderColor: accent,
+    //   duration: 0.2,
+    //   ease: 'none',
+    //   onComplete: () => {
+    //     gsap.set(actualButton, {
+    //       delay: 0.4,
+    //       backgroundColor: 'var(--accent)',
+    //       borderColor: 'var(--accent)',
+    //       pointerEvents: 'auto',
+    //     })
+    //   },
+    // })
     gsap.set(metadataContainers[arrayPos], {
       zIndex: 0,
-    })
-    gsap.to(actualButton, {
-      backgroundColor: accent,
-      borderColor: accent,
-      duration: 0.2,
-      ease: 'none',
-      onComplete: () => {
-        gsap.set(actualButton, {
-          delay: 0.4,
-          backgroundColor: 'var(--accent)',
-          borderColor: 'var(--accent)',
-          pointerEvents: 'auto',
-        })
-      },
     })
     gsap.to([metadataPs, metadataPoetry], {
       yPercent: -100,
@@ -141,29 +145,28 @@ function heroUIChange() {
   }
 
   function expandControl(arrayPos) {
-    const rootStyles = getComputedStyle(document.documentElement)
-    const accent = rootStyles.getPropertyValue('--accent').trim()
+    // const rootStyles = getComputedStyle(document.documentElement)
+    // const accent = rootStyles.getPropertyValue('--accent').trim()
     // Take actual button and rotate it
     // Take the other button to close it
-    const actualButton = expandButtons[arrayPos]
-    actualButton.classList.add('is--active')
-    actualButton.style.pointerEvents = 'none'
+    // actualButton.classList.add('is--active')
+    // actualButton.style.pointerEvents = 'none'
+    // gsap.to(actualButton, {
+    //   backgroundColor: accent,
+    //   borderColor: accent,
+    //   duration: 0.2,
+    //   ease: 'none',
+    //   onComplete: () => {
+    //     gsap.set(actualButton, {
+    //       delay: 0.4,
+    //       backgroundColor: 'var(--accent)',
+    //       borderColor: 'var(--accent)',
+    //       pointerEvents: 'auto',
+    //     })
+    //   },
+    // })
     gsap.set(metadataContainers[arrayPos], {
       zIndex: 0,
-    })
-    gsap.to(actualButton, {
-      backgroundColor: accent,
-      borderColor: accent,
-      duration: 0.2,
-      ease: 'none',
-      onComplete: () => {
-        gsap.set(actualButton, {
-          delay: 0.4,
-          backgroundColor: 'var(--accent)',
-          borderColor: 'var(--accent)',
-          pointerEvents: 'auto',
-        })
-      },
     })
     gsap.to(sliderTexts, {
       yPercent: -100,
@@ -187,12 +190,42 @@ function heroUIChange() {
   }
 
   document.addEventListener('nature-open', () => {
+    gsap.to(ball, {
+      scale: 1,
+      x: 0,
+      duration: D.med,
+      ease: E.p2o,
+    })
+    gsap.to(uiButtonText, {
+      opacity: 1,
+    })
+    gsap.to([uiButtonText, uiButtonTextHidden], {
+      yPercent: 0,
+      duration: 0.6,
+      ease: 'power2.inOut',
+    })
     closeAnyMenu(1)
     setTimeout(() => {
       expandNature(0)
     }, 300)
   })
   document.addEventListener('control-open', () => {
+    gsap.to(ball, {
+      scale: 1,
+      x: 18,
+      duration: D.med,
+      ease: E.p2o,
+    })
+    gsap.to([uiButtonText, uiButtonTextHidden], {
+      yPercent: -100,
+      duration: 0.6,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        gsap.to(uiButtonText, {
+          opacity: 0,
+        })
+      },
+    })
     closeAnyMenu(0)
     setTimeout(() => {
       expandControl(1)

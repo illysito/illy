@@ -29,7 +29,7 @@ function colorModeChange() {
   // TYPE
   const projectHeaders = document.querySelectorAll('.work-h')
   // HEADER DOTS
-  const headerDots = document.querySelectorAll('.header-dot')
+  // const headerDots = document.querySelectorAll('.header-dot')
 
   const duration = D.slow
 
@@ -52,17 +52,17 @@ function colorModeChange() {
     })
   }
 
-  function updateHeroUIButtons() {
-    const rootStyles = getComputedStyle(document.documentElement)
-    const typeColor = rootStyles.getPropertyValue('--type-color').trim()
-    headerDots.forEach((h) => {
-      if (!h.classList.contains('is--active')) {
-        gsap.to(h, {
-          borderColor: typeColor,
-        })
-      }
-    })
-  }
+  // function updateHeroUIButtons() {
+  //   const rootStyles = getComputedStyle(document.documentElement)
+  //   const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+  //   headerDots.forEach((h) => {
+  //     if (!h.classList.contains('is--active')) {
+  //       gsap.to(h, {
+  //         borderColor: typeColor,
+  //       })
+  //     }
+  //   })
+  // }
 
   function toLight() {
     localStorage.setItem('isDarkModeOn', 'false')
@@ -151,25 +151,25 @@ function colorModeChange() {
   document.addEventListener('theme:light-accent1', () => {
     toLight()
     updateButtons()
-    updateHeroUIButtons()
+    // updateHeroUIButtons()
     updateType()
   })
   document.addEventListener('theme:light-accent2', () => {
     toLight2()
     updateButtons()
-    updateHeroUIButtons()
+    // updateHeroUIButtons()
     updateType()
   })
   document.addEventListener('theme:dark-accent1', () => {
     toDark()
     updateButtons()
-    updateHeroUIButtons()
+    // updateHeroUIButtons()
     updateType()
   })
   document.addEventListener('theme:dark-accent2', () => {
     toDark2()
     updateButtons()
-    updateHeroUIButtons()
+    // updateHeroUIButtons()
     updateType()
   })
 }

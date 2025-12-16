@@ -11,8 +11,9 @@ function heroUIExpand() {
   const dataWrapper = document.querySelector('.data-wrapper')
   const poetryWrapper = document.querySelector('.poetry-block')
 
-  const headerDots = document.querySelectorAll('.header-dot-cont')
-  const headerTexts = document.querySelectorAll('.metadata-h')
+  const expandToggle = document.querySelector('.expand-toggle')
+  const headerTexts = document.querySelector('.meta-o-hidden.is--header')
+  // const headerTextsHidden = document.querySelector('.metadata-h-hidden')
 
   let isUIExpanded = false
 
@@ -21,14 +22,16 @@ function heroUIExpand() {
     gsap.set(metadataHeaders, {
       zIndex: 1,
     })
-    gsap.to([headerTexts, headerDots], {
+    gsap.to([headerTexts, expandToggle], {
       yPercent: -100,
       opacity: 1,
       duration: 0.6,
+      ease: 'power2.inOut',
     })
     gsap.to([dataWrapper, poetryWrapper], {
       opacity: 1,
       duration: 0.6,
+      ease: 'power2.inOut',
     })
   }
 
@@ -37,14 +40,16 @@ function heroUIExpand() {
     gsap.set(metadataHeaders, {
       zIndex: -30,
     })
-    gsap.to([headerTexts, headerDots], {
+    gsap.to([headerTexts, expandToggle], {
       yPercent: 0,
       opacity: 0,
       duration: 0.6,
+      ease: 'power2.inOut',
     })
     gsap.to([dataWrapper, poetryWrapper], {
       opacity: 0,
       duration: 0.6,
+      ease: 'power2.inOut',
     })
   }
 

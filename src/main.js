@@ -87,8 +87,12 @@ async function runHomeFunctions() {
   const { default: serviceAnimations } = await import(
     './features/pages/home/service_animations'
   )
+  // BUILDING
   const { default: building } = await import(
     './features/pages/building/building'
+  )
+  const { default: offCanvaBuilding } = await import(
+    './features/pages/building/offCanvaBuilding'
   )
   // const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
 
@@ -110,6 +114,7 @@ async function runHomeFunctions() {
   // heroUI()
   if (isBuilding) {
     building()
+    offCanvaBuilding()
   }
 
   preloader()

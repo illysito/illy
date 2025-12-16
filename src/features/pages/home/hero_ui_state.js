@@ -1,9 +1,8 @@
 import gsap from 'gsap'
 
 function heroUIState() {
-  const expandButtons = document.querySelectorAll('.header-dot')
-  const expandNature = expandButtons[0]
-  const expandControl = expandButtons[1]
+  const expandToggle = document.querySelector('.expand-toggle')
+  const b = expandToggle.firstElementChild
 
   const modeEvents = {
     0: new Event('menus-closed'),
@@ -11,39 +10,40 @@ function heroUIState() {
     2: new Event('nature-open'),
   }
 
-  const states = [1, 0]
+  const states = [0, 1]
 
   if (!localStorage.getItem('UIState')) {
     localStorage.setItem('UIState', '2')
   }
   const stateString = localStorage.getItem('UIState')
+  let isNatureExpanded
+
   if (stateString === '1') {
     states[0] = 0
     states[1] = 1
+    isNatureExpanded = true
   } else {
     states[0] = 1
     states[1] = 0
+    isNatureExpanded = false
   }
   readStates()
 
-  let isNatureExpanded = false
-  let isControlExpanded = false
-
-  function toggleMode(id) {
-    console.log(id)
-    if (id == 'expand-nature') {
+  function toggleMode() {
+    if (isNatureExpanded) {
       states[0] = 1
       if (states[1] === 1) {
         states[1] = 0
-        isControlExpanded = !isControlExpanded
+        // isControlExpanded = !isControlExpanded
       }
     } else {
       states[1] = 1
       if (states[0] === 1) {
         states[0] = 0
-        isNatureExpanded = !isNatureExpanded
+        // isNatureExpanded = !isNatureExpanded
       }
     }
+    isNatureExpanded = !isNatureExpanded
 
     console.log(states)
     readStates()
@@ -57,46 +57,36 @@ function heroUIState() {
   }
 
   // Click
-  expandNature.addEventListener('click', (e) => {
-    const b = e.currentTarget
-    const id = b.id
-    toggleMode(id)
+  expandToggle.addEventListener('click', () => {
+    // const b = e.currentTarget
+    // const id = b.id
+    toggleMode()
   })
-  expandControl.addEventListener('click', (e) => {
-    const b = e.currentTarget
-    const id = b.id
-    toggleMode(id)
-  })
+  // expandControl.addEventListener('click', (e) => {
+  //   const b = e.currentTarget
+  //   const id = b.id
+  //   toggleMode(id)
+  // })
 
   // Hover buttons
-  function buttonHoverIn(b) {
+  function buttonHoverIn() {
     gsap.to(b, {
-      scale: 0.9,
+      scale: 0.8,
       duration: 0.2,
     })
   }
-  function buttonHoverOut(b) {
+  function buttonHoverOut() {
     gsap.to(b, {
       scale: 1,
       duration: 0.2,
     })
   }
 
-  expandNature.addEventListener('mouseenter', (e) => {
-    const b = e.currentTarget
-    buttonHoverIn(b)
+  expandToggle.addEventListener('mouseenter', () => {
+    buttonHoverIn()
   })
-  expandNature.addEventListener('mouseleave', (e) => {
-    const b = e.currentTarget
-    buttonHoverOut(b)
-  })
-  expandControl.addEventListener('mouseenter', (e) => {
-    const b = e.currentTarget
-    buttonHoverIn(b)
-  })
-  expandControl.addEventListener('mouseleave', (e) => {
-    const b = e.currentTarget
-    buttonHoverOut(b)
+  expandToggle.addEventListener('mouseleave', () => {
+    buttonHoverOut()
   })
 }
 

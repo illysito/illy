@@ -99,13 +99,13 @@ function metadata() {
     if (rain === 0) {
       rainMessage = 'no rain'
       rain = 0.0
-    } else if (rain >= 0.0 && wind < 1.0) {
+    } else if (rain >= 0.0 && rain < 1.0) {
       rainMessage = 'chirimiri'
-    } else if (rain >= 1.0 && wind < 2.5) {
+    } else if (rain >= 1.0 && rain < 2.5) {
       rainMessage = 'light rain'
-    } else if (rain >= 2.5 && wind < 7.5) {
+    } else if (rain >= 2.5 && rain < 7.5) {
       rainMessage = 'moderate rain'
-    } else if (rain >= 7.5 && wind < 50) {
+    } else if (rain >= 7.5 && rain < 50) {
       rainMessage = 'heavy rain'
     } else if (rain >= 50) {
       rainMessage = 'torrential'
