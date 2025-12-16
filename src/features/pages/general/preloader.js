@@ -3,6 +3,13 @@ import gsap from 'gsap'
 import introHome from '../../pages/home/introHome'
 
 async function preloader() {
+  let isMobile = window.innerWidth <= 767
+  let imgX
+  if (isMobile) {
+    imgX = 60
+  } else {
+    imgX = 160
+  }
   document.body.classList.add('no-scroll')
 
   // console.log('running preloader')
@@ -220,13 +227,13 @@ async function preloader() {
     })
     gsap.to(domElements.word1, {
       delay: 3 * delay,
-      x: -160,
+      x: -imgX,
       duration: dur,
       ease: 'power.inOut',
     })
     gsap.to(domElements.word2, {
       delay: 3 * delay,
-      x: 160,
+      x: imgX,
       duration: dur,
       ease: 'power.inOut',
     })
