@@ -170,6 +170,7 @@ textarea:-webkit-autofill {
 }
 
 a,
+div,
 button,
 [role='button'] {
   -webkit-tap-highlight-color: transparent;
