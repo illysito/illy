@@ -41,22 +41,21 @@ function heroUIMobile() {
     typeof DeviceMotionEvent !== 'undefined'
   ) {
     motionButton.addEventListener('click', async () => {
+      gsap.to(motionButton, {
+        scale: 0.97,
+        duration: 0.2,
+        ease: 'linear',
+        onComplete: () => {
+          gsap.to(motionButton, {
+            scale: 1,
+            duration: 0.2,
+            ease: 'linear',
+          })
+        },
+      })
       const res = await DeviceMotionEvent.requestPermission()
       if (res === 'granted') {
         alert('Motion enabled')
-        gsap.to(motionButton, {
-          scale: 0.97,
-          duration: 0.2,
-          ease: 'linear',
-          onComplete: () => {
-            gsap.to(motionButton, {
-              scale: 1,
-              opacity: 0,
-              duration: 0.6,
-            })
-            motionButton.remove()
-          },
-        })
       } else {
         alert('Motion permission denied')
       }
