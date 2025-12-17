@@ -63,6 +63,7 @@ function heroUIMobile() {
         })
       } else {
         console.log('Motion permission denied')
+        alert('motion denied!')
       }
     })
   }
