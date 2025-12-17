@@ -1,4 +1,5 @@
 import gsap from 'gsap'
+import { nodeName } from 'jquery'
 
 import heroHandlerMobile from './hero_handler_mobile'
 // import Anim from '../../../helpers/anim'
@@ -55,9 +56,13 @@ function heroUIMobile() {
       })
       const res = await DeviceMotionEvent.requestPermission()
       if (res === 'granted') {
-        alert('Motion enabled')
+        gsap.to(motionButton, {
+          opacity: 0,
+          duration: 0.4,
+          pointerEvents: nodeName,
+        })
       } else {
-        alert('Motion permission denied')
+        console.log('Motion permission denied')
       }
     })
   }
