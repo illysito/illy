@@ -6,6 +6,7 @@ import heroHandlerMobile from './hero_handler_mobile'
 function heroUIMobile() {
   // DOM
   const heroCanvas = document.querySelector('#hero-canvas-mobile')
+  const motionButton = document.querySelector('.motion-button')
 
   // MAIN UNIFORMS
   const darkModeRef = { current: 0.0 }
@@ -39,18 +40,23 @@ function heroUIMobile() {
     typeof DeviceMotionEvent.requestPermission === 'function' &&
     typeof DeviceMotionEvent !== 'undefined'
   ) {
-    const button = document.createElement('button')
-    button.textContent = 'Enable Motion'
-    button.style.position = 'fixed'
-    button.style.top = '20px'
-    button.style.left = '20px'
-    button.style.zIndex = '9999'
-    document.body.appendChild(button)
-    button.addEventListener('click', async () => {
+    motionButton.addEventListener('click', async () => {
       const res = await DeviceMotionEvent.requestPermission()
       if (res === 'granted') {
         alert('Motion enabled')
-        button.remove()
+        gsap.to(motionButton, {
+          scale: 0.97,
+          duration: 0.2,
+          ease: 'linear',
+          onComplete: () => {
+            gsap.to(motionButton, {
+              scale: 1,
+              opacity: 0,
+              duration: 0.6,
+            })
+            motionButton.remove()
+          },
+        })
       } else {
         alert('Motion permission denied')
       }
