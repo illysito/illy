@@ -36,38 +36,38 @@ function heroUIMobile() {
   // const E = Anim.E
 
   // SHAKE
-  if (localStorage.getItem('isMotionGranted') != true) {
-    if (
-      typeof DeviceMotionEvent.requestPermission === 'function' &&
-      typeof DeviceMotionEvent !== 'undefined'
-    ) {
-      motionButton.addEventListener('click', async () => {
-        gsap.to(motionButton, {
-          scale: 0.97,
-          duration: 0.2,
-          ease: 'linear',
-          onComplete: () => {
-            gsap.to(motionButton, {
-              scale: 1,
-              duration: 0.2,
-              ease: 'linear',
-            })
-          },
-        })
-        const res = await DeviceMotionEvent.requestPermission()
-        if (res === 'granted') {
-          localStorage.setItem('isMotionGranted', 'true')
+  const isMotionGranted = localStorage.getItem('isMotionGranted') === 'true'
+  if (
+    !isMotionGranted &&
+    typeof DeviceMotionEvent.requestPermission === 'function' &&
+    typeof DeviceMotionEvent !== 'undefined'
+  ) {
+    motionButton.addEventListener('click', async () => {
+      gsap.to(motionButton, {
+        scale: 0.97,
+        duration: 0.2,
+        ease: 'linear',
+        onComplete: () => {
           gsap.to(motionButton, {
-            opacity: 0,
-            duration: 0.4,
-            pointerEvents: 'none',
+            scale: 1,
+            duration: 0.2,
+            ease: 'linear',
           })
-        } else {
-          console.log('Motion permission denied')
-          alert('motion denied!')
-        }
+        },
       })
-    }
+      const res = await DeviceMotionEvent.requestPermission()
+      if (res === 'granted') {
+        localStorage.setItem('isMotionGranted', 'true')
+        gsap.to(motionButton, {
+          opacity: 0,
+          duration: 0.4,
+          pointerEvents: 'none',
+        })
+      } else {
+        console.log('Motion permission denied')
+        alert('motion denied!')
+      }
+    })
   }
 
   const GRAVITY = 9.8
