@@ -42,9 +42,9 @@ function dispHandlerMobile(canvas, darkModeRef, offsetRef, accRef){
   sandbox.setUniform('u_resolution', [canvas.width, canvas.height])
   //prettier-ignore
   const textureBlack = githubToJsDelivr(
-  'https://github.com/illysito/illy/blob/6232ce1436151ddd2677cec7f9e81cc8d4f2f8eb/imgs/illy%20texture%20NOT%20transp.jpg')
+  'https://github.com/illysito/illy/blob/9ef5654921a79f4198a71008a1c29943eb7c73ce/public/imgs_cdn/ILLY-TEXTURE-SIZED-34.jpg')
   const textureWhite = githubToJsDelivr(
-  'https://github.com/illysito/illy/blob/60c91161b64385a5aa2edc9787ca92dcf0e30ede/imgs/illy%20texture%20dark%20NOT%20transp.jpg')
+  'https://github.com/illysito/illy/blob/9ef5654921a79f4198a71008a1c29943eb7c73ce/public/imgs_cdn/ILLY-TEXTURE-SIZED-33.jpg')
   // const image2_URL = 'https://raw.githubusercontent.com/illysito/shaders/2605776610e744beacacb039330bc22b17240e59/imgs/20240802_15580031_4289.jpg'
   const displacementURL = githubToJsDelivr('https://github.com/illysito/shaders/blob/b89ccd38b24b375e79318690acbe4f09faeaf22a/imgs/Perlin%20Noise%20Large.png')
 
