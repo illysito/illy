@@ -37,6 +37,10 @@ function heroUIMobile() {
 
   // SHAKE
   const isMotionGranted = localStorage.getItem('isMotionGranted') === 'true'
+  if (isMotionGranted) {
+    motionButton.remove()
+  }
+
   if (
     !isMotionGranted &&
     typeof DeviceMotionEvent.requestPermission === 'function' &&
