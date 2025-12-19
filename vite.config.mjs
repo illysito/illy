@@ -7,6 +7,11 @@ export default defineConfig({
   plugins: [eslintPlugin({ cache: false })],
   server: {
     host: 'localhost',
+    port: 5174,
+    // cors: {
+    //   origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
+    // },
+    // cors: true
     cors: '*',
     hmr: {
       host: 'localhost',

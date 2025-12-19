@@ -15,21 +15,21 @@ function offCanvaBuilding() {
   function manageMenu() {
     if (menuShown) {
       gsap.to(offCanva, {
+        delay: 0.3,
         yPercent: 0,
         duration: 1.2,
         ease: 'expo.inOut',
       })
       gsap.to(links, {
-        delay: 0.2,
-        yPercent: -200,
+        yPercent: 0,
         duration: 1.2,
-        ease: 'expo.inOut',
+        stagger: -0.05,
+        ease: 'power2.inOut',
       })
       gsap.to(backLinks, {
-        delay: 0.2,
-        yPercent: -100,
+        yPercent: 0,
         duration: 1.2,
-        ease: 'expo.inOut',
+        ease: 'power2.inOut',
       })
     } else {
       gsap.to(offCanva, {
@@ -38,14 +38,17 @@ function offCanvaBuilding() {
         ease: 'expo.inOut',
       })
       gsap.to(links, {
-        yPercent: 0,
+        delay: 0.3,
+        yPercent: -100,
+        stagger: 0.05,
         duration: 1.2,
-        ease: 'expo.inOut',
+        ease: 'power2.inOut',
       })
       gsap.to(backLinks, {
-        yPercent: 0,
+        delay: 0.3,
+        yPercent: -100,
         duration: 1.2,
-        ease: 'expo.inOut',
+        ease: 'power2.inOut',
       })
     }
     menuShown = !menuShown
@@ -77,14 +80,14 @@ function offCanvaBuilding() {
     const backTextHidden = backText.nextElementSibling
     backButton.addEventListener('mouseover', () => {
       gsap.to([backText, backTextHidden], {
-        yPercent: -100,
+        yPercent: -200,
         duration: 0.4,
         ease: 'power2.inOut',
       })
     })
     backButton.addEventListener('mouseleave', () => {
       gsap.to([backText, backTextHidden], {
-        yPercent: 0,
+        yPercent: -100,
         duration: 0.4,
         ease: 'power2.inOut',
       })
