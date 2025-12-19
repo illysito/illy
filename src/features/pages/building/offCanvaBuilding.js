@@ -20,7 +20,7 @@ function offCanvaBuilding() {
       })
       gsap.to(links, {
         delay: 0.2,
-        yPercent: -145,
+        yPercent: -200,
         duration: 1.2,
         ease: 'expo.inOut',
       })
