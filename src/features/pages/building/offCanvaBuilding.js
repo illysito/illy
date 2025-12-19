@@ -7,6 +7,8 @@ function offCanvaBuilding() {
   const workButton = document.querySelector('.nav-link.is--navtextbuilding')
   const backButton = document.querySelector('.back-link-wrapper')
   const webLinks = document.querySelectorAll('.offcanva-build-link-wrapper')
+  const links = document.querySelectorAll('.offcanva-build-link')
+  const backLinks = document.querySelectorAll('.back-link-txt')
 
   let menuShown = false
   function manageMenu() {
@@ -16,8 +18,28 @@ function offCanvaBuilding() {
         duration: 1.2,
         ease: 'expo.inOut',
       })
+      gsap.to(links, {
+        yPercent: 0,
+        duration: 1.2,
+        ease: 'expo.inOut',
+      })
+      gsap.to(backLinks, {
+        yPercent: 0,
+        duration: 1.2,
+        ease: 'expo.inOut',
+      })
     } else {
       gsap.to(offCanva, {
+        yPercent: 100,
+        duration: 1.2,
+        ease: 'expo.inOut',
+      })
+      gsap.to(links, {
+        yPercent: 100,
+        duration: 1.2,
+        ease: 'expo.inOut',
+      })
+      gsap.to(backLinks, {
         yPercent: 100,
         duration: 1.2,
         ease: 'expo.inOut',
