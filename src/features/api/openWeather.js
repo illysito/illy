@@ -46,7 +46,7 @@ async function getMeteo() {
     sunriseTime = sunriseToday
   } catch (err) {
     console.error(err)
-    windFallback = true
+    // windFallback = true
     // return null
   }
 
@@ -83,6 +83,7 @@ async function getMeteo() {
     // console.log('viento ', windSpeed)
   } catch (err) {
     console.error(err)
+    windFallback = true
     rainFallback = true
     // return null
   }
