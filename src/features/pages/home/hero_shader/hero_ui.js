@@ -239,13 +239,13 @@ function heroUI(isBuilding) {
   })
 
   // MOUSEMOVE
-  window.addEventListener('mousemove', (e) => {
-    const x = gsap.utils.mapRange(0, window.innerWidth, 0.0, 1.0, e.clientX)
-    const y = gsap.utils.mapRange(0, window.innerHeight, 0.0, 1.0, e.clientY)
-    mouseRefX.current = x
-    mouseRefY.current = y
-    scheduleUpdate()
-  })
+  // window.addEventListener('mousemove', (e) => {
+  //   const x = gsap.utils.mapRange(0, window.innerWidth, 0.0, 1.0, e.clientX)
+  //   const y = gsap.utils.mapRange(0, window.innerHeight, 0.0, 1.0, e.clientY)
+  //   mouseRefX.current = x
+  //   mouseRefY.current = y
+  //   scheduleUpdate()
+  // })
 
   // COLOR STATES
   if (localStorage.getItem('dark_state') === '1') {
