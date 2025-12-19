@@ -24,6 +24,8 @@ function heroUI(isBuilding) {
   const distortionControlYRef = { current: 0.0, stored: 0.0 } // from 0.0 to 0.4
   const tearRef = { current: 0.5, stored: 0.5 } // from 0.0 to 80.0
   const blocksRef = { current: 0.01, stored: 0.01 } // from 0.1 to 1.0
+  const mouseRefX = { current: 0.0 }
+  const mouseRefY = { current: 0.0 }
 
   // UNIFORM MANAGEMENT
   const updateUniforms = heroHandler(
@@ -35,7 +37,9 @@ function heroUI(isBuilding) {
     blocksRef,
     distortionControlXRef,
     distortionControlYRef,
-    tearRef
+    tearRef,
+    mouseRefX,
+    mouseRefY
   )
 
   let ticking = false
@@ -231,6 +235,15 @@ function heroUI(isBuilding) {
       offsetRef.current = gsap.utils.mapRange(0, 240, 0.0, 1.0, scrollY)
     }
 
+    scheduleUpdate()
+  })
+
+  // MOUSEMOVE
+  window.addEventListener('mousemove', (e) => {
+    const x = gsap.utils.mapRange(0, window.innerWidth, 0.0, 1.0, e.clientX)
+    const y = gsap.utils.mapRange(0, window.innerHeight, 0.0, 1.0, e.clientY)
+    mouseRefX.current = x
+    mouseRefY.current = y
     scheduleUpdate()
   })
 

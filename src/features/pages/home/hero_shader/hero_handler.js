@@ -3,7 +3,7 @@ import GlslCanvas from 'glslCanvas'
 import disp_frag from './hero_shader'
 
 //prettier-ignore
-function dispHandler(canvas, darkModeRef, offsetRef, windRef, rainRef, blocksRef, distortionControlXRef, distortionControlYRef, tearRef) {
+function dispHandler(canvas, darkModeRef, offsetRef, windRef, rainRef, blocksRef, distortionControlXRef, distortionControlYRef, tearRef, mouseRefX, mouseRefY) {
 
   function githubToJsDelivr(permalink) {
     return permalink
@@ -65,6 +65,8 @@ function dispHandler(canvas, darkModeRef, offsetRef, windRef, rainRef, blocksRef
     sandbox.setUniform('u_distortionControlX', distortionControlXRef.current)
     sandbox.setUniform('u_distortionControlY', distortionControlYRef.current)
     sandbox.setUniform('u_tear', tearRef.current)
+    sandbox.setUniform('u_mouseX', mouseRefX.current)
+    sandbox.setUniform('u_mouseY', mouseRefY.current)
   }
 
   window.addEventListener('resize', function () {

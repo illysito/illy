@@ -11,6 +11,8 @@ uniform sampler2D u_image_1;
 uniform sampler2D u_image_2;
 uniform sampler2D u_displacement;
 uniform float u_darkMode;
+uniform float u_mouseX;
+uniform float u_mouseY;
 
 // weather UNIFORMS
 uniform float u_wind;
@@ -138,6 +140,10 @@ void main()
 
   vec2 coords = aspect(uv, image_ratio, canvas_ratio);
 
+  // MOUSE
+
+  vec2 mouse = vec2(u_mouseX, u_mouseY);
+
   // BLOCK COORDS
 
   float blocks_x = 50.0 / u_blocks;
@@ -155,7 +161,7 @@ void main()
 
   // IMG
 
-  float displacementCoef = 0.32;
+  float displacementCoef = 0.32 * mouse.x;
 
       // weather
 
