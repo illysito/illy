@@ -19,6 +19,9 @@ async function getMeteo() {
   let sunsetTime = 0
   let sunriseTime = 0
 
+  let windFallback = false
+  let rainFallback = false
+
   // OPEN WEATHER
   try {
     const res = await fetch(url_openWeather)
@@ -43,7 +46,8 @@ async function getMeteo() {
     sunriseTime = sunriseToday
   } catch (err) {
     console.error(err)
-    return null
+    windFallback = true
+    // return null
   }
 
   // AEMET
@@ -79,7 +83,8 @@ async function getMeteo() {
     // console.log('viento ', windSpeed)
   } catch (err) {
     console.error(err)
-    return null
+    rainFallback = true
+    // return null
   }
 
   return {
@@ -90,6 +95,8 @@ async function getMeteo() {
     moonPhase,
     sunsetTime,
     sunriseTime,
+    windFallback,
+    rainFallback,
   }
 }
 

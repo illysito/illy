@@ -171,6 +171,15 @@ function metadata() {
         })
       }
     })
+
+    // FAIL
+    if (meteo.windFallback) {
+      DOM.wind_txt.textContent = 'no data_'
+    }
+
+    if (meteo.rainFallback) {
+      DOM.rain_txt.textContent = 'no data_'
+    }
   })
 }
 
