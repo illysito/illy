@@ -19,11 +19,13 @@ function offCanvaBuilding() {
         ease: 'expo.inOut',
       })
       gsap.to(links, {
-        yPercent: -100,
+        delay: 0.2,
+        yPercent: -145,
         duration: 1.2,
         ease: 'expo.inOut',
       })
       gsap.to(backLinks, {
+        delay: 0.2,
         yPercent: -100,
         duration: 1.2,
         ease: 'expo.inOut',
