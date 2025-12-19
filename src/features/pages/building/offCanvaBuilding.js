@@ -19,12 +19,12 @@ function offCanvaBuilding() {
         ease: 'expo.inOut',
       })
       gsap.to(links, {
-        yPercent: 0,
+        yPercent: -100,
         duration: 1.2,
         ease: 'expo.inOut',
       })
       gsap.to(backLinks, {
-        yPercent: 0,
+        yPercent: -100,
         duration: 1.2,
         ease: 'expo.inOut',
       })
@@ -35,12 +35,12 @@ function offCanvaBuilding() {
         ease: 'expo.inOut',
       })
       gsap.to(links, {
-        yPercent: 100,
+        yPercent: 0,
         duration: 1.2,
         ease: 'expo.inOut',
       })
       gsap.to(backLinks, {
-        yPercent: 100,
+        yPercent: 0,
         duration: 1.2,
         ease: 'expo.inOut',
       })
