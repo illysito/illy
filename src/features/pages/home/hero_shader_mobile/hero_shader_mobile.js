@@ -80,7 +80,7 @@ void main()
 
   // IMG
 
-  float displacementCoef = 0.2;
+  float displacementCoef = 0.32;
 
       // weather
 
