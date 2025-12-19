@@ -80,7 +80,7 @@ void main()
 
   // IMG
 
-  float displacementCoef = 0.32;
+  float displacementCoef = 0.2;
 
       // weather
 
@@ -102,6 +102,7 @@ void main()
       // weather displacement
 
   float displaceForceWind = displacement.r * noiseDepth * distAmplitude;
+  displaceForceWind *= 1.2;
 
       // combined displacement (& rain)
 

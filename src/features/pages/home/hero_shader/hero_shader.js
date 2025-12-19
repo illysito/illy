@@ -161,11 +161,11 @@ void main()
 
   // IMG
 
-  float displacementCoef = 0.32 * mouse.x * 4.0;
+  float displacementCoef = 0.2;
 
       // weather
 
-  float windCoef = -u_wind * 0.34;
+  float windCoef = -u_wind * 0.48 * 2.0 * mouse.x;
   float windOffset = fbm(vec2(u_time * u_wind, coords.y * 0.5));
   vec2 rainOffset = drops(uv, u_time * u_rain * 0.01, u_rain);
 
