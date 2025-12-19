@@ -161,7 +161,7 @@ void main()
 
   // IMG
 
-  float displacementCoef = 0.32 * mouse.x;
+  float displacementCoef = 0.32 * mouse.x * 4.0;
 
       // weather
 
