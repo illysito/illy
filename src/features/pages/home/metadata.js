@@ -174,11 +174,11 @@ function metadata() {
 
     // FAIL
     if (meteo.windFallback) {
-      DOM.wind_txt.textContent = 'no data_'
+      DOM.wind_txt.textContent = 'no data, pls reload_'
     }
 
     if (meteo.rainFallback) {
-      DOM.rain_txt.textContent = 'no data_'
+      DOM.rain_txt.textContent = 'no data, pls reload_'
     }
   })
 }
