@@ -9,6 +9,7 @@ function offCanvaBuilding() {
   const webLinks = document.querySelectorAll('.offcanva-build-link-wrapper')
   const links = document.querySelectorAll('.offcanva-build-link')
   const backLinks = document.querySelectorAll('.back-link-txt')
+  console.log(links)
 
   let menuShown = false
   function manageMenu() {
