@@ -199,9 +199,9 @@ async function preloader() {
   function fadePreloader() {
     gsap.to(domElements.preloader, {
       delay: delay,
-      opacity: 0,
+      yPercent: -100,
       duration: 1.2,
-      ease: 'power.out',
+      ease: 'expo.inOut',
       onComplete: () => {
         gsap.set(domElements.preloader, { zIndex: -30 })
       },
