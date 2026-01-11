@@ -5,12 +5,12 @@ function iChing() {
   const yinLines = document.querySelectorAll('.yin-line')
 
   gsap.to(yangLines, {
-    width: '80%',
+    width: '100%',
     duration: 1.2,
     ease: 'expo.inOut',
   })
   gsap.to(yinLines, {
-    width: '80%',
+    width: '100%',
     duration: 1.2,
     ease: 'expo.inOut',
   })
