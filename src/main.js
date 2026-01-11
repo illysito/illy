@@ -215,6 +215,11 @@ async function runQRFunctions() {
   generateQR()
 }
 
+async function runIChingFunctions() {
+  const { default: iChing } = await import('./features/pages/i-ching/iching')
+  iChing()
+}
+
 // INIT
 
 if (!document.body.classList.contains('body__flowfield'))
@@ -227,3 +232,4 @@ if (document.body.classList.contains('body__philosophy'))
   runPhilosophyFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
 if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()
+if (document.body.classList.contains('body__i-ching')) runIChingFunctions()
