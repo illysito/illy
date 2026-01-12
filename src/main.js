@@ -222,7 +222,10 @@ async function runIChingFunctions() {
 
 // INIT
 
-if (!document.body.classList.contains('body__flowfield'))
+if (
+  !document.body.classList.contains('body__flowfield') &&
+  !document.body.classList.contains('body__i-ching')
+)
   // requestIdleCallback(runGeneralFunctions)
   runGeneralFunctions()
 if (document.body.classList.contains('body__home'))

@@ -175,3 +175,8 @@ button,
 [role='button'] {
   -webkit-tap-highlight-color: transparent;
 }
+
+.hexagram-title,
+.trigram-h {
+  white-space: pre-wrap;
+}
