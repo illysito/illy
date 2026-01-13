@@ -42,6 +42,16 @@ const HEXAGRAMS = [
     name: `Ch'ien  /  Lo Creativo`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%202.png',
   },
   {
@@ -50,6 +60,16 @@ const HEXAGRAMS = [
     name: `K'un  /  Lo Receptivo`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%203.png',
   },
   {
@@ -58,6 +78,16 @@ const HEXAGRAMS = [
     name: `Chun  /  La Dificultad Inicial`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%204.png',
   },
   {
@@ -66,6 +96,16 @@ const HEXAGRAMS = [
     name: `Meng  /  La Necedad Juvenil`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%205.png',
   },
   {
@@ -74,6 +114,16 @@ const HEXAGRAMS = [
     name: `Hsü  /  La Espera (La Alimentación)`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%206.png',
   },
   {
@@ -82,6 +132,16 @@ const HEXAGRAMS = [
     name: `Sung  /  El Conflicto (El Pleito)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%207.png',
   },
   {
@@ -90,6 +150,16 @@ const HEXAGRAMS = [
     name: `Shih  /  El Ejército`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%208.png',
   },
   {
@@ -98,6 +168,16 @@ const HEXAGRAMS = [
     name: `Pi  /  La Solidaridad (El mantenerse unido)`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%209.png',
   },
   {
@@ -106,6 +186,16 @@ const HEXAGRAMS = [
     name: `Hsiao Ch'u  /  La Fuerza Domesticadora de lo Pequeño`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2010.png',
   },
   {
@@ -114,6 +204,16 @@ const HEXAGRAMS = [
     name: `Lü  /  El Porte (La Pisada)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2011.png',
   },
   {
@@ -122,6 +222,16 @@ const HEXAGRAMS = [
     name: `T'ai  /  La Paz`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2012.png',
   },
   {
@@ -130,6 +240,16 @@ const HEXAGRAMS = [
     name: `P'i  /  El Estancamiento`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2013.png',
   },
   {
@@ -138,6 +258,16 @@ const HEXAGRAMS = [
     name: `T'ung Jen  /  Comunidad con los Hombres`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2014.png',
   },
   {
@@ -146,6 +276,16 @@ const HEXAGRAMS = [
     name: `Ta Yu  /  La Posesión de lo Grande`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2015.png',
   },
   {
@@ -154,6 +294,16 @@ const HEXAGRAMS = [
     name: `Ch'ien  /  La Modestia`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2016.png',
   },
   {
@@ -162,6 +312,16 @@ const HEXAGRAMS = [
     name: `Yü  /  El Entusiasmo`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2017.png',
   },
   {
@@ -170,6 +330,16 @@ const HEXAGRAMS = [
     name: `Sui  /  El Seguimiento`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2018.png',
   },
   {
@@ -178,6 +348,16 @@ const HEXAGRAMS = [
     name: `Ku  /  El Trabajo en lo Echado a Perder`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2019.png',
   },
   {
@@ -186,6 +366,16 @@ const HEXAGRAMS = [
     name: `Lin  /  El Acercamiento`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2020.png',
   },
   {
@@ -194,14 +384,34 @@ const HEXAGRAMS = [
     name: `Kuan  /  La Contemplación (La Vista)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2021.png',
   },
   {
     order: 21,
-    bin: 0b010111,
+    bin: 0b100101,
     name: `Shih Ho  /  La Mordedura Tajante`,
-    up: triByBin.get(0b111).name,
-    down: triByBin.get(0b010).name,
+    up: triByBin.get(0b101).name,
+    down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2022.png',
   },
   {
@@ -210,6 +420,16 @@ const HEXAGRAMS = [
     name: `Pi  /  La Gracia (Lo Agraciado)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2023.png',
   },
   {
@@ -218,6 +438,16 @@ const HEXAGRAMS = [
     name: `Po  /  La Desintegración`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2024.png',
   },
   {
@@ -226,6 +456,16 @@ const HEXAGRAMS = [
     name: `Fu  /  El Retorno (El Tiempo del Solsticio)`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2025.png',
   },
   {
@@ -234,6 +474,16 @@ const HEXAGRAMS = [
     name: `Wu Wang  /  La Inocencia (Lo Inesperado)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2026.png',
   },
   {
@@ -242,6 +492,16 @@ const HEXAGRAMS = [
     name: `Ta Ch'u  /  La Fuerza Domesticadora de lo Grande`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2027.png',
   },
   {
@@ -250,6 +510,16 @@ const HEXAGRAMS = [
     name: `I  /  Las Comisuras de la Boca (La Nutrición)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2028.png',
   },
   {
@@ -258,6 +528,16 @@ const HEXAGRAMS = [
     name: `Ta Kuo  /  La Preponderancia de lo Grande`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2029.png',
   },
   {
@@ -266,6 +546,16 @@ const HEXAGRAMS = [
     name: `K'an  /  Lo Abismal, El Agua`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2030.png',
   },
   {
@@ -274,6 +564,16 @@ const HEXAGRAMS = [
     name: `Li  /  Lo Adherente, El Fuego`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2031.png',
   },
   {
@@ -282,14 +582,34 @@ const HEXAGRAMS = [
     name: `Hsien  /  El Influjo (El Cortejo)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2032.png',
   },
   {
     order: 32,
-    bin: 0b001100,
+    bin: 0b011100,
     name: `Heng  /  La Duración`,
     up: triByBin.get(0b100).name,
-    down: triByBin.get(0b001).name,
+    down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2033.png',
   },
   {
@@ -298,6 +618,16 @@ const HEXAGRAMS = [
     name: `Tun  /  La Retirada`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2034.png',
   },
   {
@@ -306,6 +636,16 @@ const HEXAGRAMS = [
     name: `Ta Chuang  /  El Poder de lo Grande`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2035.png',
   },
   {
@@ -314,6 +654,16 @@ const HEXAGRAMS = [
     name: `Chin  /  El Progreso`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2036.png',
   },
   {
@@ -321,7 +671,17 @@ const HEXAGRAMS = [
     bin: 0b101000,
     name: `Ming I  /  El Oscurecimiento de la Luz`,
     up: triByBin.get(0b000).name,
-    down: triByBin.get(0b001).name,
+    down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2037.png',
   },
   {
@@ -330,6 +690,16 @@ const HEXAGRAMS = [
     name: `Chia Jen  /  El Clan (La Familia)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2038.png',
   },
   {
@@ -338,6 +708,16 @@ const HEXAGRAMS = [
     name: `K'uei  /  El Antagonismo (La Oposición)`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2039.png',
   },
   {
@@ -346,6 +726,16 @@ const HEXAGRAMS = [
     name: `Chien  /  El Impedimento`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2040.png',
   },
   {
@@ -354,6 +744,16 @@ const HEXAGRAMS = [
     name: `Hsieh  /  La Liberación`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2041.png',
   },
   {
@@ -362,6 +762,16 @@ const HEXAGRAMS = [
     name: `Sun  /  La Merma`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2042.png',
   },
   {
@@ -370,6 +780,16 @@ const HEXAGRAMS = [
     name: `I  /  El Aumento`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2043.png',
   },
   {
@@ -378,6 +798,16 @@ const HEXAGRAMS = [
     name: `Kuai  /  El Desbordamiento`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b111).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2044.png',
   },
   {
@@ -386,6 +816,16 @@ const HEXAGRAMS = [
     name: `Kou  /  El Ir al Encuentro (La Complacencia)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2045.png',
   },
   {
@@ -394,6 +834,16 @@ const HEXAGRAMS = [
     name: `Ts'ui  /  La Reunión (La Recolección)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b000).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2046.png',
   },
   {
@@ -402,6 +852,16 @@ const HEXAGRAMS = [
     name: `Sheng  /  La Subida (El Empuje hacia Arriba)`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2047.png',
   },
   {
@@ -410,6 +870,16 @@ const HEXAGRAMS = [
     name: `K'un  /  La Desazón (La Opresión, El Agotamiento)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2048.png',
   },
   {
@@ -418,6 +888,16 @@ const HEXAGRAMS = [
     name: `Ching  /  El Pozo de Agua`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2049.png',
   },
   {
@@ -426,6 +906,16 @@ const HEXAGRAMS = [
     name: `Ko  /  La Revolución (La Muda)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2050.png',
   },
   {
@@ -434,6 +924,16 @@ const HEXAGRAMS = [
     name: `Ting  /  El Caldero`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2051.png',
   },
   {
@@ -442,6 +942,16 @@ const HEXAGRAMS = [
     name: `Chen  /  Lo Suscitativo (La Conmoción, El Trueno)`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b100).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2052.png',
   },
   {
@@ -450,6 +960,16 @@ const HEXAGRAMS = [
     name: `Ken  /  El Aquietamiento (La Montaña)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2053.png',
   },
   {
@@ -458,6 +978,16 @@ const HEXAGRAMS = [
     name: `Chien  /  La Evolución (Progreso Paulatino)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2054.png',
   },
   {
@@ -466,6 +996,16 @@ const HEXAGRAMS = [
     name: `Kuei Mei  /  La Muchacha que se Casa (La Desposanda)`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2055.png',
   },
   {
@@ -474,6 +1014,16 @@ const HEXAGRAMS = [
     name: `Feng  /  La Plenitud`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2056.png',
   },
   {
@@ -482,6 +1032,16 @@ const HEXAGRAMS = [
     name: `Lü  /  El Andariego`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2057.png',
   },
   {
@@ -490,6 +1050,16 @@ const HEXAGRAMS = [
     name: `Sun  /  Lo Suave (Lo Penetrante, El Viento)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b011).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2058.png',
   },
   {
@@ -498,6 +1068,16 @@ const HEXAGRAMS = [
     name: `Tui  /  Lo Sereno, El Lago`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2059.png',
   },
   {
@@ -506,6 +1086,16 @@ const HEXAGRAMS = [
     name: `Huan  /  La Disolución (La Dispersión)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2060.png',
   },
   {
@@ -514,6 +1104,16 @@ const HEXAGRAMS = [
     name: `Chieh  /  La Restricción`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2061.png',
   },
   {
@@ -522,6 +1122,16 @@ const HEXAGRAMS = [
     name: `Chung Fu  /  La Verdad Interior`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b110).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2062.png',
   },
   {
@@ -530,6 +1140,16 @@ const HEXAGRAMS = [
     name: `Hsiao Kuo  /  La Preponderancia de lo Pequeño`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b001).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2063.png',
   },
   {
@@ -538,6 +1158,16 @@ const HEXAGRAMS = [
     name: `Chi Chi  /  Después de la Consumación`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b101).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2064.png',
   },
   {
@@ -546,6 +1176,16 @@ const HEXAGRAMS = [
     name: `Wei Chi  /  Antes de la Consumación`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b010).name,
+    mutable1: 'Línea mutable 1',
+    mutable2: 'Línea mutable 2',
+    mutable3: 'Línea mutable 3',
+    mutable4: 'Línea mutable 4',
+    mutable5: 'Línea mutable 5',
+    mutable6: 'Línea mutable 6',
+    dictamen:
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    imagen:
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2065.png',
   },
 ]
