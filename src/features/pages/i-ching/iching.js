@@ -14,6 +14,7 @@ function iChing() {
   // general
   const introSection = document.querySelector('.intro-section')
   const iChingSection = document.querySelector('.i-ching-section')
+  const infoSection = document.querySelector('.info-section')
   const iChingHeader = document.querySelector('.i-ching-header')
   const hexContainers = document.querySelectorAll('.hexagram-container')
   const imgs = document.querySelectorAll('.chinese-txtr')
@@ -32,6 +33,8 @@ function iChing() {
   // buttons
   const buttons = document.querySelectorAll('.is-butt')
   const startButton = document.querySelector('.start-button')
+  const infoButton = document.querySelector('.info-button')
+  const infoBackButton = document.querySelector('.is--expl')
   const coinButton = document.querySelector('.coins-button')
   const explanationButton = document.querySelector('.explanation-button')
   const mutableButton = document.querySelector('.mutable-button')
@@ -45,10 +48,38 @@ function iChing() {
   let mutableLines = [0, 0, 0, 0, 0, 0]
   let splitH
   let splitIntroH
+  let isBlocked = false
+
+  function blockButton() {
+    gsap.to(coinButton, {
+      // opacity: 0.4,
+      pointerEvents: 'none',
+      duration: 0.2,
+    })
+    isBlocked = true
+    setTimeout(() => {
+      gsap.to(coinButton, {
+        // opacity: 1,
+        pointerEvents: 'auto',
+        duration: 0.2,
+      })
+      isBlocked = false
+    }, 3400)
+  }
+
+  function init() {
+    gsap.to(introSection, {
+      delay: 0.6,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    splitLines()
+  }
+  init()
 
   function start() {
     gsap.to(splitIntroH.lines, {
-      // opacity: 0,
       yPercent: 100,
       duration: 1.2,
       ease: 'power2.inOut',
@@ -69,7 +100,110 @@ function iChing() {
       duration: 1.2,
       ease: 'power2.inOut',
     })
+    gsap.to(iChingSection, {
+      opacity: 1,
+      delay: 1.2,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
   }
+
+  function info() {
+    gsap.to(splitIntroH.lines, {
+      yPercent: 100,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(iChingHeader, {
+      // opacity: 0,
+      yPercent: 100,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(introSection, {
+      yPercent: -100,
+      duration: 2.4,
+      ease: 'power2.inOut',
+    })
+    gsap.to(introSection, {
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(infoSection, {
+      yPercent: 100,
+      delay: 1.2,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to([readingHs], {
+      yPercent: -100,
+      delay: 1.4,
+      duration: 1.8,
+      ease: 'power2.inOut',
+    })
+    gsap.to(splitH.lines, {
+      yPercent: 0,
+      delay: 1.4,
+      duration: 1.8,
+      ease: 'power2.inOut',
+    })
+    gsap.to(infoBackButton, {
+      opacity: 1,
+      duration: 1.2,
+      delay: 1.8,
+    })
+  }
+
+  function backFromInfo() {
+    gsap.to(infoBackButton, {
+      opacity: 0,
+      duration: 1.2,
+      // delay: 1.4,
+    })
+    gsap.to(splitIntroH.lines, {
+      delay: 1.2,
+      yPercent: 0,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(iChingHeader, {
+      delay: 1.2,
+      // opacity: 0,
+      yPercent: 0,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(introSection, {
+      yPercent: 0,
+      duration: 2.4,
+      ease: 'power2.inOut',
+    })
+    gsap.to(introSection, {
+      delay: 1.4,
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(infoSection, {
+      yPercent: 0,
+      // delay: 1.2,
+      duration: 2.4,
+      ease: 'power2.inOut',
+    })
+    gsap.to([readingHs], {
+      yPercent: 0,
+      // delay: 1.4,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(splitH.lines, {
+      yPercent: 100,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+  }
+
   function throwCoins() {
     let lineIndex = 5 - lineCounter
     let value = 0
@@ -242,6 +376,7 @@ function iChing() {
     imgs.forEach((img) => {
       img.src = source
       gsap.to(img, {
+        delay: 0.6,
         opacity: 1,
         duration: 2,
         ease: 'power2.inOut',
@@ -258,6 +393,7 @@ function iChing() {
       trigramHeadings[1].textContent = 'Abajo:  ' + currentHex.down
       trigramHeadings[3].textContent = 'Abajo:  ' + currentHex.down
       gsap.to([title, trigramHeadings], {
+        delay: 0.6,
         opacity: 1,
         duration: 2,
         ease: 'power2.inOut',
@@ -412,7 +548,7 @@ function iChing() {
     const source = githubToJsDelivr(newHex.src)
     const currentTitle = hexWrapper.querySelector('.hexagram-title')
     const currentTrigramHeadings = hexWrapper.querySelectorAll('.trigram-h')
-    gsap.to(splitH.lines, {
+    gsap.to([readingHs, splitH.lines], {
       yPercent: 100,
       duration: 1.2,
       ease: 'power2.inOut',
@@ -442,6 +578,11 @@ function iChing() {
 
         gsap.to(splitH.lines, {
           yPercent: 0,
+          duration: 1.2,
+          ease: 'power2.inOut',
+        })
+        gsap.to(readingHs, {
+          yPercent: -100,
           duration: 1.2,
           ease: 'power2.inOut',
         })
@@ -532,7 +673,7 @@ function iChing() {
     const source = githubToJsDelivr(currentHex.src)
     const currentTitle = hexWrapper.querySelector('.hexagram-title')
     const currentTrigramHeadings = hexWrapper.querySelectorAll('.trigram-h')
-    gsap.to(splitH.lines, {
+    gsap.to([readingHs, splitH.lines], {
       yPercent: 100,
       duration: 1.2,
       ease: 'power2.inOut',
@@ -566,6 +707,11 @@ function iChing() {
           duration: 1.2,
           ease: 'power2.inOut',
         })
+        gsap.to(readingHs, {
+          yPercent: -100,
+          duration: 1.2,
+          ease: 'power2.inOut',
+        })
       },
     })
 
@@ -587,13 +733,14 @@ function iChing() {
 
   function displayExplanationButton() {
     gsap.to([coinButton, coinsWrapper], {
+      delay: 0.6,
       opacity: 0,
       zIndex: -1,
-      duration: 0.6,
+      duration: 0.8,
       pointerEvents: 'none',
     })
     gsap.to(explanationButton, {
-      delay: 1.2,
+      delay: 3.6,
       opacity: 1,
       zIndex: 1,
       duration: 1.2,
@@ -656,27 +803,42 @@ function iChing() {
     start()
   })
 
+  infoButton.addEventListener('click', (e) => {
+    const b = e.currentTarget
+    clickAnimation(b)
+    info()
+  })
+
+  infoBackButton.addEventListener('click', (e) => {
+    const b = e.currentTarget
+    clickAnimation(b)
+    backFromInfo()
+  })
+
   coinButton.addEventListener('click', (e) => {
     // if hexagram is not FULL
-    if (lineCounter < 6) {
-      const b = e.currentTarget
-      clickAnimation(b)
+    if (!isBlocked) {
+      blockButton()
+      if (lineCounter < 6) {
+        const b = e.currentTarget
+        clickAnimation(b)
 
-      // coin logic
-      throwCoins()
+        // coin logic
+        throwCoins()
 
-      lineCounter++
+        lineCounter++
 
-      // if hexagram has been completed
-      if (lineCounter == 6) {
-        setTimeout(() => {
-          displayChar()
-          displayTitle()
-          displayReading()
+        // if hexagram has been completed
+        if (lineCounter == 6) {
           displayExplanationButton()
-          hideMutating()
-          splitLines()
-        }, 1200)
+          setTimeout(() => {
+            displayChar()
+            displayTitle()
+            displayReading()
+            hideMutating()
+            splitLines()
+          }, 1200)
+        }
       }
     }
   })
@@ -739,136 +901,6 @@ function iChing() {
       })
     })
   })
-
-  // coinButton.addEventListener('mouseover', () => {
-  //   gsap.to(coinButton, {
-  //     scale: 0.98,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([coinButtonTxt, coinButtonTxtHidden], {
-  //     yPercent: -100,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // coinButton.addEventListener('mouseleave', () => {
-  //   gsap.to(coinButton, {
-  //     scale: 1,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([coinButtonTxt, coinButtonTxtHidden], {
-  //     yPercent: 0,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // explanationButton.addEventListener('mouseover', () => {
-  //   gsap.to(explanationButton, {
-  //     scale: 0.98,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([explanationButtonTxt, explanationButtonTxtHidden], {
-  //     yPercent: -100,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // explanationButton.addEventListener('mouseleave', () => {
-  //   gsap.to(explanationButton, {
-  //     scale: 1,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([explanationButtonTxt, explanationButtonTxtHidden], {
-  //     yPercent: 0,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // mutableButton.addEventListener('mouseover', () => {
-  //   gsap.to(mutableButton, {
-  //     scale: 0.98,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([mutableButtonTxt, mutableButtonTxtHidden], {
-  //     yPercent: -100,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // mutableButton.addEventListener('mouseleave', () => {
-  //   gsap.to(mutableButton, {
-  //     scale: 1,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([mutableButtonTxt, mutableButtonTxtHidden], {
-  //     yPercent: 0,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // originalButton.addEventListener('mouseover', () => {
-  //   gsap.to(originalButton, {
-  //     scale: 0.98,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([originalButtonTxt, originalButtonTxtHidden], {
-  //     yPercent: -100,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // originalButton.addEventListener('mouseleave', () => {
-  //   gsap.to(originalButton, {
-  //     scale: 1,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([originalButtonTxt, originalButtonTxtHidden], {
-  //     yPercent: 0,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // backButton.addEventListener('mouseover', () => {
-  //   gsap.to(backButton, {
-  //     scale: 0.98,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([backButtonTxt, backButtonTxtHidden], {
-  //     yPercent: -100,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
-
-  // backButton.addEventListener('mouseleave', () => {
-  //   gsap.to(backButton, {
-  //     scale: 1,
-  //     duration: 0.2,
-  //     ease: 'power2.inOut',
-  //   })
-  //   gsap.to([backButtonTxt, backButtonTxtHidden], {
-  //     yPercent: 0,
-  //     duration: 0.4,
-  //     ease: 'power2.inOut',
-  //   })
-  // })
 
   //#endregion
 }
