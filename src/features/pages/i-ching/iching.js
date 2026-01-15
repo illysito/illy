@@ -16,6 +16,7 @@ function iChing() {
   const iChingSection = document.querySelector('.i-ching-section')
   const infoSection = document.querySelector('.info-section')
   const iChingHeader = document.querySelector('.i-ching-header')
+  const infoChars = document.querySelectorAll('.info-char')
   const hexContainers = document.querySelectorAll('.hexagram-container')
   const imgs = document.querySelectorAll('.chinese-txtr')
   const titles = document.querySelectorAll('.hexagram-title')
@@ -49,6 +50,7 @@ function iChing() {
   let splitH
   let splitIntroH
   let isBlocked = false
+  // const svh = window.innerHeight * 0.01
 
   function blockButton() {
     // gsap.to(coinButton, {
@@ -68,6 +70,16 @@ function iChing() {
     console.log('off for a while')
   }
 
+  function lockScroll() {
+    document.body.style.position = 'fixed'
+    document.body.style.top = '0'
+  }
+
+  function unlockScroll() {
+    document.body.style.position = 'static'
+    document.body.style.top = '0'
+  }
+
   function init() {
     gsap.to(introSection, {
       delay: 0.6,
@@ -76,8 +88,19 @@ function iChing() {
       ease: 'power2.inOut',
     })
     splitLines()
+    lockScroll()
   }
   init()
+
+  function overlapReading() {
+    readingSection.style.position = 'relative'
+    infoSection.style.position = 'absolute'
+  }
+
+  // function overlapInfo() {
+  //   readingSection.style.position = 'absolute'
+  //   infoSection.style.position = 'relative'
+  // }
 
   function start() {
     gsap.to(splitIntroH.lines, {
@@ -107,9 +130,11 @@ function iChing() {
       duration: 1.2,
       ease: 'power2.inOut',
     })
+    overlapReading()
   }
 
   function info() {
+    unlockScroll()
     gsap.to(splitIntroH.lines, {
       yPercent: 100,
       duration: 1.2,
@@ -132,7 +157,8 @@ function iChing() {
       ease: 'power2.inOut',
     })
     gsap.to(infoSection, {
-      yPercent: 100,
+      opacity: 1,
+      zIndex: 99,
       delay: 1.2,
       duration: 1.2,
       ease: 'power2.inOut',
@@ -149,7 +175,7 @@ function iChing() {
       duration: 1.8,
       ease: 'power2.inOut',
     })
-    gsap.to(infoBackButton, {
+    gsap.to([infoChars, infoBackButton], {
       opacity: 1,
       duration: 1.2,
       delay: 1.8,
@@ -157,7 +183,7 @@ function iChing() {
   }
 
   function backFromInfo() {
-    gsap.to(infoBackButton, {
+    gsap.to([infoChars, infoBackButton], {
       opacity: 0,
       duration: 1.2,
       // delay: 1.4,
@@ -187,10 +213,14 @@ function iChing() {
       ease: 'power2.inOut',
     })
     gsap.to(infoSection, {
-      yPercent: 0,
+      opacity: 0,
+      zIndex: -1,
       // delay: 1.2,
       duration: 2.4,
       ease: 'power2.inOut',
+      onComplete: () => {
+        lockScroll()
+      },
     })
     gsap.to([readingHs], {
       yPercent: 0,
@@ -431,38 +461,44 @@ function iChing() {
   }
 
   function showReading() {
-    gsap.to(iChingSection, {
-      delay: 0.4,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power2.inOut',
-    })
-    gsap.to(readingSection, {
-      yPercent: 100,
-      duration: 2.4,
-      ease: 'expo.inOut',
-    })
-    gsap.to(readingHs, {
-      delay: 1.2,
-      yPercent: -100,
-      duration: 1.2,
-      ease: 'power2.inOut',
-    })
-    gsap.to(splitH.lines, {
-      delay: 1.2,
-      yPercent: 0,
-      duration: 1.2,
-      ease: 'power2.inOut',
-    })
-    gsap.to(readingColumn, {
-      delay: 1.2,
-      opacity: 1,
-      duration: 1.2,
-      ease: 'power2.inOut',
+    unlockScroll()
+    explanationButton.style.pointerEvents = 'none'
+    requestAnimationFrame(() => {
+      gsap.to(iChingSection, {
+        delay: 0.4,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power2.inOut',
+      })
+      gsap.to(readingSection, {
+        opacity: 1,
+        zIndex: 99,
+        duration: 2.4,
+        ease: 'expo.inOut',
+      })
+      gsap.to(readingHs, {
+        delay: 1.2,
+        yPercent: -100,
+        duration: 1.2,
+        ease: 'power2.inOut',
+      })
+      gsap.to(splitH.lines, {
+        delay: 1.2,
+        yPercent: 0,
+        duration: 1.2,
+        ease: 'power2.inOut',
+      })
+      gsap.to(readingColumn, {
+        delay: 1.2,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power2.inOut',
+      })
     })
   }
 
   function hideReading() {
+    explanationButton.style.pointerEvents = 'auto'
     gsap.to(readingHs, {
       yPercent: 100,
       duration: 1.2,
@@ -485,9 +521,13 @@ function iChing() {
       ease: 'power2.inOut',
     })
     gsap.to(readingSection, {
-      yPercent: -100,
+      opacity: 0,
+      zIndex: -1,
       duration: 2.4,
       ease: 'expo.inOut',
+      onComplete: () => {
+        lockScroll()
+      },
     })
   }
 
