@@ -93,6 +93,8 @@ function iChing() {
   init()
 
   function overlapReading() {
+    readingSection.style.position = 'relative'
+    infoSection.style.position = 'absolute'
     readingSection.style.visbility = 'visible'
     infoSection.style.visibility = 'hidden'
   }
