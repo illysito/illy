@@ -23,9 +23,11 @@ function iChing() {
   const trigramHeadings = document.querySelectorAll('.trigram-h')
   const readingSection = document.querySelector('.explanation-section')
   const readingHs = document.querySelectorAll('.reading-h')
-  const dict = document.querySelector('.is--dictamen')
-  const imagen = document.querySelector('.is--imagen')
+  // const dict = document.querySelector('.is--dictamen')
+  // const imagen = document.querySelector('.is--imagen')
   const linesBlock = document.querySelector('.lines-block')
+  const dictamenBlock = document.querySelector('.dictamen-block')
+  const imagenBlock = document.querySelector('.imagen-block')
   const readingColumn = document.querySelector('.col-center-reading')
   // coins
   const coinsWrapper = document.querySelector('.coins-img-wrapper')
@@ -97,11 +99,6 @@ function iChing() {
     infoSection.style.position = 'absolute'
     infoSection.style.height = '0'
   }
-
-  // function overlapInfo() {
-  //   readingSection.style.position = 'absolute'
-  //   infoSection.style.position = 'relative'
-  // }
 
   function start() {
     gsap.to(splitIntroH.lines, {
@@ -435,8 +432,19 @@ function iChing() {
 
   function displayReading() {
     const currentHex = hexByBin.get(binaryCounter)
-    dict.textContent = currentHex.dictamen
+    // dictamen
+    const dictamen = document.createElement('h3')
+    dictamen.classList.add('reading-sub-h')
+    dictamen.classList.add('is--dictamen')
+    dictamen.textContent = currentHex.dictamen
+    dictamenBlock.appendChild(dictamen)
+    // imagen
+    const imagen = document.createElement('h3')
+    imagen.classList.add('reading-sub-h')
+    imagen.classList.add('is--imagen')
     imagen.textContent = currentHex.imagen
+    imagenBlock.appendChild(imagen)
+    // lineas
     for (let i = 0; i < mutableLines.length; i++) {
       if (mutableLines[i] == 1) {
         const mutableLine = document.createElement('h3')
@@ -586,6 +594,8 @@ function iChing() {
     })
 
     // Change text visually
+    const dict = document.querySelector('.is--dictamen')
+    const imagen = document.querySelector('.is--imagen')
     const currentImg = hexWrapper.querySelector('.chinese-txtr')
     const source = githubToJsDelivr(newHex.src)
     const currentTitle = hexWrapper.querySelector('.hexagram-title')
@@ -711,6 +721,8 @@ function iChing() {
     })
 
     // Change text visually
+    const dict = document.querySelector('.is--dictamen')
+    const imagen = document.querySelector('.is--imagen')
     const currentImg = hexWrapper.querySelector('.chinese-txtr')
     const source = githubToJsDelivr(currentHex.src)
     const currentTitle = hexWrapper.querySelector('.hexagram-title')
@@ -839,6 +851,7 @@ function iChing() {
       },
     })
   }
+
   startButton.addEventListener('click', (e) => {
     const b = e.currentTarget
     clickAnimation(b)

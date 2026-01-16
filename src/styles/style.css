@@ -180,3 +180,7 @@ button,
 .trigram-h {
   white-space: pre-wrap;
 }
+
+.reading-sub-h {
+  white-space: pre-line;
+}

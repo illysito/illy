@@ -42,16 +42,21 @@ const HEXAGRAMS = [
     name: `Ch'ien  /  Lo Creativo`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:\nDragón cubierto. No actúes.',
+    mutable2:
+      'Nueve en el segundo puesto significa:\nDragón que aparece sobre el campo.\nEs propicio ver al gran hombre.',
+    mutable3:
+      'Nueve en el tercer puesto significa:\nEl noble es creativamente activo todo el día.\nAun por la noche lo embarga la preocupación interior.\nPeligro. Ninguna tacha.',
+    mutable4:
+      'Nueve en el cuarto puesto significa:\nVacilante elevación sobre el precipicio. Ninguna tacha.',
+    mutable5:
+      'Nueve en el quinto puesto significa:\nDragón que vuela en el cielo.\nEs propicio ver al gran hombre.',
+    mutable6:
+      'Al tope un nueve significa:\nDragón soberbio tendrá que arrepentirse.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Lo Creativo obra elevado logro, propiciando por la perseverancia.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%202.png',
   },
   {
@@ -60,16 +65,22 @@ const HEXAGRAMS = [
     name: `K'un  /  Lo Receptivo`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa:\nCuando se pisa escarcha, se aproxima el hielo firme.',
+    mutable2:
+      'Seis en el segundo puesto significa:\nRectilíneo, rectangular, grande.\nSin propósito, y sin embargo nada queda que no se vea fomentado.',
+    mutable3:
+      'Seis en el tercer puesto significa:\nLíneas ocultas; se es capaz de permanecer perseverante.\nSi acaso sigues al servicio de un rey,\n¡no busques obras, sino llévalas a cabo!',
+    mutable4:
+      'Seis en el cuarto puesto significa:\nBolsa atada. Ninguna tacha; ningún elogio.',
+    mutable5:
+      'Seis en el quinto puesto significa:\nRopa interior amarilla trae elevada ventura.',
+    mutable6:
+      'Al tope un seis significa:\nDragones luchan en la pradera.\nSu sangre es negra y amarilla.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Lo Receptivo obra elevado éxito, propiciante por la perseverancia de una yegua. Cuando el noble ha de emprender algo y quiere avanzar, se extravía; mas si va en seguimiento encuentra conducción. Es propicio encontrar amigos al Oeste y al Sur, evitar los amigos al Este y al Norte. Una tranquila perseverancia trae ventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El estado de la Tierra es la receptiva entrega. Así el noble, de naturaleza amplia, sostiene el mundo externo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%203.png',
   },
   {
@@ -78,16 +89,22 @@ const HEXAGRAMS = [
     name: `Chun  /  La Dificultad Inicial`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un nueve significa:\nVacilación y traba.\nEs propicio permanecer perseverante.\nEs propicio designar ayudantes.',
+    mutable2:
+      'Seis en el segundo puesto significa:\nSe apilan dificultades. Caballo y carro se separan.\nÉl no es un raptor,\nva a cortejar en el debido plazo.\nLa doncella es casta, no se promete.\nDiez años, luego promete.',
+    mutable3:
+      'Seis en el tercer puesto significa:\nEl que caza al ciervo sin guardamonte,\nlo único que logra es extraviarse en el bosque.\nEl noble capta los signos del tiempo\ny prefiere desistir.\nContinuar acarrea humillación.',
+    mutable4:
+      'Seis en el cuarto puesto significa:\nCaballo y carro se separan.\n¡Busca la unión!\nAcudir trae ventura.\nTodo obra de un modo propicio.',
+    mutable5:
+      'Nueve en el quito puesto significa:\nDificultades en bendecir.\nPequeña perseverancia trae ventura.\nGran perseverancia trae desventura.',
+    mutable6:
+      'Al tope un seis significa:\nCaballo y carro se separan.\nLágrimas de sangre se derraman.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Lo Dificultad Inicial obra elevado éxito. Propicio en virtud de la perseverancia. No debe emprenderse nada. Es propicio designar ayudantes.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Nubes y trueno: la imagen de La Dificultad Inicial. Así el noble actúa desenmarañando y ordenando.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%204.png',
   },
   {
@@ -96,16 +113,22 @@ const HEXAGRAMS = [
     name: `Meng  /  La Necedad Juvenil`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa:\nCon el fin de desarrollar al necio\nes propicio disciplinar al hombre.\nDeben quitarse las trabas.\nContinuar así trae humillación.',
+    mutable2:
+      'Nueve en el segundo puesto significa:\nSoportar a los necios con benevolencia trae ventura.\nSaber tomar a las mujeres trae ventura.\nEl hijo es apto para administrar la casa.',
+    mutable3:
+      'Seis en el tercer puesto significa:\nNo has de tomar una muchacha\nque ve a un hombre de bronce\ny ya no es dueña de sí misma.\nNada es propicio.',
+    mutable4:
+      'Seis en el cuarto puesto significa:\nNecedad con cortedad trae humillación.',
+    mutable5:
+      'Seis en el quinto puesto significa:\nNecedad infantil aporta ventura.',
+    mutable6:
+      'Al tope un nueve significa:\nAl castigar la necedad no es propicio\ncometer abusos.\nSólo es propicio defenderse de abusos.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Necedad Juvenil tiene éxito. No soy yo quien busca al joven necio, el joven necio me busca a mí. Al primer oráculo doy razón. Si pregunta dos, tres veces, es molestia. Cuando molesta no doy información. Es propicia la perseverancia.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En lo bajo, al pie de la montaña, surge un manantial: la imagen de la juventud. Así el noble, mediante su actuación escrupulosa, sustenta su carácter.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%205.png',
   },
   {
