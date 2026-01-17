@@ -137,16 +137,22 @@ const HEXAGRAMS = [
     name: `Hsü  /  La Espera (La Alimentación)`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un nueve significa: Esperar en la pradera. Es propicio permanecer en lo duradero. Ningún defecto.',
+    mutable2:
+      'Nueve en el segundo puesto significa: La espera en la arena. Hay alguna habladuría. El final aporta ventura.',
+    mutable3:
+      'Nueve en el tercer puesto significa: La Espera en el fango da lugar a la llegada del enemigo.',
+    mutable4:
+      'Seis en el cuarto puesto significa: La Espera en la sangre. ¡Fuera del agujero!',
+    mutable5:
+      'Nueve en el quinto puesto significa: Esperar junto al vino y la comida. La perseverancia trae ventura.',
+    mutable6:
+      'Al tope un seis significa: Uno cae en el agujero. Arriban entonces tres huéspedes no convidados. Hónralos y al fin llegará la ventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Espera. Si eres veraz, tendrás luz y éxito. La perseverancia trae ventura. Es propicio atravesar las grandes aguas.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En el cielo se elevan nubes: la imagen de La Espera. Así come y bebe el noble y permanece sereno y de buen humor.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%206.png',
   },
   {
@@ -155,16 +161,22 @@ const HEXAGRAMS = [
     name: `Sung  /  El Conflicto (El Pleito)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa: Si uno no perpetúa la cuestión habrá un poco de chismorreo. Al cabo llega la ventura.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Uno no puede pleitear, retorna a su casa y lo elude. Las gentes de su ciudad, trescientas casas, quedan libres de culpa.',
+    mutable3:
+      'Seis en el tercer puesto significa: Nutrirse de antigua virtud da perseverancia. Peligro, al cabo llega la ventura. Si acaso sigues obediente al servicio de un rey, no busques obras.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Uno no puede pleitear, se vuelve y acata el destino, cambia, y encuentra paz en la perseverancia. ¡Ventura!',
+    mutable5:
+      'Nueve en el quinto puesto significa: Pleitear ante él trae elevada ventura.',
+    mutable6:
+      'Al tope un nueve significa: Aun cuando acaso a alguien se le otorgue un cinturón de cuero, al terminar la mañana le será arrancado tres veces.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Conflicto: eres veraz y te frenan. Detenerse con cautela a mitad de camino trae ventura. Ir hasta el fin trae desventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Cielo y agua se mueven en sentido contrario: la imagen del conflicto. Así el noble, en todos los negocios que realiza, reflexiona debidamente sobre su comienzo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%207.png',
   },
   {
@@ -173,16 +185,22 @@ const HEXAGRAMS = [
     name: `Shih  /  El Ejército`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa: Un ejército ha de partir en perfecto orden. Cuando es bueno el orden, amenaza la desventura.',
+    mutable2:
+      'Nueve en el segundo puesto significa: ¡En medio del ejército! ¡Ventura! ¡Ninguna falla! El rey confiere un triple galardón.',
+    mutable3:
+      'Seis en el tercer puesto significa: Acaso el ejército conduzca cadáveres en el carruaje. ¡Desventura!',
+    mutable4:
+      'Seis en el cuarto puesto significa: El ejército se retira. No hay falla.',
+    mutable5:
+      'Seis en el quinto puesto significa: En el campo hay un montaraz. Es propicio apresarlo. No hay falla. Conduzca el de más avanzada edad el ejército. El más jovenconduce cadáveres; así la perseverancia acarrea desventura.',
+    mutable6:
+      'Al tope un seis significa: El gran príncipe emite órdenes, funda Estados, otorga feudos a familias. Hombres vulgares no deben utilizarse.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Ejército requiere perseverancia y un hombre fuerte. Ventura sin falla.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En medio de la tierra hay agua: la imagen del ejército. Así el noble, en virtud de su magnanimidad para con el pueblo, acreciente sus multitudes.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%208.png',
   },
   {
@@ -191,16 +209,22 @@ const HEXAGRAMS = [
     name: `Pi  /  La Solidaridad (El mantenerse unido)`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa: Mantente solidario con él, de verdad y lealmente: no será una falla. Verdad como una colmada vasija de barro. Así por fin desde afuera llegará la ventura.',
+    mutable2:
+      'Seis en el segundo puesto significa: Mantente solidario con él en tu fuero interno. La perseverancia trae ventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Te solidarizas con gente que no es la que debe ser.',
+    mutable4:
+      'Seis en el cuarto puesto significa: También en lo externo mantente solidario con él. La perseverancia trae ventura.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Manifestación de la solidaridad. El rey, durante la cacería, sólo permite la batida desde tres lados, y renuncia a los venados que se desvían hacia adelante. Los ciudadanos no requieren advertencia. ¡Ventura!',
+    mutable6:
+      'Al tope un seis significa: No encuentra cabeza para la solidaridad. Desventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Solidaridad trae ventura. Indaga el oráculo una vez más, ve si tienes elevación, duración y perseverancia; si es así no habrá defecto. Los inseguros se allegan poco a poco. El que llega tarde tiene desventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la tierra hay agua: la imagen de la solidaridad. Así los reyes de tiempos antiguos otorgaban en feudo los diferentes Estados y mantenían trato amistoso con los príncipes vasallos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%209.png',
   },
   {
@@ -209,16 +233,22 @@ const HEXAGRAMS = [
     name: `Hsiao Ch'u  /  La Fuerza Domesticadora de lo Pequeño`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un nueve significa: Retorno al camino. ¡Cómo podría ser una falla! ¡Ventura!',
+    mutable2:
+      'Nueve en el segundo puesto significa: Se deja arrastrar hacia el retorno. ¡Ventura!',
+    mutable3:
+      'Nueve en el tercer puesto significa: Al carruaje se le saltan los rayos. El hombre y la mujer turcen los ojos.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Si eres veraz, desaparece la sangre y retrocede la angustia.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Si eres veraz y leal en la alianza, eres rico en tu prójimo.',
+    mutable6:
+      'Al tope un nueve significa: Llega la lluvia, llega el sosiego. Esto se debe a la permanente acción del carácter. La mujer cae en peligro debido a su perseverancia. La luna está casi llena. Si el noble prosigue, llegará la desventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Fuerza Domesticadora de lo Pequeño tiene éxito. Densas nubes, ninguna lluvia de nuestra región del Oeste.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El viento recorre el cielo: la imagen de La Fuerza Domesticadora de lo Pequeño. Así el noble va refinando la forma exterior de su naturaleza.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2010.png',
   },
   {
@@ -227,16 +257,21 @@ const HEXAGRAMS = [
     name: `Lü  /  El Porte (La Pisada)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
-    dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    mutable1:
+      'Al comienzo un nueve significa: Porte sencillo. Progreso sin defecto.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Pisar en llana y sencilla vía. La perseverancia de un hombre oscuro trae ventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Un tuerto puede ver, un tullido puede pisar. Pisa la cola del tigre. Éste muerde al hombre. ¡Desventura! Un guerrero actúa así en bien de su gran príncipe.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Él pisa la cola del tigre. Cautela y circunspección conducen finalmente a la ventura.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Porte decidido. Perseverancia, con conciencia el peligro.',
+    mutable6:
+      'Al tope un nueve significa: Contempla tu porte y examina las señales favorables. Si todo es perfecto, advendrá una elevada ventura.',
+    dictamen: 'Pisar la cola del tigre. Este no muerde al hombre. Éxito.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Arriba el cielo, abajo el lago: la imagen del Porte. Así distingue el noble entre lo alto y lo bajo y afirma con ello el sentido del pueblo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2011.png',
   },
   {
@@ -245,16 +280,21 @@ const HEXAGRAMS = [
     name: `T'ai  /  La Paz`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
-    dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    mutable1:
+      'Al comienzo un nueve significa: Cuando se arranca faláridas, sale adherida la hierba del césped. Cada cual a su manera. Las empresas traen ventura.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Soportar a los incultos con benevolencia, atravesar el río resueltamente, no descuidar lo lejano, no tomar en consideración a los compañeros: así tal vez se logre andar por el camino del medio.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Ningún llano al que no siga un declive, ninguna ida a la que no siga el retorno. Sin defecto es quien se mantiene perseverante frente al peligro. No te lamentes de esta verdad, disfruta de la dicha que todavía posees.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Él desciende aleteando, sin jactarse de su riqueza, en unión con su prójimo, sin malicia y veraz.',
+    mutable5:
+      'Seis en el quinto puesto significa: El soberano I concede a su hija en matrimonio. Esto trae bendición y elevada ventura.',
+    mutable6:
+      'Al tope un seis significa: La muralla se desploma de vualta al foso. Ahora no emplees ejércitos. En la propia ciudad proclama tus órdenes. La perseverancia trae humillación.',
+    dictamen: 'La Paz. Lo pequeño se va, llega lo grande. ¡Ventura! ¡Éxito!',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Cielo y Tierra se unen: la imagen de La Paz. Así reparte y completa el soberano el curso de cielo y tierra, fomenta y ordena los dones de cielo y tierra, con lo cual asiste al pueblo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2012.png',
   },
   {
@@ -263,16 +303,22 @@ const HEXAGRAMS = [
     name: `P'i  /  El Estancamiento`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa: Cuando uno arranca faláridas, salen adheridas las hierbas del césped. Cada cual a su manera. La perseverancia trae ventura y éxito.',
+    mutable2:
+      'Seis en el segundo puesto significa: Ellos soportan y toleran, esto significa ventura para los vulgares. Al gran hombre el Estancamiento le sirve para el logro.',
+    mutable3:
+      'Seis en el tercer puesto significa: Ellos sobrellevan la vergüenza.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Quien obra obedeciendo el orden del Altísimo permanece sin falla. Los que congenian con él disfrutarán de la bendición.',
+    mutable5:
+      'Nueve en el quinto puesto significa: El Estancamiento cede. ¡Ventura para el gran hombre! "¡Y si se malograra, si se malograra!" De este modo lo ata a un haz de vástagos de morera.',
+    mutable6:
+      'Al tope un nueve significa: El estancamiento cesa. Primero estancamiento, luego ventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Estancamiento. Hombres malignos no favorecen la perseverancia del noble. Lo grande se va, llega lo pequeño.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Cielo y Tierra no se unen: la imagen del Estancamiento. Así el noble se retira, refugiándose en su valer interior, con el fin de eludir dificultades. No permite que le honren con ingresos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2013.png',
   },
   {
@@ -281,16 +327,22 @@ const HEXAGRAMS = [
     name: `T'ung Jen  /  Comunidad con los Hombres`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un nueve significa: Comunidad con los hombres en el portal. Ningún defecto.',
+    mutable2:
+      'Seis en el segundo puesto significa: Comunidad con los hombres en el clan: humillación.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Esconde armas en el matorral, sube a la alta colina que está delante. Durante tres años no se levanta.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Él sube a su muralla, no puede atacar. ¡Ventura!',
+    mutable5:
+      'Nueve en el quinto puesto significa: Los hombres en comunidad primero lloran y se lamentan, pero luego ríen. Después de grandes luchas logran encontrarse.',
+    mutable6:
+      'Al tope un nueve significa: Comunidad con hombres en la pradera: no hay arrepentimiento.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Comunidad con los Hombres en lo libre: éxito. Es propicio atravesar las grandes aguas. Propicia es la perseverancia del noble.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Cielo junto con fuego: la imagen de La Comunidad con los Hombres. Así estructura el noble las tribus y discrimina las cosas.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2014.png',
   },
   {
@@ -299,16 +351,21 @@ const HEXAGRAMS = [
     name: `Ta Yu  /  La Posesión de lo Grande`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
-    dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    mutable1:
+      'Al comienzo un nueve significa: Ninguna relación con lo dañino, esto no es un defecto. Si permanece uno consciente de la dificultad, quedará libre de defecto.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Un gran carruaje para cargarlo. Se puede emprender algo. Ningún defecto.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Un príncipe lo ofrenda al Hijo del Cielo. Un hombre pequeño no sabe hacerlo.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Establece una diferencia entre sí y su prójimo. No hay defecto.',
+    mutable5:
+      'Seis en el quinto puesto significa: Aquel cuya verdad es afable y sin embargo digna, tendrá ventura.',
+    mutable6:
+      'Al tope un nueve significa: Él es bendecido desde el Cielo. ¡Ventura! Nada que no fuese propicio.',
+    dictamen: 'La Posesión de lo Grande: Elevado Logro.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El Fuego en lo alto del Cielo: la imagen de La Posesión de lo Grande. Así el noble frena el mal y fomenta el bien, obedeciendo con ello la buena voluntad del Cielo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2015.png',
   },
   {
@@ -317,16 +374,21 @@ const HEXAGRAMS = [
     name: `Ch'ien  /  La Modestia`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
-    dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    mutable1:
+      'Al comienzo un seis significa: Un noble modesto en su modestia bien puede atravesar las grandes aguas. ¡Ventura!',
+    mutable2:
+      'Seis en el segundo puesto significa: Modestia que se manifiesta. La perseverancia trae ventura.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Un noble meritorio por su modestia lleva a buen término. ¡Ventura!',
+    mutable4:
+      'Seis en el cuarto puesto significa: Nada que no sea propicio para la modestia en movimiento.',
+    mutable5:
+      'Seis en el quinto puesto significa: No hacer gala de riqueza frente a su prójimo. Es propicio atacara con violencia. Nada que no sea propicio.',
+    mutable6:
+      'Al tope un seis significa: Modestia que se manifiesta. Es propicio hacer que se pongan en marcha ejércitos, a fin de castigar la propia ciudad y el propio país.',
+    dictamen: 'La Modestia va creando el éxito. El noble lleva a buen término.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En medio de la tierra hay una montaña: la imagen de La Modestia. Así disminuye el noble lo que está de más y aumenta lo que está de menos. Sopesa las cosas y las iguala.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2016.png',
   },
   {
@@ -335,16 +397,22 @@ const HEXAGRAMS = [
     name: `Yü  /  El Entusiasmo`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1:
+      'Al comienzo un seis significa: Entusiasmo que se exterioriza trae desventura.',
+    mutable2:
+      'Seis en el segundo puesto significa: Firme como una roca. Ni un día entero. La perseverancia trae ventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Entusiasmo que mira hacia arriba engendra arrepentimiento. Vacilación trae arrepentimiento.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: La fuente del origen del Entusiasmo; alcanza grandes cosas. No dudes. Los amigos se agrupan rodeándote, como una presilla para el pelo.',
+    mutable5:
+      'Seis en el quinto puesto significa: Perseverantemente enfermo y sin embargo nunca se muere.',
+    mutable6:
+      'Al tope un seis significa: Entusiasmo cegado. Pero si después del encandilamiento logra uno el cambio, eso no será una falla.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Entusiasmo. Es propicio designar ayudantes y hacer marchar ejércitos.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El trueno surge estruendoso de la tierra: la imagen del Entusiasmo. Así los reyes antiguos hacían música para honrar los méritos, y la ofrendaban con magnificencia al Dios supremo, invitando a sus antepasados a presenciarlo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2017.png',
   },
   {
@@ -353,12 +421,12 @@ const HEXAGRAMS = [
     name: `Sui  /  El Seguimiento`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -371,12 +439,12 @@ const HEXAGRAMS = [
     name: `Ku  /  El Trabajo en lo Echado a Perder`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -389,12 +457,12 @@ const HEXAGRAMS = [
     name: `Lin  /  El Acercamiento`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -407,12 +475,12 @@ const HEXAGRAMS = [
     name: `Kuan  /  La Contemplación (La Vista)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -425,12 +493,12 @@ const HEXAGRAMS = [
     name: `Shih Ho  /  La Mordedura Tajante`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -443,12 +511,12 @@ const HEXAGRAMS = [
     name: `Pi  /  La Gracia (Lo Agraciado)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -461,12 +529,12 @@ const HEXAGRAMS = [
     name: `Po  /  La Desintegración`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -479,12 +547,12 @@ const HEXAGRAMS = [
     name: `Fu  /  El Retorno (El Tiempo del Solsticio)`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -497,12 +565,12 @@ const HEXAGRAMS = [
     name: `Wu Wang  /  La Inocencia (Lo Inesperado)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -515,12 +583,12 @@ const HEXAGRAMS = [
     name: `Ta Ch'u  /  La Fuerza Domesticadora de lo Grande`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -533,12 +601,12 @@ const HEXAGRAMS = [
     name: `I  /  Las Comisuras de la Boca (La Nutrición)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -551,12 +619,12 @@ const HEXAGRAMS = [
     name: `Ta Kuo  /  La Preponderancia de lo Grande`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -569,12 +637,12 @@ const HEXAGRAMS = [
     name: `K'an  /  Lo Abismal, El Agua`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -587,12 +655,12 @@ const HEXAGRAMS = [
     name: `Li  /  Lo Adherente, El Fuego`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -605,12 +673,12 @@ const HEXAGRAMS = [
     name: `Hsien  /  El Influjo (El Cortejo)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -623,12 +691,12 @@ const HEXAGRAMS = [
     name: `Heng  /  La Duración`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -641,12 +709,12 @@ const HEXAGRAMS = [
     name: `Tun  /  La Retirada`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -659,12 +727,12 @@ const HEXAGRAMS = [
     name: `Ta Chuang  /  El Poder de lo Grande`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -677,12 +745,12 @@ const HEXAGRAMS = [
     name: `Chin  /  El Progreso`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -695,12 +763,12 @@ const HEXAGRAMS = [
     name: `Ming I  /  El Oscurecimiento de la Luz`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -713,12 +781,12 @@ const HEXAGRAMS = [
     name: `Chia Jen  /  El Clan (La Familia)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -731,12 +799,12 @@ const HEXAGRAMS = [
     name: `K'uei  /  El Antagonismo (La Oposición)`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -749,12 +817,12 @@ const HEXAGRAMS = [
     name: `Chien  /  El Impedimento`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -767,12 +835,12 @@ const HEXAGRAMS = [
     name: `Hsieh  /  La Liberación`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -785,12 +853,12 @@ const HEXAGRAMS = [
     name: `Sun  /  La Merma`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -803,12 +871,12 @@ const HEXAGRAMS = [
     name: `I  /  El Aumento`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -821,12 +889,12 @@ const HEXAGRAMS = [
     name: `Kuai  /  El Desbordamiento`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -839,12 +907,12 @@ const HEXAGRAMS = [
     name: `Kou  /  El Ir al Encuentro (La Complacencia)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -857,12 +925,12 @@ const HEXAGRAMS = [
     name: `Ts'ui  /  La Reunión (La Recolección)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -875,12 +943,12 @@ const HEXAGRAMS = [
     name: `Sheng  /  La Subida (El Empuje hacia Arriba)`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -893,12 +961,12 @@ const HEXAGRAMS = [
     name: `K'un  /  La Desazón (La Opresión, El Agotamiento)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -911,12 +979,12 @@ const HEXAGRAMS = [
     name: `Ching  /  El Pozo de Agua`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -929,12 +997,12 @@ const HEXAGRAMS = [
     name: `Ko  /  La Revolución (La Muda)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -947,12 +1015,12 @@ const HEXAGRAMS = [
     name: `Ting  /  El Caldero`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -965,12 +1033,12 @@ const HEXAGRAMS = [
     name: `Chen  /  Lo Suscitativo (La Conmoción, El Trueno)`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -983,12 +1051,12 @@ const HEXAGRAMS = [
     name: `Ken  /  El Aquietamiento (La Montaña)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1001,12 +1069,12 @@ const HEXAGRAMS = [
     name: `Chien  /  La Evolución (Progreso Paulatino)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1019,12 +1087,12 @@ const HEXAGRAMS = [
     name: `Kuei Mei  /  La Muchacha que se Casa (La Desposanda)`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1037,12 +1105,12 @@ const HEXAGRAMS = [
     name: `Feng  /  La Plenitud`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1055,12 +1123,12 @@ const HEXAGRAMS = [
     name: `Lü  /  El Andariego`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1073,12 +1141,12 @@ const HEXAGRAMS = [
     name: `Sun  /  Lo Suave (Lo Penetrante, El Viento)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1091,12 +1159,12 @@ const HEXAGRAMS = [
     name: `Tui  /  Lo Sereno, El Lago`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1109,12 +1177,12 @@ const HEXAGRAMS = [
     name: `Huan  /  La Disolución (La Dispersión)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1127,12 +1195,12 @@ const HEXAGRAMS = [
     name: `Chieh  /  La Restricción`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1145,12 +1213,12 @@ const HEXAGRAMS = [
     name: `Chung Fu  /  La Verdad Interior`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1163,12 +1231,12 @@ const HEXAGRAMS = [
     name: `Hsiao Kuo  /  La Preponderancia de lo Pequeño`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1181,12 +1249,12 @@ const HEXAGRAMS = [
     name: `Chi Chi  /  Después de la Consumación`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:
@@ -1199,12 +1267,12 @@ const HEXAGRAMS = [
     name: `Wei Chi  /  Antes de la Consumación`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Línea mutable 1',
-    mutable2: 'Línea mutable 2',
-    mutable3: 'Línea mutable 3',
-    mutable4: 'Línea mutable 4',
-    mutable5: 'Línea mutable 5',
-    mutable6: 'Línea mutable 6',
+    mutable1: 'Al comienzo un nueve significa:',
+    mutable2: 'Nueve en el segundo puesto significa:',
+    mutable3: 'Nueve en el tercer puesto significa:',
+    mutable4: 'Nueve en el cuarto puesto significa:',
+    mutable5: 'Nueve en el quinto puesto significa:',
+    mutable6: 'Al tope un nueve significa:',
     dictamen:
       'Lo Creativo obra elevado logro, propiciando por la perseverancia',
     imagen:

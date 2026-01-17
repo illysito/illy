@@ -55,20 +55,20 @@ function iChing() {
   // const svh = window.innerHeight * 0.01
 
   function blockButton() {
-    // gsap.to(coinButton, {
-    //   // opacity: 0.4,
-    //   pointerEvents: 'none',
-    //   duration: 0.2,
-    // })
-    // isBlocked = true
-    // setTimeout(() => {
-    //   gsap.to(coinButton, {
-    //     // opacity: 1,
-    //     pointerEvents: 'auto',
-    //     duration: 0.2,
-    //   })
-    //   isBlocked = false
-    // }, 3400)
+    gsap.to(coinButton, {
+      // opacity: 0.4,
+      pointerEvents: 'none',
+      duration: 0.2,
+    })
+    isBlocked = true
+    setTimeout(() => {
+      gsap.to(coinButton, {
+        // opacity: 1,
+        pointerEvents: 'auto',
+        duration: 0.2,
+      })
+      isBlocked = false
+    }, 3400)
     console.log('off for a while')
   }
 
