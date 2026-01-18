@@ -657,16 +657,22 @@ const HEXAGRAMS = [
     name: `I  /  Las Comisuras de la Boca (La Nutrición)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Dejas escapar a tu tortuga mágica y me miras a mí, caídas las comisuras de los labios. ¡Desventura!',
+    mutable2:
+      'Seis en el segundo puesto significa: Dirigirse hacia la cumbre en busca de alimento. Apartarse del camino para buscar alimento de la colina: continuar así traerá desventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Desviarse de la nutrición. La perseverancia trae desventura. Durante diez años no obres de este modo. Nada es propicio.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Dirigirse hacia la cumbre en busca de alimento trae ventura. Espiar en torno como un tigre, con ojos aguzados e insaciable avidez. No hay defecto.',
+    mutable5:
+      'Seis en el quinto puesto significa: Desviarse del camino. Permanecer perseverante trae ventura. No debe atravesarse las grandes aguas.',
+    mutable6:
+      'Al tope un nueve significa: La fuente de la nutrición. Conciencia del peligro aporta ventura. Es propicio atravesar las grandes aguas.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Las Comisuras de la Boca. Perseverancia trae ventura. Presta atención a la nutrición, y a aquello con que trata de llenar su boca uno mismo.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Abajo, junto a la montaña, está el trueno: la imagen de La Nutrición. Así el noble presta atención a sus palabras y es moderado en el comer y el beber.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2028.png',
   },
   {
@@ -675,16 +681,22 @@ const HEXAGRAMS = [
     name: `Ta Kuo  /  La Preponderancia de lo Grande`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Colocar debajo un lecho de blanco carrizo. No hay defecto.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Un álamo seco hace brotar un retoño de raíz. Un hombre mayor obtiene una mujer joven. Todo es propicio.',
+    mutable3:
+      'Nueve en el tercer puesto significa: La viga maestra se dobla por el medio. Desventura.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: La viga maestra recibe sostén. Ventura. Si hay segundas intenciones, es humillante.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Un álamo reseco da flores. Una mujer entrada en años obtiene marido. No hay tacha. No hay elogio.',
+    mutable6:
+      'Al tope un seis significa: Hay que atravesar el agua. Ésta llega a cubrir la coronilla. Desventura. No hay tacha.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Preponderancia de lo Grande. La viga maestra se dobla por el medio. Es propicio tener a dónde ir. Logro.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El lago pasa por encima de los árboles: la imagen de La Preponderancia de lo Grande. Así el noble, cuando permanece solo, no se aflige, y si debe renunciar al mundo, no desespera.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2029.png',
   },
   {
@@ -693,16 +705,22 @@ const HEXAGRAMS = [
     name: `K'an  /  Lo Abismal, El Agua`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Repetición de Lo Abismal. Dentro del abismo se cae en un hoyo. Desventura.',
+    mutable2:
+      'Nueve en el segundo puesto significa: El abismo tiene peligro. Solo debe aspirarse a alcanzar cosas pequeñas.',
+    mutable3:
+      'Seis en el tercer puesto significa: Adelante y atrás, abismo sobre abismo. En semejante peligro primero detente, pues si no caerás en un hoyo dentro del abismo. No actúes así.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Una jarra de vino, una escudilla de arroz por añadidura, vajilla de barro cocido, sencillamente alcanzados por la ventana. En modo alguno constituye esto una falla.',
+    mutable5:
+      'Nueve en el quinto puesto significa: El abismo no se llena hasta rebasar, solo se llena hasta el borde. No hay defecto.',
+    mutable6:
+      'Al tope un seis significa: Atado con sogas y maromas, encerrado entre muros carcelarios, cercados de espinas: durante tres años no logra uno orientarse. ¡Desventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Lo Abismal repetido. Si eres veraz, tendrás logro en tu corazón, y lo que hicieres tendrá éxito.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El agua fluye ininterrumpidamente y llega a la meta: la imagen de Lo Abismal reiterado. Así el noble observa una conducta de constante virtud y ejerce el negocio de la enseñanza.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2030.png',
   },
   {
@@ -711,16 +729,22 @@ const HEXAGRAMS = [
     name: `Li  /  Lo Adherente, El Fuego`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Las huellas de los pies corren entrecruzadas a troche y moche. Si al respecto uno se mantiene serio, no hay tacha.',
+    mutable2:
+      'Seis en el segundo puesto significa: Resplandor amarillo. Elevada ventura.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Al resplandor del sol poniente los hombres o bien golpean la olla y cantan, o bien suspiran ruidosamente porque se aproxima la senectud. Desventura.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Súbita es su llegada: se inflama, se extingue, es arrojado lejos.',
+    mutable5:
+      'Seis en el quinto puesto significa: Llorando a torrentes, suspirando y lamentando. ¡Ventura!',
+    mutable6:
+      'Al tope un nueve significa: El rey lo emplea para que se ponga en marcha y castigue. Lo mejor será entonces matar a los cabecillas y hacer priosioneros a los secuaces. No hay tacha.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Lo Adherente. Es propicia la perseverancia, pues aporta el éxito. Dedicarse al cuidado de la vaca trae ventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'La Claridad se eleva dos veces: la imagen del Fuego. Así el gran hombre alumbra, perpetuando esta claridad, las cuatro regiones cardinales del mundo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2031.png',
   },
   {
@@ -729,16 +753,22 @@ const HEXAGRAMS = [
     name: `Hsien  /  El Influjo (El Cortejo)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: El Influjo se manifiesta en el dedo gordo del pie.',
+    mutable2:
+      'Seis en el segundo puesto significa: El Influjo se manifiesta en las pantorrillas. ¡Desventura! Quedarse trae ventura.',
+    mutable3:
+      'Nueve en el tercer puesto significa: El Influjo se manifiesta en los muslos. Se atiene a lo que le sigue. Proseguir es humillante.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: La perseverancia trae ventura. Se desvanece el arrepentimiento. Cuando el pensamiento de uno se agita en inquieto vaivén, solo le seguirán aquellos amigos hacia quienes dirija pensamientos conscientes.',
+    mutable5:
+      'Nueve en el quinto puesto significa: El Influjo se manifiesta en la nuca. No hay arrepentimiento.',
+    mutable6:
+      'Al tope un seis significa: El Influjo se manifiesta en las mandíbulas, las mejillas y la lengua.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Influjo. Logro. Es propicia la perseverancia. Tomar una muchacha trae ventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la montaña hay un lago: la imagen del Influjo. Así el noble, en virtud de su disposición receptiva deja que los hombres se acerquen a él.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2032.png',
   },
   {
@@ -747,16 +777,21 @@ const HEXAGRAMS = [
     name: `Heng  /  La Duración`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Pretender la duración demasiado pronto acarrea persistente desventura. Nada que fuese propicio.',
+    mutable2:
+      'Nueve en el segundo puesto significa: El arrepentimiento se desvanece.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Al que no confiere duración a su carácter lo cubren de vergüenza. Persistente humillación.',
+    mutable4: 'Nueve en el cuarto puesto significa: Ningún venado en el campo.',
+    mutable5:
+      'Seis en el quinto puesto significa: Dar duración al propio carácter mediante la perseverancia es venturoso para una mujer; para un hombre es desventurado..',
+    mutable6:
+      'Al tope un seis significa: El desasosiego como estado duradero trae desventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Éxito. No hay falla. Es propicia la perseverancia. Es propicio que uno tenga a dónde ir.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Trueno y viento: la imagen de La Duración. Así el noble permanece firme y no modifica su rumbo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2033.png',
   },
   {
