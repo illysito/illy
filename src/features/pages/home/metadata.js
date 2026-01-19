@@ -1,8 +1,10 @@
 import gsap from 'gsap'
 
-import getMeteo from '../../api/openWeather'
+import meteoPromise from '../../api/openWeather'
 
-function metadata() {
+async function metadata() {
+  const meteo = await meteoPromise
+
   function domQuery() {
     return {
       underscores: document.querySelectorAll('.underscore'),
@@ -71,116 +73,116 @@ function metadata() {
   let whiteMoonImgIndex = 0
   let moon = 0.0
 
-  getMeteo().then((meteo) => {
-    // WIND
-    wind = meteo.windSpeed
+  // getMeteo().then((meteo) => {
+  // WIND
+  wind = meteo.windSpeed
 
-    if (wind < 1) {
-      windMessage = 'calm'
-    } else if (wind >= 1 && wind < 3) {
-      windMessage = 'light breeze'
-    } else if (wind >= 3 && wind < 7) {
-      windMessage = 'breeze'
-    } else if (wind >= 7 && wind < 10) {
-      windMessage = 'fresh breeze'
-    } else if (wind >= 10 && wind < 14) {
-      windMessage = 'strong breeze'
-    } else if (wind >= 14 && wind < 20) {
-      windMessage = 'high wind'
-    } else if (wind >= 20) {
-      windMessage = 'storm'
-    }
+  if (wind < 1) {
+    windMessage = 'calm'
+  } else if (wind >= 1 && wind < 3) {
+    windMessage = 'light breeze'
+  } else if (wind >= 3 && wind < 7) {
+    windMessage = 'breeze'
+  } else if (wind >= 7 && wind < 10) {
+    windMessage = 'fresh breeze'
+  } else if (wind >= 10 && wind < 14) {
+    windMessage = 'strong breeze'
+  } else if (wind >= 14 && wind < 20) {
+    windMessage = 'high wind'
+  } else if (wind >= 20) {
+    windMessage = 'storm'
+  }
 
-    DOM.wind_txt.textContent = windMessage + ' · ' + wind + ' m/s'
+  DOM.wind_txt.textContent = windMessage + ' · ' + wind + ' m/s'
 
-    // RAIN
-    rain = meteo.rain
+  // RAIN
+  rain = meteo.rain
 
-    if (rain === 0) {
-      rainMessage = 'no rain'
-      rain = 0.0
-    } else if (rain >= 0.0 && rain < 1.0) {
-      rainMessage = 'chirimiri'
-    } else if (rain >= 1.0 && rain < 2.5) {
-      rainMessage = 'light rain'
-    } else if (rain >= 2.5 && rain < 7.5) {
-      rainMessage = 'moderate rain'
-    } else if (rain >= 7.5 && rain < 50) {
-      rainMessage = 'heavy rain'
-    } else if (rain >= 50) {
-      rainMessage = 'torrential'
-    }
+  if (rain === 0) {
+    rainMessage = 'no rain'
+    rain = 0.0
+  } else if (rain >= 0.0 && rain < 1.0) {
+    rainMessage = 'chirimiri'
+  } else if (rain >= 1.0 && rain < 2.5) {
+    rainMessage = 'light rain'
+  } else if (rain >= 2.5 && rain < 7.5) {
+    rainMessage = 'moderate rain'
+  } else if (rain >= 7.5 && rain < 50) {
+    rainMessage = 'heavy rain'
+  } else if (rain >= 50) {
+    rainMessage = 'torrential'
+  }
 
-    DOM.rain_txt.textContent = rainMessage + ' · ' + rain + ' mm/h'
+  DOM.rain_txt.textContent = rainMessage + ' · ' + rain + ' mm/h'
 
-    // MOON
-    moon = meteo.moonPhase
+  // MOON
+  moon = meteo.moonPhase
 
-    if (moon > 0 && moon <= 0.125) {
-      moonMessage = 'waxing crecent'
-      blackMoonImgIndex = 1
-    } else if (moon > 0.125 && moon <= 0.25) {
-      moonMessage = 'first quarter'
-      blackMoonImgIndex = 2
-    } else if (moon > 0.25 && moon <= 0.375) {
-      moonMessage = 'waxing gibbous'
-      blackMoonImgIndex = 3
-    } else if (moon > 0.375 && moon < 0.5) {
-      moonMessage = 'waxing gibbous (almost there!)'
-      blackMoonImgIndex = 4
-    } else if (moon === 0.5) {
-      moonMessage = 'full moon'
-      blackMoonImgIndex = 5
-    } else if (moon > 0.5 && moon <= 0.625) {
-      moonMessage = 'waning gibbous'
-      blackMoonImgIndex = 6
-    } else if (moon > 0.625 && moon <= 0.75) {
-      moonMessage = 'last quarter'
-      blackMoonImgIndex = 7
-    } else if (moon > 0.75 && moon <= 0.875) {
-      moonMessage = 'waning crescent'
-      blackMoonImgIndex = 8
-    } else if (moon > 0.875 && moon < 1) {
-      moonMessage = 'almost new'
-      blackMoonImgIndex = 9
-    } else if (moon === 0 || moon === 1) {
-      moonMessage = 'new moon'
-      blackMoonImgIndex = 0
-    }
-    whiteMoonImgIndex = blackMoonImgIndex + 10
+  if (moon > 0 && moon <= 0.125) {
+    moonMessage = 'waxing crecent'
+    blackMoonImgIndex = 1
+  } else if (moon > 0.125 && moon <= 0.25) {
+    moonMessage = 'first quarter'
+    blackMoonImgIndex = 2
+  } else if (moon > 0.25 && moon <= 0.375) {
+    moonMessage = 'waxing gibbous'
+    blackMoonImgIndex = 3
+  } else if (moon > 0.375 && moon < 0.5) {
+    moonMessage = 'waxing gibbous (almost there!)'
+    blackMoonImgIndex = 4
+  } else if (moon === 0.5) {
+    moonMessage = 'full moon'
+    blackMoonImgIndex = 5
+  } else if (moon > 0.5 && moon <= 0.625) {
+    moonMessage = 'waning gibbous'
+    blackMoonImgIndex = 6
+  } else if (moon > 0.625 && moon <= 0.75) {
+    moonMessage = 'last quarter'
+    blackMoonImgIndex = 7
+  } else if (moon > 0.75 && moon <= 0.875) {
+    moonMessage = 'waning crescent'
+    blackMoonImgIndex = 8
+  } else if (moon > 0.875 && moon < 1) {
+    moonMessage = 'almost new'
+    blackMoonImgIndex = 9
+  } else if (moon === 0 || moon === 1) {
+    moonMessage = 'new moon'
+    blackMoonImgIndex = 0
+  }
+  whiteMoonImgIndex = blackMoonImgIndex + 10
 
-    DOM.moon_txt.textContent = moonMessage
-    DOM.moon_imgs.forEach((moon, index) => {
-      if (blackMoonImgIndex === index) {
-        gsap.to(moon, {
-          opacity: 1,
-          duration: 0.1,
-          ease: 'none',
-        })
-      } else if (whiteMoonImgIndex === index) {
-        gsap.to(moon, {
-          opacity: 1,
-          duration: 0.1,
-          ease: 'none',
-        })
-      } else {
-        gsap.to(moon, {
-          opacity: 0,
-          duration: 0.1,
-          ease: 'none',
-        })
-      }
-    })
-
-    // FAIL
-    if (meteo.windFallback) {
-      DOM.wind_txt.textContent = 'no data, pls reload_'
-    }
-
-    if (meteo.rainFallback) {
-      DOM.rain_txt.textContent = 'no data, pls reload_'
+  DOM.moon_txt.textContent = moonMessage
+  DOM.moon_imgs.forEach((moon, index) => {
+    if (blackMoonImgIndex === index) {
+      gsap.to(moon, {
+        opacity: 1,
+        duration: 0.1,
+        ease: 'none',
+      })
+    } else if (whiteMoonImgIndex === index) {
+      gsap.to(moon, {
+        opacity: 1,
+        duration: 0.1,
+        ease: 'none',
+      })
+    } else {
+      gsap.to(moon, {
+        opacity: 0,
+        duration: 0.1,
+        ease: 'none',
+      })
     }
   })
+
+  // FAIL
+  if (meteo.windFallback) {
+    DOM.wind_txt.textContent = 'no data, pls reload_'
+  }
+
+  if (meteo.rainFallback) {
+    DOM.rain_txt.textContent = 'no data, pls reload_'
+  }
+  // })
 }
 
 export default metadata

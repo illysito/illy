@@ -101,4 +101,5 @@ async function getMeteo() {
   }
 }
 
-export default getMeteo
+const meteoPromise = getMeteo()
+export default meteoPromise

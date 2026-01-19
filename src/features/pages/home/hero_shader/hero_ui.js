@@ -1,10 +1,11 @@
 import gsap from 'gsap'
 
 import heroHandler from './hero_handler'
-import getMeteo from '../../../api/openWeather'
+import meteoPromise from '../../../api/openWeather'
 import Anim from '../../../helpers/anim'
 
-function heroUI(isBuilding) {
+async function heroUI(isBuilding) {
+  const meteo = await meteoPromise
   // DOM
   const heroCanvas = document.querySelector('#hero-canvas')
   const sliderBalls = document.querySelectorAll('.slider-ball')
@@ -92,11 +93,14 @@ function heroUI(isBuilding) {
   })
 
   // METEO
-  getMeteo().then((meteo) => {
-    windRef.current = meteo.normalizedWindSpeed
-    rainRef.current = meteo.normalizedRain
-    scheduleUpdate()
-  })
+  // getMeteo().then((meteo) => {
+  //   windRef.current = meteo.normalizedWindSpeed
+  //   rainRef.current = meteo.normalizedRain
+  //   scheduleUpdate()
+  // })
+  windRef.current = meteo.normalizedWindSpeed
+  rainRef.current = meteo.normalizedRain
+  scheduleUpdate()
 
   // SLIDER LOGIC
   let isDragging = false
