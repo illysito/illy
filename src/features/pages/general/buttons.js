@@ -46,6 +46,7 @@ function button(button) {
       ease: E.eio,
     })
   }
+
   function buttonHoverOut(e) {
     const rootStyles = getComputedStyle(document.documentElement)
     const typeColor = rootStyles.getPropertyValue('--type-color').trim()
@@ -80,12 +81,51 @@ function button(button) {
     })
   }
 
+  function buttonMobileClick(e) {
+    const rootStyles = getComputedStyle(document.documentElement)
+    const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+    const b = e.currentTarget
+    const w = b.firstElementChild
+    const circle = w.nextElementSibling
+    gsap.to(b, {
+      scale: 0.98,
+      duration: D.med,
+      borderColor: typeColor,
+      ease: E.p2io,
+      onComplete: () => {
+        gsap.to(b, {
+          scale: 1,
+          duration: D.med,
+          borderColor: typeColor,
+          ease: E.p2io,
+        })
+      },
+    })
+    gsap.to(circle, {
+      scale: 1,
+      yPercent: -200,
+      duration: D.med,
+      ease: E.p2io,
+      onComplete: () => {
+        gsap.set(circle, {
+          yPercent: 0,
+        })
+      },
+    })
+  }
+
   if (!isMobile()) {
     button.addEventListener('mouseenter', (e) => {
       buttonHoverIn(e)
     })
     button.addEventListener('mouseleave', (e) => {
       buttonHoverOut(e)
+    })
+  }
+
+  if (isMobile()) {
+    button.addEventListener('click', (e) => {
+      buttonMobileClick(e)
     })
   }
 }
