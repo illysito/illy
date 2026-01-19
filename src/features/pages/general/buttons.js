@@ -6,6 +6,10 @@ const D = Anim.D
 const E = Anim.E
 
 function button(button) {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
+
   function buttonHoverIn(e) {
     const b = e.currentTarget
     const w = b.firstElementChild
@@ -76,12 +80,14 @@ function button(button) {
     })
   }
 
-  button.addEventListener('mouseenter', (e) => {
-    buttonHoverIn(e)
-  })
-  button.addEventListener('mouseleave', (e) => {
-    buttonHoverOut(e)
-  })
+  if (!isMobile()) {
+    button.addEventListener('mouseenter', (e) => {
+      buttonHoverIn(e)
+    })
+    button.addEventListener('mouseleave', (e) => {
+      buttonHoverOut(e)
+    })
+  }
 }
 
 export default button
