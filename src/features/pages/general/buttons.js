@@ -85,10 +85,8 @@ function button(button) {
     const rootStyles = getComputedStyle(document.documentElement)
     const typeColor = rootStyles.getPropertyValue('--type-color').trim()
     const b = e.currentTarget
-    const w = b.firstElementChild
-    const circle = w.nextElementSibling
     gsap.to(b, {
-      scale: 0.98,
+      scale: 0.92,
       duration: D.med,
       borderColor: typeColor,
       ease: E.p2io,
@@ -98,17 +96,6 @@ function button(button) {
           duration: D.med,
           borderColor: typeColor,
           ease: E.p2io,
-        })
-      },
-    })
-    gsap.to(circle, {
-      scale: 1,
-      yPercent: -200,
-      duration: D.med,
-      ease: E.p2io,
-      onComplete: () => {
-        gsap.set(circle, {
-          yPercent: 0,
         })
       },
     })
