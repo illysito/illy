@@ -220,11 +220,19 @@ async function runIChingFunctions() {
   iChing()
 }
 
+async function runTatreezFunctions() {
+  const { default: tatreezUI } = await import(
+    './features/p5js/tatreez/tatreez_ui'
+  )
+  tatreezUI()
+}
+
 // INIT
 
 if (
   !document.body.classList.contains('body__flowfield') &&
-  !document.body.classList.contains('body__i-ching')
+  !document.body.classList.contains('body__i-ching') &&
+  !document.body.classList.contains('body__tatreez')
 )
   // requestIdleCallback(runGeneralFunctions)
   runGeneralFunctions()
@@ -236,3 +244,4 @@ if (document.body.classList.contains('body__philosophy'))
 if (document.body.classList.contains('body__qr')) runQRFunctions()
 if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()
 if (document.body.classList.contains('body__i-ching')) runIChingFunctions()
+if (document.body.classList.contains('body__tatreez')) runTatreezFunctions()
