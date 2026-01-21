@@ -23,7 +23,7 @@ function tatreezHandler(canvasWrapper) {
     if (!isMobile()) {
       res = 16
     } else {
-      res = 8
+      res = 12
     }
 
     // RANDOM TRANSITION
