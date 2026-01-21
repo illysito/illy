@@ -6,6 +6,10 @@ const D = Anim.D
 const E = Anim.E
 
 async function tatreezUI() {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
+
   const { default: tatreezHandler } = await import('./tatreez_handler.js')
   const tatreezCanvasWrapper = document.querySelector('.tatreez-canvas-wrapper')
 
