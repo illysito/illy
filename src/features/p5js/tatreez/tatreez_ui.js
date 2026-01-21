@@ -53,6 +53,7 @@ async function tatreezUI() {
     })
   }
 
+  // HOVER ARROWS
   arrowRight.addEventListener('mouseover', () => {
     gsap.to(arrowRight, {
       scale: 0.96,
@@ -83,6 +84,7 @@ async function tatreezUI() {
     })
   })
 
+  // CLICK ARROWS
   arrowRight.addEventListener('click', () => {
     animateClick(arrowRight)
     window.dispatchEvent(rightClick)
@@ -115,6 +117,33 @@ async function tatreezUI() {
     moveTexts()
   })
 
+  // SWIPE
+  let startX = 0
+
+  window.addEventListener('pointerdown', (e) => {
+    startX = e.clientX
+  })
+
+  window.addEventListener('pointerup', (e) => {
+    const deltaX = e.clientX - startX
+
+    if (Math.abs(deltaX) < 50) return // threshold
+
+    if (deltaX > 0) {
+      window.dispatchEvent(rightClick)
+      counter = (counter + 1) % LENGTH
+      moveHeaders()
+      moveTexts()
+    } else {
+      window.dispatchEvent(leftClick)
+      counter = counter - 1
+      if (counter < 0) counter = LENGTH - 1
+      moveHeaders()
+      moveTexts()
+    }
+  })
+
+  // KEYS
   window.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') {
       window.dispatchEvent(rightClick)
