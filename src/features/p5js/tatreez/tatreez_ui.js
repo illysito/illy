@@ -39,8 +39,10 @@ async function tatreezUI() {
   const leftClick = new CustomEvent('left-click')
 
   function animateClick(button) {
+    let downScale = 0.92
+    if (isMobile()) downScale = 0.82
     gsap.to(button, {
-      scale: 0.92,
+      scale: downScale,
       duration: D.fast,
       ease: E.linear,
       onComplete: () => {
