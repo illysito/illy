@@ -10,7 +10,9 @@ async function tatreezUI() {
   const tatreezCanvasWrapper = document.querySelector('.tatreez-canvas-wrapper')
 
   const arrowLeft = document.querySelector('.arrow-left')
+  const arrowLeftMobile = document.querySelector('.arrow-left-mob')
   const arrowRight = document.querySelector('.arrow-right')
+  const arrowRightMobile = document.querySelector('.arrow-right-mob')
   const tatreezHeaders = document.querySelectorAll('.tatreez-arabic-h')
   const tatreezTxts = document.querySelectorAll('.tatreez-explanation')
   const LENGTH = 3
@@ -58,7 +60,6 @@ async function tatreezUI() {
       duration: D.fast,
     })
   })
-
   arrowRight.addEventListener('mouseleave', () => {
     gsap.to(arrowRight, {
       scale: 1,
@@ -74,7 +75,6 @@ async function tatreezUI() {
       duration: D.fast,
     })
   })
-
   arrowLeft.addEventListener('mouseleave', () => {
     gsap.to(arrowLeft, {
       scale: 1,
@@ -90,8 +90,23 @@ async function tatreezUI() {
     moveHeaders()
     moveTexts()
   })
+  arrowRightMobile.addEventListener('click', () => {
+    animateClick(arrowRight)
+    window.dispatchEvent(rightClick)
+    counter = (counter + 1) % LENGTH
+    moveHeaders()
+    moveTexts()
+  })
 
   arrowLeft.addEventListener('click', () => {
+    animateClick(arrowLeft)
+    window.dispatchEvent(leftClick)
+    counter = counter - 1
+    if (counter < 0) counter = LENGTH - 1
+    moveHeaders()
+    moveTexts()
+  })
+  arrowLeftMobile.addEventListener('click', () => {
     animateClick(arrowLeft)
     window.dispatchEvent(leftClick)
     counter = counter - 1
