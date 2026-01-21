@@ -5,17 +5,26 @@ import tatreezArray from './tatreez_arrays.js'
 
 /* eslint-disable */
 function tatreezHandler(canvasWrapper) {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
   // window._disableAutoScriptLoad = true
   new p5((sk) => {
     let canvasParent
     let width
     let height
-    let res = 16
+    let res
     let cols
     let rows
     let currentArr = []
     let index = 0
     let startIndex = 0
+
+    if (!isMobile()) {
+      res = 16
+    } else {
+      res = 8
+    }
 
     // RANDOM TRANSITION
     let pending = []
