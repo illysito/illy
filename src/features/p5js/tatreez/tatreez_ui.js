@@ -101,7 +101,7 @@ async function tatreezUI() {
     moveTexts()
   })
   arrowRightMobile.addEventListener('click', () => {
-    animateClick(arrowRight)
+    animateClick(arrowRightMobile)
     window.dispatchEvent(rightClick)
     counter = (counter + 1) % LENGTH
     moveHeaders()
@@ -117,7 +117,7 @@ async function tatreezUI() {
     moveTexts()
   })
   arrowLeftMobile.addEventListener('click', () => {
-    animateClick(arrowLeft)
+    animateClick(arrowLeftMobile)
     window.dispatchEvent(leftClick)
     counter = counter - 1
     if (counter < 0) counter = LENGTH - 1
