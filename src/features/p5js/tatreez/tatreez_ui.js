@@ -132,12 +132,12 @@ async function tatreezUI() {
     if (Math.abs(deltaX) < 50) return // threshold
 
     if (deltaX > 0) {
-      window.dispatchEvent(rightClick)
+      window.dispatchEvent(leftClick)
       counter = (counter + 1) % LENGTH
       moveHeaders()
       moveTexts()
     } else {
-      window.dispatchEvent(leftClick)
+      window.dispatchEvent(rightClick)
       counter = counter - 1
       if (counter < 0) counter = LENGTH - 1
       moveHeaders()
