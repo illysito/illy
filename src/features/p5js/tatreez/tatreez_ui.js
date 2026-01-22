@@ -150,6 +150,7 @@ async function tatreezUI() {
     if (e.key === 'ArrowRight') {
       window.dispatchEvent(rightClick)
       counter = (counter + 1) % LENGTH
+      animateClick(arrowRight)
       moveHeaders()
       moveTexts()
     }
@@ -158,6 +159,7 @@ async function tatreezUI() {
       window.dispatchEvent(leftClick)
       counter = counter - 1
       if (counter < 0) counter = LENGTH - 1
+      animateClick(arrowLeft)
       moveHeaders()
       moveTexts()
     }
