@@ -56,7 +56,8 @@ function iChing() {
 
   function blockButton() {
     gsap.to(coinButton, {
-      backgroundColor: '#454545',
+      backgroundColor: '#aaaaaa',
+      opacity: 0.8,
       pointerEvents: 'none',
       duration: 0.2,
     })
@@ -64,6 +65,7 @@ function iChing() {
     setTimeout(() => {
       gsap.to(coinButton, {
         backgroundColor: '#101010',
+        opacity: 1,
         pointerEvents: 'auto',
         duration: 0.2,
       })
