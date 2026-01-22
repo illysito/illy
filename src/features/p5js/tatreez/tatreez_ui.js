@@ -17,7 +17,7 @@ async function tatreezUI() {
   const arrowRightMobile = document.querySelector('.arrow-right-mob')
   const tatreezHeaders = document.querySelectorAll('.tatreez-arabic-h')
   const tatreezTxts = document.querySelectorAll('.tatreez-explanation')
-  const LENGTH = 3
+  const LENGTH = 5
 
   let counter = 0
 
