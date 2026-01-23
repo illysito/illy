@@ -621,7 +621,9 @@ function iChing() {
         currentTrigramHeadings[0].textContent = newHex.up
         currentTrigramHeadings[1].textContent = newHex.down
         dict.textContent = newHex.dictamen
+        console.log('dict: ', newHex.dictamen)
         imagen.textContent = newHex.imagen
+        console.log('imagen: ', newHex.imagen)
         splitLines()
 
         gsap.to([currentImg, currentTitle, currentTrigramHeadings], {

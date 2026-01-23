@@ -1083,16 +1083,22 @@ const HEXAGRAMS = [
     name: `Ts'ui  /  La Reunión (La Recolección)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b000).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Si eres veraz, mas no hasta el fin, habra ya confusión, ya reunión. Si llamas, después de un solo apretón podrás volver a reír. No lamentes nada. Acudir carece de tacha.',
+    mutable2:
+      'Seis en el segundo puesto significa: Dejarse llevar trae ventura y permanece sin tacha. Si uno es veraz, es también propicio brindar una pequeña ofrenda.',
+    mutable3:
+      'Seis en el tercer puesto significa: Reunión entre suspiros. Nada que sea propicio. Acudir carece de tacha. Pequeña humillación.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: ¡Gran ventura! Ningún defecto.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Si al reunir ocupa uno su posición, ello no acarrea ningún defecto. Si algunos no adhieren todavía de verdad, se requiere una elevada y constante perseverancia, pues así se desvanece el arrepentimiento.',
+    mutable6:
+      'Al tope un seis significa: Quejumbre y suspiros, torrentes de lágrimas. Ningún defecto.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Reunión. Éxito. El rey se acerca a su templo. Es propicio ver al gran hombre. Esto trae éxito. Es propicia la perseverancia. Ofrendar grandes sacrificios engendra ventura. Es propicio emprender algo.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El lago está por sobre la tierra: la imagen de La Reunión. Así el noble renueva sus armas para afrontar lo imprevisto.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2046.png',
   },
   {
@@ -1101,16 +1107,20 @@ const HEXAGRAMS = [
     name: `Sheng  /  La Subida (El Empuje hacia Arriba)`,
     up: triByBin.get(0b000).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: La subida que encuentra confianza trae gran ventura.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Cuando uno es veraz, es también propicio ofrendar un pequeño sacrificio. Ningún defecto.',
+    mutable3: `Nueve en el tercer puesto significa: Uno asciende entrando en una ciudad vacía.`,
+    mutable4: `Seis en el cuarto puesto significa:El rey lo ofrenda al monte Ch'i. Ventura. Ningún defecto.`,
+    mutable5:
+      'Seis en el quinto puesto significa: La perseverancia trae ventura. Uno asciende sobre gradas.',
+    mutable6:
+      'Al tope un seis significa: Ascender a oscuras. Es propicio ser inconmoviblemente perseverante.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Subida tiene elevado éxito. Hay que ver al gran hombre. ¡No temas! La partida hacia el sur trae ventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En medio de la tierra crece la madera: la imagen de La Subida. Así el noble, con gran dedicación, acumula lo pequeño para lograr lo elevado y lo grande.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2047.png',
   },
   {
@@ -1119,16 +1129,22 @@ const HEXAGRAMS = [
     name: `K'un  /  La Desazón (La Opresión, El Agotamiento)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Uno está sentado en desazón bajo un árbol seco y viene a parar a un tenebroso valle. Durante tres años uno no ve nada.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Uno se siente desazonado junto al vino y los víveres. Acaba de llegar el hombre de las rodilleras escarlatas. Es propicio ofrendar sacrificios. Partir trae desventura. Ningún defecto.',
+    mutable3:
+      'Seis en el tercer puesto significa: Uno se deja acosar por rocas y se apoya en espinas y cardos. Entra en su casa y no ve a su muejr. ¡Desventura!',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Él llega muy quedo, oprimido en áureo carruaje. Humillación, pero se llega a un fin.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Se le cortan la nariz y los pies. Uno se ve acosado por el de las rodilleras purpúreas. Quedamente llega la alegría. Es propicio ofrendar sacrificios y dádivas.',
+    mutable6:
+      'Al tope un seis significa: Está oprimido por lianas. Se mueve inseguro, y se halla diciendo: "El moverse trae arrepentimiento." Si uno siente por eso arrepentimiento y se moviliza, tendrá ventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Desazón. Logro. Perseverancia. El gran hombre obra ventura. Ningún defecto. Si uno tiene algo que decir, no se le cree.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En el lago no hay agua: la imagen del Agotamiento. Así el noble empeña su vida con el fin de seguir su voluntad.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2048.png',
   },
   {
@@ -1137,16 +1153,22 @@ const HEXAGRAMS = [
     name: `Ching  /  El Pozo de Agua`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: El limo del pozo no se bebe. A un pozo viejo no acuden animales.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Junto al agujero del pozo uno dispara a los peces. El cántaro está roto y pierde.',
+    mutable3:
+      'Nueve en el tercer puesto significa: El pozo se ha limpiado pero no se bebe de él. Este es el pesar de mi corazón; pues se podría tomar de él. Si el rey fuese preclaro se disfrutaría conjuntamente de la dicha.',
+    mutable4:
+      'Seis en el cuarto puesto significa: El pozo es revestido; ningún defecto.',
+    mutable5:
+      'Nueve en el quinto puesto significa: En el pozo hay una fuente clara y fresca de la que se puede beber.',
+    mutable6:
+      'Al tope un seis significa: Extraen del pozo sin impedimento. Se puede confiar en él. ¡Elevada ventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Pozo. Puede cambiarse de ciudad, mas no puede cambiarse de pozo. Éste no disminuye y no aumenta. Ellos vienen y van y recogen del pozo. Cuando casi se ha alcanzado el agua del pozo pero todavía no se llegó abajo con la cuerda o se rompe el cántaro, eso trae desventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la madera está el agua: la imagen del Pozo. Así el noble alienta al pueblo durante el trabajo y lo exhorta a ayudarse mutuamente.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2049.png',
   },
   {
@@ -1155,16 +1177,22 @@ const HEXAGRAMS = [
     name: `Ko  /  La Revolución (La Muda)`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Uno es envuelto en la piel de una vaca amarilla.',
+    mutable2:
+      'Seis en el segundo puesto significa: Llegado el propio día, se puede revolucionar. Partir trae ventura. Ningún defecto.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Partir trae desventura. La perseverancia acarrea peligro. Cuando la palabra acerca de la revolución se haya proferido tres veces, será bueno dirigirse a él y se hallará fe.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Se desvanece el arrepentimiento. Se halla fe. Cambiar el orden estatal trae ventura.',
+    mutable5:
+      'Nueve en el quinto puesto significa: El gran hombre cambia como un tigre. Aun antes de indagar el oráculo, encuentra fe.',
+    mutable6:
+      'Al tope un seis significa: El noble cambia como una pantera. El inferior muda en la cara. Partir trae desventura. Permanecer en perseverancia trae ventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Revolución. En tu propio día encontrarás fe. Elevado éxito, propicio por la perseverancia. Se desvanece el arrepentimiento.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'En el lago hay fuego: la imagen de La Revolución. Así ordena el noble la cronología y clarifica las épocas.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2050.png',
   },
   {
@@ -1173,16 +1201,21 @@ const HEXAGRAMS = [
     name: `Ting  /  El Caldero`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
-    dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    mutable1:
+      'Al comienzo un seis significa: Un caldero con las patas tumbadas. Propicio para eliminar lo estancado. Uno toma una concubina por amor a su hijo. Ningún defecto.',
+    mutable2:
+      'Nueve en el segundo puesto significa: En el caldero hay alimento. Mis compañeros sienten envidia, pero nada pueden contra mí. ¡Ventura!',
+    mutable3:
+      'Nueve en el tercer puesto significa: El asa del caldero está alterada. Uno está impedido en su modo de vivir. La grasa del faisán no se come. Solo cuando precipite la lluvia, se agotará el arrepentimiento. Finalmente llega la ventura.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Al caldero se le rompen las patas. La comida del príncipe se derrama y se mancilla su figura. ¡Desventura!',
+    mutable5:
+      'Seis en el quinto puesto significa: El caldero tiene asas amarillas, argollas áureas. Es propicia la perseverancia.',
+    mutable6:
+      'Al tope un nueve significa: El caldero tiene argollas de jade. ¡Gran ventura! Nada que no sea propicio.',
+    dictamen: 'El Caldero. Elevada ventura. Éxito.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la madera hay fuego: la imagen del Caldero. Así el noble, rectificando su posición, afirma el destino.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2051.png',
   },
   {
