@@ -1270,16 +1270,22 @@ const HEXAGRAMS = [
     name: `Chien  /  La Evolución (Progreso Paulatino)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: La oca avanza poco a poco en su vuelo hacia la ribera. El joven hijo está en peligro, Hay habladurías. Ningún defecto.',
+    mutable2:
+      'Seis en el segundo puesto significa: La oca avanza poco a poco hacia la roca. Comer y beber en paz y concordia. ¡Ventura!',
+    mutable3:
+      'Nueve en el tercer puesto significa: La oca avanza poco a poco hacia el altiplano. El hombre parte y no regresa. La mujer lleva un niño en su seno pero no lo da a luz. ¡Desventura! Es propicio defenderse de los bandidos.',
+    mutable4:
+      'Seis en el cuarto puesto significa: La oca avanza poco a poco hacia el árbol. Tal vez consiga una rama chata. Ningún defecto.',
+    mutable5:
+      'Nueve en el quinto puesto significa: La oca avanza poco a poco hacia la cumbre. Durante tres años la mujer no concibe un hijo. Finalmente, nada puede trabarla. ¡Ventura!',
+    mutable6:
+      'Al tope un nueve significa: La oca avanza poco a poco hacia las nubes. Sus plumas pueden utilizarse en la danza sagrada. ¡Ventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Evolución. Casan a la muchacha. ¡Ventura! Es propicia la perseverancia.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la montaña hay un árbol: la imagen de La Evolución. Así permanece el noble en digna virtud a fin de mejorar las costumbres.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2054.png',
   },
   {
@@ -1288,16 +1294,22 @@ const HEXAGRAMS = [
     name: `Kuei Mei  /  La Muchacha que se Casa (La Desposanda)`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: La muchacha que se casa como concubina. Un cojo que puede pisar con firmeza. Las empresas traen ventura.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Un tuerto que puede ver. Es propicia la perseverancia de un hombre solitario.',
+    mutable3:
+      'Seis en el tercer puesto significa: La muchacha que se casa, como esclava. Se casa como concubina.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: La muchacha que se casa prorroga el plazo. Un casamiento tardío llega a su tiempo.',
+    mutable5:
+      'Seis en el quinto puesto significa: El regente I casa a su hija. Y entonces las bordadas vestiduras de la princesa no fueron tan espléndidas como las de la sierva. La luna, casi llena, trae ventura.',
+    mutable6:
+      'Al tope un seis significa: La mujer sostiene el cesto, pero no hay frutos en él. El hombre apuñala a la oveja, pero no fluye sangre. Nada que fuese propicio.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Desposanda. Las empresas traen desventura. Nada que fuese propicio.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Por encima del lago se halla el trueno: la imagen de La Muchacha que se Casa. Así el noble, por la eternidad del fin reconoce lo perecedero.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2055.png',
   },
   {
@@ -1306,16 +1318,22 @@ const HEXAGRAMS = [
     name: `Feng  /  La Plenitud`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Cuando uno se encuentra con el amo que le está destinado, podrá pasar junto a él diez días y no será una falta. Acudir obtiene reconocimiento.',
+    mutable2:
+      'Seis en el segundo puesto significa: La cortina tiene tan densa plenitud que al mediodía se ven las estrellas polares. Acudiendo se encontrará desconfianza y odio. Si uno lo despierta con la verdad, llega la ventura.',
+    mutable3:
+      'Nueve en el tercer puesto significa: El matorral tiene tal plenitud que a mediodía se ven las pequeñas estrellas. Él se rompe el brazo derecho. Ningún defecto.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: La cortina tiene tal plenitud que al mediodía se ven las estrellas polares. Él se encuentra con su amo que es su par. ¡Ventura!',
+    mutable5:
+      'Seis en el quinto puesto significa: Llegan líneas, se acerca la bendición y la gloria. ¡Ventura!',
+    mutable6:
+      'Al tope un seis significa: Su casa se halla en plenitud. Él oculta a su clan. Espía a través del portón y ya no advierte a nadie. Durante tres años no ve nada. ¡Desventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Plenitud tiene éxito. El rey la alcanza. No estés triste; debes ser como el sol al mediodía.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Trueno y rayo llegan ambos: la imagen de La Plenitud. Así el noble decide los procesos judiciales y ejecuta los castigos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2056.png',
   },
   {
@@ -1324,16 +1342,22 @@ const HEXAGRAMS = [
     name: `Lü  /  El Andariego`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Cuando el andariego se dedica a nimiedades atrae sobre sí la desgracia.',
+    mutable2:
+      'Seis en el segundo puesto significa: El andariego llega al hospedaje. Lleva consigo lo que posee. Consigue la perseverancia de un joven sirviente.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Al andariego se le quema su albergue. Pierde la perseverancia de su joven sirviente. Peligro.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: El andariego descansa en un aposentamiento. Obtiene su propiedad y un hacha. Mi corazón no está contento.',
+    mutable5:
+      'Seis en el quinto puesto significa: Dispara sobre un faisán. Con la primera flecha cae. Finalmente esto le rinde alabanzas y un cargo.',
+    mutable6:
+      'Al tope un nueve significa: Al pájaro se le quema el nido: el andariego primero ríe, luego tiene motivos de quejarse y llorar. En su ligereza pierde la vaca. ¡Desventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Andariego. Éxito por lo pequeño. Al andaragiedo la perseverancia le trae ventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la montaña hay fuego: la imagen del Andariego. Así el noble aplica con claridad y cautela las penalidades y no arrastra pendencias.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2057.png',
   },
   {
@@ -1342,16 +1366,22 @@ const HEXAGRAMS = [
     name: `Sun  /  Lo Suave (Lo Penetrante, El Viento)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Al avanzar y al retroceder es propicia la perseverancia de un guerrero.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Penetrar bajo la cama. Se emplea a sacerdotes y magos en gran número. ¡Ventura! Ningún defecto.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Penetración reiterada. Humillación.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Se desvanece el arrepentimiento. Duranto la cacería prende uno tres clases de venado.',
+    mutable5:
+      'Nueve en el quinto puesto significa: La perseverancia trae ventura. El arrepentimiento se desvanece. Nada que no fuese propicio. No hay principio, pero sí un fin. Antes del cambio tres días, despues del cambio tres días. ¡Ventura!',
+    mutable6:
+      'Al tope un nueve significa: Penetración bajo la cama. Él pierde su posesión y su hacha. La perseverancia trae desventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Lo Suave. Éxito por lo pequeño. Es propicio tener a dónde ir. Es propicio ver al gran hombre.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Vientos que se siguen uno a otro: la imagen de Lo Suavemente Penetrante. Así el noble difunde sus mandamientos y da cumplimiento a sus asuntos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2058.png',
   },
   {
@@ -1360,16 +1390,19 @@ const HEXAGRAMS = [
     name: `Tui  /  Lo Sereno, El Lago`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
-    dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+    mutable1: 'Al comienzo un nueve significa: Serenidad contenta. ¡Ventura!',
+    mutable2:
+      'Nueve en el segundo puesto significa: Verdadera serenidad. ¡Ventura! El arrepentimiento se desvanece.',
+    mutable3:
+      'Seis en el tercer puesto significa: Serenidad que se allega. ¡Desventura!',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Serenidad ponderada no está en calma. Luego de deshacerse de los defectos uno halla alegría.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Enfrentar con veracidad lo corrosivo, es peligroso.',
+    mutable6: 'Al tope un seis significa: Serenidad seductora.',
+    dictamen: 'Lo Sereno. Éxito. Es propicia la perseverancia.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Lagos que reposan uno sobre otro: la imagen de Lo Sereno. Así el noble se reúne con sus amigos para la discusión y la ejercitación.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2059.png',
   },
   {
@@ -1378,16 +1411,22 @@ const HEXAGRAMS = [
     name: `Huan  /  La Disolución (La Dispersión)`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Él aporta ayuda con la fuerza de un caballo. ¡Ventura!',
+    mutable2:
+      'Nueve en el segundo puesto significa: Durante la disolución él corre hacia su sostén. El arrepentimiento se desvanece.',
+    mutable3:
+      'Seis en el tercer puesto significa: Él disuelve su yo. No hay arrepentimiento.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Él se aparta de su grey. ¡Elevada ventura! Por la disolución se obtiene acumulación. Esto es algo en que los hombres comunes no piensan.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Disolventes como sudor son sus altos clamores. ¡Disolución! Un rey permanece sin mácula.',
+    mutable6:
+      'Al tope un nueve significa: Él disuelve su sangre. Alejarse, mantenerse apartado, salir afuera, es sin defecto.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Disolución. Éxito. El rey se acerca a su templo. Es propicio cruzar las grandes aguas. Es propicia la perseverancia.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El viento planea sobre el agua: la imagen de La Disolución. Así los antiguos reyes ofrecían sacrificios al Señor y erigían templos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2060.png',
   },
   {
@@ -1396,16 +1435,22 @@ const HEXAGRAMS = [
     name: `Chieh  /  La Restricción`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: No salir abandonando portón y patio, no es falla.',
+    mutable2:
+      'Nueve en el segundo puesto significa: No salir abandonando portón y patio, trae desventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Quien no conoce restricción alguna tendrá que lamentarse. No hay falla.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Restricción complacida. Éxito.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Dulce restricción trae ventura. Ir allí trae estima.',
+    mutable6:
+      'Al tope un seis significa: Restricción amarga: la perseverancia trae desventura. Se desvanece el arrepentimiento.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Restricción. Éxito. No se debe ejercer con persistencia una restricción amarga.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Por encima del lago hay agua: la imagen de La Restricción. Así el noble crea el número y la medida e investiga qué es la virtud y la recta conducta.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2061.png',
   },
   {
@@ -1414,16 +1459,22 @@ const HEXAGRAMS = [
     name: `Chung Fu  /  La Verdad Interior`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Estar dispuesto trae ventura. Si hay segundas intenciones, es inquietante.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Una grulla que clama en la sombra. Su pichón le responde. Tengo una buena copa. Quiero compartirla contigo.',
+    mutable3:
+      'Seis en el tercer puesto significa: Él se encuentra con un compañero, ya toca el tambor, ya cesa de hacerlo, ya solloza, ya canta.',
+    mutable4:
+      'Seis en el cuarto puesto significa: La luna está casi llena. Se pierde el caballo de yunta. No hay falla.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Él posee la verdad que une con cadenas. No hay falla.',
+    mutable6:
+      'Al tope un nueve significa: Clamor de gallo que se eleva al cielo. La perseverancia trae desventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Verdad Interior. Cerdos y peces. ¡Ventura! Es propicio cruzar las grandes aguas. Es propicia la perseverancia.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Por sobre el lago está el viento: la imagen de La Verdad Interior. Así el noble discute los asuntos penales, con el fin de detener las ejecuciones.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2062.png',
   },
   {
@@ -1432,16 +1483,22 @@ const HEXAGRAMS = [
     name: `Hsiao Kuo  /  La Preponderancia de lo Pequeño`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: El pájaro, por volar, cae en la desventura.',
+    mutable2:
+      'Seis en el segundo puesto significa: Ella pasa de largo junto a su antepasado y se encuentra a su antepasada. Él no llega hasta su príncipe y encuentra al funcionario. No hay falla.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Si uno no toma precauciones extraordinarias, acaso llegue alguien de atrás y le pegue. ¡Desventura!',
+    mutable4:
+      'Nueve en el cuarto puesto significa: No hay falla. Sin pasar, él lo encuentra. Acudir trae peligro. Hay que estar en guardia. No actúes. De modo duradero sé perseverante.',
+    mutable5:
+      'Seis en el quinto puesto significa: Densas nubes, ninguna lluvia de nuestra región del Oeste. El príncipe tira y alcanza al que está en la cueva.',
+    mutable6:
+      'Al tope un seis significa: Sin encontrarlo, pasa de largo junto a él. El pájaro volador lo abandona. ¡Desventura! Esto significa desdicha y daño.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Preponderancia de lo Pequeño. Éxito. Es propicia la perseverancia. Pueden hacerse cosas pequeñas, no deben hacerse cosas grandes. El pájaro volador trae el mensaje: no es bueno aspirar hacia lo alto, es bueno permanecer abajo. ¡Gran ventura!',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la montaña está el trueno: la imagen de La Preponderancia de lo Pequeño. Así el noble, en su conducta da preponderancia a la veneración. En casos de duelo da preponderancia al duelo. En sus gastos da preponderancia a la economía.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2063.png',
   },
   {
@@ -1450,16 +1507,22 @@ const HEXAGRAMS = [
     name: `Chi Chi  /  Después de la Consumación`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b101).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Él frena sus ruedas. Se le hunda la cola en el agua. No hay falta.',
+    mutable2:
+      'Seis en el segundo puesto significa: La mujer pierde la cortina de su carruaje. No corras tras ella; al séptimo día la obtendrás.',
+    mutable3:
+      'Nueve en el tercer puesto significa: El ilustre antepasado castiga la tierra diabólica. Al cabo de tres años la vence. No se debe utilizar a los vulgares.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Las más bellas vestimentas se convierten en harapos. Sé cauteloso todo el día.',
+    mutable5:
+      'Nueve en el quinto puesto significa: El hombre del Este que sacrifica a un buey no recibe tanta dicha verdadera como el hombre del Oeste con su pequeña ofrenda.',
+    mutable6:
+      'Al tope un seis significa: Se le hunde la cabeza en el agua. Peligro.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Éxito en lo pequeño. Es propicia la perseverancia. Al principio ventura, al cabo confusiones.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El agua está por encima del fuego: la imagen del estado Después de la Consumación. Así el noble reflexiona sobre la desgracia y por anticipado se arma contra ella.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2064.png',
   },
   {
@@ -1468,16 +1531,22 @@ const HEXAGRAMS = [
     name: `Wei Chi  /  Antes de la Consumación`,
     up: triByBin.get(0b101).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Se le hunde la cola en el agua. Humillante.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Él frena sus ruedas. La perseverancia trae ventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Antes de la consumación el ataque trae desventura. Es propicio atravesar las grandes aguas.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: La perseverancia trae ventura. Se desvanece el arrepentimiento. Conomoción para castigar la tierra diabólica. Durante tres años habrá recompensas con grandes reinos.',
+    mutable5:
+      'Seis en el quinto puesto significa: La perseverancia trae ventura. No hay arrepentimiento. La luz del noble es verdadera. ¡Ventura!',
+    mutable6:
+      'Al tope un nueve significa: En verdadera confianza se bebe vino. No hay falta en ello. Pero cuando uno se moja la cabeza, en verdad la perderá.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Antes de la Consumación. Logro. Pero si al pequeño zorro, cuando casi ha consumado su travesía, se le hunde la cola en el agua, no hay nada que sea propicio.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El fuego está por encima del agua: la imagen del estado Anterior a la Transición. Así el noble es cauteloso en la discriminación de las cosas, a fin de que cada una llegue a ocupar su lugar.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2065.png',
   },
 ]
