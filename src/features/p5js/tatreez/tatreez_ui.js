@@ -133,13 +133,14 @@ async function tatreezUI() {
 
     if (deltaX > 0) {
       window.dispatchEvent(leftClick)
-      counter = (counter + 1) % LENGTH
+      counter = counter - 1
+      if (counter < 0) counter = LENGTH - 1
       moveHeaders()
       moveTexts()
     } else {
       window.dispatchEvent(rightClick)
-      counter = counter - 1
-      if (counter < 0) counter = LENGTH - 1
+      counter = (counter + 1) % LENGTH
+
       moveHeaders()
       moveTexts()
     }
@@ -149,7 +150,7 @@ async function tatreezUI() {
   window.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') {
       window.dispatchEvent(rightClick)
-      counter = (counter - 1) % LENGTH
+      counter = (counter + 1) % LENGTH
       animateClick(arrowRight)
       moveHeaders()
       moveTexts()
@@ -157,7 +158,7 @@ async function tatreezUI() {
 
     if (e.key === 'ArrowLeft') {
       window.dispatchEvent(leftClick)
-      counter = counter + 1
+      counter = counter - 1
       if (counter < 0) counter = LENGTH - 1
       animateClick(arrowLeft)
       moveHeaders()
