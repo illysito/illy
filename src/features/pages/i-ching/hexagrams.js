@@ -1224,16 +1224,21 @@ const HEXAGRAMS = [
     name: `Chen  /  Lo Suscitativo (La Conmoción, El Trueno)`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Llega la conmoción: ¡Ju, ju! Le siguen palabras rientes: ¡Ja, ja! ¡Ventura!',
+    mutable2:
+      'Seis en el segundo puesto significa: La conmoción llega con peligro. De cien mil maneras pierdes tus tesoros y has de subir a las nueve colinas. No corras ávidamente tras ellos. Al cabo de siete días los recuperarás.',
+    mutable3:
+      'Seis en el tercer puesto significa: Llega la conmoción y causa desconcierto. Si uno actúa a consecuencia de la conmoción, quedará libre de desgracia.',
+    mutable4: 'Nueve en el cuarto puesto significa: La conmoción se empantana.',
+    mutable5:
+      'Seis en el quinto puesto significa: La conmoción va y viene: peligro, pero no se pierde nada en absoluto, tan solo hay negocios, cosas que hacer.',
+    mutable6:
+      'Al tope un seis significa: La conmoción trae decadencia y un angustiado mirar alrededor. Avanzar trae desventuras. Si aún no llega la conmoción hasta el propio cuerpo, y solo ha alcanzado al vecino, entonces no hay defecto. Los compañeros tienen de qué hablar.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Conmoción trae éxito. Llega la conmoción: ¡Ju, ju! Palabras rientes: ¡Ja, ja! La conmoción aterra a cien millas, y él no deja caer el cucharón sacrificial, ni el cáliz.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Trueno continuado: la imagen de La Conmoción. Así el noble, bajo temor y temblor, rectifica su vida y se explora a sí mismo.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2052.png',
   },
   {
