@@ -55,22 +55,22 @@ function iChing() {
   // const svh = window.innerHeight * 0.01
 
   function blockButton() {
-    gsap.to(coinButton, {
-      backgroundColor: '#aaaaaa',
-      // opacity: 0.8,
-      pointerEvents: 'none',
-      duration: 0.2,
-    })
-    isBlocked = true
-    setTimeout(() => {
-      gsap.to(coinButton, {
-        backgroundColor: '#101010',
-        // opacity: 1,
-        pointerEvents: 'auto',
-        duration: 0.2,
-      })
-      isBlocked = false
-    }, 3400)
+    // gsap.to(coinButton, {
+    //   backgroundColor: '#aaaaaa',
+    //   // opacity: 0.8,
+    //   pointerEvents: 'none',
+    //   duration: 0.2,
+    // })
+    // isBlocked = true
+    // setTimeout(() => {
+    //   gsap.to(coinButton, {
+    //     backgroundColor: '#101010',
+    //     // opacity: 1,
+    //     pointerEvents: 'auto',
+    //     duration: 0.2,
+    //   })
+    //   isBlocked = false
+    // }, 3400)
     console.log('off for a while')
   }
 
@@ -434,6 +434,14 @@ function iChing() {
 
   function displayReading() {
     const currentHex = hexByBin.get(binaryCounter)
+    // Generate new BINARY sequence
+    let futureBinaryCounter = binaryCounter
+    for (let i = 0; i < mutableLines.length; i++) {
+      if (mutableLines[i] == 1) {
+        futureBinaryCounter ^= 1 << (5 - i)
+      }
+    }
+    const newHex = hexByBin.get(futureBinaryCounter)
     // dictamen
     const dictamen = document.createElement('h3')
     dictamen.classList.add('reading-sub-h')
@@ -446,6 +454,20 @@ function iChing() {
     imagen.classList.add('is--imagen')
     imagen.textContent = currentHex.imagen
     imagenBlock.appendChild(imagen)
+    // dictamen Mutated
+    const dictamenMutated = document.createElement('h3')
+    dictamenMutated.classList.add('reading-sub-h')
+    dictamenMutated.classList.add('is--mutation-dictamen')
+    dictamenMutated.textContent = newHex.dictamen
+    dictamenBlock.appendChild(dictamenMutated)
+    dictamenMutated.style.position = 'absolute'
+    // imagen Mutated
+    const imagenMutated = document.createElement('h3')
+    imagenMutated.classList.add('reading-sub-h')
+    imagenMutated.classList.add('is--mutation-imagen')
+    imagenMutated.textContent = newHex.imagen
+    imagenBlock.appendChild(imagenMutated)
+    imagenMutated.style.position = 'absolute'
     // lineas
     for (let i = 0; i < mutableLines.length; i++) {
       if (mutableLines[i] == 1) {
@@ -597,7 +619,9 @@ function iChing() {
 
     // Change text visually
     const dict = document.querySelector('.is--dictamen')
+    const dictMutation = document.querySelector('.is--mutation-dictamen')
     const imagen = document.querySelector('.is--imagen')
+    const imagenMutation = document.querySelector('.is--mutation-imagen')
     const currentImg = hexWrapper.querySelector('.chinese-txtr')
     const source = githubToJsDelivr(newHex.src)
     const currentTitle = hexWrapper.querySelector('.hexagram-title')
@@ -616,22 +640,39 @@ function iChing() {
       duration: 1.6,
       ease: 'power2.inOut',
       onComplete: () => {
+        dictMutation.style.position = 'static'
+        imagenMutation.style.position = 'static'
+        dict.style.position = 'absolute'
+        imagen.style.position = 'absolute'
+
         currentImg.src = source
         currentTitle.textContent = newHex.order + '.  ' + newHex.name
         currentTrigramHeadings[0].textContent = newHex.up
         currentTrigramHeadings[1].textContent = newHex.down
-        dict.innerHTML = ''
-        // dict.textContent = newHex.dictamen
-        console.log('dict: ', newHex.dictamen)
-        imagen.textContent = newHex.imagen
-        console.log('imagen: ', newHex.imagen)
+        dictMutation.textContent = newHex.dictamen
+        // console.log('dict: ', newHex.dictamen)
+        imagenMutation.textContent = newHex.imagen
+        // console.log('imagen: ', newHex.imagen)
         splitLines()
 
-        gsap.to([currentImg, currentTitle, currentTrigramHeadings], {
-          opacity: 1,
-          duration: 1.6,
-          ease: 'power2.inOut',
+        gsap.set([dict, imagen], {
+          opacity: 0,
         })
+
+        gsap.to(
+          [
+            currentImg,
+            currentTitle,
+            currentTrigramHeadings,
+            dictMutation,
+            imagenMutation,
+          ],
+          {
+            opacity: 1,
+            duration: 1.6,
+            ease: 'power2.inOut',
+          }
+        )
 
         gsap.to(splitH.lines, {
           yPercent: 0,
@@ -727,7 +768,9 @@ function iChing() {
 
     // Change text visually
     const dict = document.querySelector('.is--dictamen')
+    const dictMutation = document.querySelector('.is--mutation-dictamen')
     const imagen = document.querySelector('.is--imagen')
+    const imagenMutation = document.querySelector('.is--mutation-imagen')
     const currentImg = hexWrapper.querySelector('.chinese-txtr')
     const source = githubToJsDelivr(currentHex.src)
     const currentTitle = hexWrapper.querySelector('.hexagram-title')
@@ -742,6 +785,11 @@ function iChing() {
       duration: 1.6,
       ease: 'power2.inOut',
       onComplete: () => {
+        dictMutation.style.position = 'absolute'
+        imagenMutation.style.position = 'absolute'
+        dict.style.position = 'static'
+        imagen.style.position = 'static'
+
         currentImg.src = source
         currentTitle.textContent = currentHex.order + '.  ' + currentHex.name
         currentTrigramHeadings[0].textContent = currentHex.up
@@ -749,6 +797,13 @@ function iChing() {
         dict.textContent = currentHex.dictamen
         imagen.textContent = currentHex.imagen
         splitLines()
+
+        gsap.set([dictMutation, imagenMutation], {
+          opacity: 0,
+        })
+        gsap.set([dict, imagen], {
+          opacity: 1,
+        })
 
         gsap.to([currentImg, currentTitle, currentTrigramHeadings], {
           opacity: 1,

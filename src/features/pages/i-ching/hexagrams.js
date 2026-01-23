@@ -1247,16 +1247,21 @@ const HEXAGRAMS = [
     name: `Ken  /  El Aquietamiento (La Montaña)`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Aquietamiento de los dedos de sus pies. Ningún defecto. Es propicia una constante perseverancia.',
+    mutable2:
+      'Seis en el segundo puesto significa: Aquietamiento de sus pantorrillas. No puede salvar a quien él sigue. Su corazón no está contento.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Aquietamiento de sus caderas. Rigidez en su sacro. Peligroso. Se sofoca el corazón.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Aquietamiento de su tronco. Ningún defecto.',
+    mutable5:
+      'Seis en el quinto puesto significa: Aquietamiento de las mandíbulas. Las palabras guardan orden. Desaparece el arrepentimiento.',
+    mutable6: 'Al tope un nueve significa: Aquietamiento magnánimo. ¡Ventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'Aquietamiento de su espalda, de modo que él ya no siente su cuerpo. Va a su patio y no ve a su gente. Ningún defecto.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Montañas, una junto a otra: la imagen del Aquietamiento. Así el noble no va en sus pensamientos más allá de su situación.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2053.png',
   },
   {
