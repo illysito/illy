@@ -940,16 +940,22 @@ const HEXAGRAMS = [
     name: `Chien  /  El Impedimento`,
     up: triByBin.get(0b010).name,
     down: triByBin.get(0b001).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Ir conduce al impedimento; venir encuentra alabanza.',
+    mutable2:
+      'Seis en el segundo puesto significa: El servidor del rey encuentra impedimento sobre impedimento. Pero no es por su propia culpa.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Ir conduce a impedimentos; entonces él regresa.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Ir conduce a impedimentos, venir conduce a la unión.',
+    mutable5:
+      'Nueve en el quinto puesto significa: En medio de los mayores impedimentos acuden amigos.',
+    mutable6:
+      'Al tope un seis significa: Ir conduce a impedimentos, venir conduce a una gran ventura. Es propicio ver al gran hombre.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Impedimento. Es propicio el Sudoeste. No es propicio el Nordeste. Es propicio ver al gran hombre. La perseverancia trae ventura.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Sobre la montaña se encuentra el agua: la imagen del Impedimento. Así el noble se orienta hacia su propia persona y va formando su carácter.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2040.png',
   },
   {
@@ -958,16 +964,21 @@ const HEXAGRAMS = [
     name: `Hsieh  /  La Liberación`,
     up: triByBin.get(0b100).name,
     down: triByBin.get(0b010).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1: 'Al comienzo un seis significa: Sin mácula.',
+    mutable2:
+      'Nueve en el segundo puesto significa: En el campo uno cobra tres zorros y recibe una flecha amarilla. La perseverancia aporta ventura.',
+    mutable3:
+      'Seis en el tercer puesto significa: Cuando alguien lleva una carga sobre sus espaldas y sin embargo viaja en coche da motivo a que se acerquen los bandidos. La perseverancia lleva a la humillación.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: Libérate del dedo gordo de tu pie, entonces acudirá el compañero y en él podrás confiar.',
+    mutable5:
+      'Seis en el quinto puesto significa: Con tal que el noble sólo pueda liberarse, esto traerá ventura. Demostrará así a los viles que la cosa le va en serio.',
+    mutable6:
+      'Al tope un seis significa: El príncipe dispara sobre un azor apostado en un alto muro. Lo abate. Todo es propicio.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Liberación. Es propicio el Sudoeste. Si ya no queda nada a donde uno debiera ir, es venturoso el regreso. Si todavía hay algo a donde uno deberia ir, entonces es venturosa la prontitud.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Trueno y lluvia se levantan: la imagen de La Liberación. Así el noble perdona las faltas y exime de culpa.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2041.png',
   },
   {
@@ -976,16 +987,22 @@ const HEXAGRAMS = [
     name: `Sun  /  La Merma`,
     up: triByBin.get(0b001).name,
     down: triByBin.get(0b110).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Una vez concluidos los negocios, acudir pronto allí no es un error. Pero ha de considerarse hasta dónde es lícito mermar a los demás.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Es propicia la perseverancia. Emprender algo trae desventura. Sin mermarse a sí mismo puede uno acrecentar a los demás.',
+    mutable3:
+      'Seis en el tercer puesto significa: Cuando tres personas marchan juntas, se disminuyen en una persona. Cuando una persona marcha sola, encuentra a su compañero.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Cuando uno disminuye sus defectos, hace que el otro acuda presuroso y se alegre. No hay tacha.',
+    mutable5:
+      'Seis en el quinto puesto significa: Sin duda alguien está incrementándolo. Diez pares de tortugas no pueden oponerse a ello. ¡Elevada ventura!',
+    mutable6:
+      'Al tope un nueve significa: Cuando un es aumentado sin merma de los demás, esto no es un defecto. La perseverancia trae ventura. Es propicio emprender algo. Uno consigue servidores, pero ya no posee un hogar particular.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'La Merma unida a la veracidad obra elevada ventura sin tacha. Puede perseverarse en ello. Es propicio emprender algo. ¿Cómo se pone esto en práctica?',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Abajo junto a la montaña está el lago: la imagen de La Merma. Así el noble reprime su cólera y refrena sus impulsos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2042.png',
   },
   {
@@ -994,16 +1011,22 @@ const HEXAGRAMS = [
     name: `I  /  El Aumento`,
     up: triByBin.get(0b011).name,
     down: triByBin.get(0b100).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Es propicio llevar a cabo grandes hechos. ¡Elevada ventura! Ningún defecto.',
+    mutable2:
+      'Seis en el segundo puesto significa: Sin duda alguien lo incrementa. Diez pares de tortugas no pueden oponerse a ello. Una constante perseverancia trae ventura. El rey lo presenta ante Dios. ¡Ventura!',
+    mutable3:
+      'Seis en el tercer puesto significa: Uno se ve incrementado por sucesos infaustos. No hay tacha si eres veraz y caminas por el medio e informas al príncipe, provisto de un sello.',
+    mutable4:
+      'Seis en el cuarto puesto significa: Si andas por el medio e informas al príncipe, él te seguirá. Es propicio ser utilizado en el traslado de la capital.',
+    mutable5:
+      'Nueve en el quinto puesto significa:  Si tienes de verdad un corazón bondadoso, no preguntes. ¡Elevada ventura! De cierto la bondad será reconocida como tu virtud.',
+    mutable6:
+      'Al tope un nueve significa: Él no trae aumento para nadie. Acaso hasta llegue alguien a golpearlo. No mantiene duraderamente firme su corazón. ¡Desventura!',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Aumento. Es propicio emprender algo. Es propicio atravesar las grandes aguas.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Viento y trueno: la imnagen del Aumento. Así el noble: cuando ve el bien, lo imita, si tiene defectos, se deshace de ellos.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2043.png',
   },
   {
@@ -1012,16 +1035,22 @@ const HEXAGRAMS = [
     name: `Kuai  /  El Desbordamiento`,
     up: triByBin.get(0b110).name,
     down: triByBin.get(0b111).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un nueve significa: Poderoso en los dedos de los pies que avanzan. Si uno acude sin estar a la altura de la cuestión comete una falta.',
+    mutable2:
+      'Nueve en el segundo puesto significa: Llamada de alarma. Al atardecer y durante la noche de armas. No temas nada.',
+    mutable3:
+      'Nueve en el tercer puesto significa: Ser poderoso en las mandíbulas trae desventura. El noble está firmemente resuelto. Anda solitario y se encuentra bajo la lluvia. Es salpicado y se murmura contra él. Ninguna tacha.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: En los muslos no hay piel y resulta difícil caminar. Si uno se dejara guiar como una oveja se desvanecería el arrepentimiento. Pero al escuchar estas palabras, no se creerá en ellas.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Ante la cizaña se requiere una firme decisión. Andar por el medio queda libre de tacha.',
+    mutable6:
+      'Al tope un seis significa: ¡Ningún llamado! Finalmente llega la desventura.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Desbordamiento. Resueltamente el asunto ha de darse a conocer en la corte del rey. Ha de proclamarse conforme a la verdad. ¡Peligro! Hay que dar aviso a la propia ciudad. No es propicio tomar las armas. Es propicio emprender algo.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'El lago ha subido al cielo: la imagen del Desbordamiento. Así el noble dispensa riquezas hacia abajo y recela cobijarse en su virtud.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2044.png',
   },
   {
@@ -1030,16 +1059,22 @@ const HEXAGRAMS = [
     name: `Kou  /  El Ir al Encuentro (La Complacencia)`,
     up: triByBin.get(0b111).name,
     down: triByBin.get(0b011).name,
-    mutable1: 'Al comienzo un nueve significa:',
-    mutable2: 'Nueve en el segundo puesto significa:',
-    mutable3: 'Nueve en el tercer puesto significa:',
-    mutable4: 'Nueve en el cuarto puesto significa:',
-    mutable5: 'Nueve en el quinto puesto significa:',
-    mutable6: 'Al tope un nueve significa:',
+    mutable1:
+      'Al comienzo un seis significa: Hay que frenarlo con galga de bronce. La perseverancia trae ventura. Si uno lo deja seguir su curso, sufrirá desventura. También un cerdo flaco tiene propensión a embravecerse y hacer estragos.',
+    mutable2:
+      'Nueve en el segundo puesto significa: En el recipiente hay un pez. ¡Ningún defecto! No es propicio para huéspedes.',
+    mutable3:
+      'Nueve en el tercer puesto significa: En los muslos no hay piel y resulta difícil caminar. Si se tiene siempre presente el peligro no se cometerá una falta grande.',
+    mutable4:
+      'Nueve en el cuarto puesto significa: En el recipiente no hay ningún pez. De ello surge desventura.',
+    mutable5:
+      'Nueve en el quinto puesto significa: Un melón cubierto de hojas de sauce: líneas ocultas. Entonces la cosa le llega a uno como caída del cielo.',
+    mutable6:
+      'Al tope un nueve significa: Va al encuentro usando los cuernos. Humillación. No hay tacha.',
     dictamen:
-      'Lo Creativo obra elevado logro, propiciando por la perseverancia',
+      'El Ir al Encuentro. La muchacha es poderosa. No debe uno casarse con semejante muchacha.',
     imagen:
-      'Pleno de fuerza es el movimiento del Cielo.\nAsí el noble se hace fuerte e infatigable',
+      'Bajo el cielo se encuentra el viento: la imagen del Ir al Encuentro. Así procede el príncipe al difundir sus órdenes proclamándolas hacia los cuatro puntos cardinales.',
     src: 'https://github.com/illysito/illy/blob/2cc878c55e3120fdb4e78a65143161f3a04985e1/public/imgs_cdn/characters/iChing_-%20copia%2045.png',
   },
   {
