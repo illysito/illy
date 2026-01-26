@@ -162,7 +162,7 @@ function nav(isBuilding) {
     ticking = false
   }
 
-  if (!isMobile() && !isBuilding) {
+  if (!isMobile() && isBuilding) {
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(hideOrShowOnScroll)

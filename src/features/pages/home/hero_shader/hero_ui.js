@@ -10,7 +10,7 @@ async function heroUI(isBuilding) {
   const heroCanvas = document.querySelector('#hero-canvas')
   const sliderBalls = document.querySelectorAll('.slider-ball')
   const sliderRails = document.querySelectorAll('.slider-hero')
-  const golBall = document.querySelector('.gol-slider-ball')
+  // const golBall = document.querySelector('.gol-slider-ball')
 
   // MAIN UNIFORMS
   const darkModeRef = { current: 0.0 }
@@ -191,20 +191,20 @@ async function heroUI(isBuilding) {
     })
   })
   // Also for the Game of Life (little trick to do it here)
-  golBall.addEventListener('mouseover', () => {
-    gsap.to(golBall, {
-      scale: 1.4,
-      borderRadius: 0,
-      duration: 0.2,
-    })
-  })
-  golBall.addEventListener('mouseleave', () => {
-    gsap.to(golBall, {
-      scale: 1,
-      borderRadius: 120,
-      duration: 0.2,
-    })
-  })
+  // golBall.addEventListener('mouseover', () => {
+  //   gsap.to(golBall, {
+  //     scale: 1.4,
+  //     borderRadius: 0,
+  //     duration: 0.2,
+  //   })
+  // })
+  // golBall.addEventListener('mouseleave', () => {
+  //   gsap.to(golBall, {
+  //     scale: 1,
+  //     borderRadius: 120,
+  //     duration: 0.2,
+  //   })
+  // })
   document.addEventListener('mousemove', (e) => {
     if (!isDragging) return
     updateBallPosition(e.clientX)

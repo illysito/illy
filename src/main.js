@@ -22,8 +22,11 @@ function domElementsQuery() {
     preloader: document.querySelector('.preloader__section'),
     qrButton: document.querySelector('.qr-button'),
     canvasWrapper: document.querySelector('.layer-1-canvas-wrapper'),
-    golPlayButton: document.querySelector('.gol-play-button'),
-    golSeedButton: document.querySelector('.gol-seed-button'),
+    // golPlayButton: document.querySelector('.gol-play-button'),
+    // golSeedButton: document.querySelector('.gol-seed-button'),
+    // case buttons
+    deepStudyButtons: document.querySelectorAll('.deepstudy-button'),
+    liveSiteButton: document.querySelector('.livesite-button'),
   }
 }
 const domElements = domElementsQuery()
@@ -40,7 +43,7 @@ if (!localStorage.getItem('accent_state')) {
 async function runGeneralFunctions() {
   colorModeChange()
   colorModeState()
-  nav(isBuilding)
+  nav(!isBuilding)
   if (!isMobile() && !isBuilding) {
     setTimeout(() => {
       import('./features/pages/general/mousetrail').then(
@@ -137,12 +140,12 @@ async function runHomeFunctions() {
   // form()
 
   // Footer
-  button(domElements.golPlayButton)
-  button(domElements.golSeedButton)
+  // button(domElements.golPlayButton)
+  // button(domElements.golSeedButton)
 
   // Intersection observers
   const workShaderTarget = document.querySelector('.about-type-h') // shaders RUN when about parapgraph is visible
-  const golTarget = document.querySelector('.footer') // gol RUNS when footer is visible
+  // const golTarget = document.querySelector('.footer') // gol RUNS when footer is visible
   const targets = [
     {
       el: workShaderTarget,
@@ -152,16 +155,16 @@ async function runHomeFunctions() {
         console.log('shaders should run here')
       },
     },
-    {
-      el: golTarget,
-      run: () => {
-        if (!isMobile()) {
-          import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
-        } else {
-          return
-        }
-      },
-    },
+    // {
+    //   el: golTarget,
+    //   run: () => {
+    //     if (!isMobile()) {
+    //       import('./features/p5js/game_of_life/gol_ui').then((m) => m.default())
+    //     } else {
+    //       return
+    //     }
+    //   },
+    // },
   ]
   const io = new IntersectionObserver(
     (entries, observer) => {
@@ -192,6 +195,22 @@ async function runHomeFunctions() {
 
   // workCanvasUI()
   // golUI()
+}
+
+async function runCaseFunctions() {
+  const { default: introNav } = await import(
+    './features/pages/general/introNav'
+  )
+  const { default: caseStudiesMisc } = await import(
+    './features/pages/case-studies/caseStudiesMisc'
+  )
+
+  introNav()
+  caseStudiesMisc()
+  domElements.deepStudyButtons.forEach((b) => {
+    button(b)
+  })
+  button(domElements.liveSiteButton)
 }
 
 async function runPhilosophyFunctions() {
@@ -239,6 +258,7 @@ if (
 if (document.body.classList.contains('body__home'))
   // requestIdleCallback(runHomeFunctions)
   runHomeFunctions()
+if (document.body.classList.contains('body__case')) runCaseFunctions()
 if (document.body.classList.contains('body__philosophy'))
   runPhilosophyFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()

@@ -2,6 +2,7 @@ import gsap from 'gsap'
 // import SplitType from 'split-type'
 
 function introHome() {
+  console.log('introHome!!')
   let dur = 0.6
   // let ease1 = 'power1.inOut'
   let ease2 = 'power2.inOut'

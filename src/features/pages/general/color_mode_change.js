@@ -8,48 +8,58 @@ const D = Anim.D
 
 function colorModeChange() {
   const html = document.documentElement
+  const body = document.body
+  const isHome = body.classList.contains('body__home')
+  // const isCaseStudy = body.classList.contains('body__case')
 
-  // IMGS
+  // General -----------------
+  const logoDark = document.querySelector('.nav-logo')
+  const logoWhite = document.querySelector('.nav-logo-white')
+  const buttonTexts = document.querySelectorAll('.butt-text')
+  const buttonTextsHidden = document.querySelectorAll('.butt-text-hidden')
+  const buttonTextsArr = [buttonTexts, buttonTextsHidden]
+
+  // Home ------------------
+  // imgs
   const darkArrows = document.querySelectorAll('.view-img')
   const lightArrows = document.querySelectorAll('.view-img-white')
   const darkLiveArrows = document.querySelectorAll('.live-web-wrapper')
   const lightLiveArrows = document.querySelectorAll('.live-web-wrapper-white')
   const darkMoons = document.querySelector('.black-moon-wrapper')
   const lightMoons = document.querySelector('.white-moon-wrapper')
-  const logoDark = document.querySelector('.nav-logo')
-  const logoWhite = document.querySelector('.nav-logo-white')
-  // BUTTONS (need to do this because of flashy artifact)
-  const buttonTexts = document.querySelectorAll('.butt-text')
-  const buttonTextsHidden = document.querySelectorAll('.butt-text-hidden')
+  // buttons (need to do this because of flashy artifact)
   const hireButton = document.querySelector('.hire-button')
-  const golPlayButton = document.querySelectorAll('.gol-play-button')
-  const golSeedButton = document.querySelectorAll('.gol-seed-button')
-  const buttonTextsArr = [buttonTexts, buttonTextsHidden]
-  const buttonsArr = [hireButton, golPlayButton, golSeedButton]
-  // TYPE
+  const buttonsArr = [hireButton]
+  // type
   const projectHeaders = document.querySelectorAll('.work-h')
-  // HEADER DOTS
+  // header dots
   // const headerDots = document.querySelectorAll('.header-dot')
+
+  // Case studies
 
   const duration = D.slow
 
   function updateButtons() {
     const rootStyles = getComputedStyle(document.documentElement)
     const typeColor = rootStyles.getPropertyValue('--type-color').trim()
-    gsap.to(buttonTextsArr, {
-      color: typeColor,
-    })
-    gsap.to(buttonsArr, {
-      borderColor: typeColor,
-    })
+    if (isHome) {
+      gsap.to(buttonTextsArr, {
+        color: typeColor,
+      })
+      gsap.to(buttonsArr, {
+        borderColor: typeColor,
+      })
+    }
   }
 
   function updateType() {
     const rootStyles = getComputedStyle(document.documentElement)
     const typeColor = rootStyles.getPropertyValue('--type-color').trim()
-    gsap.to(projectHeaders, {
-      color: typeColor,
-    })
+    if (isHome) {
+      gsap.to(projectHeaders, {
+        color: typeColor,
+      })
+    }
   }
 
   // function updateHeroUIButtons() {
@@ -74,14 +84,16 @@ function colorModeChange() {
       opacity: 0,
       duration: duration,
     })
-    gsap.to([darkMoons, darkArrows, darkLiveArrows], {
-      opacity: 1,
-      duration: duration,
-    })
-    gsap.to([lightMoons, lightArrows, lightLiveArrows], {
-      opacity: 0,
-      duration: duration,
-    })
+    if (isHome) {
+      gsap.to([darkMoons, darkArrows, darkLiveArrows], {
+        opacity: 1,
+        duration: duration,
+      })
+      gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 0,
+        duration: duration,
+      })
+    }
     html.setAttribute('data-wf-mode', 'base')
   }
 
@@ -95,14 +107,16 @@ function colorModeChange() {
       opacity: 0,
       duration: duration,
     })
-    gsap.to([darkMoons, darkArrows, darkLiveArrows], {
-      opacity: 1,
-      duration: duration,
-    })
-    gsap.to([lightMoons, lightArrows, lightLiveArrows], {
-      opacity: 0,
-      duration: duration,
-    })
+    if (isHome) {
+      gsap.to([darkMoons, darkArrows, darkLiveArrows], {
+        opacity: 1,
+        duration: duration,
+      })
+      gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 0,
+        duration: duration,
+      })
+    }
     html.setAttribute('data-wf-mode', 'base-2')
   }
 
@@ -116,14 +130,16 @@ function colorModeChange() {
       opacity: 1,
       duration: duration,
     })
-    gsap.to([darkMoons, darkArrows, darkLiveArrows], {
-      opacity: 0,
-      duration: duration,
-    })
-    gsap.to([lightMoons, lightArrows, lightLiveArrows], {
-      opacity: 1,
-      duration: duration,
-    })
+    if (isHome) {
+      gsap.to([darkMoons, darkArrows, darkLiveArrows], {
+        opacity: 0,
+        duration: duration,
+      })
+      gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 1,
+        duration: duration,
+      })
+    }
     html.setAttribute('data-wf-mode', 'dark')
   }
 
@@ -137,14 +153,16 @@ function colorModeChange() {
       opacity: 1,
       duration: duration,
     })
-    gsap.to([darkMoons, darkArrows, darkLiveArrows], {
-      opacity: 0,
-      duration: duration,
-    })
-    gsap.to([lightMoons, lightArrows, lightLiveArrows], {
-      opacity: 1,
-      duration: duration,
-    })
+    if (isHome) {
+      gsap.to([darkMoons, darkArrows, darkLiveArrows], {
+        opacity: 0,
+        duration: duration,
+      })
+      gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 1,
+        duration: duration,
+      })
+    }
     html.setAttribute('data-wf-mode', 'dark-2')
   }
 

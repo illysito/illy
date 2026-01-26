@@ -27,12 +27,16 @@ function colorModeState() {
     const accentState = localStorage.getItem('accent_state')
 
     if (darkState === '1') {
-      gsap.set(darkmodeButton.firstElementChild, { x: 18 })
+      if (darkmodeButton) {
+        gsap.set(darkmodeButton.firstElementChild, { x: 18 })
+      }
       isDarkModeClicked = true
       states[0] = 1
     }
     if (accentState === '1') {
-      gsap.set(accentButton.firstElementChild, { x: 18 })
+      if (darkmodeButton) {
+        gsap.set(accentButton.firstElementChild, { x: 18 })
+      }
       isAccentClicked = true
       states[1] = 1
     }
@@ -100,16 +104,18 @@ function colorModeState() {
   }
 
   // Click
-  darkmodeButton.addEventListener('click', (e) => {
-    const b = e.currentTarget
-    const id = b.id
-    toggleMode(b, id)
-  })
-  accentButton.addEventListener('click', (e) => {
-    const b = e.currentTarget
-    const id = b.id
-    toggleMode(b, id)
-  })
+  if (darkmodeButton && accentButton) {
+    darkmodeButton.addEventListener('click', (e) => {
+      const b = e.currentTarget
+      const id = b.id
+      toggleMode(b, id)
+    })
+    accentButton.addEventListener('click', (e) => {
+      const b = e.currentTarget
+      const id = b.id
+      toggleMode(b, id)
+    })
+  }
 
   // Hover buttons
   function buttonHoverIn(b) {
@@ -129,22 +135,24 @@ function colorModeState() {
     })
   }
 
-  darkmodeButton.addEventListener('mouseenter', (e) => {
-    const b = e.currentTarget
-    buttonHoverIn(b)
-  })
-  darkmodeButton.addEventListener('mouseleave', (e) => {
-    const b = e.currentTarget
-    buttonHoverOut(b)
-  })
-  accentButton.addEventListener('mouseenter', (e) => {
-    const b = e.currentTarget
-    buttonHoverIn(b)
-  })
-  accentButton.addEventListener('mouseleave', (e) => {
-    const b = e.currentTarget
-    buttonHoverOut(b)
-  })
+  if (darkmodeButton && accentButton) {
+    darkmodeButton.addEventListener('mouseenter', (e) => {
+      const b = e.currentTarget
+      buttonHoverIn(b)
+    })
+    darkmodeButton.addEventListener('mouseleave', (e) => {
+      const b = e.currentTarget
+      buttonHoverOut(b)
+    })
+    accentButton.addEventListener('mouseenter', (e) => {
+      const b = e.currentTarget
+      buttonHoverIn(b)
+    })
+    accentButton.addEventListener('mouseleave', (e) => {
+      const b = e.currentTarget
+      buttonHoverOut(b)
+    })
+  }
 }
 
 export default colorModeState
