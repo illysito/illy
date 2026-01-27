@@ -29,11 +29,15 @@ function dispUI() {
 
   // About
   const offsetRefME = { current: 0 }
+  // const image1_URL_ME = githubToJsDelivr(
+  //   'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/fotiwini.jpeg'
+  // )
   const image1_URL_ME = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/fotiwini.jpeg'
+    'https://github.com/illysito/illy/blob/5aed40356cf0ef081485809964e01d8a52dd8b91/public/imgs_cdn/MeFlute.jpg'
   )
+
   const image2_URL_ME = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/ME-11.webp'
+    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/fotiwini.jpeg'
   )
   const updateUniformsME = dispHandler(
     aboutCanvas,
@@ -129,13 +133,13 @@ function dispUI() {
   updateUniforms.push(updateUniformsLIRIOS)
   offsets.push(offsetRefLIRIOS)
 
-  // Llanten
+  // Posters
   const offsetRefPOSTERS = { current: 0 }
   const image1_URL_POSTERS = githubToJsDelivr(
     'https://github.com/illysito/illy/blob/a092342a2a0be47bdc85d62434c3562abca9dc76/public/imgs_cdn/WORK-12-11.webp'
   )
   const image2_URL_POSTERS = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/a9544aa26fa32c9da97a4234792630ab74976d6e/public/imgs_cdn/WORK-9-09.webp'
+    'https://github.com/illysito/illy/blob/d1dc2e7f148e9350b20ce502a3424b16e41e677f/public/imgs_cdn/WORK%2013%20-%20.webp'
   )
   const updateUniformsPOSTERS = dispHandler(
     postersCanvas,

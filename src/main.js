@@ -6,7 +6,7 @@ import colorModeChange from './features/pages/general/color_mode_change'
 import colorModeState from './features/pages/general/color_mode_state'
 import nav from './features/pages/general/nav'
 
-let isBuilding = true
+let isBuilding = false
 
 function isMobile() {
   return window.innerWidth <= 767
@@ -16,6 +16,7 @@ function domElementsQuery() {
   return {
     worldContainer: document.querySelector('.world-container'),
     hireButton: document.querySelector('.hire-button'),
+    hireButton2: document.querySelector('.hire-button-2'),
     nav: document.querySelector('.nav__section'),
     navLinks: document.querySelectorAll('.nav-link'),
     preloaderOverlays: document.querySelectorAll('.preloader-overlay'),
@@ -135,6 +136,8 @@ async function runHomeFunctions() {
   workInteraction()
   workAnimations()
   serviceAnimations()
+
+  button(domElements.hireButton2)
 
   // Contact
   // form()

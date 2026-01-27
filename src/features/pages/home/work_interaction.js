@@ -8,7 +8,13 @@ function workInteraction() {
   const p2o = 'power2.out'
   const duration = 0.8
 
-  function hoverIn(cardTitles, cardTitlesHidden, sorryHeader, viewBlock) {
+  function hoverIn(
+    cardTitles,
+    cardTitlesHidden,
+    sorryHeader,
+    viewBlock,
+    canvasWrapper
+  ) {
     const rootStyles = getComputedStyle(document.documentElement)
     const accent = rootStyles.getPropertyValue('--accent').trim()
     gsap.to([cardTitles, cardTitlesHidden], {
@@ -28,9 +34,20 @@ function workInteraction() {
       duration: duration - 0.2,
       ease: p2o,
     })
+    gsap.to(canvasWrapper, {
+      borderRadius: 8,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
   }
 
-  function hoverOut(cardTitles, cardTitlesHidden, sorryHeader, viewBlock) {
+  function hoverOut(
+    cardTitles,
+    cardTitlesHidden,
+    sorryHeader,
+    viewBlock,
+    canvasWrapper
+  ) {
     const rootStyles = getComputedStyle(document.documentElement)
     const typeColor = rootStyles.getPropertyValue('--type-color').trim()
     gsap.to([cardTitles, cardTitlesHidden], {
@@ -50,6 +67,11 @@ function workInteraction() {
       duration: duration - 0.2,
       ease: p2o,
     })
+    gsap.to(canvasWrapper, {
+      borderRadius: 0,
+      duration: duration - 0.2,
+      ease: p2o,
+    })
   }
 
   canvasUI.forEach((canvas, index) => {
@@ -62,11 +84,23 @@ function workInteraction() {
       const sorryHeader = workView.firstElementChild
       const viewBlock = workView.lastElementChild
       canvas.addEventListener('mouseover', () => {
-        hoverIn(cardTitles, cardTitlesHidden, sorryHeader, viewBlock)
+        hoverIn(
+          cardTitles,
+          cardTitlesHidden,
+          sorryHeader,
+          viewBlock,
+          canvasWrapper
+        )
       })
 
       canvas.addEventListener('mouseleave', () => {
-        hoverOut(cardTitles, cardTitlesHidden, sorryHeader, viewBlock)
+        hoverOut(
+          cardTitles,
+          cardTitlesHidden,
+          sorryHeader,
+          viewBlock,
+          canvasWrapper
+        )
       })
     }
   })
