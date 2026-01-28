@@ -8,10 +8,13 @@ function workAnimations() {
 
   let scrollStart
   let scrollEnd
+  let delay
   if (isMobile()) {
     scrollStart = 'top bottom'
     scrollEnd = 'top 95%'
+    delay = 0
   } else {
+    delay = 0.1
     scrollStart = 'top 90%'
     scrollEnd = 'top 60%'
   }
@@ -39,7 +42,7 @@ function workAnimations() {
     gsap.set(splitP.lines, { yPercent: -100, opacity: 0 })
 
     gsap.to(splitP.lines, {
-      delay: 0.1 * index,
+      delay: delay * index,
       yPercent: 0,
       opacity: 1,
       stagger: 0.08,
@@ -67,7 +70,7 @@ function workAnimations() {
     gsap.set(splitH.lines, { yPercent: -100, opacity: 0 })
 
     gsap.to(splitH.lines, {
-      delay: 0.1 * index,
+      delay: delay * index,
       duration: 0.6,
       yPercent: 0,
       opacity: 1,
@@ -85,7 +88,7 @@ function workAnimations() {
     gsap.set(l, { width: 0 })
 
     gsap.to(l, {
-      delay: 0.14 * index,
+      delay: delay * index,
       duration: 1.2,
       width: '100%',
       stagger: 0.4,
@@ -100,7 +103,7 @@ function workAnimations() {
 
   workOverlays.forEach((o, index) => {
     gsap.to(o, {
-      delay: 0.1 * index,
+      delay: delay * index,
       duration: 1.2,
       yPercent: 100,
       ease: 'power3.inOut',
