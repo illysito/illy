@@ -14,7 +14,7 @@ function footer() {
   let scrollStart
   let scrollEnd
   if (isMobile()) {
-    scrollStart = 'top bottom'
+    scrollStart = 'top -20%'
     scrollEnd = 'top 95%'
     delay = 0
   } else {
