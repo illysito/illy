@@ -47,6 +47,7 @@ function workAnimations() {
         trigger: splitP.lines,
         start: scrollStart,
         end: scrollEnd,
+        markers: true,
       },
     })
   })
