@@ -4,8 +4,24 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 function footer() {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
+
   const footerHeadings = document.querySelectorAll('.footer-h')
   const footerImgs = document.querySelectorAll('.footer-img')
+
+  let scrollStart
+  let scrollEnd
+  if (isMobile()) {
+    scrollStart = 'top bottom'
+    scrollEnd = 'top 95%'
+    delay = 0
+  } else {
+    delay = 0.1
+    scrollStart = 'top 90%'
+    scrollEnd = 'top 60%'
+  }
 
   // reveal footer text
   footerHeadings.forEach((h) => {
@@ -14,8 +30,8 @@ function footer() {
       opacity: 1,
       scrollTrigger: {
         trigger: h,
-        start: 'top 90%',
-        end: 'top 60%',
+        start: scrollStart,
+        end: scrollEnd,
         markers: false,
       },
     })
@@ -28,8 +44,8 @@ function footer() {
     duration: 1.2,
     scrollTrigger: {
       trigger: footerImgs[0],
-      start: 'top 90%',
-      end: 'top 60%',
+      start: scrollStart,
+      end: scrollEnd,
       markers: false,
     },
   })
