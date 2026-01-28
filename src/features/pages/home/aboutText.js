@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 function aboutText() {
   const aboutH = document.querySelectorAll('.about-type-h')
   const aboutCanvas = document.querySelector('.work-canvas.is--about')
+  const aboutImg = document.querySelector('.about-img-mobile')
 
   const splitH = new SplitType(aboutH, {
     types: 'words',
@@ -28,17 +29,35 @@ function aboutText() {
     },
   })
 
-  gsap.to(aboutCanvas, {
-    y: -160,
-    scale: 1.2,
-    scrollTrigger: {
-      trigger: aboutCanvas,
-      start: 'top 98%',
-      end: 'bottom 12%',
-      scrub: 1.2,
-      markers: false,
-    },
-  })
+  if (aboutCanvas) {
+    // Laptop
+    gsap.to(aboutCanvas, {
+      y: -160,
+      scale: 1.2,
+      scrollTrigger: {
+        trigger: aboutCanvas,
+        start: 'top 98%',
+        end: 'bottom 12%',
+        scrub: 1.2,
+        markers: false,
+      },
+    })
+  }
+
+  if (aboutImg) {
+    // Mobile
+    gsap.to(aboutImg, {
+      y: -160,
+      scale: 1.1,
+      scrollTrigger: {
+        trigger: aboutImg,
+        start: 'top 98%',
+        end: 'bottom 12%',
+        scrub: 1.2,
+        markers: false,
+      },
+    })
+  }
 }
 
 export default aboutText
