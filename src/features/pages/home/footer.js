@@ -10,32 +10,36 @@ function footer() {
 
   const footerHeadings = document.querySelectorAll('.footer-h')
   const footerImgs = document.querySelectorAll('.footer-img')
-
-  let scrollStart
-  let scrollEnd
-  if (isMobile()) {
-    scrollStart = 'top -20%'
-    scrollEnd = 'top 95%'
-    delay = 0
-  } else {
-    delay = 0.1
-    scrollStart = 'top 90%'
-    scrollEnd = 'top 60%'
-  }
+  const footerSection = document.querySelector('.footer')
 
   // reveal footer text
-  footerHeadings.forEach((h) => {
-    gsap.to(h, {
-      yPercent: 100,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: h,
-        start: scrollStart,
-        end: scrollEnd,
-        markers: false,
-      },
+  if (isMobile()) {
+    footerHeadings.forEach((h) => {
+      gsap.to(h, {
+        yPercent: 100,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: footerSection,
+          start: 'top 90%',
+          end: 'top 60%',
+          markers: false,
+        },
+      })
     })
-  })
+  } else {
+    footerHeadings.forEach((h) => {
+      gsap.to(h, {
+        yPercent: 100,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: h,
+          start: 'top 90%',
+          end: 'top 60%',
+          markers: false,
+        },
+      })
+    })
+  }
 
   // reveal footer images
   gsap.to(footerImgs, {
@@ -44,8 +48,8 @@ function footer() {
     duration: 1.2,
     scrollTrigger: {
       trigger: footerImgs[0],
-      start: scrollStart,
-      end: scrollEnd,
+      start: 'top 90%',
+      end: 'top 60%',
       markers: false,
     },
   })
