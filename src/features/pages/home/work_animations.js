@@ -2,11 +2,26 @@ import gsap from 'gsap'
 import SplitType from 'split-type'
 
 function workAnimations() {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
+
+  let scrollStart
+  let scrollEnd
+  if (isMobile()) {
+    scrollStart = 'top 98%'
+    scrollEnd = 'top 88%'
+  } else {
+    scrollStart = 'top 90%'
+    scrollEnd = 'top 60%'
+  }
+
   const workPs = document.querySelectorAll('.work-p')
   const workHs = document.querySelectorAll('.work-h')
   const workLines = document.querySelectorAll('.work-line')
   const workOverlays = document.querySelectorAll('.canvas-overlay')
   const workCanvas = document.querySelectorAll('.work-canvas')
+  const workImgs = document.querySelectorAll('.work-img')
   // const workCards = document.querySelectorAll('.work-card')
 
   workPs.forEach((p, index) => {
@@ -30,8 +45,8 @@ function workAnimations() {
       stagger: 0.08,
       scrollTrigger: {
         trigger: splitP.lines,
-        start: 'top 90%',
-        end: 'top 60%',
+        start: scrollStart,
+        end: scrollEnd,
       },
     })
   })
@@ -59,8 +74,8 @@ function workAnimations() {
       ease: 'power2.out',
       scrollTrigger: {
         trigger: splitH.lines,
-        start: 'top 90%',
-        end: 'top 60%',
+        start: scrollStart,
+        end: scrollEnd,
       },
     })
   })
@@ -76,8 +91,8 @@ function workAnimations() {
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: l,
-        start: 'top 90%',
-        end: 'top 60%',
+        start: scrollStart,
+        end: scrollEnd,
       },
     })
   })
@@ -90,26 +105,43 @@ function workAnimations() {
       ease: 'power3.inOut',
       scrollTrigger: {
         trigger: o,
-        start: 'top 90%',
-        end: 'top 60%',
+        start: scrollStart,
+        end: scrollEnd,
       },
     })
   })
 
-  workCanvas.forEach((canvas, index) => {
-    // const texture = canvas.firstElementChild
-    if (index != 0) {
-      gsap.to(canvas, {
+  if (workCanvas) {
+    workCanvas.forEach((canvas, index) => {
+      // const texture = canvas.firstElementChild
+      if (index != 0) {
+        gsap.to(canvas, {
+          scale: 1.05,
+          scrollTrigger: {
+            trigger: canvas,
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 1,
+          },
+        })
+      }
+    })
+  }
+
+  if (workImgs) {
+    workImgs.forEach((img) => {
+      // const texture = canvas.firstElementChild
+      gsap.to(img, {
         scale: 1.05,
         scrollTrigger: {
-          trigger: canvas,
+          trigger: img,
           start: 'top bottom',
           end: 'top top',
           scrub: 1,
         },
       })
-    }
-  })
+    })
+  }
 }
 
 export default workAnimations
