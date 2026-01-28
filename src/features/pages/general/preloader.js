@@ -59,15 +59,15 @@ async function preloader() {
   }
 
   function fadePreloaderOut() {
-    let fadeDirection
-    const directionBias = Math.random()
-    if (directionBias < 0.5) {
-      fadeDirection = 1
-    } else {
-      fadeDirection = -1
-    }
+    let fadeDirection = -1
+    // const directionBias = Math.random()
+    // if (directionBias < 0.5) {
+    //   fadeDirection = 1
+    // } else {
+    //   fadeDirection = -1
+    // }
     gsap.to(domElements.columns, {
-      // delay: delay,
+      delay: delay,
       yPercent: 100 * fadeDirection,
       // opacity: 0,
       stagger: {
@@ -99,7 +99,7 @@ async function preloader() {
     // await generateName('100')
     setTimeout(() => {
       fadeElementsOut()
-    }, 2000)
+    }, 2600)
     setTimeout(() => {
       fadePreloaderOut()
     }, 2800)
@@ -109,7 +109,9 @@ async function preloader() {
 
     // fadePreloader()
     document.body.classList.remove('no-scroll')
-    introHome()
+    setTimeout(() => {
+      introHome()
+    }, 3800)
     localStorage.setItem('isPreloader', 'true')
   }
 

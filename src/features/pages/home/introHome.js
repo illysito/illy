@@ -19,6 +19,7 @@ function introHome() {
       navWrapper: document.querySelector('.navigation__wrapper'),
       // heading
       headings: document.querySelectorAll('.hero-h'),
+      claimHeadings: document.querySelectorAll('.claim-h'),
       // img
       canvas_wrapper: document.querySelector('.hero-canvas'),
       canvas_wrapper_mobile: document.querySelector('.hero-canvas-mobile'),
@@ -67,6 +68,13 @@ function introHome() {
     })
   }
 
+  function animateClaim() {
+    gsap.to(domElements.claimHeadings, {
+      opacity: 1,
+      duration: dur,
+    })
+  }
+
   // function animateHeading() {
   //   const splitHeading_1 = new SplitType(domElements.headings[0], {
   //     types: 'chars',
@@ -106,9 +114,10 @@ function introHome() {
   // }
 
   // INIT
+
   function init() {
     animateNav()
-    // animateHeading()
+    animateClaim()
     animateCanvas()
   }
 
