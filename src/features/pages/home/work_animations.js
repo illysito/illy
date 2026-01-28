@@ -9,8 +9,8 @@ function workAnimations() {
   let scrollStart
   let scrollEnd
   if (isMobile()) {
-    scrollStart = 'top 98%'
-    scrollEnd = 'top 88%'
+    scrollStart = 'top bottom'
+    scrollEnd = 'top 95%'
   } else {
     scrollStart = 'top 90%'
     scrollEnd = 'top 60%'
@@ -47,7 +47,7 @@ function workAnimations() {
         trigger: splitP.lines,
         start: scrollStart,
         end: scrollEnd,
-        markers: true,
+        // markers: true,
       },
     })
   })
