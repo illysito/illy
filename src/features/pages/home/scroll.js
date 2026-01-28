@@ -11,7 +11,10 @@ function scroll() {
   const serviceLines = document.querySelectorAll('.service-line')
   const headers = document.querySelectorAll('.header__info')
   const separationHeaders = document.querySelectorAll('.separation-h')
+  const hireButton2 = document.querySelector('.hire-button-2')
+  const aboutP = document.querySelector('.about-type-p')
 
+  // hero claim
   claimHeadings.forEach((h, index) => {
     gsap.to(h, {
       yPercent: 100,
@@ -24,7 +27,6 @@ function scroll() {
       },
     })
   })
-
   gsap.to(claimUnderscore, {
     yPercent: 100,
     scrollTrigger: {
@@ -38,6 +40,7 @@ function scroll() {
 
   const aboutSection = document.querySelector('.about__section')
 
+  // parallax
   gsap.to(aboutSection, {
     y: 80,
     scrollTrigger: {
@@ -48,6 +51,7 @@ function scroll() {
     },
   })
 
+  // line reveal horizontal
   sectionLines.forEach((l) => {
     gsap.set(l, { width: 0 })
 
@@ -62,7 +66,6 @@ function scroll() {
       },
     })
   })
-
   serviceLines.forEach((l) => {
     gsap.set(l, { width: 0 })
 
@@ -77,7 +80,6 @@ function scroll() {
       },
     })
   })
-
   headers.forEach((h) => {
     gsap.set(h, { opacity: 0 })
 
@@ -93,10 +95,11 @@ function scroll() {
     })
   })
 
+  // separation headers reveal
   separationHeaders.forEach((h) => {
     gsap.to(h, {
       duration: 1,
-      yPercent: -100,
+      yPercent: 100,
       opacity: 1,
       ease: 'power2.inOut',
       scrollTrigger: {
@@ -106,6 +109,29 @@ function scroll() {
         markers: false,
       },
     })
+  })
+
+  // things that reveal through opacity like buttons or some txt
+  gsap.to(aboutP, {
+    duration: 1,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: aboutP,
+      start: 'top 90%',
+      end: 'top 60%',
+      markers: false,
+    },
+  })
+
+  gsap.to(hireButton2, {
+    duration: 1,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: hireButton2,
+      start: 'top 90%',
+      end: 'top 80%',
+      markers: false,
+    },
   })
 }
 

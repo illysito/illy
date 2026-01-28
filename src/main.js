@@ -98,7 +98,7 @@ async function runHomeFunctions() {
   const { default: offCanvaBuilding } = await import(
     './features/pages/building/offCanvaBuilding'
   )
-  // const { default: golUI } = await import('./features/p5js/game_of_life/gol_ui')
+  const { default: footer } = await import('./features/pages/home/footer')
 
   // Hero
   if (!isMobile()) {
@@ -127,6 +127,7 @@ async function runHomeFunctions() {
   heroUIState()
   heroUIExpand()
   scroll()
+  footer()
 
   // About
   aboutText()

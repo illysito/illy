@@ -21,6 +21,8 @@ function button(button) {
     const typeColorComp = rootStyles
       .getPropertyValue('--type-color-comp')
       .trim()
+
+    gsap.killTweensOf([b, circle, text, textHidden])
     gsap.to(b, {
       scale: 0.98,
       duration: D.med,
@@ -55,6 +57,8 @@ function button(button) {
     const text = w.firstElementChild
     const textHidden = text.nextElementSibling
     const circle = w.nextElementSibling
+
+    gsap.killTweensOf([b, circle, text, textHidden])
     gsap.to(text, {
       yPercent: 0,
       duration: D.med,
