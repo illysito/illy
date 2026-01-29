@@ -5,8 +5,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 async function caseStudiesMisc() {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
+
   function domQuery() {
     return {
+      caseSection: document.querySelector('.case-section'),
       underscores: document.querySelectorAll('.underscore'),
       caseImgs: document.querySelectorAll('.case-img'),
       caseTitle: document.querySelector('.case-title'),
@@ -28,40 +33,63 @@ async function caseStudiesMisc() {
   })
 
   // parallax
-  DOM.caseImgs.forEach((img) => {
-    gsap.to(img, {
-      yPercent: -12,
-      scrollTrigger: {
-        trigger: img,
-        start: 'top 72%',
-        end: 'bottom 20%',
-        scrub: true,
-        markers: false,
-      },
+  if (isMobile()) {
+    DOM.caseImgs.forEach((img) => {
+      gsap.to(img, {
+        yPercent: -12,
+        scrollTrigger: {
+          trigger: img,
+          start: 'top 72%',
+          end: 'bottom 20%',
+          scrub: true,
+          markers: false,
+        },
+      })
     })
-  })
+  } else {
+    DOM.caseImgs.forEach((img) => {
+      gsap.to(img, {
+        yPercent: -12,
+        scrollTrigger: {
+          trigger: DOM.caseSection,
+          start: 'top bottom',
+          end: 'bottom 20%',
+          scrub: true,
+          markers: false,
+        },
+      })
+    })
+  }
 
   // reveal
-  gsap.to([DOM.caseTitle, DOM.caseSubtitles, DOM.caseMetaH, DOM.caseMetaP], {
-    yPercent: -100,
-    duration: 1.2,
-    ease: 'power2.out',
-  })
-  gsap.to(DOM.caseImgs, {
-    opacity: 1,
-    duration: 1.2,
-    ease: 'power1.inOut',
-  })
-  DOM.caseEnding.forEach((ending) => {
-    gsap.to(ending, {
+  if (isMobile()) {
+    gsap.to([DOM.caseTitle, DOM.caseMetaH, DOM.caseMetaP], {
       yPercent: -100,
-      scrollTrigger: {
-        trigger: ending,
-        start: 'top 90%',
-        end: 'top 40%',
-      },
+      duration: 1.2,
+      ease: 'power2.out',
     })
-  })
+  } else {
+    gsap.to([DOM.caseTitle, DOM.caseSubtitles, DOM.caseMetaH, DOM.caseMetaP], {
+      yPercent: -100,
+      duration: 1.2,
+      ease: 'power2.out',
+    })
+    gsap.to(DOM.caseImgs, {
+      opacity: 1,
+      duration: 1.2,
+      ease: 'power1.inOut',
+    })
+    DOM.caseEnding.forEach((ending) => {
+      gsap.to(ending, {
+        yPercent: -100,
+        scrollTrigger: {
+          trigger: ending,
+          start: 'top 90%',
+          end: 'top 40%',
+        },
+      })
+    })
+  }
 }
 
 export default caseStudiesMisc
