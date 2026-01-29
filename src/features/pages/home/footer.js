@@ -42,17 +42,31 @@ function footer() {
   }
 
   // reveal footer images
-  gsap.to(footerImgs, {
-    opacity: 1,
-    stagger: -0.08,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: footerImgs[0],
-      start: 'top 90%',
-      end: 'top 60%',
-      markers: false,
-    },
-  })
+  if (isMobile()) {
+    gsap.to(footerImgs, {
+      opacity: 1,
+      stagger: -0.08,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: footerSection,
+        start: 'top 90%',
+        end: 'top 60%',
+        markers: false,
+      },
+    })
+  } else {
+    gsap.to(footerImgs, {
+      opacity: 1,
+      stagger: -0.08,
+      duration: 1.2,
+      scrollTrigger: {
+        trigger: footerImgs[0],
+        start: 'top 90%',
+        end: 'top 60%',
+        markers: false,
+      },
+    })
+  }
 
   // hover on footer links
   if (!isMobile()) {
