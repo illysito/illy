@@ -71,7 +71,7 @@ function offCanvaMenu() {
         )
     } else {
       // OPEN MENU
-      document.body.classList.add('no-scroll')
+      // document.body.classList.add('no-scroll')
       const tl = gsap.timeline()
       tl.to(heroImg, {
         y: -32,
@@ -84,6 +84,9 @@ function offCanvaMenu() {
             yPercent: 100,
             duration: 1.2,
             ease: 'expo.inOut',
+            onComplete: () => {
+              document.body.classList.add('no-scroll')
+            },
           },
           '<-=0.6'
         )
