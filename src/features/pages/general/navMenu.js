@@ -36,9 +36,6 @@ function offCanvaMenu() {
   function manageMenu() {
     if (menuShown) {
       // CLOSE MENU
-      gsap.set(offCanva, {
-        zIndex: -30,
-      })
       const tl = gsap.timeline()
       tl.to(links, {
         // delay: 0.3,
@@ -87,6 +84,11 @@ function offCanvaMenu() {
             yPercent: 0,
             duration: 1.2,
             ease: 'expo.inOut',
+            onComplete: () => {
+              gsap.set(offCanva, {
+                zIndex: -30,
+              })
+            },
           },
           '-=0.3'
         )
