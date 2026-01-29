@@ -58,15 +58,15 @@ function offCanvaMenu() {
     })
   }
 
-  let scrollY = 0
+  let scrollY = window.scrollY
   function moveFuckingOverlayNavOmgICantBelieveIHaveToDoThisShit() {
-    offCanva.style.top = scrollY
+    offCanva.style.top = `${scrollY}px`
     requestAnimationFrame(moveFuckingOverlayNavOmgICantBelieveIHaveToDoThisShit)
   }
   moveFuckingOverlayNavOmgICantBelieveIHaveToDoThisShit()
 
-  window.addEventListener('scroll', (e) => {
-    scrollY = e.scrollY
+  window.addEventListener('scroll', () => {
+    scrollY = window.scrollY
   })
 
   let menuShown = false
