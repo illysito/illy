@@ -103,13 +103,13 @@ async function preloader() {
     }, 2600)
     setTimeout(() => {
       fadePreloaderOut()
+      document.body.classList.remove('no-scroll')
     }, 2800)
     setTimeout(() => {
       fadeMotionButton()
     }, 4000)
 
     // fadePreloader()
-    document.body.classList.remove('no-scroll')
     setTimeout(() => {
       introHome()
     }, 3800)
