@@ -54,6 +54,9 @@ function offCanvaMenu() {
               from: 'random',
             },
             ease: 'expo.inOut',
+            onComplete: () => {
+              document.body.classList.remove('no-scroll')
+            },
           },
           '-=0.9'
         )
@@ -63,19 +66,12 @@ function offCanvaMenu() {
             yPercent: 0,
             duration: 1.2,
             ease: 'expo.inOut',
-            onComplete: () => {
-              // document.body.classList.remove('no-scroll')
-              offCanva.style.position = 'absolute'
-              offCanva.style.top = 0
-            },
           },
           '-=0.3'
         )
     } else {
       // OPEN MENU
-      // document.body.classList.add('no-scroll')
-      offCanva.style.position = 'fixed'
-      offCanva.style.top = 0
+      document.body.classList.add('no-scroll')
       const tl = gsap.timeline()
       tl.to(heroImg, {
         y: -32,
