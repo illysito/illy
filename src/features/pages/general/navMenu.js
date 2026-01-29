@@ -28,10 +28,44 @@ function offCanvaMenu() {
     window.removeEventListener('touchmove', preventScroll)
   }
 
+  function animateButtonIn() {
+    const burgerWrapper = menuButton.firstElementChild
+    const line1 = burgerWrapper.firstElementChild
+    const line2 = line1.nextElementSibling
+    gsap.to(line1, {
+      rotate: 180,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(line2, {
+      rotate: -180,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+  }
+
+  function animateButtonOut() {
+    const burgerWrapper = menuButton.firstElementChild
+    const line1 = burgerWrapper.firstElementChild
+    const line2 = line1.nextElementSibling
+    gsap.to(line1, {
+      rotate: 0,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+    gsap.to(line2, {
+      rotate: 0,
+      duration: 1.2,
+      ease: 'power2.inOut',
+    })
+  }
+
   let menuShown = false
   function manageMenu() {
     if (menuShown) {
       // CLOSE MENU
+      menuButton.style.poinerEvents = 'auto'
+      animateButtonOut()
       const tl = gsap.timeline()
       tl.to(links, {
         // delay: 0.3,
@@ -91,6 +125,8 @@ function offCanvaMenu() {
     } else {
       // OPEN MENU
       // document.body.classList.add('no-scroll')
+      menuButton.style.poinerEvents = 'none'
+      animateButtonIn()
       lockScroll()
       gsap.set(offCanva, {
         zIndex: 130,
