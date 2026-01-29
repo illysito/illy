@@ -12,6 +12,8 @@ function scroll() {
   const headers = document.querySelectorAll('.header__info')
   const separationHeaders = document.querySelectorAll('.separation-h')
   const hireButton2 = document.querySelector('.hire-button-2')
+  const workButton = document.querySelector('.work-button')
+  const labButton = document.querySelector('.lab-button')
   const aboutP = document.querySelector('.about-type-p')
 
   // hero claim
@@ -128,6 +130,26 @@ function scroll() {
     opacity: 1,
     scrollTrigger: {
       trigger: hireButton2,
+      start: 'top 90%',
+      end: 'top 80%',
+      markers: false,
+    },
+  })
+  gsap.to(workButton, {
+    duration: 1,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: workButton,
+      start: 'top 90%',
+      end: 'top 80%',
+      markers: false,
+    },
+  })
+  gsap.to(labButton, {
+    duration: 1,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: labButton,
       start: 'top 90%',
       end: 'top 80%',
       markers: false,

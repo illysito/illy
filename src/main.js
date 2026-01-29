@@ -111,12 +111,13 @@ async function runHomeFunctions() {
       './features/pages/home/hero_shader/hero_ui'
     )
     heroUI(isBuilding)
-  } else {
-    const { default: heroUIMobile } = await import(
-      './features/pages/home/hero_shader_mobile/hero_ui_mobile'
-    )
-    heroUIMobile()
   }
+  // } else {
+  //   const { default: heroUIMobile } = await import(
+  //     './features/pages/home/hero_shader_mobile/hero_ui_mobile'
+  //   )
+  //   heroUIMobile()
+  // }
   // const { default: heroUI } = await import(
   //   './features/pages/home/hero_shader/hero_ui'
   // )
@@ -138,7 +139,9 @@ async function runHomeFunctions() {
   aboutText()
 
   // Shaders
-  workCanvasUI()
+  if (!isMobile()) {
+    workCanvasUI()
+  }
   workInteraction()
   workAnimations()
   serviceAnimations()
