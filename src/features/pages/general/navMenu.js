@@ -10,7 +10,7 @@ function offCanvaMenu() {
   const links = document.querySelectorAll('.offcanva-build-link')
   const backLinks = document.querySelectorAll('.back-link-txt')
   const cols = document.querySelectorAll('.offcanva-column')
-  const heroImg = document.querySelector('.hero-img-wrapper-mobile')
+  const heroImg = document.querySelector('.hero-img-wrapper-mobile') // only on HERO! I need this to happen an all pages
   console.log(cols)
   // console.log(links)
 
@@ -95,6 +95,7 @@ function offCanvaMenu() {
     } else {
       // OPEN MENU
       // document.body.classList.add('no-scroll')
+      lockScroll()
       gsap.set(offCanva, {
         zIndex: 130,
       })
@@ -110,9 +111,6 @@ function offCanvaMenu() {
             yPercent: 100,
             duration: 1.2,
             ease: 'expo.inOut',
-            onComplete: () => {
-              lockScroll()
-            },
           },
           '<-=0.6'
         )
@@ -143,12 +141,11 @@ function offCanvaMenu() {
         .to(
           backLinks,
           {
-            delay: 0.3,
             yPercent: -100,
             duration: 1.2,
             ease: 'power2.inOut',
           },
-          '<'
+          '<+=0.3'
         )
     }
     menuShown = !menuShown
