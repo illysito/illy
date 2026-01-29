@@ -140,7 +140,7 @@ function offCanvaMenu() {
         offCanva,
         {
           // backgroundColor: '#101010',
-          yPercent: -100,
+          yPercent: 100,
           duration: 1.2,
           ease: 'expo.inOut',
         },
