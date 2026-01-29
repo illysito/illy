@@ -109,6 +109,7 @@ function offCanvaMenu() {
         .to(
           offCanva,
           {
+            backgroundColor: '#10101000',
             yPercent: 0,
             duration: 1.2,
             ease: 'expo.inOut',
@@ -138,6 +139,7 @@ function offCanvaMenu() {
       tl.to(
         offCanva,
         {
+          backgroundColor: '#101010',
           yPercent: 100,
           duration: 1.2,
           ease: 'expo.inOut',
@@ -147,7 +149,7 @@ function offCanvaMenu() {
         .to(
           cols,
           {
-            yPercent: 120,
+            yPercent: 100,
             duration: 1.2,
             stagger: {
               each: 0.01,
