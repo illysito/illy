@@ -30,7 +30,9 @@ function colorModeChange() {
   // buttons (need to do this because of flashy artifact)
   const hireButton = document.querySelector('.hire-button')
   const hireButton2 = document.querySelector('.hire-button-2')
-  const buttonsArr = [hireButton, hireButton2]
+  const workButton = document.querySelector('.work-button')
+  const labButton = document.querySelector('.lab-button')
+  const buttonsArr = [hireButton, hireButton2, workButton, labButton]
   // type
   const projectHeaders = document.querySelectorAll('.work-h')
   // header dots

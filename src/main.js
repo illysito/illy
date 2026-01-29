@@ -19,6 +19,8 @@ function domElementsQuery() {
     worldContainer: document.querySelector('.world-container'),
     hireButton: document.querySelector('.hire-button'),
     hireButton2: document.querySelector('.hire-button-2'),
+    workButton: document.querySelector('.work-button'),
+    labButton: document.querySelector('.lab-button'),
     nav: document.querySelector('.nav__section'),
     navLinks: document.querySelectorAll('.nav-link'),
     preloaderOverlays: document.querySelectorAll('.preloader-overlay'),
@@ -142,6 +144,8 @@ async function runHomeFunctions() {
   serviceAnimations()
 
   button(domElements.hireButton2)
+  button(domElements.workButton)
+  button(domElements.labButton)
 
   // Contact
   // form()
