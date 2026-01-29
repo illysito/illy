@@ -18,7 +18,6 @@ function offCanvaMenu() {
   function manageMenu() {
     if (menuShown) {
       // CLOSE MENU
-      document.body.classList.remove('no-scroll')
       const tl = gsap.timeline()
       tl.to(links, {
         // delay: 0.3,
@@ -64,6 +63,9 @@ function offCanvaMenu() {
             yPercent: 0,
             duration: 1.2,
             ease: 'expo.inOut',
+            onComplete: () => {
+              document.body.classList.remove('no-scroll')
+            },
           },
           '-=0.3'
         )
