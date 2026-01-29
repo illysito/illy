@@ -147,7 +147,7 @@ function offCanvaMenu() {
         .to(
           cols,
           {
-            yPercent: 100,
+            yPercent: 120,
             duration: 1.2,
             stagger: {
               each: 0.01,
