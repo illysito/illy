@@ -139,7 +139,7 @@ function offCanvaMenu() {
       tl.to(
         offCanva,
         {
-          backgroundColor: '#101010',
+          // backgroundColor: '#101010',
           yPercent: 100,
           duration: 1.2,
           ease: 'expo.inOut',
