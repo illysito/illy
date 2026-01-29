@@ -10,7 +10,7 @@ function offCanvaMenu() {
   const links = document.querySelectorAll('.offcanva-build-link')
   const backLinks = document.querySelectorAll('.back-link-txt')
   const cols = document.querySelectorAll('.offcanva-column')
-  const heroImg = document.querySelector('.hero-img-wrapper-mobile') // only on HERO! I need this to happen an all pages
+  // const heroImg = document.querySelector('.hero-img-wrapper-mobile') // only on HERO! I need this to happen an all pages
   console.log(cols)
   // console.log(links)
 
@@ -74,15 +74,15 @@ function offCanvaMenu() {
         duration: 1.2,
         ease: 'power2.inOut',
       })
-        .to(
-          heroImg,
-          {
-            y: 0,
-            duration: 1,
-            ease: 'power2.inOut',
-          },
-          '<'
-        )
+        // .to(
+        //   heroImg,
+        //   {
+        //     y: 0,
+        //     duration: 1,
+        //     ease: 'power2.inOut',
+        //   },
+        //   '<'
+        // )
         .to(
           backLinks,
           {
@@ -132,20 +132,20 @@ function offCanvaMenu() {
         zIndex: 130,
       })
       const tl = gsap.timeline()
-      tl.to(heroImg, {
-        y: -32,
-        duration: 1,
-        ease: 'power2.inOut',
-      })
-        .to(
-          offCanva,
-          {
-            yPercent: 100,
-            duration: 1.2,
-            ease: 'expo.inOut',
-          },
-          '<-=0.6'
-        )
+      // tl.to(heroImg, {
+      //   y: -32,
+      //   duration: 1,
+      //   ease: 'power2.inOut',
+      // })
+      tl.to(
+        offCanva,
+        {
+          yPercent: 100,
+          duration: 1.2,
+          ease: 'expo.inOut',
+        },
+        '<-=0.6'
+      )
         .to(
           cols,
           {
