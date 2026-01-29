@@ -109,7 +109,7 @@ function offCanvaMenu() {
         .to(
           offCanva,
           {
-            backgroundColor: '#10101000',
+            // backgroundColor: '#10101000',
             yPercent: 0,
             duration: 1.2,
             ease: 'expo.inOut',
