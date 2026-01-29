@@ -4,7 +4,9 @@ import './styles/style.css'
 import button from './features/pages/general/buttons.js'
 import colorModeChange from './features/pages/general/color_mode_change'
 import colorModeState from './features/pages/general/color_mode_state'
+import introNav from './features/pages/general/introNav'
 import nav from './features/pages/general/nav'
+import offCanvaMenu from './features/pages/general/offcanva_menu'
 
 let isBuilding = false
 
@@ -45,6 +47,7 @@ async function runGeneralFunctions() {
   colorModeChange()
   colorModeState()
   nav(!isBuilding)
+  introNav()
   if (!isMobile() && !isBuilding) {
     setTimeout(() => {
       import('./features/pages/general/mousetrail').then(
@@ -55,7 +58,7 @@ async function runGeneralFunctions() {
     }, 3400)
   }
 
-  // offCanvaMenu()
+  offCanvaMenu()
   button(domElements.hireButton)
   if (domElements.qrButton) {
     button(domElements.qrButton)
@@ -202,14 +205,14 @@ async function runHomeFunctions() {
 }
 
 async function runCaseFunctions() {
-  const { default: introNav } = await import(
-    './features/pages/general/introNav'
-  )
+  // const { default: introNav } = await import(
+  //   './features/pages/general/introNav'
+  // )
   const { default: caseStudiesMisc } = await import(
     './features/pages/case-studies/caseStudiesMisc'
   )
 
-  introNav()
+  // introNav()
   caseStudiesMisc()
   domElements.deepStudyButtons.forEach((b) => {
     button(b)

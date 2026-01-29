@@ -136,7 +136,7 @@ function workAnimations() {
     workImgs.forEach((img) => {
       // const texture = canvas.firstElementChild
       gsap.to(img, {
-        scale: 1.05,
+        scale: 1.1,
         scrollTrigger: {
           trigger: img,
           start: 'top bottom',

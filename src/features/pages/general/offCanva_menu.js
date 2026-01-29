@@ -1,19 +1,20 @@
 import gsap from 'gsap'
 
 function offCanvaMenu() {
-  const button = document.querySelector('.hire-button')
+  const button = document.querySelector('.navigation__wrapper-mobile')
   const closeButton = document.querySelector('.close-button')
-  const menu = document.querySelector('.offcanva')
+  const menu = document.querySelector('.offcanva-building')
   const body = document.body
 
   button.addEventListener('click', () => {
     gsap.to(body, {
-      y: 32,
+      y: -32,
       duration: 1.2,
       ease: 'power2.inOut',
     })
     gsap.to(menu, {
       yPercent: 118,
+      // opacity: 1,
       duration: 1.2,
       ease: 'power3.inOut',
     })

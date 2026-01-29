@@ -22,8 +22,11 @@ function colorModeState() {
 
   // 0: light or dark
   // 1: accent 1 or 2
+
+  // Selection based on pages / viewport
   let states = [0, 0]
-  if (isMobile()) states = [1, 0]
+  if (isMobile()) states = [1, 0] // dark on mobile
+  if (document.body.classList.contains('body__posters')) states = [1, 0]
   let isDarkModeClicked = false
   let isAccentClicked = false
 
