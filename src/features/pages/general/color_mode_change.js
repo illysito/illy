@@ -29,7 +29,8 @@ function colorModeChange() {
   const lightMoons = document.querySelector('.white-moon-wrapper')
   // buttons (need to do this because of flashy artifact)
   const hireButton = document.querySelector('.hire-button')
-  const buttonsArr = [hireButton]
+  const hireButton2 = document.querySelector('.hire-button-2')
+  const buttonsArr = [hireButton, hireButton2]
   // type
   const projectHeaders = document.querySelectorAll('.work-h')
   // header dots

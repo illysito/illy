@@ -47,12 +47,13 @@ async function preloader() {
   function fadeElementsOut() {
     gsap.to(domElements.preloaderSentence1, {
       yPercent: -200,
+      opacity: 0,
       duration: 1.2 * dur,
       ease: 'power1.inOut',
     })
     gsap.to(domElements.preloaderSentence2, {
       yPercent: 200,
-      // stagger: -0.2,
+      opacity: 0,
       duration: 1.2 * dur,
       ease: 'power1.inOut',
     })

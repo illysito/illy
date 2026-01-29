@@ -55,25 +55,27 @@ function footer() {
   })
 
   // hover on footer links
-  footerHeadings.forEach((h, index) => {
-    if (index == 3 || index == 5) return
+  if (!isMobile()) {
+    footerHeadings.forEach((h, index) => {
+      if (index == 3 || index == 5) return
 
-    const wrapper = h.parentElement
-    h.addEventListener('mouseover', () => {
-      gsap.to(wrapper, {
-        duration: 0.6,
-        x: 8,
-        opacity: 0.8,
+      const wrapper = h.parentElement
+      h.addEventListener('mouseover', () => {
+        gsap.to(wrapper, {
+          duration: 0.6,
+          x: 8,
+          opacity: 0.8,
+        })
+      })
+      h.addEventListener('mouseleave', () => {
+        gsap.to(wrapper, {
+          duration: 0.6,
+          x: 0,
+          opacity: 1,
+        })
       })
     })
-    h.addEventListener('mouseleave', () => {
-      gsap.to(wrapper, {
-        duration: 0.6,
-        x: 0,
-        opacity: 1,
-      })
-    })
-  })
+  }
 }
 
 export default footer

@@ -6,6 +6,10 @@ const D = Anim.D
 const E = Anim.E
 
 function colorModeState() {
+  function isMobile() {
+    return window.innerWidth <= 767
+  }
+
   const darkmodeButton = document.querySelector('.darkmode-toggle')
   const accentButton = document.querySelector('.accent-toggle')
 
@@ -18,7 +22,8 @@ function colorModeState() {
 
   // 0: light or dark
   // 1: accent 1 or 2
-  const states = [0, 0]
+  let states = [0, 0]
+  if (isMobile()) states = [1, 0]
   let isDarkModeClicked = false
   let isAccentClicked = false
 
