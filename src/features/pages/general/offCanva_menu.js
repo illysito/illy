@@ -13,7 +13,7 @@ function offCanvaMenu() {
   const backLinks = document.querySelectorAll('.back-link-txt')
   const cols = document.querySelectorAll('.offcanva-column')
   console.log(cols)
-  console.log(links)
+  // console.log(links)
 
   let menuShown = false
   function manageMenu() {
@@ -27,7 +27,11 @@ function offCanvaMenu() {
       })
       gsap.to(cols, {
         delay: 0.3,
-        yPercent: -100,
+        yPercent: 0,
+        stagger: {
+          each: 0.01,
+          from: 'random',
+        },
         duration: 1.2,
         ease: 'expo.inOut',
       })
@@ -60,8 +64,12 @@ function offCanvaMenu() {
         ease: 'expo.inOut',
       })
       gsap.to(cols, {
-        yPercent: 0,
+        yPercent: 100,
         duration: 1.2,
+        stagger: {
+          each: 0.01,
+          from: 'random',
+        },
         ease: 'expo.inOut',
       })
       gsap.to(links, {
