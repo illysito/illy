@@ -6,7 +6,7 @@ import colorModeChange from './features/pages/general/color_mode_change'
 import colorModeState from './features/pages/general/color_mode_state'
 import introNav from './features/pages/general/introNav'
 import nav from './features/pages/general/nav'
-import offCanvaMenu from './features/pages/general/offcanva_menu'
+import offCanvaMenu from './features/pages/general/navMenu'
 
 let isBuilding = false
 
