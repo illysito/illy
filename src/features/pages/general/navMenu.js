@@ -18,73 +18,108 @@ function offCanvaMenu() {
   let menuShown = false
   function manageMenu() {
     if (menuShown) {
+      // CLOSE MENU
       document.body.classList.remove('no-scroll')
-      gsap.to(offCanva, {
-        delay: 0.3,
+      const tl = gsap.timeline()
+      tl.to(links, {
+        // delay: 0.3,
         yPercent: 0,
-        duration: 1.2,
-        ease: 'expo.inOut',
-      })
-      gsap.to(cols, {
-        delay: 0.3,
-        yPercent: 0,
-        stagger: {
-          each: 0.01,
-          from: 'random',
-        },
-        duration: 1.2,
-        ease: 'expo.inOut',
-      })
-      gsap.to(links, {
-        yPercent: 0,
-        duration: 1.2,
         stagger: -0.05,
-        ease: 'power2.inOut',
-      })
-      gsap.to(backLinks, {
-        yPercent: 0,
         duration: 1.2,
         ease: 'power2.inOut',
       })
-      gsap.to(body, {
-        y: 0,
-        duration: 1.2,
-        ease: 'power2.inOut',
-      })
+        .to(
+          backLinks,
+          {
+            yPercent: 0,
+            duration: 1.2,
+            ease: 'power2.inOut',
+          },
+          '<'
+        )
+        .to(
+          cols,
+          {
+            yPercent: 0,
+            duration: 1.2,
+            stagger: {
+              each: 0.01,
+              from: 'random',
+            },
+            ease: 'expo.inOut',
+          },
+          '-=0.9'
+        )
+        .to(
+          offCanva,
+          {
+            yPercent: 0,
+            duration: 1.2,
+            ease: 'expo.inOut',
+          },
+          '-=0.3'
+        )
+        .to(
+          body,
+          {
+            y: 0,
+            duration: 1,
+            ease: 'power2.inOut',
+          },
+          '<'
+        )
     } else {
+      // OPEN MENU
       document.body.classList.add('no-scroll')
-      gsap.to(body, {
+      const tl = gsap.timeline()
+      tl.to(body, {
         y: -32,
-        duration: 1.2,
+        duration: 1,
         ease: 'power2.inOut',
       })
-      gsap.to(offCanva, {
-        yPercent: 120,
-        duration: 1.2,
-        ease: 'expo.inOut',
-      })
-      gsap.to(cols, {
-        yPercent: 100,
-        duration: 1.2,
-        stagger: {
-          each: 0.01,
-          from: 'random',
-        },
-        ease: 'expo.inOut',
-      })
-      gsap.to(links, {
-        delay: 0.3,
-        yPercent: -100,
-        stagger: 0.05,
-        duration: 1.2,
-        ease: 'power2.inOut',
-      })
-      gsap.to(backLinks, {
-        delay: 0.3,
-        yPercent: -100,
-        duration: 1.2,
-        ease: 'power2.inOut',
-      })
+        .to(
+          offCanva,
+          {
+            yPercent: 120,
+            duration: 1.2,
+            ease: 'expo.inOut',
+          },
+          '<'
+        )
+        .to(
+          cols,
+          {
+            yPercent: 100,
+            duration: 1.2,
+            stagger: {
+              each: 0.01,
+              from: 'random',
+            },
+            ease: 'expo.inOut',
+          },
+          '-=1'
+        )
+        .to(
+          links,
+          {
+            // delay: 0.3,
+            yPercent: -100,
+            stagger: 0.05,
+            duration: 1.2,
+            ease: 'power2.inOut',
+          },
+          '-=0.9'
+        )
+        .to(
+          backLinks,
+          {
+            delay: 0.3,
+            yPercent: -100,
+            duration: 1.2,
+            ease: 'power2.inOut',
+          },
+          '<'
+        )
     }
     menuShown = !menuShown
   }
