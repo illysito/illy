@@ -11,6 +11,8 @@ function offCanvaMenu() {
   const webLinks = document.querySelectorAll('.offcanva-build-link-wrapper')
   const links = document.querySelectorAll('.offcanva-build-link')
   const backLinks = document.querySelectorAll('.back-link-txt')
+  const cols = document.querySelectorAll('.offcanva-column')
+  console.log(cols)
   console.log(links)
 
   let menuShown = false
@@ -20,6 +22,12 @@ function offCanvaMenu() {
       gsap.to(offCanva, {
         delay: 0.3,
         yPercent: 0,
+        duration: 1.2,
+        ease: 'expo.inOut',
+      })
+      gsap.to(cols, {
+        delay: 0.3,
+        yPercent: -100,
         duration: 1.2,
         ease: 'expo.inOut',
       })
@@ -48,6 +56,11 @@ function offCanvaMenu() {
       })
       gsap.to(offCanva, {
         yPercent: 120,
+        duration: 1.2,
+        ease: 'expo.inOut',
+      })
+      gsap.to(cols, {
+        yPercent: 0,
         duration: 1.2,
         ease: 'expo.inOut',
       })
