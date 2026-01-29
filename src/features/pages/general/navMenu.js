@@ -14,6 +14,24 @@ function offCanvaMenu() {
   console.log(cols)
   // console.log(links)
 
+  let scrollY = 0
+
+  function lockScroll() {
+    scrollY = window.scrollY
+
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = '100%'
+  }
+
+  function unlockScroll() {
+    document.body.style.position = ''
+    document.body.style.top = ''
+    document.body.style.width = ''
+
+    window.scrollTo(0, scrollY)
+  }
+
   let menuShown = false
   function manageMenu() {
     if (menuShown) {
@@ -55,7 +73,7 @@ function offCanvaMenu() {
             },
             ease: 'expo.inOut',
             onComplete: () => {
-              document.body.classList.remove('no-scroll')
+              unlockScroll()
             },
           },
           '-=0.9'
@@ -85,7 +103,7 @@ function offCanvaMenu() {
             duration: 1.2,
             ease: 'expo.inOut',
             onComplete: () => {
-              document.body.classList.add('no-scroll')
+              lockScroll()
             },
           },
           '<-=0.6'
