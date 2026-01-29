@@ -14,9 +14,17 @@ function scroll() {
   const hireButton2 = document.querySelector('.hire-button-2')
   const workButton = document.querySelector('.work-button')
   const labButton = document.querySelector('.lab-button')
+  const workButtonMob = document.querySelector('.work-button-mobile')
+  const labButtonMob = document.querySelector('.lab-button-mobile')
   const aboutP = document.querySelector('.about-type-p')
 
-  const buttons = [hireButton2, workButton, labButton]
+  const buttons = [
+    hireButton2,
+    workButton,
+    labButton,
+    workButtonMob,
+    labButtonMob,
+  ]
 
   // hero claim
   claimHeadings.forEach((h, index) => {

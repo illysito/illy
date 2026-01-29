@@ -32,7 +32,16 @@ function colorModeChange() {
   const hireButton2 = document.querySelector('.hire-button-2')
   const workButton = document.querySelector('.work-button')
   const labButton = document.querySelector('.lab-button')
-  const buttonsArr = [hireButton, hireButton2, workButton, labButton]
+  const workButtonMob = document.querySelector('.work-button')
+  const labButtonMob = document.querySelector('.lab-button')
+  const buttonsArr = [
+    hireButton,
+    hireButton2,
+    workButton,
+    labButton,
+    workButtonMob,
+    labButtonMob,
+  ]
   // type
   const projectHeaders = document.querySelectorAll('.work-h')
   // header dots
