@@ -14,22 +14,18 @@ function offCanvaMenu() {
   console.log(cols)
   // console.log(links)
 
-  let scrollY = 0
+  function preventScroll(e) {
+    e.preventDefault()
+  }
 
   function lockScroll() {
-    scrollY = window.scrollY
-
-    document.body.style.position = 'fixed'
-    document.body.style.top = `-${scrollY}px`
-    document.body.style.width = '100%'
+    window.addEventListener('wheel', preventScroll, { passive: false })
+    window.addEventListener('touchmove', preventScroll, { passive: false })
   }
 
   function unlockScroll() {
-    document.body.style.position = ''
-    document.body.style.top = ''
-    document.body.style.width = ''
-
-    window.scrollTo(0, scrollY)
+    window.removeEventListener('wheel', preventScroll)
+    window.removeEventListener('touchmove', preventScroll)
   }
 
   let menuShown = false
