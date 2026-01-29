@@ -6,9 +6,9 @@ const D = Anim.D
 const E = Anim.E
 
 function nav(isBuilding) {
-  function isMobile() {
-    return window.innerWidth <= 767
-  }
+  // function isMobile() {
+  //   return window.innerWidth <= 767
+  // }
   console.log(isBuilding)
   // Query elements from DOM
   function domElementsQuery() {
@@ -135,41 +135,41 @@ function nav(isBuilding) {
     })
   }
 
-  let lastScroll = 0
-  let ticking = false
+  // let lastScroll = 0
+  // let ticking = false
 
-  function hideOrShowOnScroll() {
-    const currentScroll = window.scrollY
-    const scrollDirection = currentScroll - lastScroll
+  // function hideOrShowOnScroll() {
+  //   const currentScroll = window.scrollY
+  //   const scrollDirection = currentScroll - lastScroll
 
-    if (scrollDirection > 20) {
-      gsap.to(domElements.nav, {
-        y: -0.14 * window.innerHeight,
-        duration: 2 * D.slow,
-        ease: E.eo,
-      })
-    } else if (scrollDirection < 0) {
-      gsap.to(domElements.nav, {
-        y: 0,
-        duration: D.slow,
-        ease: E.eo,
-      })
-    } else {
-      ticking = false
-      return
-    }
-    lastScroll = currentScroll
-    ticking = false
-  }
+  //   if (scrollDirection > 20) {
+  //     gsap.to(domElements.nav, {
+  //       y: -0.14 * window.innerHeight,
+  //       duration: 2 * D.slow,
+  //       ease: E.eo,
+  //     })
+  //   } else if (scrollDirection < 0) {
+  //     gsap.to(domElements.nav, {
+  //       y: 0,
+  //       duration: D.slow,
+  //       ease: E.eo,
+  //     })
+  //   } else {
+  //     ticking = false
+  //     return
+  //   }
+  //   lastScroll = currentScroll
+  //   ticking = false
+  // }
 
-  if (!isMobile() && !isBuilding) {
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(hideOrShowOnScroll)
-        ticking = true
-      }
-    })
-  }
+  // if (!isMobile() && !isBuilding) {
+  //   window.addEventListener('scroll', () => {
+  //     if (!ticking) {
+  //       requestAnimationFrame(hideOrShowOnScroll)
+  //       ticking = true
+  //     }
+  //   })
+  // }
 
   domElements.navLogo.addEventListener('mouseenter', animateLogoIn)
   domElements.navLogo.addEventListener('mouseleave', animateLogoOut)
