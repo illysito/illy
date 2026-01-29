@@ -6,9 +6,9 @@ const D = Anim.D
 const E = Anim.E
 
 function colorModeState() {
-  function isMobile() {
-    return window.innerWidth <= 767
-  }
+  // function isMobile() {
+  //   return window.innerWidth <= 767
+  // }
 
   const darkmodeButton = document.querySelector('.darkmode-toggle')
   const accentButton = document.querySelector('.accent-toggle')
@@ -25,7 +25,10 @@ function colorModeState() {
 
   // Selection based on pages / viewport
   let states = [0, 0]
-  if (isMobile()) states = [1, 0] // dark on mobile
+  // if (isMobile()) {
+  //   states = [1, 0] // dark on mobile
+  //   localStorage.setItem('dark_state', '1')
+  // }
   if (document.body.classList.contains('body__posters')) states = [1, 0]
   let isDarkModeClicked = false
   let isAccentClicked = false

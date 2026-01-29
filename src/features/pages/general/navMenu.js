@@ -11,8 +11,6 @@ function offCanvaMenu() {
   const backLinks = document.querySelectorAll('.back-link-txt')
   const cols = document.querySelectorAll('.offcanva-column')
   // const heroImg = document.querySelector('.hero-img-wrapper-mobile') // only on HERO! I need this to happen an all pages
-  console.log(cols)
-  // console.log(links)
 
   function preventScroll(e) {
     e.preventDefault()

@@ -14,7 +14,7 @@ async function caseStudiesMisc() {
       caseSection: document.querySelector('.case-section'),
       underscores: document.querySelectorAll('.underscore'),
       caseImgs: document.querySelectorAll('.case-img'),
-      caseTitle: document.querySelector('.case-title'),
+      caseTitle: document.querySelectorAll('.case-title'),
       caseSubtitles: document.querySelectorAll('.case-subtitle'),
       caseMetaH: document.querySelectorAll('.meta-h'),
       caseMetaP: document.querySelectorAll('.meta-p'),

@@ -48,8 +48,10 @@ if (!localStorage.getItem('accent_state')) {
 // PAGES
 
 async function runGeneralFunctions() {
-  colorModeChange()
-  colorModeState()
+  if (!isMobile()) {
+    colorModeChange()
+    colorModeState()
+  }
   nav(!isBuilding)
   introNav()
   if (!isMobile() && !isBuilding) {
