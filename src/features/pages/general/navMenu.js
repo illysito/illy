@@ -81,7 +81,7 @@ function offCanvaMenu() {
         .to(
           offCanva,
           {
-            yPercent: 120,
+            yPercent: 100,
             duration: 1.2,
             ease: 'expo.inOut',
           },
