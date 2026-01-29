@@ -83,16 +83,16 @@ async function preloader() {
     })
   }
 
-  function fadeMotionButton() {
-    const motionButton = document.querySelector('.motion-button')
-    if (motionButton) {
-      gsap.to(motionButton, {
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power2.inOut',
-      })
-    }
-  }
+  // function fadeMotionButton() {
+  //   const motionButton = document.querySelector('.motion-button')
+  //   if (motionButton) {
+  //     gsap.to(motionButton, {
+  //       opacity: 1,
+  //       duration: 0.8,
+  //       ease: 'power2.inOut',
+  //     })
+  //   }
+  // }
 
   // INIT
   async function init() {
@@ -105,9 +105,9 @@ async function preloader() {
       fadePreloaderOut()
       document.body.classList.remove('no-scroll')
     }, 2800)
-    setTimeout(() => {
-      fadeMotionButton()
-    }, 4000)
+    // setTimeout(() => {
+    //   fadeMotionButton()
+    // }, 4000)
 
     // fadePreloader()
     setTimeout(() => {

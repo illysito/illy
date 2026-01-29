@@ -132,7 +132,7 @@ function scroll() {
       trigger: hireButton2,
       start: 'top 90%',
       end: 'top 80%',
-      markers: false,
+      markers: true,
     },
   })
   gsap.to(workButton, {

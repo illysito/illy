@@ -97,12 +97,13 @@ async function runHomeFunctions() {
     './features/pages/home/service_animations'
   )
   // BUILDING
-  const { default: building } = await import(
-    './features/pages/building/building'
-  )
-  const { default: offCanvaBuilding } = await import(
-    './features/pages/building/offCanvaBuilding'
-  )
+  // const { default: building } = await import(
+  //   './features/pages/building/building'
+  // )
+  // const { default: offCanvaBuilding } = await import(
+  //   './features/pages/building/offCanvaBuilding'
+  // )
+  // FOOTER
   const { default: footer } = await import('./features/pages/home/footer')
 
   // Hero
@@ -122,10 +123,10 @@ async function runHomeFunctions() {
   //   './features/pages/home/hero_shader/hero_ui'
   // )
   // heroUI()
-  if (isBuilding) {
-    building()
-    offCanvaBuilding()
-  }
+  // if (isBuilding) {
+  //   building()
+  //   offCanvaBuilding()
+  // }
 
   preloader()
   metadata()
