@@ -1,8 +1,6 @@
 import gsap from 'gsap'
 
 function offCanvaMenu() {
-  const body = document.body
-
   let isMobile = window.innerWidth <= 767
 
   const offCanva = document.querySelector('.offcanva-building')
@@ -12,6 +10,7 @@ function offCanvaMenu() {
   const links = document.querySelectorAll('.offcanva-build-link')
   const backLinks = document.querySelectorAll('.back-link-txt')
   const cols = document.querySelectorAll('.offcanva-column')
+  const heroImg = document.querySelector('.hero-img-wrapper-mobile')
   console.log(cols)
   // console.log(links)
 
@@ -29,7 +28,7 @@ function offCanvaMenu() {
         ease: 'power2.inOut',
       })
         .to(
-          body,
+          heroImg,
           {
             y: 0,
             duration: 1,
@@ -72,7 +71,7 @@ function offCanvaMenu() {
       // OPEN MENU
       document.body.classList.add('no-scroll')
       const tl = gsap.timeline()
-      tl.to(body, {
+      tl.to(heroImg, {
         y: -32,
         duration: 1,
         ease: 'power2.inOut',
