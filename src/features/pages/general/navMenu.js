@@ -110,7 +110,7 @@ function offCanvaMenu() {
           offCanva,
           {
             // backgroundColor: '#10101000',
-            yPercent: 0,
+            xPercent: 0,
             duration: 1.2,
             ease: 'expo.inOut',
             onComplete: () => {
@@ -140,7 +140,7 @@ function offCanvaMenu() {
         offCanva,
         {
           // backgroundColor: '#101010',
-          yPercent: 100,
+          xPercent: -100,
           duration: 1.2,
           ease: 'expo.inOut',
         },
@@ -157,7 +157,7 @@ function offCanvaMenu() {
             },
             ease: 'expo.inOut',
           },
-          '-=1'
+          '-=0.6'
         )
         .to(
           links,
