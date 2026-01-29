@@ -16,6 +16,8 @@ function scroll() {
   const labButton = document.querySelector('.lab-button')
   const aboutP = document.querySelector('.about-type-p')
 
+  const buttons = [hireButton2, workButton, labButton]
+
   // hero claim
   claimHeadings.forEach((h, index) => {
     gsap.to(h, {
@@ -125,35 +127,24 @@ function scroll() {
     },
   })
 
-  gsap.to(hireButton2, {
-    duration: 1,
-    opacity: 1,
-    scrollTrigger: {
-      trigger: hireButton2,
-      start: 'top 90%',
-      end: 'top 80%',
-      markers: true,
-    },
-  })
-  gsap.to(workButton, {
-    duration: 1,
-    opacity: 1,
-    scrollTrigger: {
-      trigger: workButton,
-      start: 'top 90%',
-      end: 'top 80%',
-      markers: false,
-    },
-  })
-  gsap.to(labButton, {
-    duration: 1,
-    opacity: 1,
-    scrollTrigger: {
-      trigger: labButton,
-      start: 'top 90%',
-      end: 'top 80%',
-      markers: false,
-    },
+  buttons.forEach((b) => {
+    gsap.set(b, {
+      pointerEvents: 'none',
+    })
+    gsap.to(b, {
+      opacity: 1,
+      duration: 0.6,
+      scrollTrigger: {
+        trigger: b,
+        start: 'top 90%',
+        once: true, // 🔥 important
+        onEnter: () => {
+          gsap.delayedCall(0.6, () => {
+            b.style.pointerEvents = 'auto'
+          })
+        },
+      },
+    })
   })
 }
 
