@@ -29,6 +29,15 @@ function offCanvaMenu() {
         ease: 'power2.inOut',
       })
         .to(
+          body,
+          {
+            y: 0,
+            duration: 1,
+            ease: 'power2.inOut',
+          },
+          '<'
+        )
+        .to(
           backLinks,
           {
             yPercent: 0,
@@ -59,15 +68,6 @@ function offCanvaMenu() {
           },
           '-=0.3'
         )
-        .to(
-          body,
-          {
-            y: 0,
-            duration: 1,
-            ease: 'power2.inOut',
-          },
-          '<'
-        )
     } else {
       // OPEN MENU
       document.body.classList.add('no-scroll')
@@ -84,7 +84,7 @@ function offCanvaMenu() {
             duration: 1.2,
             ease: 'expo.inOut',
           },
-          '<'
+          '<-=0.6'
         )
         .to(
           cols,
