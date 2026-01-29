@@ -36,6 +36,9 @@ function offCanvaMenu() {
   function manageMenu() {
     if (menuShown) {
       // CLOSE MENU
+      gsap.set(offCanva, {
+        zIndex: -30,
+      })
       const tl = gsap.timeline()
       tl.to(links, {
         // delay: 0.3,
@@ -90,6 +93,9 @@ function offCanvaMenu() {
     } else {
       // OPEN MENU
       // document.body.classList.add('no-scroll')
+      gsap.set(offCanva, {
+        zIndex: 130,
+      })
       const tl = gsap.timeline()
       tl.to(heroImg, {
         y: -32,
