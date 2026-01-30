@@ -218,6 +218,14 @@ async function runHomeFunctions() {
   // golUI()
 }
 
+async function runLabFunctions() {
+  // const { default: introNav } = await import(
+  //   './features/pages/general/introNav'
+  // )
+  const { default: lab } = await import('./features/pages/lab/lab')
+  lab()
+}
+
 async function runCaseFunctions() {
   // const { default: introNav } = await import(
   //   './features/pages/general/introNav'
@@ -280,6 +288,7 @@ if (document.body.classList.contains('body__home'))
   // requestIdleCallback(runHomeFunctions)
   runHomeFunctions()
 if (document.body.classList.contains('body__case')) runCaseFunctions()
+if (document.body.classList.contains('body__lab')) runLabFunctions()
 if (document.body.classList.contains('body__philosophy'))
   runPhilosophyFunctions()
 if (document.body.classList.contains('body__qr')) runQRFunctions()
