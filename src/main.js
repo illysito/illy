@@ -218,14 +218,14 @@ async function runHomeFunctions() {
   // golUI()
 }
 
-async function runLabFunctions() {
+// work
+async function runWorkFunctions() {
   // const { default: introNav } = await import(
   //   './features/pages/general/introNav'
   // )
-  const { default: lab } = await import('./features/pages/lab/lab')
-  lab()
+  const { default: work } = await import('./features/pages/work/work')
+  work()
 }
-
 async function runCaseFunctions() {
   // const { default: introNav } = await import(
   //   './features/pages/general/introNav'
@@ -240,6 +240,15 @@ async function runCaseFunctions() {
     button(b)
   })
   button(domElements.liveSiteButton)
+}
+
+// lab
+async function runLabFunctions() {
+  // const { default: introNav } = await import(
+  //   './features/pages/general/introNav'
+  // )
+  const { default: lab } = await import('./features/pages/lab/lab')
+  lab()
 }
 
 async function runPhilosophyFunctions() {
@@ -287,6 +296,7 @@ if (
 if (document.body.classList.contains('body__home'))
   // requestIdleCallback(runHomeFunctions)
   runHomeFunctions()
+if (document.body.classList.contains('body__work')) runWorkFunctions()
 if (document.body.classList.contains('body__case')) runCaseFunctions()
 if (document.body.classList.contains('body__lab')) runLabFunctions()
 if (document.body.classList.contains('body__philosophy'))

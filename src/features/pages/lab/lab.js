@@ -43,7 +43,7 @@ async function lab() {
       // duration: 1.2,
       scrollTrigger: {
         trigger: img,
-        start: 'top 8%',
+        start: 'top 20%',
         end: 'bottom top',
         scrub: true,
       },
@@ -60,7 +60,7 @@ async function lab() {
       const titleHidden = title.nextElementSibling
       console.log(title)
 
-      img.addEventListener('mouseover', () => {
+      img.addEventListener('mouseenter', () => {
         gsap.to(img, {
           scale: 1.1,
           duration: 1.2,
