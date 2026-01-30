@@ -55,23 +55,23 @@ function iChing() {
   // const svh = window.innerHeight * 0.01
 
   function blockButton() {
-    // gsap.to(coinButton, {
-    //   backgroundColor: '#aaaaaa',
-    //   // opacity: 0.8,
-    //   pointerEvents: 'none',
-    //   duration: 0.2,
-    // })
-    // isBlocked = true
-    // setTimeout(() => {
-    //   gsap.to(coinButton, {
-    //     backgroundColor: '#101010',
-    //     // opacity: 1,
-    //     pointerEvents: 'auto',
-    //     duration: 0.2,
-    //   })
-    //   isBlocked = false
-    // }, 3400)
-    console.log('off for a while')
+    gsap.to(coinButton, {
+      backgroundColor: '#aaaaaa',
+      // opacity: 0.8,
+      pointerEvents: 'none',
+      duration: 0.2,
+    })
+    isBlocked = true
+    setTimeout(() => {
+      gsap.to(coinButton, {
+        backgroundColor: '#101010',
+        // opacity: 1,
+        pointerEvents: 'auto',
+        duration: 0.2,
+      })
+      isBlocked = false
+    }, 3400)
+    // console.log('off for a while')
   }
 
   function lockScroll() {
