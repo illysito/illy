@@ -39,8 +39,8 @@ async function lab() {
   // parallax
   DOM.imgs.forEach((img) => {
     gsap.to(img, {
-      y: -20,
-      duration: 1.2,
+      yPercent: -8,
+      // duration: 1.2,
       scrollTrigger: {
         trigger: img,
         start: 'top 8%',
