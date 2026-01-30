@@ -43,8 +43,8 @@ async function lab() {
       duration: 1.2,
       scrollTrigger: {
         trigger: img,
-        start: 'top 20%',
-        end: 'top top',
+        start: 'top 8%',
+        end: 'bottom top',
         scrub: true,
       },
     })
