@@ -161,7 +161,7 @@ async function workPage() {
     })
   }
 
-  // hover
+  // hover on filters
   let isClicked = false
 
   DOM.filterWrappers.forEach((filter, index) => {
@@ -212,6 +212,55 @@ async function workPage() {
       console.log(state)
       filterWork()
     })
+  })
+
+  // hover on rows
+  DOM.workRows.forEach((row) => {
+    const textWrapper = row.firstElementChild
+    const overflowHidden = textWrapper.firstElementChild
+    const text = overflowHidden.firstElementChild
+    const textHidden = text.nextElementSibling
+
+    if (!isMobile()) {
+      row.addEventListener('mouseenter', () => {
+        // const rootStyles = getComputedStyle(document.documentElement)
+        // const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+        // const typeColorComp = rootStyles
+        //   .getPropertyValue('--type-color-comp')
+        //   .trim()
+        // gsap.to(row, {
+        //   backgroundColor: typeColor,
+        //   duration: D.fast,
+        //   ease: 'power2.out',
+        // })
+        gsap.to([text, textHidden], {
+          // color: typeColorComp,
+          yPercent: -100,
+          duration: D.med,
+          ease: E.eio,
+        })
+      })
+
+      row.addEventListener('mouseleave', () => {
+        // const rootStyles = getComputedStyle(document.documentElement)
+        // const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+        // const typeColorComp = rootStyles
+        //   .getPropertyValue('--type-color-comp')
+        //   .trim()
+
+        // gsap.to(row, {
+        //   backgroundColor: typeColorComp,
+        //   duration: D.fast,
+        //   ease: 'power2.out',
+        // })
+        gsap.to([text, textHidden], {
+          // color: typeColor,
+          yPercent: 0,
+          duration: D.med,
+          ease: E.eio,
+        })
+      })
+    }
   })
 }
 
