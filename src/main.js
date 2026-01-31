@@ -284,12 +284,18 @@ async function runTatreezFunctions() {
   tatreezUI()
 }
 
+async function runCatanFunctions() {
+  const { default: catanUI } = await import('./features/pages/catan/catan')
+  catanUI()
+}
+
 // INIT
 
 if (
   !document.body.classList.contains('body__flowfield') &&
   !document.body.classList.contains('body__i-ching') &&
-  !document.body.classList.contains('body__tatreez')
+  !document.body.classList.contains('body__tatreez') &&
+  !document.body.classList.contains('body__catan')
 )
   // requestIdleCallback(runGeneralFunctions)
   runGeneralFunctions()
@@ -298,6 +304,7 @@ if (document.body.classList.contains('body__home'))
   runHomeFunctions()
 if (document.body.classList.contains('body__work')) runWorkFunctions()
 if (document.body.classList.contains('body__case')) runCaseFunctions()
+// lab
 if (document.body.classList.contains('body__lab')) runLabFunctions()
 if (document.body.classList.contains('body__philosophy'))
   runPhilosophyFunctions()
@@ -305,3 +312,4 @@ if (document.body.classList.contains('body__qr')) runQRFunctions()
 if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()
 if (document.body.classList.contains('body__i-ching')) runIChingFunctions()
 if (document.body.classList.contains('body__tatreez')) runTatreezFunctions()
+if (document.body.classList.contains('body__catan')) runCatanFunctions()

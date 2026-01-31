@@ -10,6 +10,7 @@ function colorModeChange() {
   const html = document.documentElement
   const body = document.body
   const isHome = body.classList.contains('body__home')
+  const isWork = body.classList.contains('body__work')
   // const isCaseStudy = body.classList.contains('body__case')
 
   // General -----------------
@@ -25,6 +26,8 @@ function colorModeChange() {
   const lightArrows = document.querySelectorAll('.view-img-white')
   const darkLiveArrows = document.querySelectorAll('.live-web-wrapper')
   const lightLiveArrows = document.querySelectorAll('.live-web-wrapper-white')
+  const darkWorkArrows = document.querySelectorAll('.work-arrow')
+  const lightWorkArrows = document.querySelectorAll('.work-arrow-white')
   const darkMoons = document.querySelector('.black-moon-wrapper')
   const lightMoons = document.querySelector('.white-moon-wrapper')
   // buttons (need to do this because of flashy artifact)
@@ -105,6 +108,15 @@ function colorModeChange() {
         opacity: 0,
         duration: duration,
       })
+    } else if (isWork) {
+      gsap.to(darkWorkArrows, {
+        opacity: 1,
+        duration: duration,
+      })
+      gsap.to(lightWorkArrows, {
+        opacity: 0,
+        duration: duration,
+      })
     }
     html.setAttribute('data-wf-mode', 'base')
   }
@@ -125,6 +137,15 @@ function colorModeChange() {
         duration: duration,
       })
       gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 0,
+        duration: duration,
+      })
+    } else if (isWork) {
+      gsap.to(darkWorkArrows, {
+        opacity: 1,
+        duration: duration,
+      })
+      gsap.to(lightWorkArrows, {
         opacity: 0,
         duration: duration,
       })
@@ -151,6 +172,15 @@ function colorModeChange() {
         opacity: 1,
         duration: duration,
       })
+    } else if (isWork) {
+      gsap.to(darkWorkArrows, {
+        opacity: 0,
+        duration: duration,
+      })
+      gsap.to(lightWorkArrows, {
+        opacity: 1,
+        duration: duration,
+      })
     }
     html.setAttribute('data-wf-mode', 'dark')
   }
@@ -171,6 +201,15 @@ function colorModeChange() {
         duration: duration,
       })
       gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 1,
+        duration: duration,
+      })
+    } else if (isWork) {
+      gsap.to(darkWorkArrows, {
+        opacity: 0,
+        duration: duration,
+      })
+      gsap.to(lightWorkArrows, {
         opacity: 1,
         duration: duration,
       })

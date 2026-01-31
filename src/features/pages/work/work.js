@@ -23,6 +23,11 @@ async function workPage() {
       filterLines: document.querySelectorAll('.filter-line'),
       workRows: document.querySelectorAll('.work-row'),
       workLines: document.querySelectorAll('.work-line'),
+      mousetrackedImgWrapper: document.querySelector(
+        '.mousetracked-img-wrapper'
+      ),
+      mousetrackedImgs: document.querySelectorAll('.mousetracked-img'),
+      rowsWrapper: document.querySelector('.rows-wrapper'),
     }
   }
   const DOM = domQuery()
@@ -215,35 +220,56 @@ async function workPage() {
   })
 
   // hover on rows
-  DOM.workRows.forEach((row) => {
+  DOM.workRows.forEach((row, index) => {
     const textWrapper = row.firstElementChild
+    const arrowWrapper = textWrapper.nextElementSibling
     const overflowHidden = textWrapper.firstElementChild
     const text = overflowHidden.firstElementChild
     const textHidden = text.nextElementSibling
+    const underscore = text.firstElementChild
 
     if (!isMobile()) {
       row.addEventListener('mouseenter', () => {
-        // const rootStyles = getComputedStyle(document.documentElement)
-        // const typeColor = rootStyles.getPropertyValue('--type-color').trim()
-        // const typeColorComp = rootStyles
-        //   .getPropertyValue('--type-color-comp')
-        //   .trim()
-        // gsap.to(row, {
-        //   backgroundColor: typeColor,
-        //   duration: D.fast,
-        //   ease: 'power2.out',
-        // })
+        const rootStyles = getComputedStyle(document.documentElement)
+        const accent = rootStyles.getPropertyValue('--accent').trim()
         gsap.to([text, textHidden], {
-          // color: typeColorComp,
-          yPercent: -100,
+          color: accent,
+          duration: D.med,
+          ease: E.p2io,
+        })
+        gsap.to(overflowHidden, {
+          x: 16,
+          duration: D.med,
+          ease: E.p2io,
+        })
+        gsap.to(underscore, {
+          color: accent,
           duration: D.med,
           ease: E.eio,
+        })
+        if (arrowWrapper) {
+          gsap.to(arrowWrapper, {
+            opacity: 1,
+            x: 16,
+            duration: D.med,
+            ease: E.p2io,
+          })
+        }
+        DOM.mousetrackedImgs.forEach((img, i) => {
+          gsap.set(img, {
+            opacity: 0,
+          })
+          if (index === i) {
+            gsap.set(img, {
+              opacity: 1,
+            })
+          }
         })
       })
 
       row.addEventListener('mouseleave', () => {
-        // const rootStyles = getComputedStyle(document.documentElement)
-        // const typeColor = rootStyles.getPropertyValue('--type-color').trim()
+        const rootStyles = getComputedStyle(document.documentElement)
+        const typeColor = rootStyles.getPropertyValue('--type-color').trim()
         // const typeColorComp = rootStyles
         //   .getPropertyValue('--type-color-comp')
         //   .trim()
@@ -254,13 +280,86 @@ async function workPage() {
         //   ease: 'power2.out',
         // })
         gsap.to([text, textHidden], {
-          // color: typeColor,
-          yPercent: 0,
+          color: typeColor,
+          x: 0,
+          duration: D.med,
+          ease: E.p2io,
+        })
+        gsap.to(overflowHidden, {
+          x: 0,
+          duration: D.med,
+          ease: E.p2io,
+        })
+        gsap.to(underscore, {
+          color: typeColor,
           duration: D.med,
           ease: E.eio,
         })
+        if (arrowWrapper) {
+          gsap.to(arrowWrapper, {
+            opacity: 0,
+            x: 0,
+            duration: D.med,
+            ease: E.p2io,
+          })
+        }
       })
     }
+  })
+
+  // mousetracking
+  let mouseX = 0
+  let mouseY = 0
+  let prevMouseX = 0
+  let prevMouseY = 0
+
+  let dirX = 0
+  let dirY = 0
+
+  let targetX = 0
+  let targetY = 0
+  let speed = 0.2
+
+  function moveImg() {
+    targetX += (mouseX - targetX) * speed
+    targetY += (mouseY - targetY) * speed
+
+    DOM.mousetrackedImgWrapper.style.left = `${targetX - 160}px`
+    DOM.mousetrackedImgWrapper.style.top = `${targetY - (160 * 5) / 4}px`
+
+    gsap.to(DOM.mousetrackedImgs, {
+      x: dirX,
+      y: dirY,
+      duration: 1.2,
+    })
+    requestAnimationFrame(moveImg)
+  }
+  moveImg()
+
+  window.addEventListener('mousemove', (e) => {
+    prevMouseX = mouseX
+    prevMouseY = mouseY
+
+    mouseX = e.clientX
+    mouseY = e.clientY + window.scrollY
+
+    dirX = mouseX - prevMouseX
+    dirY = mouseY - prevMouseY
+  })
+
+  DOM.rowsWrapper.addEventListener('mouseover', () => {
+    gsap.to(DOM.mousetrackedImgWrapper, {
+      opacity: 1,
+      duration: D.fast,
+      ease: E.p2io,
+    })
+  })
+  DOM.rowsWrapper.addEventListener('mouseleave', () => {
+    gsap.to(DOM.mousetrackedImgWrapper, {
+      opacity: 0,
+      duration: D.fast,
+      ease: E.p2io,
+    })
   })
 }
 
