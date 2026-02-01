@@ -111,6 +111,10 @@ function colorModeChange() {
         opacity: 0,
         duration: duration,
       })
+      gsap.to(pinkFooterWrapper, {
+        opacity: 0,
+        duration: duration,
+      })
     } else if (isWork) {
       gsap.to(darkWorkArrows, {
         opacity: 1,
@@ -140,6 +144,10 @@ function colorModeChange() {
         duration: duration,
       })
       gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 0,
+        duration: duration,
+      })
+      gsap.to(pinkFooterWrapper, {
         opacity: 0,
         duration: duration,
       })
