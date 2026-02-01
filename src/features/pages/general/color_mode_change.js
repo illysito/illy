@@ -30,6 +30,9 @@ function colorModeChange() {
   const lightWorkArrows = document.querySelectorAll('.work-arrow-white')
   const darkMoons = document.querySelector('.black-moon-wrapper')
   const lightMoons = document.querySelector('.white-moon-wrapper')
+  const pinkFooterWrapper = document.querySelector(
+    '.footer-img-wrapper.is--pink'
+  )
   // buttons (need to do this because of flashy artifact)
   const hireButton = document.querySelector('.hire-button')
   const hireButton2 = document.querySelector('.hire-button-2')
@@ -172,6 +175,10 @@ function colorModeChange() {
         opacity: 1,
         duration: duration,
       })
+      gsap.to(pinkFooterWrapper, {
+        opacity: 0,
+        duration: duration,
+      })
     } else if (isWork) {
       gsap.to(darkWorkArrows, {
         opacity: 0,
@@ -201,6 +208,10 @@ function colorModeChange() {
         duration: duration,
       })
       gsap.to([lightMoons, lightArrows, lightLiveArrows], {
+        opacity: 1,
+        duration: duration,
+      })
+      gsap.to(pinkFooterWrapper, {
         opacity: 1,
         duration: duration,
       })
