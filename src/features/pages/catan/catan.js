@@ -36,7 +36,13 @@ function calculatePower(totalPoints, matches) {
 }
 
 function calculateAverageYekaleo(totalYekaleo, matches) {
-  let avgYekaleo = totalYekaleo / matches
+  let avg = (totalYekaleo - 100) / matches
+  let avgYekaleo
+  if (avg > 0) {
+    avgYekaleo = '+' + avg
+  } else {
+    avgYekaleo = avg
+  }
   return avgYekaleo
 }
 
