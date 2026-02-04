@@ -159,7 +159,7 @@ for (let i = 0; i < 21; i++) {
     }
   }
 }
-console.log(TREE_1)
+// console.log(TREE_1)
 
 const tatreezArray = []
 

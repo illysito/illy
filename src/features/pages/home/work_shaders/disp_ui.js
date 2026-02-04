@@ -13,11 +13,11 @@ function dispUI() {
 
   // canvases
   const aboutCanvas = document.querySelector('#about-canvas')
+  const derivaCanvas = document.querySelector('#work-deriva-canvas')
   const padmiCanvas = document.querySelector('#work-padmi-canvas')
   const liubaCanvas = document.querySelector('#work-liuba-canvas')
   const barrenaCanvas = document.querySelector('#work-barrrena-canvas')
   const cachanchanCanvas = document.querySelector('#work-cachanchan-canvas')
-  const liriosCanvas = document.querySelector('#work-lirios-canvas')
   const postersCanvas = document.querySelector('#work-posters-canvas')
 
   const p2o = 'power2.out'
@@ -33,7 +33,7 @@ function dispUI() {
   //   'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/fotiwini.jpeg'
   // )
   const image1_URL_ME = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/5aed40356cf0ef081485809964e01d8a52dd8b91/public/imgs_cdn/MeFlute.jpg'
+    'https://github.com/illysito/illy/blob/a717995520cd513d366e61c685414d13990f0ef2/ME%20MAIN%202.jpg'
   )
 
   const image2_URL_ME = githubToJsDelivr(
@@ -47,6 +47,23 @@ function dispUI() {
   )
   updateUniforms.push(updateUniformsME)
   offsets.push(offsetRefME)
+
+  // Deriva
+  const offsetRefLIRIOS = { current: 0 }
+  const image1_URL_LIRIOS = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/46e763e5e639f4794f949c3390e286404259a29b/public/imgs_cdn/Deriva-Mobile-MOCKUP.jpg'
+  )
+  const image2_URL_LIRIOS = githubToJsDelivr(
+    'https://github.com/illysito/illy/blob/46e763e5e639f4794f949c3390e286404259a29b/public/imgs_cdn/Deriva-PC-MOCKUP.jpg'
+  )
+  const updateUniformsLIRIOS = dispHandler(
+    derivaCanvas,
+    offsetRefLIRIOS,
+    image1_URL_LIRIOS,
+    image2_URL_LIRIOS
+  )
+  updateUniforms.push(updateUniformsLIRIOS)
+  offsets.push(offsetRefLIRIOS)
 
   // Padmi
   const offsetRefPADMI = { current: 0 }
@@ -115,23 +132,6 @@ function dispUI() {
   )
   updateUniforms.push(updateUniformsCACHANCHAN)
   offsets.push(offsetRefCACHANCHAN)
-
-  // Lirios
-  const offsetRefLIRIOS = { current: 0 }
-  const image1_URL_LIRIOS = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-09.webp'
-  )
-  const image2_URL_LIRIOS = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/WORK%20IMG%20-%202%20-10.webp'
-  )
-  const updateUniformsLIRIOS = dispHandler(
-    liriosCanvas,
-    offsetRefLIRIOS,
-    image1_URL_LIRIOS,
-    image2_URL_LIRIOS
-  )
-  updateUniforms.push(updateUniformsLIRIOS)
-  offsets.push(offsetRefLIRIOS)
 
   // Posters
   const offsetRefPOSTERS = { current: 0 }

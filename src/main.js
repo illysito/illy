@@ -286,7 +286,11 @@ async function runTatreezFunctions() {
 
 async function runCatanFunctions() {
   const { default: catanUI } = await import('./features/pages/catan/catan')
-  catanUI()
+  const { default: catanData } = await import(
+    './features/pages/catan/catanData'
+  )
+  const players = await catanData()
+  catanUI(players)
 }
 
 // INIT
