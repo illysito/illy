@@ -39,9 +39,9 @@ function calculateAverageYekaleo(totalYekaleo, matches) {
   let avg = (totalYekaleo - 100) / matches
   let avgYekaleo
   if (avg > 0) {
-    avgYekaleo = '+' + avg
+    avgYekaleo = '+' + avg.toFixed(2)
   } else {
-    avgYekaleo = avg
+    avgYekaleo = avg.toFixed(2)
   }
   return avgYekaleo
 }
@@ -97,7 +97,7 @@ async function catan(players) {
     const id = player.name
 
     SORTED_NAMES.push(player.name)
-    SORTED_WIN_RATES.push(player.winRate)
+    SORTED_WIN_RATES.push(player.winRate.toFixed(2))
     SORTED_COLORS.push(player.color)
 
     // fetch the correspondent PLAYER card and its content in the DOM
@@ -118,13 +118,17 @@ async function catan(players) {
     gsap.set([NAME, WIN_RATE, YEKALEO], {
       color: COLOR,
     })
-    WIN_RATE.textContent = player.winRate + ' %'
+    WIN_RATE.textContent = player.winRate.toFixed(2) + ' %'
     YEKALEO.textContent = player.totalRating + ' ykl'
     MATCHES_PLAYED.textContent = player.matches
     MATCHES_WON.textContent = player.wonMatches
     AVG_POINTS.textContent =
-      calculateAveragePoints(player.totalPoints, player.matches) + ' pts'
-    POWER.textContent = calculatePower(player.totalPoints, player.matches)
+      calculateAveragePoints(player.totalPoints, player.matches).toFixed(2) +
+      ' pts'
+    POWER.textContent = calculatePower(
+      player.totalPoints,
+      player.matches
+    ).toFixed(2)
     AVG_YEKALEO.textContent =
       calculateAverageYekaleo(player.totalRating, player.matches) + ' ykl'
   })
