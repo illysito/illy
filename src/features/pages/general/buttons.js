@@ -100,6 +100,9 @@ function button(button) {
           duration: D.med,
           // borderColor: typeColor,
           ease: E.p2io,
+          onComplete: () => {
+            window.location.href = e.currentTarget.href
+          },
         })
       },
     })
@@ -116,6 +119,7 @@ function button(button) {
 
   if (isMobile()) {
     button.addEventListener('click', (e) => {
+      e.preventDefault()
       buttonMobileClick(e)
     })
   }
