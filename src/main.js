@@ -289,6 +289,10 @@ async function runCatanFunctions() {
   const { default: catanData } = await import(
     './features/pages/catan/catanData'
   )
+  const { default: catanPreloader } = await import(
+    './features/pages/catan/catanPreloader'
+  )
+  catanPreloader()
   const players = await catanData()
   catanUI(players)
 }
