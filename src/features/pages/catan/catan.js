@@ -53,7 +53,7 @@ function calculateColor(color) {
   } else if (color == 'lila') {
     col = '#ca79ff'
   } else if (color == 'azul') {
-    col = '#1943ff'
+    col = '#0ee2f5'
   } else if (color == 'naranja') {
     col = '#ffa600'
   } else if (color == 'verde') {
