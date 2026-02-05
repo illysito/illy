@@ -48,8 +48,13 @@ async function catanPreloader() {
         gsap.to(preloader, {
           delay: 0.3,
           opacity: 0,
-          duration: 0.8,
-          zIndex: -30,
+          duration: 1.6,
+          onComplete: () => {
+            gsap.to(preloader, {
+              zIndex: -30,
+              duration: 0,
+            })
+          },
         })
       },
     },
