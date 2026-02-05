@@ -91,13 +91,13 @@ function button(button) {
     const b = e.currentTarget
     gsap.to(b, {
       scale: 0.92,
-      duration: D.med,
+      duration: D.fast,
       // borderColor: typeColor,
       ease: E.p2io,
       onComplete: () => {
         gsap.to(b, {
           scale: 1,
-          duration: D.med,
+          duration: D.fast,
           // borderColor: typeColor,
           ease: E.p2io,
           onComplete: () => {
