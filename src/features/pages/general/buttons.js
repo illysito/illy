@@ -85,10 +85,9 @@ function button(button) {
     })
   }
 
-  function buttonMobileClick(e) {
+  function buttonMobileClick(b, href) {
     // const rootStyles = getComputedStyle(document.documentElement)
     // const typeColor = rootStyles.getPropertyValue('--type-color').trim()
-    const b = e.currentTarget
     gsap.to(b, {
       scale: 0.92,
       duration: D.fast,
@@ -101,7 +100,7 @@ function button(button) {
           // borderColor: typeColor,
           ease: E.p2io,
           onComplete: () => {
-            window.location.href = e.currentTarget.href
+            if (href) window.location.href = href
           },
         })
       },
@@ -119,8 +118,12 @@ function button(button) {
 
   if (isMobile()) {
     button.addEventListener('click', (e) => {
-      e.preventDefault()
-      buttonMobileClick(e)
+      const b = e.currentTarget
+      const href = b.href
+      if (href) {
+        e.preventDefault()
+      }
+      buttonMobileClick(b, href)
     })
   }
 }
