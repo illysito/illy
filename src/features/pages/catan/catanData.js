@@ -2,12 +2,12 @@ async function catanData() {
   const players = []
   async function fetchData() {
     //prettier-ignore
-    // const url_T2 = 'https://docs.google.com/spreadsheets/d/12rQxW0LrqQHoWMWTzSKu0K5onPBnW54Mii4iguJnsE0/gviz/tq?tqx=out:csv&gid=0'
-    const url_T1 =
-      'https://docs.google.com/spreadsheets/d/1SwItQduinPgicSOz_-vriLmV8HJRHBHa1nG_PR2fkcU/gviz/tq?tqx=out:csv&gid=0'
+    const url_T2 = 'https://docs.google.com/spreadsheets/d/12rQxW0LrqQHoWMWTzSKu0K5onPBnW54Mii4iguJnsE0/gviz/tq?tqx=out:csv&gid=0'
+    // const url_T1 = 'https://docs.google.com/spreadsheets/d/1SwItQduinPgicSOz_-vriLmV8HJRHBHa1nG_PR2fkcU/gviz/tq?tqx=out:csv&gid=0'
 
     try {
-      const response = await fetch(url_T1)
+      // const response = await fetch(url_T1)
+      const response = await fetch(url_T2)
       const data = await response.text()
 
       const rows = data.split('\n').slice(1) // Remove header
