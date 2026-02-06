@@ -285,16 +285,23 @@ async function runTatreezFunctions() {
 }
 
 async function runCatanFunctions() {
-  const { default: catanUI } = await import('./features/pages/catan/catan')
-  const { default: catanData } = await import(
-    './features/pages/catan/catanData'
+  const { default: catanDisplayData } = await import(
+    './features/pages/catan/catanDisplayData'
   )
+  const { default: catanData } = await import(
+    './features/pages/catan/catanReadData'
+  )
+
+  // const { default: catanAddMatch } = await import(
+  //   './features/pages/catan/catanAddMatch'
+  // )
   // const { default: catanPreloader } = await import(
   //   './features/pages/catan/catanPreloader'
   // )
   // catanPreloader()
   const players = await catanData()
-  catanUI(players)
+  catanDisplayData(players)
+  // catanAddMatch()
 }
 
 // INIT
