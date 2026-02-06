@@ -154,8 +154,8 @@ async function catan(players) {
       const WIN_RATE = mainStats[0]
       const YEKALEO = mainStats[1]
       const miscStats = playerWrapper.querySelectorAll('.catan-misc-stat')
-      const MATCHES_PLAYED = miscStats[0]
-      const MATCHES_WON = miscStats[1]
+      const MATCHES_WON = miscStats[0]
+      const MATCHES_PLAYED = miscStats[1]
       const AVG_POINTS = miscStats[2]
       const AVG_YEKALEO = miscStats[3]
       const POWER = miscStats[4]
@@ -176,10 +176,10 @@ async function catan(players) {
         calculateAveragePoints(player.totalPoints, player.matches).toFixed(2),
         'pts'
       )
-      POWER.textContent = calculatePower(
-        player.totalPoints,
-        player.matches
-      ).toFixed(2)
+      POWER.innerHTML = formatDecimalsAndUnits(
+        calculatePower(player.totalPoints, player.matches).toFixed(2),
+        ''
+      )
       AVG_YEKALEO.innerHTML = formatDecimalsAndUnits(
         calculateAverageYekaleo(player.totalRating, player.matches),
         'ykl'
