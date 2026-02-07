@@ -1,5 +1,7 @@
 import gsap from 'gsap'
 
+import catanWriteData from './catanWriteData'
+
 const players = [
   {
     name: 'pau',
@@ -259,13 +261,14 @@ function catanAddMatch() {
     const AVERAGE = calculateMatchAverage()
     assignYekaleo(AVERAGE)
     console.log(players)
+    catanWriteData(players)
     gsap.to(DOM.addPlayersMenu, {
       yPercent: 0,
       duration: 1.2,
       ease: 'expo.inOut',
-      onComplete: () => {
-        window.location.reload()
-      },
+      // onComplete: () => {
+      //   window.location.reload()
+      // },
     })
   })
 }
