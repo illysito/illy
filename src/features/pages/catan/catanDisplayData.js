@@ -16,6 +16,8 @@ function selectDomElements() {
     catanPlayerNums: document.querySelectorAll('.catan-player-num'),
     catanPlayerStats: document.querySelectorAll('.catan-player-stat'),
     catanCategoryTitles: document.querySelectorAll('.catan-table-category'),
+    addButton: document.querySelector('.add-match-button'),
+    addPlayersMenu: document.querySelector('.addmatch-catan-screen'),
   }
 }
 const DOM = selectDomElements()
@@ -238,6 +240,27 @@ async function catanDisplayData(players) {
       } else {
         mainCardShowsYekaleo()
       }
+    })
+  })
+
+  // ADD PLAYER IN
+  DOM.addButton.addEventListener('click', () => {
+    gsap.to(DOM.addButton, {
+      scale: 0.96,
+      duration: 0.1,
+      ease: 'linear',
+      onComplete: () => {
+        gsap.to(DOM.addButton, {
+          scale: 1,
+          duration: 0.1,
+          ease: 'linear',
+        })
+      },
+    })
+    gsap.to(DOM.addPlayersMenu, {
+      yPercent: 100,
+      duration: 1.2,
+      ease: 'expo.inOut',
     })
   })
 }

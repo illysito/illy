@@ -292,16 +292,16 @@ async function runCatanFunctions() {
     './features/pages/catan/catanReadData'
   )
 
-  // const { default: catanAddMatch } = await import(
-  //   './features/pages/catan/catanAddMatch'
-  // )
+  const { default: catanAddMatch } = await import(
+    './features/pages/catan/catanAddMatch'
+  )
   // const { default: catanPreloader } = await import(
   //   './features/pages/catan/catanPreloader'
   // )
   // catanPreloader()
   const players = await catanData()
   catanDisplayData(players)
-  // catanAddMatch()
+  catanAddMatch()
 }
 
 // INIT
