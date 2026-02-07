@@ -263,6 +263,9 @@ function catanAddMatch() {
       yPercent: 0,
       duration: 1.2,
       ease: 'expo.inOut',
+      onComplete: () => {
+        window.location.reload()
+      },
     })
   })
 }
