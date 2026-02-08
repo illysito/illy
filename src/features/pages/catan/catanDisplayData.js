@@ -64,6 +64,7 @@ function calculateColor(color) {
   } else if (color == 'rosa') {
     col = '#ff7ebc'
   }
+  console.log(col)
   return col
 }
 
