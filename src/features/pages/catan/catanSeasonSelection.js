@@ -9,6 +9,7 @@ async function catanSelectSeason() {
   const seasonSelectors = document.querySelectorAll('.season-selector')
   const icons = document.querySelectorAll('.loading-icon')
 
+  document.body.style.overflow = 'hidden'
   gsap.to(icons, {
     rotation: 360,
     duration: 9.6,
@@ -36,6 +37,7 @@ async function catanSelectSeason() {
             duration: 0.1,
             ease: 'linear',
             onComplete: () => {
+              document.body.style.overflow = 'visible'
               gsap.to(s, {
                 scale: 1,
                 duration: 0.1,
