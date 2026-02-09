@@ -301,9 +301,14 @@ async function runCatanFunctions() {
 
   // catanPreloader()
   const url = await catanSeasonSelection()
-  const players = await catanReadData(url)
-  catanDisplayData(players)
+  async function refreshUI() {
+    const players = await catanReadData(url)
+    catanDisplayData(players)
+  }
+  refreshUI()
   catanAddMatch(url)
+
+  window.addEventListener('catan:data-updated', refreshUI)
 }
 
 // INIT

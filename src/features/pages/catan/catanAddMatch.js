@@ -85,7 +85,7 @@ const DOM = selectDomElements()
 //   return ykl
 // }
 
-function catanAddMatch(url) {
+async function catanAddMatch(url) {
   let activePlayers = [false, false, false, false, false, false] // 0 is OFF and 1 is ON for the player in that given position
   function activatePlayer(index, btn, txt) {
     let isActive = activePlayers[index]
@@ -253,7 +253,7 @@ function catanAddMatch(url) {
   })
 
   // EVENT LISTENRE FOR BUTTON
-  DOM.button.addEventListener('click', () => {
+  DOM.button.addEventListener('click', async () => {
     gsap.to(DOM.button, {
       scale: 0.98,
       duration: 0.1,
@@ -269,7 +269,7 @@ function catanAddMatch(url) {
     const AVERAGE = calculateMatchAverage()
     assignYekaleo(AVERAGE)
     assignPlayedMatches()
-    catanWriteData(players, url)
+
     gsap.to(DOM.addPlayersMenu, {
       height: 0,
       marginTop: 0,
@@ -280,6 +280,10 @@ function catanAddMatch(url) {
       //   window.location.reload()
       // },
     })
+
+    await catanWriteData(players, url)
+
+    window.dispatchEvent(new CustomEvent('catan:data-updated'))
   })
 }
 

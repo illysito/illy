@@ -12,7 +12,7 @@ async function catanSelectSeason() {
   document.body.style.overflow = 'hidden'
   gsap.to(icons, {
     rotation: 360,
-    duration: 9.6,
+    duration: 8,
     repeat: -1,
     ease: 'none',
   })
