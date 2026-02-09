@@ -178,6 +178,14 @@ function catanAddMatch(url) {
     })
   }
 
+  function assignPlayedMatches() {
+    players.forEach((p, index) => {
+      if (activePlayers[index]) {
+        p.matchesToAdd = 1
+      }
+    })
+  }
+
   // EVENR LISTENERS FOR NAMES
   DOM.catanPlayerWrappers.forEach((w, index) => {
     const btn = w.firstElementChild
@@ -260,7 +268,7 @@ function catanAddMatch(url) {
     })
     const AVERAGE = calculateMatchAverage()
     assignYekaleo(AVERAGE)
-    // console.log(players)
+    assignPlayedMatches()
     catanWriteData(players, url)
     gsap.to(DOM.addPlayersMenu, {
       yPercent: 0,
