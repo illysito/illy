@@ -288,20 +288,22 @@ async function runCatanFunctions() {
   const { default: catanDisplayData } = await import(
     './features/pages/catan/catanDisplayData'
   )
-  const { default: catanData } = await import(
+  const { default: catanReadData } = await import(
     './features/pages/catan/catanReadData'
   )
 
   const { default: catanAddMatch } = await import(
     './features/pages/catan/catanAddMatch'
   )
-  // const { default: catanPreloader } = await import(
-  //   './features/pages/catan/catanPreloader'
-  // )
+  const { default: catanSeasonSelection } = await import(
+    './features/pages/catan/catanSeasonSelection'
+  )
+
   // catanPreloader()
-  const players = await catanData()
+  const url = await catanSeasonSelection()
+  const players = await catanReadData(url)
   catanDisplayData(players)
-  catanAddMatch()
+  catanAddMatch(url)
 }
 
 // INIT

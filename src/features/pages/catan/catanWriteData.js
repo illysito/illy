@@ -13,14 +13,11 @@
 //   return json
 // }
 
-const WEBAPP_URL =
-  'https://script.google.com/macros/s/AKfycbwCv6pcjEi1O24m1n01Fo6qf5kiBtIDIG_MWlLp1oirW2bC2XyTUg0ll9Yd56DmRVtZ/exec'
-
-async function catanWriteData(players) {
+async function catanWriteData(players, url) {
   const body = new URLSearchParams()
   body.set('payload', JSON.stringify(players))
 
-  const res = await fetch(WEBAPP_URL, {
+  const res = await fetch(url, {
     method: 'POST',
     body, // <-- no custom headers
   })

@@ -64,12 +64,12 @@ function calculateColor(color) {
   } else if (color == 'rosa') {
     col = '#ff7ebc'
   }
-  console.log(col)
+  // console.log(col)
   return col
 }
 
 function formatDecimalsAndUnits(rawValue, units) {
-  const normalizedValue = String(rawValue.replace('.', ','))
+  const normalizedValue = String(rawValue).replace('.', ',')
   const firstCommaPosition = normalizedValue.indexOf(',')
   const beforeComma = normalizedValue.slice(0, firstCommaPosition + 1)
   const afterComma = normalizedValue.slice(firstCommaPosition + 1)
@@ -120,7 +120,7 @@ function displayByYekaleo() {
 }
 
 async function catanDisplayData(players) {
-  console.log(players)
+  // console.log(players)
   // add win rate property to all players
   players.forEach((p) => {
     p.winRate = calculateWinRate(p.wonMatches, p.matches)

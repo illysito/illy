@@ -85,7 +85,7 @@ const DOM = selectDomElements()
 //   return ykl
 // }
 
-function catanAddMatch() {
+function catanAddMatch(url) {
   let activePlayers = [false, false, false, false, false, false] // 0 is OFF and 1 is ON for the player in that given position
   function activatePlayer(index, btn, txt) {
     let isActive = activePlayers[index]
@@ -260,8 +260,8 @@ function catanAddMatch() {
     })
     const AVERAGE = calculateMatchAverage()
     assignYekaleo(AVERAGE)
-    console.log(players)
-    catanWriteData(players)
+    // console.log(players)
+    catanWriteData(players, url)
     gsap.to(DOM.addPlayersMenu, {
       yPercent: 0,
       duration: 1.2,
