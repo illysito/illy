@@ -159,7 +159,7 @@ function catanAddMatch(url) {
     let avg = 0
     players.forEach((p, index) => {
       if (activePlayers[index]) {
-        totalPoints += players[index].pointsToAdd
+        totalPoints += p.pointsToAdd
         totalPlayers++
       }
     })

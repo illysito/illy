@@ -18,9 +18,18 @@ function selectDomElements() {
     catanCategoryTitles: document.querySelectorAll('.catan-table-category'),
     addButton: document.querySelector('.add-match-button'),
     addPlayersMenu: document.querySelector('.addmatch-catan-screen'),
+    selectionScreen: document.querySelector('.season-catan-screen'),
   }
 }
 const DOM = selectDomElements()
+
+function hideSeasonScreen() {
+  gsap.to(DOM.selectionScreen, {
+    xPercent: -100,
+    duration: 0.8,
+    ease: 'expo.inOut',
+  })
+}
 
 function calculateWinRate(won, played) {
   let winRate = (100 * won) / played
@@ -229,6 +238,7 @@ async function catanDisplayData(players) {
   }
 
   function init() {
+    hideSeasonScreen()
     mainCardShowsWinRate()
     // mainCardShowsYekaleo()
     displayPlayerCards()

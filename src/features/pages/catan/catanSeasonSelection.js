@@ -7,13 +7,30 @@ const seasonURLS = [
 
 async function catanSelectSeason() {
   const seasonSelectors = document.querySelectorAll('.season-selector')
-  const selectionScreen = document.querySelector('.season-catan-screen')
+  const icons = document.querySelectorAll('.loading-icon')
+
+  gsap.to(icons, {
+    rotation: 360,
+    duration: 9.6,
+    repeat: -1,
+    ease: 'none',
+  })
 
   return new Promise((resolve) => {
     seasonSelectors.forEach((s, index) => {
+      const content = s.firstElementChild
+      const loadingIcon = content.nextElementSibling
       s.addEventListener(
         'click',
         () => {
+          gsap.to(content, {
+            opacity: 0,
+            duration: 0.2,
+          })
+          gsap.to(loadingIcon, {
+            opacity: 1,
+            duration: 0.2,
+          })
           gsap.to(s, {
             scale: 0.98,
             duration: 0.1,
@@ -23,11 +40,6 @@ async function catanSelectSeason() {
                 scale: 1,
                 duration: 0.1,
                 ease: 'linear',
-              })
-              gsap.to(selectionScreen, {
-                xPercent: -100,
-                duration: 0.8,
-                ease: 'expo.inOut',
               })
               resolve(seasonURLS[index])
             },
