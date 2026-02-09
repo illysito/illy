@@ -69,6 +69,7 @@ function calculateColor(color) {
 }
 
 function formatDecimalsAndUnits(rawValue, units) {
+  rawValue = Number(rawValue).toFixed(2)
   const normalizedValue = String(rawValue).replace('.', ',')
   const firstCommaPosition = normalizedValue.indexOf(',')
   const beforeComma = normalizedValue.slice(0, firstCommaPosition + 1)
