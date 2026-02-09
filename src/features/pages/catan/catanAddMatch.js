@@ -271,7 +271,9 @@ function catanAddMatch(url) {
     assignPlayedMatches()
     catanWriteData(players, url)
     gsap.to(DOM.addPlayersMenu, {
-      yPercent: 0,
+      height: 0,
+      marginTop: 0,
+      opacity: 0,
       duration: 1.2,
       ease: 'expo.inOut',
       // onComplete: () => {

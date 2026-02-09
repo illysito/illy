@@ -270,7 +270,9 @@ async function catanDisplayData(players) {
       },
     })
     gsap.to(DOM.addPlayersMenu, {
-      yPercent: 100,
+      height: 'auto',
+      marginTop: 80,
+      opacity: 1,
       duration: 1.2,
       ease: 'expo.inOut',
     })
