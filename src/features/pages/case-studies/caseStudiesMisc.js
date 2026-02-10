@@ -36,10 +36,10 @@ async function caseStudiesMisc() {
   if (isMobile()) {
     DOM.caseImgs.forEach((img) => {
       gsap.to(img, {
-        yPercent: -12,
+        yPercent: -4,
         scrollTrigger: {
           trigger: img,
-          start: 'top 72%',
+          start: 'top bottom',
           end: 'bottom 20%',
           scrub: true,
           markers: false,
