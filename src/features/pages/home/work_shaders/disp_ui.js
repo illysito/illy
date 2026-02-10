@@ -33,7 +33,7 @@ function dispUI() {
   //   'https://github.com/illysito/illy/blob/4b2380e8efe928758960c126503d94824b64fb30/public/imgs_cdn/fotiwini.jpeg'
   // )
   const image1_URL_ME = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/a717995520cd513d366e61c685414d13990f0ef2/ME%20MAIN%202.jpg'
+    'https://github.com/illysito/illy/blob/142a7eaa8ce153930d95af48b995ced0a4a6f9aa/public/imgs_cdn/ME%20MAIN%203.webp'
   )
 
   const image2_URL_ME = githubToJsDelivr(
