@@ -40,7 +40,7 @@ async function caseStudiesMisc() {
         scrollTrigger: {
           trigger: img,
           start: 'top bottom',
-          end: 'bottom 20%',
+          end: 'bottom top',
           scrub: true,
           markers: false,
         },
