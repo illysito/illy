@@ -95,16 +95,30 @@ async function preloader() {
   // }
 
   // INIT
+
+  let timeOut1 = 2600
+  let timeOut2 = 2800
+  let timeOut3 = 3800
+  // if (localStorage.getItem('isPreloader') == 'true') {
+  //   timeOut1 = 0
+  //   timeOut2 = 0
+  //   timeOut3 = 0
+  // } else {
+  //   timeOut1 = 2600
+  //   timeOut2 = 2800
+  //   timeOut3 = 3800
+  // }
+
   async function init() {
     animateWordsIn()
     // await generateName('100')
     setTimeout(() => {
       fadeElementsOut()
-    }, 2600)
+    }, timeOut1)
     setTimeout(() => {
       fadePreloaderOut()
       document.body.classList.remove('no-scroll')
-    }, 2800)
+    }, timeOut2)
     // setTimeout(() => {
     //   fadeMotionButton()
     // }, 4000)
@@ -112,7 +126,7 @@ async function preloader() {
     // fadePreloader()
     setTimeout(() => {
       introHome()
-    }, 3800)
+    }, timeOut3)
     localStorage.setItem('isPreloader', 'true')
   }
 

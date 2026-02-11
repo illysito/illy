@@ -133,6 +133,7 @@ async function runHomeFunctions() {
   // }
 
   preloader()
+
   metadata()
   heroUIChange()
   heroUIState()
@@ -226,6 +227,7 @@ async function runWorkFunctions() {
   const { default: work } = await import('./features/pages/work/work')
   work()
 }
+
 async function runCaseFunctions() {
   // const { default: introNav } = await import(
   //   './features/pages/general/introNav'
