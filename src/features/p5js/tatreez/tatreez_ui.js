@@ -1,8 +1,7 @@
 import gsap from 'gsap'
 
-import Anim from '../../helpers/anim.js'
-
 import tatreezHandler from './tatreez_handler.js'
+import Anim from '../../helpers/anim.js'
 
 const D = Anim.D
 const E = Anim.E
