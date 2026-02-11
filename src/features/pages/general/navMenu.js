@@ -196,6 +196,19 @@ function offCanvaMenu() {
   menuButton.addEventListener('click', manageMenu)
   backButton.addEventListener('click', manageMenu)
 
+  // access to contact from home in mobile
+  if (isMobile) {
+    const mobileMenuLinks = document.querySelectorAll(
+      '.offcanva-build-link-wrapper'
+    )
+    const contactSectionById = document.getElementById('contact')
+    mobileMenuLinks[2].addEventListener('click', (e) => {
+      e.preventDefault()
+      manageMenu()
+      contactSectionById.scrollIntoView()
+    })
+  }
+
   if (!isMobile) {
     webLinks.forEach((l) => {
       // const text = l.firstElementChild
