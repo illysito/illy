@@ -203,9 +203,13 @@ function offCanvaMenu() {
     )
     const contactSectionById = document.getElementById('contact')
     mobileMenuLinks[2].addEventListener('click', (e) => {
-      e.preventDefault()
-      manageMenu()
-      contactSectionById.scrollIntoView()
+      if (document.body.classList.contains('body__home')) {
+        e.preventDefault()
+        manageMenu()
+        contactSectionById.scrollIntoView()
+      } else {
+        window.location.href = '/#contact'
+      }
     })
   }
 
