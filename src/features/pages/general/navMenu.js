@@ -127,7 +127,7 @@ function offCanvaMenu() {
         () => {
           if (fromWhere == 'fromHome') {
             contactSectionById.scrollIntoView({
-              behavior: 'smooth',
+              // behavior: 'smooth',
               block: 'start',
             })
           }
