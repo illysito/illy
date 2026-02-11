@@ -56,68 +56,74 @@ async function tatreezUI() {
   }
 
   // HOVER ARROWS
-  arrowRight.addEventListener('mouseover', () => {
-    gsap.to(arrowRight, {
-      scale: 0.96,
-      // x: 2,
-      duration: D.fast,
+  if (arrowLeft && arrowRight) {
+    arrowRight.addEventListener('mouseover', () => {
+      gsap.to(arrowRight, {
+        scale: 0.96,
+        // x: 2,
+        duration: D.fast,
+      })
     })
-  })
-  arrowRight.addEventListener('mouseleave', () => {
-    gsap.to(arrowRight, {
-      scale: 1,
-      x: 0,
-      duration: D.fast,
+    arrowRight.addEventListener('mouseleave', () => {
+      gsap.to(arrowRight, {
+        scale: 1,
+        x: 0,
+        duration: D.fast,
+      })
     })
-  })
 
-  arrowLeft.addEventListener('mouseover', () => {
-    gsap.to(arrowLeft, {
-      scale: 0.96,
-      // x: -2,
-      duration: D.fast,
+    arrowLeft.addEventListener('mouseover', () => {
+      gsap.to(arrowLeft, {
+        scale: 0.96,
+        // x: -2,
+        duration: D.fast,
+      })
     })
-  })
-  arrowLeft.addEventListener('mouseleave', () => {
-    gsap.to(arrowLeft, {
-      scale: 1,
-      x: 0,
-      duration: D.fast,
+    arrowLeft.addEventListener('mouseleave', () => {
+      gsap.to(arrowLeft, {
+        scale: 1,
+        x: 0,
+        duration: D.fast,
+      })
     })
-  })
 
-  // CLICK ARROWS
-  arrowRight.addEventListener('click', () => {
-    animateClick(arrowRight)
-    window.dispatchEvent(rightClick)
-    counter = (counter + 1) % LENGTH
-    moveHeaders()
-    moveTexts()
-  })
-  arrowRightMobile.addEventListener('click', () => {
-    animateClick(arrowRightMobile)
-    window.dispatchEvent(rightClick)
-    counter = (counter + 1) % LENGTH
-    moveHeaders()
-    moveTexts()
-  })
+    // CLICK ARROWS
+    arrowRight.addEventListener('click', () => {
+      animateClick(arrowRight)
+      window.dispatchEvent(rightClick)
+      counter = (counter + 1) % LENGTH
+      moveHeaders()
+      moveTexts()
+    })
+    arrowLeft.addEventListener('click', () => {
+      animateClick(arrowLeft)
+      window.dispatchEvent(leftClick)
+      counter = counter - 1
+      if (counter < 0) counter = LENGTH - 1
+      moveHeaders()
+      moveTexts()
+    })
+  }
 
-  arrowLeft.addEventListener('click', () => {
-    animateClick(arrowLeft)
-    window.dispatchEvent(leftClick)
-    counter = counter - 1
-    if (counter < 0) counter = LENGTH - 1
-    moveHeaders()
-    moveTexts()
-  })
-  arrowLeftMobile.addEventListener('click', () => {
-    animateClick(arrowLeftMobile)
-    window.dispatchEvent(leftClick)
-    counter = counter - 1
-    if (counter < 0) counter = LENGTH - 1
-    moveHeaders()
-    moveTexts()
-  })
+  // MOB
+  if (arrowLeftMobile && arrowRightMobile) {
+    arrowRightMobile.addEventListener('click', () => {
+      animateClick(arrowRightMobile)
+      window.dispatchEvent(rightClick)
+      counter = (counter + 1) % LENGTH
+      moveHeaders()
+      moveTexts()
+    })
+
+    arrowLeftMobile.addEventListener('click', () => {
+      animateClick(arrowLeftMobile)
+      window.dispatchEvent(leftClick)
+      counter = counter - 1
+      if (counter < 0) counter = LENGTH - 1
+      moveHeaders()
+      moveTexts()
+    })
+  }
 
   // SWIPE
   let startX = 0
