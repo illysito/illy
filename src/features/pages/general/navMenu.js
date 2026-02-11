@@ -129,19 +129,15 @@ function offCanvaMenu() {
       tl.call(
         () => {
           if (fromWhere == 'fromHome') {
-            tl.to(
-              window,
-              {
-                duration: 1.5,
-                scrollTo: contactSectionById,
-                ease: 'power2.inOut',
-              },
-              '-=0.35'
-            )
+            gsap.to(window, {
+              duration: 1.2,
+              scrollTo: contactSectionById,
+              ease: 'power2.inOut',
+            })
           }
         },
         null,
-        '-=1.2'
+        '-=1.5'
       )
     } else {
       // OPEN MENU
