@@ -2,13 +2,15 @@ import gsap from 'gsap'
 
 import Anim from '../../helpers/anim.js'
 
+import tatreezHandler from './tatreez_handler.js'
+
 const D = Anim.D
 const E = Anim.E
 
 async function tatreezUI() {
   let downScale = 0.92
 
-  const { default: tatreezHandler } = await import('./tatreez_handler.js')
+  // const { default: tatreezHandler } = await import('./tatreez_handler.js')
   const tatreezCanvasWrapper = document.querySelector('.tatreez-canvas-wrapper')
 
   const arrowLeft = document.querySelector('.arrow-left')
