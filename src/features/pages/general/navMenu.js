@@ -10,6 +10,7 @@ function offCanvaMenu() {
   const links = document.querySelectorAll('.offcanva-build-link')
   const backLinks = document.querySelectorAll('.back-link-txt')
   const cols = document.querySelectorAll('.offcanva-column')
+  const contactSectionById = document.getElementById('contact')
   // const heroImg = document.querySelector('.hero-img-wrapper-mobile') // only on HERO! I need this to happen an all pages
 
   function preventScroll(e) {
@@ -70,7 +71,7 @@ function offCanvaMenu() {
   })
 
   let menuShown = false
-  function manageMenu() {
+  function manageMenu(fromWhere) {
     if (menuShown) {
       // CLOSE MENU
       menuButton.style.poinerEvents = 'auto'
@@ -83,15 +84,6 @@ function offCanvaMenu() {
         duration: 1.2 * 0.9,
         ease: 'power2.inOut',
       })
-        // .to(
-        //   heroImg,
-        //   {
-        //     y: 0,
-        //     duration: 1,
-        //     ease: 'power2.inOut',
-        //   },
-        //   '<'
-        // )
         .to(
           backLinks,
           {
@@ -120,7 +112,6 @@ function offCanvaMenu() {
         .to(
           offCanva,
           {
-            // backgroundColor: '#10101000',
             yPercent: 0,
             duration: 1.2 * 0.9,
             ease: 'expo.inOut',
@@ -132,6 +123,18 @@ function offCanvaMenu() {
           },
           '-=0.3'
         )
+      tl.call(
+        () => {
+          if (fromWhere == 'fromHome') {
+            contactSectionById.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+            })
+          }
+        },
+        null,
+        '-=1.2'
+      )
     } else {
       // OPEN MENU
       // document.body.classList.add('no-scroll')
@@ -201,12 +204,10 @@ function offCanvaMenu() {
     const mobileMenuLinks = document.querySelectorAll(
       '.offcanva-build-link-wrapper'
     )
-    const contactSectionById = document.getElementById('contact')
     mobileMenuLinks[2].addEventListener('click', (e) => {
       if (document.body.classList.contains('body__home')) {
         e.preventDefault()
-        manageMenu()
-        contactSectionById.scrollIntoView()
+        manageMenu('fromHome')
       } else {
         window.location.href = '/#contact'
       }
