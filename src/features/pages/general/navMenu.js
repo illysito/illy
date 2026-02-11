@@ -80,7 +80,7 @@ function offCanvaMenu() {
         // delay: 0.3,
         yPercent: 0,
         stagger: -0.05,
-        duration: 1.2,
+        duration: 1.2 * 0.9,
         ease: 'power2.inOut',
       })
         // .to(
@@ -96,7 +96,7 @@ function offCanvaMenu() {
           backLinks,
           {
             yPercent: 0,
-            duration: 1.2,
+            duration: 1.2 * 0.9,
             ease: 'power2.inOut',
           },
           '<'
@@ -105,7 +105,7 @@ function offCanvaMenu() {
           cols,
           {
             yPercent: 0,
-            duration: 1.2,
+            duration: 1.2 * 0.9,
             stagger: {
               each: 0.01,
               from: 'random',
@@ -122,7 +122,7 @@ function offCanvaMenu() {
           {
             // backgroundColor: '#10101000',
             yPercent: 0,
-            duration: 1.2,
+            duration: 1.2 * 0.9,
             ease: 'expo.inOut',
             onComplete: () => {
               gsap.set(offCanva, {
@@ -152,7 +152,7 @@ function offCanvaMenu() {
         {
           // backgroundColor: '#101010',
           yPercent: 100,
-          duration: 1.2,
+          duration: 1.2 * 0.9,
           ease: 'expo.inOut',
         },
         '<-=0.6'
@@ -161,7 +161,7 @@ function offCanvaMenu() {
           cols,
           {
             yPercent: 100,
-            duration: 1.2,
+            duration: 1.2 * 0.9,
             stagger: {
               each: 0.01,
               from: 'random',
@@ -176,7 +176,7 @@ function offCanvaMenu() {
             // delay: 0.3,
             yPercent: -100,
             stagger: 0.05,
-            duration: 1.2,
+            duration: 1.2 * 0.9,
             ease: 'power2.inOut',
           },
           '-=0.9'
@@ -185,7 +185,7 @@ function offCanvaMenu() {
           backLinks,
           {
             yPercent: -100,
-            duration: 1.2,
+            duration: 1.2 * 0.9,
             ease: 'power2.inOut',
           },
           '<+=0.3'
