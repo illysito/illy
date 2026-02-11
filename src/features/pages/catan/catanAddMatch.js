@@ -56,8 +56,8 @@ const colors = [
   '#ffa600',
 ]
 
-const catanPointsWrappers = document.querySelectorAll(
-  '.add-catan-points-wrapper'
+const catanPointsWrappers = Array.from(
+  document.querySelectorAll('.add-catan-points-wrapper')
 )
 
 function selectDomElements() {
