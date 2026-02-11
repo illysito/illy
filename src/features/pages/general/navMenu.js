@@ -1,4 +1,7 @@
 import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
+gsap.registerPlugin(ScrollToPlugin)
 
 function offCanvaMenu() {
   let isMobile = window.innerWidth <= 767
@@ -126,10 +129,15 @@ function offCanvaMenu() {
       tl.call(
         () => {
           if (fromWhere == 'fromHome') {
-            contactSectionById.scrollIntoView({
-              // behavior: 'smooth',
-              block: 'start',
-            })
+            tl.to(
+              window,
+              {
+                duration: 1.5,
+                scrollTo: contactSectionById,
+                ease: 'power2.inOut',
+              },
+              '-=0.35'
+            )
           }
         },
         null,
