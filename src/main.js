@@ -281,6 +281,7 @@ async function runTatreezFunctions() {
   const { default: tatreezUI } = await import(
     './features/p5js/tatreez/tatreez_ui'
   )
+  console.log('only tatreez functions run!')
   tatreezUI()
 }
 
@@ -300,6 +301,7 @@ async function runCatanFunctions() {
   )
 
   // catanPreloader()
+  console.log('catan functions are trying to run')
   const url = await catanSeasonSelection()
   async function refreshUI() {
     const players = await catanReadData(url)
