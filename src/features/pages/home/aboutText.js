@@ -47,7 +47,7 @@ function aboutText() {
   if (aboutImg) {
     // Mobile
     gsap.to(aboutImg, {
-      y: -80,
+      y: -60,
       scale: 1.1,
       scrollTrigger: {
         trigger: aboutImg,
