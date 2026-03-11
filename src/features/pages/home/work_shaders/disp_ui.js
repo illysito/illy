@@ -139,7 +139,7 @@ function dispUI() {
     'https://github.com/illysito/illy/blob/a092342a2a0be47bdc85d62434c3562abca9dc76/public/imgs_cdn/WORK-12-11.webp'
   )
   const image2_URL_POSTERS = githubToJsDelivr(
-    'https://github.com/illysito/illy/blob/d1dc2e7f148e9350b20ce502a3424b16e41e677f/public/imgs_cdn/WORK%2013%20-%20.webp'
+    'https://github.com/illysito/illy/blob/963f3776fb40172e02f93e017839a7d30c11baa7/imgs/PalestineTatreezWork.jpg'
   )
   const updateUniformsPOSTERS = dispHandler(
     postersCanvas,
