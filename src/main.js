@@ -10,6 +10,8 @@ import offCanvaMenu from './features/pages/general/navMenu'
 
 let isBuilding = false
 
+console.log('lol')
+
 function isMobile() {
   return window.innerWidth <= 767
 }
@@ -316,11 +318,11 @@ async function runCatanFunctions() {
 }
 
 async function runColorShaderFunctions() {
-  const { default: colorShaderWorld } = await import(
-    './features/pages/color-shaders/colorShadersWorld'
-  )
+  // const { default: colorShaderWorld } = await import(
+  //   './features/pages/color-shaders/colorShadersWorld'
+  // )
   console.log('only color shader functions run!')
-  colorShaderWorld()
+  // colorShaderWorld()
 }
 
 // INIT
@@ -330,7 +332,7 @@ if (
   !document.body.classList.contains('body__i-ching') &&
   !document.body.classList.contains('body__tatreez') &&
   !document.body.classList.contains('body__catan') &&
-  !document.body.classList.contains('body__shaders-color')
+  !document.body.classList.contains('body__color')
 )
   // requestIdleCallback(runGeneralFunctions)
   runGeneralFunctions()
@@ -348,5 +350,4 @@ if (document.body.classList.contains('body__flowfield')) runFlowFieldFunctions()
 if (document.body.classList.contains('body__i-ching')) runIChingFunctions()
 if (document.body.classList.contains('body__tatreez')) runTatreezFunctions()
 if (document.body.classList.contains('body__catan')) runCatanFunctions()
-if (document.body.classList.contains('body__shaders-color'))
-  runColorShaderFunctions()
+if (document.body.classList.contains('body__color')) runColorShaderFunctions()
