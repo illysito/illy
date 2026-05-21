@@ -1,7 +1,7 @@
 // import gsap from 'gsap'
 import * as THREE from 'three'
 
-// import typographyFragment from './shaders/fragShaderTypography'
+import typographyFragment from '../../../shaders/glsl/breathingShaderFrags'
 import vert from './shaders/vertexShader'
 
 async function colorShaderWorld() {
@@ -49,13 +49,6 @@ async function colorShaderWorld() {
       u_mouseX: { value: 0.5 },
       u_mouseY: { value: 0.5 },
       u_blocks: { value: 800 },
-
-      u_noiseFrequency: { value: UNIFORMS_TEXTURE.frequency },
-      u_displacementCoef: { value: UNIFORMS_TEXTURE.amplitude },
-
-      u_currentTexture: { value: textures.inner_circle },
-      u_noiseTexture: { value: textures.perlin },
-      u_bg: { value: textures.bg },
     },
     transparent: true,
     blending: THREE.AdditiveBlending,
