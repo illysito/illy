@@ -2,7 +2,7 @@
 import * as THREE from 'three'
 
 import vert from './shaders/vertexShader'
-import typographyFragment from '../../../shaders/glsl/breathingShaderFrags'
+import breathingShader_frag from '../../../shaders/glsl/breathingShaderFrags'
 
 async function colorShaderWorld() {
   const canvas = document.getElementById('color-shader-canvas-1')
@@ -40,7 +40,7 @@ async function colorShaderWorld() {
   // Main plane creation
   const planeGeometry = new THREE.PlaneGeometry(600, 600)
   const planeMaterial = new THREE.ShaderMaterial({
-    fragmentShader: typographyFragment,
+    fragmentShader: breathingShader_frag,
     vertexShader: vert,
     uniforms: {
       u_time: { value: 0 },
