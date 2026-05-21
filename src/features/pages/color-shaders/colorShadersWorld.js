@@ -2,7 +2,7 @@
 import * as THREE from 'three'
 
 import vert from './shaders/vertexShader'
-import breathingShader_frag from '../../../shaders/glsl/breathingShaderFrags'
+import breathingShader_frag from '../../../shaders/glsl/breathingShaderFrag'
 
 async function colorShaderWorld() {
   const canvas = document.getElementById('color-shader-canvas-1')
