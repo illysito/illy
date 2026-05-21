@@ -1,8 +1,8 @@
 // import gsap from 'gsap'
 import * as THREE from 'three'
 
-import typographyFragment from '../../../shaders/glsl/breathingShaderFrags'
 import vert from './shaders/vertexShader'
+import typographyFragment from '../../../shaders/glsl/breathingShaderFrags'
 
 async function colorShaderWorld() {
   const canvas = document.getElementById('color-shader-canvas-1')
