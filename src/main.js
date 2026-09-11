@@ -289,33 +289,33 @@ async function runTatreezFunctions() {
   tatreezUI()
 }
 
-async function runCatanFunctions() {
-  const { default: catanDisplayData } = await import(
-    './features/pages/catan/catanDisplayData'
-  )
-  const { default: catanReadData } = await import(
-    './features/pages/catan/catanReadData'
-  )
+// async function runCatanFunctions() {
+//   const { default: catanDisplayData } = await import(
+//     './features/pages/catan/catanDisplayData'
+//   )
+//   const { default: catanReadData } = await import(
+//     './features/pages/catan/catanReadData'
+//   )
 
-  const { default: catanAddMatch } = await import(
-    './features/pages/catan/catanAddMatch'
-  )
-  const { default: catanSeasonSelection } = await import(
-    './features/pages/catan/catanSeasonSelection'
-  )
+//   const { default: catanAddMatch } = await import(
+//     './features/pages/catan/catanAddMatch'
+//   )
+//   const { default: catanSeasonSelection } = await import(
+//     './features/pages/catan/catanSeasonSelection'
+//   )
 
-  // catanPreloader()
-  console.log('catan functions are trying to run')
-  const url = await catanSeasonSelection()
-  async function refreshUI() {
-    const players = await catanReadData(url)
-    catanDisplayData(players)
-  }
-  refreshUI()
-  catanAddMatch(url)
+//   // catanPreloader()
+//   console.log('catan functions are trying to run')
+//   const url = await catanSeasonSelection()
+//   async function refreshUI() {
+//     const players = await catanReadData(url)
+//     catanDisplayData(players)
+//   }
+//   refreshUI()
+//   catanAddMatch(url)
 
-  window.addEventListener('catan:data-updated', refreshUI)
-}
+//   window.addEventListener('catan:data-updated', refreshUI)
+// }
 
 async function runColorShaderFunctions() {
   // const { default: colorShaderWorld } = await import(
